@@ -831,13 +831,13 @@ public class SecondScreenView extends View
             float y = 50 + i * 47;
             JSONObject m = moves != null && i < moves.length() ? moves.optJSONObject(i) : null;
             if (m == null) { small("-", 290, y + 8, DIM); continue; }
-            typeIcon(m.optJSONObject("type"), 206, y + 4, 64);
+            typeIcon(m.optJSONObject("type"), 206, y + 2, 64);
+            categoryIcon(m.optInt("cat", 2), 218, y + 30, 40);   // under the type, clear of the name
             String pp = "PP " + m.optInt("pp") + "/" + m.optInt("maxpp");
             float ppw = text(pp, 500, y + 2, mSmallFont, 18, 1, LILAC, SHADOW);
             small(ellipsize(m.optString("name", ""), mSmallFont, 21, 500 - ppw - 8 - 278), 278, y, WHITE);
-            categoryIcon(m.optInt("cat", 2), 278, y + 24, 40);
             int pw = m.optInt("power", 0), acc = m.optInt("acc", 0);
-            text("Pow " + (pw > 1 ? pw : "-") + "   Acc " + (acc > 0 ? acc : "-"), 324, y + 22, mSmallFont, 18, 0, DIM, SHADOW);
+            text("Pow " + (pw > 1 ? pw : "-") + "   Acc " + (acc > 0 ? acc : "-"), 280, y + 24, mSmallFont, 18, 0, DIM, SHADOW);
         }
     }
 
