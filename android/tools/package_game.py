@@ -4,7 +4,7 @@
 Produces, in out_dir:
   game.zip               the game files the engine needs at runtime
   game.properties        build/size/id info read by GameInstallActivity
-  game-manifest.json.gz  every file in game.zip with its CRC and byte range,
+  game-manifest.dat      (gzipped JSON) every file in game.zip with its CRC and byte range,
                          used by the in-app updater to download only the
                          files that changed between builds
 
@@ -306,7 +306,8 @@ def main():
             content.update(("%s|%d|%d\n" % (info.filename, info.CRC, info.file_size)).encode())
     game_id = content.hexdigest()[:16]
     manifest = {"build": args.build, "game_id": game_id, "files": entries}
-    with gzip.open(os.path.join(out, "game-manifest.json.gz"), "wt", encoding="utf-8") as f:
+    # Not named *.gz: Android's asset packaging strips/uncompresses .gz files
+    with gzip.open(os.path.join(out, "game-manifest.dat"), "wt", encoding="utf-8") as f:
         json.dump(manifest, f, separators=(",", ":"))
     with open(os.path.join(out, "game.properties"), "w") as f:
         f.write("id=%s\n" % game_id)

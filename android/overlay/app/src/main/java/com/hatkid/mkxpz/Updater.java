@@ -199,7 +199,10 @@ public class Updater
     private static Map<String, Object[]> parseManifest(byte[] gz) throws Exception
     {
         byte[] json;
-        try (GZIPInputStream in = new GZIPInputStream(new java.io.ByteArrayInputStream(gz))) {
+        boolean gzipped = gz.length > 2 && (gz[0] & 0xff) == 0x1f && (gz[1] & 0xff) == 0x8b;
+        if (!gzipped) {
+            json = gz;
+        } else try (GZIPInputStream in = new GZIPInputStream(new java.io.ByteArrayInputStream(gz))) {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buf = new byte[1 << 16];
             int n;

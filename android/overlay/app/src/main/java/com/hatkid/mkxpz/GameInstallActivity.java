@@ -52,7 +52,8 @@ public class GameInstallActivity extends Activity
     static final String ACTION_INSTALL_STATUS = "com.hatkid.mkxpz.INSTALL_STATUS";
     private static final String GAME_ASSET = "game.zip";
     private static final String GAME_INFO_ASSET = "game.properties";
-    private static final String MANIFEST_ASSET = "game-manifest.json.gz";
+    // Not *.gz: Android's asset packaging would strip the extension
+    private static final String MANIFEST_ASSET = "game-manifest.dat";
     private static final String MARKER_FILE = ".installed";
     private static final String PREFS = "install";
 

@@ -198,7 +198,7 @@ jobs:
 
           # 2. Update APK: same app without the bundled game (in-app updates)
           mv "$ASSETS/game.zip" "$OUT/game.zip"
-          mv "$ASSETS/game-manifest.json.gz" "$OUT/game-manifest.json.gz"
+          mv "$ASSETS/game-manifest.dat" "$OUT/game-manifest.json.gz"
           GAME_ID=$(grep '^id=' "$ASSETS/game.properties" | cut -d= -f2)
           rm -f "$ASSETS/game.properties"
           ./gradlew assembleRelease --no-daemon --stacktrace -Dorg.gradle.jvmargs=-Xmx4g
