@@ -44,6 +44,8 @@ controller is used and comes back when you touch the screen.
 | Z      | Special (D) |
 | Fast / Slow | Speed up / slow down (Q / W) |
 
+The phone's own back button/gesture acts as the game's **Back** button. It
+doesn't close the game, so an accidental swipe can't lose unsaved progress.
 Bluetooth/USB controllers and keyboards also work.
 
 ## How it works
@@ -66,6 +68,15 @@ Bluetooth/USB controllers and keyboards also work.
 * **MIDI music** is rendered to Ogg with the game's `soundfont.sf2` at build
   time, because the Android engine has no MIDI synthesizer. Where a track
   already exists as `.ogg`, the `.mid` copy is dropped.
+* **Android fixes added to the game** (APK only, the PC version is
+  unchanged):
+  * `game_patches/Scripts/000_Android_Compat.rb` makes the game's file
+    lookups ignore upper/lower case, like Windows does, in case a device
+    stores app files on case-sensitive storage. Some paths in the game don't
+    match the real file names' case, e.g. `Graphics/windowskins/...` vs. the
+    `Windowskins` folder, or the title music `Title` vs. `title.ogg`.
+  * F12 soft-reset is turned off, because the game's handler would relaunch
+    `Game.exe` and quit, which just closes the app on Android.
 * **Saves** go to the app's internal data folder, the Android equivalent of
   `%APPDATA%`. They survive game updates. Uninstalling the app deletes them.
 

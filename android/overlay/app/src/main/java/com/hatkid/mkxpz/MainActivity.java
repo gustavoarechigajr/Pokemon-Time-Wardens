@@ -100,6 +100,18 @@ public class MainActivity extends SDLActivity
     @Override
     public boolean dispatchKeyEvent(KeyEvent evt)
     {
+        // Time Wardens: the Android back button/gesture would otherwise close
+        // the game immediately (losing unsaved progress). Treat it as the
+        // game's own "Back" button (X key = RGSS B) instead.
+        if (evt.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            if (evt.getAction() == KeyEvent.ACTION_DOWN && evt.getRepeatCount() == 0) {
+                SDLActivity.onNativeKeyDown(KeyEvent.KEYCODE_X);
+            } else if (evt.getAction() == KeyEvent.ACTION_UP) {
+                SDLActivity.onNativeKeyUp(KeyEvent.KEYCODE_X);
+            }
+            return true;
+        }
+
         if (
             evt.getKeyCode() != KeyEvent.KEYCODE_BACK &&
             evt.getKeyCode() != KeyEvent.KEYCODE_VOLUME_UP &&
@@ -117,6 +129,12 @@ public class MainActivity extends SDLActivity
             return true;
 
         return super.dispatchKeyEvent(evt);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        // Never let the system back action finish the game (see dispatchKeyEvent)
     }
 
     @Override

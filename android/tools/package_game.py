@@ -8,6 +8,8 @@ Produces two files for the APK's assets folder:
 Android-specific handling:
   * Windows-only files (Game.exe, DLLs, the PokeRover tool, shortcuts...)
     are left out.
+  * Files under android/game_patches/ are added on top of the game (Android-
+    only compatibility scripts).
   * MIDI music is rendered to Ogg Vorbis with the game's own soundfont.
     The Android engine has no FluidSynth, so .mid files would be silent
     (or raise errors) on a phone. Essentials looks audio up without an
@@ -18,7 +20,9 @@ Usage: package_game.py <game_dir> <out_dir> [--midi-cache DIR]
 
 import argparse
 import hashlib
+import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -39,6 +43,15 @@ EXCLUDE_NAMES = {"desktop.ini", "Thumbs.db", ".DS_Store"}
 EXCLUDE_EXT = {".exe", ".dll", ".lnk", ".code-workspace"}
 
 MIDI_EXT = {".mid", ".midi"}
+
+# Engine settings changed for Android (merged into the game's mkxp.json)
+MKXP_OVERRIDES = {
+    # F12 soft-reset: the game's handler relaunches Game.exe and quits, which
+    # on Android just closes the app.
+    "enableReset": False,
+    # MIDI is pre-rendered to Ogg, no soundfont is shipped
+    "midiSoundFont": "",
+}
 
 # Already-compressed formats are stored, everything else is deflated
 STORE_EXT = {".png", ".ogg", ".mp3", ".jpg", ".jpeg", ".gif", ".zip", ".ogv"}
@@ -94,6 +107,7 @@ def main():
     ap.add_argument("game_dir")
     ap.add_argument("out_dir")
     ap.add_argument("--midi-cache", default=None)
+    ap.add_argument("--patches", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "game_patches"))
     args = ap.parse_args()
 
     game = os.path.abspath(args.game_dir)
@@ -146,9 +160,31 @@ def main():
                 print("rendered MIDI:", rel, "->", arcname)
             if rel == "soundfont.sf2":
                 continue  # only needed for MIDI, which is rendered above
+            if rel == "mkxp.json":
+                with open(src, encoding="utf-8") as f:
+                    text = re.sub(r"^\s*//.*$", "", f.read(), flags=re.M)
+                conf = json.loads(text)
+                conf.update(MKXP_OVERRIDES)
+                data = json.dumps(conf, indent=4).encode("utf-8")
+                zf.writestr(arcname, data, compress_type=zipfile.ZIP_DEFLATED)
+                total += len(data)
+                continue
             comp = zipfile.ZIP_STORED if os.path.splitext(arcname)[1].lower() in STORE_EXT else zipfile.ZIP_DEFLATED
             zf.write(src, arcname, compress_type=comp)
             total += os.path.getsize(src)
+
+        # Android-only additions/overrides
+        patches = os.path.abspath(args.patches)
+        for root, dirs, names in os.walk(patches):
+            dirs.sort()
+            for n in sorted(names):
+                src = os.path.join(root, n)
+                arcname = os.path.relpath(src, patches).replace(os.sep, "/")
+                if arcname in files:
+                    sys.exit("game patch would overwrite an existing game file: " + arcname)
+                zf.write(src, arcname)
+                total += os.path.getsize(src)
+                print("added Android patch:", arcname)
 
     with open(zip_path, "rb") as f:
         h = hashlib.sha256()
