@@ -175,13 +175,24 @@ grep "TimeWardens\[Dual\]" "$OUT/logcat.txt" | tail -5
 # so every page of the second screen can be checked in screenshots.
 if [ -n "$DISPLAY_NUM" ]; then
   log "Second screen demo pass"
-  # In demo mode the view also saves its page to files/tw_demo_shot.png
-  # (overlay displays can't be captured with screencap)
+  # In demo mode the view logs each new page as base64 JPEG chunks
+  # ("TWShot <seq> <i>/<n> <data>"): overlay displays can't be captured with
+  # screencap. demo_shot saves the latest complete image.
   demo_shot() {
     sleep 1
-    adb exec-out cat "/sdcard/Android/data/$PKG/files/tw_demo_shot.png" > "$OUT/$1.png" 2>/dev/null
-    convert "$OUT/$1.png" -quality 80 "$OUT/$1.jpg" 2>/dev/null && \
-      echo "==SHOT $1== $(base64 -w0 "$OUT/$1.jpg")"
+    python3 - "$OUT/logcat.txt" "$OUT/$1.jpg" <<'PY' && echo "==SHOT $1== $(base64 -w0 "$OUT/$1.jpg")"
+import base64, re, sys
+shots = {}
+for line in open(sys.argv[1], errors="replace"):
+    m = re.search(r"TWShot\s*\(\s*\d+\): (\d+) (\d+)/(\d+) (\S+)", line)
+    if m:
+        shots.setdefault(int(m.group(1)), {})[int(m.group(2))] = (int(m.group(3)), m.group(4))
+done = [k for k, v in shots.items() if v and len(v) == next(iter(v.values()))[0]]
+if not done:
+    sys.exit(1)
+v = shots[max(done)]
+open(sys.argv[2], "wb").write(base64.b64decode("".join(v[i][1] for i in sorted(v))))
+PY
   }
   adb shell am force-stop "$PKG"; sleep 2
   adb shell am start -n "$PKG/com.hatkid.mkxpz.GameInstallActivity" --ez tw_demo true > /dev/null
@@ -200,7 +211,6 @@ if [ -n "$DISPLAY_NUM" ]; then
     grep -q "Page ${TABS[$i]}" "$OUT/logcat.txt" || log "!! demo ${TABS[$i]} tap not registered"
   done
   check_alive || { log "!! game died during the demo pass"; FAIL=1; }
-  adb shell ls "/sdcard/Android/data/$PKG/files/game/" | grep "tw_cmd" | head -5
 fi
 adb shell settings put global overlay_display_devices null
 sleep 3

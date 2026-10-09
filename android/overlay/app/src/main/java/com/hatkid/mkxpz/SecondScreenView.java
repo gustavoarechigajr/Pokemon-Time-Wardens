@@ -72,6 +72,8 @@ public class SecondScreenView extends View
     private final File mStatusFile;
     private final boolean mDemo;
     private long mLastDemoShot;
+    private Bitmap mDemoPrev;
+    private int mDemoShotSeq;
     private final SharedPreferences mPrefs;
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
@@ -513,24 +515,24 @@ public class SecondScreenView extends View
     }
 
     /**
-     * Demo mode only: keeps a copy of the page in files/tw_demo_shot.png so
-     * the emulator test can capture it (overlay displays can't be
-     * screenshotted with screencap).
+     * Demo mode only: logs the page as a JPEG (base64, in chunks) whenever it
+     * changes, so the emulator test can capture it. Overlay displays can't
+     * be captured with screencap and app files aren't readable over adb.
      */
     private void saveDemoShot()
     {
         long now = SystemClock.uptimeMillis();
         if (now - mLastDemoShot < 1000) return;
         mLastDemoShot = now;
-        File dir = getContext().getExternalFilesDir(null);
-        if (dir == null) return;
-        File tmp = new File(dir, "tw_demo_shot.tmp");
-        try (java.io.FileOutputStream out = new java.io.FileOutputStream(tmp)) {
-            mCanvasBmp.compress(Bitmap.CompressFormat.PNG, 100, out);
-        } catch (IOException e) {
-            return;
+        if (mDemoPrev != null && mDemoPrev.sameAs(mCanvasBmp)) return;
+        mDemoPrev = mCanvasBmp.copy(Bitmap.Config.ARGB_8888, false);
+        java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+        mCanvasBmp.compress(Bitmap.CompressFormat.JPEG, 85, out);
+        String b64 = android.util.Base64.encodeToString(out.toByteArray(), android.util.Base64.NO_WRAP);
+        int seq = ++mDemoShotSeq, n = (b64.length() + 3499) / 3500;
+        for (int i = 0; i < n; i++) {
+            Log.i("TWShot", seq + " " + (i + 1) + "/" + n + " " + b64.substring(i * 3500, Math.min(b64.length(), (i + 1) * 3500)));
         }
-        tmp.renameTo(new File(dir, "tw_demo_shot.png"));
     }
 
     private void draw()
