@@ -1629,8 +1629,9 @@ public class SecondScreenView extends View
     /** Title strip for the battle sub-pages, in the battle message box style. */
     private void battleTitle(String title)
     {
-        blt9("Graphics/Pictures/Battle/overlay_message", 6, 4, W - 12, 40);
-        text(title, 22, capTop(mFont, 27, 24), mFont, 27, 0, MSG_BASE, MSG_SHADOW);
+        box(6, 4, W - 12, 40);
+        Typeface tf = measure(title, mFont, 27) > W - 44 ? mNarrowFont : mFont;
+        text(ellipsize(title, tf, 27, W - 44), 20, capTop(tf, 27, 24), tf, 27, 0, WHITE, SHADOW);
     }
 
     /** Back to the commands, or open the game's own menu on the top screen. */
@@ -1663,12 +1664,16 @@ public class SecondScreenView extends View
                 else sendBattle("cmd", "battle_switch", "index", String.valueOf(idx));
             }));
             icon(p.optString("icon", ""), x + 36, y + 38, 64, can && !fainted, fainted ? mDark : null);
-            text(ellipsize(p.optString("name", ""), mSmallFont, 21, 110), x + 72, y + 6, mSmallFont, 21, 0, can ? WHITE : DIM, SHADOW);
+            String pname = p.optString("name", "");
+            Typeface nf = measure(pname, mSmallFont, 21) > 110 ? mNarrowFont : mSmallFont;
+            text(ellipsize(pname, nf, 21, 116), x + 72, y + 6, nf, 21, 0, can ? WHITE : DIM, SHADOW);
             if (egg) continue;
             text("Lv." + p.optInt("lv", 1), x + cw - 10, y + 6, mSmallFont, 18, 1, LILAC, SHADOW);
             int hp = p.optInt("hp", 0), max = Math.max(1, p.optInt("maxhp", 1));
-            hpBar(x + 72, y + 32, cw - 84, hp / (float) max);
-            text(hp + "/" + max, x + cw - 10, y + 40, mSmallFont, 17, 1, WHITE, SHADOW);
+            // HP bar with the numbers beside it; status and matchup on the line below
+            float hpw = measure(hp + "/" + max, mSmallFont, 17);
+            hpBar(x + 72, y + 32, cw - 90 - hpw, hp / (float) max);
+            text(hp + "/" + max, x + cw - 10, y + 24, mSmallFont, 17, 1, WHITE, SHADOW);
             int status = p.optInt("status", -1);
             float tx = x + 72;
             if (status >= 0) {
