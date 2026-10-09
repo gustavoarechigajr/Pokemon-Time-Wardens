@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Values supplied by the CI workflow (see .github/workflows/android-apk.yml)
+def envOr = { String name, String fallback -> System.getenv(name) ?: fallback }
+def abiList = envOr('TW_ABIS', 'arm64-v8a,armeabi-v7a,x86_64').split(',').collect { it.trim() }
+
+android {
+    namespace 'com.hatkid.mkxpz'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId envOr('TW_APPLICATION_ID', 'com.gustavoarechigajr.timewardens')
+        minSdk 23
+        targetSdk 33
+        versionCode Integer.parseInt(envOr('TW_VERSION_CODE', '1'))
+        versionName envOr('TW_VERSION_NAME', '2.05-android')
+        archivesBaseName = "TimeWardens-$versionName"
+        ndk {
+            abiFilters(*abiList)
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(envOr('TW_KEYSTORE', "${rootDir}/release.jks"))
+            storePassword envOr('TW_KEYSTORE_PASSWORD', '')
+            keyAlias envOr('TW_KEY_ALIAS', 'timewardens')
+            keyPassword envOr('TW_KEY_PASSWORD', '')
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            jniDebuggable true
+        }
+    }
+
+    // The whole game is one big zip in assets; storing it uncompressed lets
+    // it be streamed straight out of the APK on first launch.
+    aaptOptions {
+        noCompress 'zip'
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path "jni/Android.mk"
+        }
+    }
+    ndkVersion envOr('TW_NDK_VERSION', '23.2.8568313')
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+}
