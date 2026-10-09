@@ -66,8 +66,8 @@ controller is used and comes back when you touch the screen.
 |--------|-------------|
 | D-pad  | Move / navigate menus |
 | OK     | Use / confirm (C) |
-| Back   | Cancel / open the menu (X) |
-| Act    | Action (Z) |
+| Back   | Cancel / back (X) |
+| Menu   | Open the pause menu (Z, Essentials' Action input) |
 | X / Y  | Jump up / jump down in lists (A / S keys) |
 | Z      | Special (D) |
 | Fast / Slow | Speed up / slow down (Q / W) |
@@ -80,11 +80,12 @@ controller is detected and appears if you touch the screen.
 |------------|-------------|
 | D-pad / left stick | Move / navigate |
 | A (bottom) | OK / confirm |
-| B (right) or Start | Back / open the menu |
-| X (left)   | Action |
-| Y (top) or Select | Special |
+| B (right) | Back / cancel |
+| X (left) or Start | Open the pause menu |
+| Y (top) or Select | Special (Ready Menu) |
 | L1 / R1    | Speed up / slow down |
-| L2 / R2    | Jump up / down in lists |
+| L2         | Jump up in lists |
+| R2         | Jump down in lists / quicksave on the map |
 
 If confirm and back feel swapped on your device, check its controller
 layout setting (Xbox vs. Nintendo style).
@@ -96,40 +97,60 @@ Keyboards also work.
 ## Dual-screen devices (e.g. AYN Thor Max)
 
 When the device has a second screen, the game runs on the main screen and
-the second screen becomes a **second game screen**. It is drawn with the
-game's own artwork and fonts, so it looks like part of Time Wardens.
+the second screen becomes a **touch companion screen**. It is drawn with the
+game's own artwork and fonts, so it looks like part of Time Wardens. Tabs
+along the bottom switch pages:
 
-* **PARTY**: a live copy of the in-game party screen, with the same starry
-  panels, each Pokémon's own Poké Ball, animated party icons, HP bars that
-  drain and refill during battles, level, gender, status, shiny star and
-  held-item marker.
-* **JOURNAL**:
-  * the same BW-style location sign the game shows when you enter an area
-  * your current story objective from the quest log (chapter, where to
-    go, what to do). Long objectives show 4 lines at a time with a
-    blinking ▼ like the game's message boxes; tap the box, or wait a few
-    seconds, for the rest.
-  * trainer name, money, play time
-  * the in-game clock, time of day and season
-  * the chapters you've earned
-* **MAP**: the game's Town Map of the region you're in, with your trainer
-  icon and the map's blinking cursor on your current position. It follows
-  you as you walk, and hidden areas appear once you've unlocked them in the
-  game.
-* Buttons along the bottom: switch pages, **MENU** (opens the pause menu)
-  and **SPEED** (cycles the game speed). The current speed is shown there,
-  since on PC it only appears in the window title.
-* **SCREEN OFF** (on the Journal page) blanks the second screen. Tap it to
-  wake it. The app remembers the page and the on/off choice.
+* **PARTY**: a live copy of the in-game party screen (each Pokémon's own
+  Poké Ball, animated icons, HP bars that drain and refill in battle,
+  level, gender, status, shiny star, held item). Tap a Pokémon for its
+  **summary**: INFO (types, ability, nature, held item, EXP), STATS (with
+  IVs/EVs) and MOVES (type, PP, power, accuracy, category, description).
+  From there:
+  * **USE ITEM**: pick a healing item from your bag (Potions, Revives,
+    status cures...) and use it on that Pokémon, with the game's own
+    item effects and messages.
+  * **SWAP**: then tap another Pokémon to swap their places.
+* **BATTLE** (replaces the first tab during battles and opens by itself):
+  FIGHT / BAG / POKÉMON / RUN; the move list shows each move's type, PP and
+  how effective it is against the opponent (super effective, not very
+  effective, no effect) using Time Wardens' own type chart, including the
+  custom types. Opponents show their level, types, HP and status. BACK,
+  MEGA / SPECIAL and SHIFT appear when they apply. The physical buttons
+  keep working as usual.
+* **JOURNAL**: the BW-style location sign, your current story objective
+  (tap for the next part of long ones), trainer name, money, play time,
+  the in-game clock and season and the chapters earned. **QUEST LOG** lists
+  every active and completed quest.
+* **MAP**: the region's Town Map with your position. Tap a place to see its
+  name; if you can Fly and it's a Fly destination, **FLY** takes you there.
+* **ROUTE**: the wild Pokémon of the current area for the time of day, with
+  encounter rates and levels. Unseen Pokémon stay silhouettes and "???";
+  caught ones get a Poké Ball mark.
+* **LOG**: the last 30 lines of dialogue, in case you skipped past one.
+* **MORE**: **MENU** (pause menu), **SAVE**, **SPEED** (the current game
+  speed, which on PC only appears in the window title), **REPEL** (uses
+  your next Repel, steps left shown), your registered key items (Bicycle,
+  rods...) and **SCREEN OFF**, which blanks the second screen until you tap
+  it. The app remembers the page and the on/off choice.
+
+When the game asks you to type a name, the second screen turns into a
+**keyboard** (letters, numbers, SPACE, DEL, OK).
+
+Actions from the second screen are only carried out when the game is free
+(on the map, not during a message or a cutscene); otherwise a short note
+explains why. Errors such as "it won't have any effect" come from the game
+itself.
 
 Touching the second screen never takes focus away from the physical
 controls. Before a save is loaded it shows the Time Wardens title.
 
 How it works: `game_patches/Mods/Android_DualScreen.rb` (loaded through the
 game's existing `Mods` folder support) writes a small status file while the
-second screen is open. `DualScreen.java` draws the pages from it at the
-game's 512x384 resolution and scales them up pixel-perfect. Nothing extra
-runs on single-screen devices.
+second screen is open. `SecondScreenView.java` draws the pages from it at
+the game's 512x384 resolution and scales them up pixel-perfect; taps are
+sent back as small command files that the mod runs inside the game.
+Nothing extra runs on single-screen devices.
 
 ## How it works
 
@@ -175,8 +196,11 @@ runs on single-screen devices.
 
 The workflow's last job installs the APK on an Android 11 emulator, boots
 the game, presses through the title screen and checks logcat for engine
-errors and crashes (`tools/emulator_test.sh`). Screenshots are printed
-base64-encoded in that job's log.
+errors and crashes (`tools/emulator_test.sh`). It also attaches a simulated
+second display, taps through its tabs, and restarts once with sample data
+(`--ez tw_demo true`, from `assets/tw_demo_status.json`) to screenshot every
+second-screen page, including the battle page and a summary. Screenshots are
+printed base64-encoded in that job's log.
 
 ## Signing
 

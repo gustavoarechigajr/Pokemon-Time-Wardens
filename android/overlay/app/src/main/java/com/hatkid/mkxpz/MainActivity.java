@@ -60,7 +60,8 @@ public class MainActivity extends SDLActivity
 
         super.onCreate(savedInstanceState);
 
-        mDualScreen = new DualScreen(this, GameInstallActivity.getGameDir(this));
+        mDualScreen = new DualScreen(this, GameInstallActivity.getGameDir(this),
+            getIntent().getBooleanExtra("tw_demo", false));
 
         // Get Debug flag
         try {

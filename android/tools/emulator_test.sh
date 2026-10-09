@@ -117,8 +117,8 @@ dpad KEYCODE_DPAD_DOWN KEYCODE_DPAD_DOWN KEYCODE_DPAD_LEFT KEYCODE_DPAD_RIGHT
 sleep 3
 shot "after_walk"
 
-# B opens the pause menu, B again closes it
-pad KEYCODE_BUTTON_B; sleep 4; shot "pad_b_menu"
+# Start (= Essentials' ACTION input) opens the pause menu, B closes it
+pad KEYCODE_BUTTON_START; sleep 4; shot "pad_start_menu"
 pad KEYCODE_BUTTON_B; sleep 3; shot "pad_b_closed"
 
 # Keyboard still works (C = OK) and the phone's back key acts as Back
@@ -150,16 +150,18 @@ shot_display() {
   fi
 }
 shot_display "second_party"
-# Tap the page buttons on the 960x540 second screen. The 512x384 page is
-# scaled x1.40625 and centred (x offset 120); buttons are 96 wide every 102 px
-# from x=4, at y 330-378.
-tap_button() { adb shell input -d "$DISPLAY_NUM" tap "$((120 + (4 + $1 * 102 + 48) * 140625 / 100000))" 498; }
+# Taps on the 960x540 second screen. The 512x384 page is scaled x1.40625
+# and centred (x offset 120). tap_v takes coordinates on the 512x384 page;
+# the six tabs are 80 wide every 85 px from x=2, at y 334-380.
+tap_v() { adb shell input -d "$DISPLAY_NUM" tap "$((120 + $1 * 140625 / 100000))" "$(($2 * 140625 / 100000))"; }
+tap_tab() { tap_v "$((2 + $1 * 85 + 40))" 357; }
+TABS=(party journal map route log more)
 if [ -n "$DISPLAY_NUM" ]; then
-  tap_button 1; sleep 2; shot_display "second_journal"
-  grep -q "Page journal" "$OUT/logcat.txt" && log "Second screen journal tab works" || log "!! journal tap not registered"
-  tap_button 2; sleep 2; shot_display "second_map"
-  grep -q "Page map" "$OUT/logcat.txt" && log "Second screen map tab works" || log "!! map tap not registered"
-  tap_button 0; sleep 1
+  for i in 1 2 3; do
+    tap_tab "$i"; sleep 2; shot_display "second_${TABS[$i]}"
+    grep -q "Page ${TABS[$i]}" "$OUT/logcat.txt" && log "Second screen ${TABS[$i]} tab works" || log "!! ${TABS[$i]} tap not registered"
+  done
+  tap_tab 0; sleep 1
 fi
 if grep -q "Second screen found" "$OUT/logcat.txt"; then
   log "Dual screen panel opened"
@@ -167,6 +169,26 @@ else
   log "!! dual screen panel did not open"; FAIL=1
 fi
 grep "TimeWardens\[Dual\]" "$OUT/logcat.txt" | tail -5
+# Demo pass: restart with sample data (mid-battle, a party, quests, a route)
+# so every page of the second screen can be checked in screenshots.
+if [ -n "$DISPLAY_NUM" ]; then
+  log "Second screen demo pass"
+  adb shell am force-stop "$PKG"; sleep 2
+  adb shell am start -n "$PKG/com.hatkid.mkxpz.GameInstallActivity" --ez tw_demo true > /dev/null
+  sleep 25
+  grep -q "Demo status loaded" "$OUT/logcat.txt" && log "Demo status loaded" || log "!! demo status not loaded"
+  shot_display "demo_start"
+  tap_tab 0; sleep 2; shot_display "demo_battle"
+  tap_v 300 200; sleep 2; shot_display "demo_battle_tap"
+  tap_tab 0; sleep 2; shot_display "demo_party"
+  tap_v 128 48; sleep 2; shot_display "demo_summary"
+  for i in 1 2 3 4 5; do
+    tap_tab "$i"; sleep 2; shot_display "demo_${TABS[$i]}"
+    grep -q "Page ${TABS[$i]}" "$OUT/logcat.txt" || log "!! demo ${TABS[$i]} tap not registered"
+  done
+  check_alive || { log "!! game died during the demo pass"; FAIL=1; }
+  adb shell ls "/sdcard/Android/data/$PKG/files/game/" | grep "tw_cmd" | head -5
+fi
 adb shell settings put global overlay_display_devices null
 sleep 3
 check_alive || { log "!! game died when the second display was removed"; FAIL=1; }

@@ -111,7 +111,7 @@ public class Gamepad
         {
             case KeyEvent.KEYCODE_C: return "OK";
             case KeyEvent.KEYCODE_X: return "Back";
-            case KeyEvent.KEYCODE_Z: return "Act";
+            case KeyEvent.KEYCODE_Z: return "Menu";
             case KeyEvent.KEYCODE_A: return "X";
             case KeyEvent.KEYCODE_S: return "Y";
             case KeyEvent.KEYCODE_D: return "Z";
@@ -182,9 +182,9 @@ public class Gamepad
      *
      * Layout follows Android's positional button codes, as used by handhelds
      * such as the AYN Thor and by Xbox-style pads:
-     *   A (bottom) = OK, B (right) = Back/menu, X (left) = Action,
-     *   Y (top) = Special, L1/R1 = speed up/down, L2/R2 = jump up/down in
-     *   lists, Start = menu, Select = Special.
+     *   A (bottom) = OK, B (right) = Back, X (left) and Start = Menu
+     *   (Essentials' ACTION input), Y (top) and Select = Special (ready
+     *   menu), L1/R1 = L/R, L2 = A key, R2 = S key (quicksave).
      */
     public static int mapControllerKey(int keycode)
     {
@@ -194,9 +194,9 @@ public class Gamepad
             case KeyEvent.KEYCODE_DPAD_CENTER:
                 return KeyEvent.KEYCODE_C;
             case KeyEvent.KEYCODE_BUTTON_B:
-            case KeyEvent.KEYCODE_BUTTON_START:
                 return KeyEvent.KEYCODE_X;
             case KeyEvent.KEYCODE_BUTTON_X:
+            case KeyEvent.KEYCODE_BUTTON_START:
                 return KeyEvent.KEYCODE_Z;
             case KeyEvent.KEYCODE_BUTTON_Y:
             case KeyEvent.KEYCODE_BUTTON_SELECT:
