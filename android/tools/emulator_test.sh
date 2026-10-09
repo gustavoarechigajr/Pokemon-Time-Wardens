@@ -182,34 +182,50 @@ if [ -n "$DISPLAY_NUM" ]; then
     sleep 1
     python3 - "$OUT/logcat.txt" "$OUT/$1.jpg" <<'PY' && echo "==SHOT $1== $(base64 -w0 "$OUT/$1.jpg")"
 import base64, re, sys
-shots = {}
-for line in open(sys.argv[1], errors="replace"):
-    m = re.search(r"TWShot\s*\(\s*\d+\): (\d+) (\d+)/(\d+) (\S+)", line)
+shots, last = {}, {}
+for n, line in enumerate(open(sys.argv[1], errors="replace")):
+    m = re.search(r"TWShot\s*\(\s*(\d+)\): (\d+) (\d+)/(\d+) (\S+)", line)
     if m:
-        shots.setdefault(int(m.group(1)), {})[int(m.group(2))] = (int(m.group(3)), m.group(4))
-done = [k for k, v in shots.items() if v and len(v) == next(iter(v.values()))[0]]
+        key = (m.group(1), int(m.group(2)))   # (pid, seq): seq restarts with the app
+        shots.setdefault(key, {})[int(m.group(3))] = (int(m.group(4)), m.group(5))
+        last[key] = n
+done = [k for k, v in shots.items() if len(v) == next(iter(v.values()))[0]]
 if not done:
     sys.exit(1)
-v = shots[max(done)]
+v = shots[max(done, key=lambda k: last[k])]
 open(sys.argv[2], "wb").write(base64.b64decode("".join(v[i][1] for i in sorted(v))))
 PY
   }
-  adb shell am force-stop "$PKG"; sleep 2
-  adb shell am start -n "$PKG/com.hatkid.mkxpz.GameInstallActivity" --ez tw_demo true > /dev/null
-  sleep 25
-  grep -q "Demo status loaded" "$OUT/logcat.txt" && log "Demo status loaded" || log "!! demo status not loaded"
-  demo_shot "demo_start"
-  tap_tab 0; sleep 2; demo_shot "demo_battle"
-  tap_v 300 200; sleep 2; demo_shot "demo_battle_tap"
-  tap_tab 0; sleep 2; demo_shot "demo_party"
+  # Restarts the app with a demo variant (see SecondScreenView.loadDemo)
+  demo_start() {
+    adb shell am force-stop "$PKG"; sleep 2
+    adb shell am start -n "$PKG/com.hatkid.mkxpz.GameInstallActivity" --es tw_demo "$1" > /dev/null
+    sleep 20
+    grep -q "Demo status loaded ($1)" "$OUT/logcat.txt" && log "Demo status loaded ($1)" || log "!! demo status ($1) not loaded"
+  }
+  # Mid-battle: battle page, then the party/summary and every other tab
+  demo_start battle
+  demo_shot "demo_battle"
+  tap_tab 0; sleep 2; demo_shot "demo_party_in_battle"
   tap_v 128 48; sleep 2; demo_shot "demo_summary"
-  tap_v 250 23; sleep 2; demo_shot "demo_summary_stats"
-  tap_v 354 23; sleep 2; demo_shot "demo_summary_moves"
-  tap_v 86 270; sleep 2; demo_shot "demo_items"
+  tap_v 354 23; sleep 2; demo_shot "demo_summary_stats"
+  tap_v 458 23; sleep 2; demo_shot "demo_summary_moves"
   for i in 1 2 3 4 5; do
     tap_tab "$i"; sleep 2; demo_shot "demo_${TABS[$i]}"
     grep -q "Page ${TABS[$i]}" "$OUT/logcat.txt" || log "!! demo ${TABS[$i]} tap not registered"
   done
+  # Move list
+  demo_start fight
+  demo_shot "demo_fight"
+  # On the map: party actions enabled, healing items, quick actions
+  demo_start map
+  tap_tab 0; sleep 2; demo_shot "demo_party"
+  tap_v 384 64; sleep 2
+  tap_v 86 270; sleep 2; demo_shot "demo_items"
+  tap_tab 5; sleep 2; demo_shot "demo_more_free"
+  # Naming keyboard
+  demo_start entry
+  demo_shot "demo_keyboard"
   check_alive || { log "!! game died during the demo pass"; FAIL=1; }
 fi
 adb shell settings put global overlay_display_devices null

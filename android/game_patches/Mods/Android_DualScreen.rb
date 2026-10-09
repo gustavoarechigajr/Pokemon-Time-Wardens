@@ -414,7 +414,10 @@ if (System.platform[/Android/] rescue false)
         if menu
           st["battler"] = menu[:battler]
           if menu[:kind] == :command
-            st["commands"] = menu[:texts] || []
+            # texts[0] is the prompt ("What will X do?"); the four commands follow
+            texts = menu[:texts] || []
+            st["prompt"] = texts[0].to_s
+            st["commands"] = texts[1, 4] || []
             st["cmd_mode"] = menu[:mode] || 0
           elsif menu[:kind] == :fight
             b = battle.battlers[menu[:battler]]

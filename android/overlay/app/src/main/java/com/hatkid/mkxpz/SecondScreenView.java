@@ -151,12 +151,12 @@ public class SecondScreenView extends View
         }
     };
 
-    public SecondScreenView(Context ctx, File gameDir, File statusFile, boolean demo)
+    public SecondScreenView(Context ctx, File gameDir, File statusFile, String demo)
     {
         super(ctx);
         mGameDir = gameDir;
         mStatusFile = statusFile;
-        mDemo = demo;
+        mDemo = demo != null;
         mPrefs = ctx.getSharedPreferences("dualscreen", Context.MODE_PRIVATE);
         mPage = Math.max(0, Math.min(TABS.length - 1, mPrefs.getInt("page2", P_PARTY)));
         mScreenOn = mPrefs.getBoolean("panel_on", true);
@@ -168,17 +168,35 @@ public class SecondScreenView extends View
         cm.setScale(0f, 0f, 0f, 0.55f);   // silhouette for unseen Pokémon / dimmed badges
         mDark.setColorFilter(new ColorMatrixColorFilter(cm));
         mDark.setFilterBitmap(false);
-        if (mDemo) loadDemo(ctx);
+        if (mDemo) loadDemo(ctx, demo);
     }
 
-    private void loadDemo(Context ctx)
+    private void loadDemo(Context ctx, String variant)
     {
         try (java.io.InputStream in = ctx.getAssets().open("tw_demo_status.json")) {
             byte[] data = new byte[in.available()];
             int n = 0, r;
             while (n < data.length && (r = in.read(data, n, data.length - n)) > 0) n += r;
             mState = new JSONObject(new String(data, 0, n, StandardCharsets.UTF_8));
-            Log.i(TAG, "Demo status loaded");
+            // The sample is mid-battle at the command menu; variants:
+            switch (variant) {
+                case "fight":
+                    mState.put("battle", mState.optJSONObject("battle_fight"));
+                    mBattlePage = true;
+                    break;
+                case "map":
+                    mState.put("context", "map");
+                    mState.remove("battle");
+                    break;
+                case "entry":
+                    mState.put("context", "entry");
+                    mState.put("entry", new JSONObject().put("text", "Gus").put("max", 7).put("min", 1));
+                    break;
+                default:
+                    mBattlePage = true;
+                    break;
+            }
+            Log.i(TAG, "Demo status loaded (" + variant + ")");
         } catch (Exception e) {
             Log.w(TAG, "No demo status: " + e);
         }
@@ -658,7 +676,10 @@ public class SecondScreenView extends View
                     new Rect(x + 60 - fh / 2, y + 40 - fh / 2 + bob, x + 60 + fh / 2, y + 40 + fh / 2 + bob), mBlit);
             }
             if (p.optBoolean("item", false)) blt("Graphics/Pictures/Party/icon_item", x + 62, y + 48);
-            text(p.optString("name", ""), x + 96, y + 22);
+            String pname = p.optString("name", "");
+            // Long names switch to the narrow font so they clear the gender mark
+            Typeface nameFont = measure(pname, mFont, 27) > 124 ? mNarrowFont : mFont;
+            text(ellipsize(pname, nameFont, 27, 126), x + 96, y + 22, nameFont, 27, 0, WHITE, SHADOW);
 
             if (!egg) {
                 blt("Graphics/Pictures/Party/overlay_hp_back" + (fainted ? "_faint" : ""), x + 96, y + 50);
@@ -760,7 +781,10 @@ public class SecondScreenView extends View
         button("USE ITEM", 6, 250, 160, 40, can && !egg, false, () -> { mOverlay = O_ITEMS; mScroll[O_ITEMS] = 0; });
         button("SWAP", 176, 250, 160, 40, can, false, () -> { mSwapFrom = mSelected; mOverlay = O_NONE; setPage(P_PARTY); });
         button("CLOSE", 346, 250, 160, 40, true, false, () -> mOverlay = O_NONE);
-        if (!can) small("Items and swapping work while you're free to move.", W / 2f, 300, DIM, 2);
+        if (!can) {
+            box(6, 294, 500, 34);
+            text("Items and swapping work while you're free to move.", W / 2f, 300, mSmallFont, 17, 2, DIM, SHADOW);
+        }
     }
 
     private void drawSummaryInfo(JSONObject p)
@@ -1083,7 +1107,7 @@ public class SecondScreenView extends View
             small(e.optString("name", "???"), 74, y + 4, seen ? WHITE : DIM);
             small("Lv." + e.optString("lv", ""), 300, y + 4, LILAC);
             small(e.optInt("pct", 0) + "%", 400, y + 4, WHITE, 1);
-            if (e.optBoolean("owned", false)) blt("Graphics/Pictures/Party/icon_ball", 440, (int) (y - 2), 0, 0, 44, 28, 33, 21, mBlit);
+            if (e.optBoolean("owned", false)) blt("Graphics/Pictures/Pokedex/icon_own", 448, y + 2);
         }
         mC.restore();
         if (rows.isEmpty()) small("No wild Pokémon here.", W / 2f, 140, DIM, 2);
@@ -1131,31 +1155,41 @@ public class SecondScreenView extends View
         boolean can = free();
         box(6, 6, 500, 40);
         text("Quick actions", 20, 12);
-        if (!can) small("Available while you're free to move", 494, 16, DIM, 1);
         int speed = mState.optInt("speed", 1);
-        button("MENU", 10, 56, 160, 48, can, false, () -> command("cmd", "menu"));
-        button("SAVE", 176, 56, 160, 48, can, false, () -> command("cmd", "save"));
-        button("SPEED x" + speed, 342, 56, 160, 48, true, false, () -> command("cmd", "speed"));
+        button("MENU", 10, 54, 160, 48, can, false, () -> command("cmd", "menu"));
+        button("SAVE", 176, 54, 160, 48, can, false, () -> command("cmd", "save"));
+        button("SPEED x" + speed, 342, 54, 160, 48, true, false, () -> command("cmd", "speed"));
 
         JSONObject quick = mState.optJSONObject("quick");
         JSONObject repel = quick != null ? quick.optJSONObject("repel") : null;
         String repelLabel = repel != null ? repel.optString("name", "Repel") + " x" + repel.optInt("qty") : "NO REPEL";
-        button(repelLabel, 10, 112, 244, 48, can && repel != null, false, () -> command("cmd", "repel"));
+        button(repelLabel, 10, 108, 244, 48, can && repel != null, false, () -> command("cmd", "repel"));
         int steps = (repel != null) ? repel.optInt("steps", 0) : 0;
-        if (steps > 0) small(steps + " steps left", 266, 126, LILAC);
+        if (steps > 0) {
+            box(260, 112, 246, 40);
+            small(steps + " steps left", 272, 120, LILAC);
+        }
 
         JSONArray reg = quick != null ? quick.optJSONArray("registered") : null;
-        small("Registered items", 16, 170, DIM);
+        box(6, 164, 500, 108);
+        small("Registered items", 16, 168, GOLD);
         int n = reg == null ? 0 : reg.length();
         for (int i = 0; i < Math.min(n, 4); i++) {
             JSONObject it = reg.optJSONObject(i);
             final String id = it.optString("id", "");
-            float x = 10 + i * 124, y = 196;
-            button("", x, y, 118, 64, can, false, () -> command("cmd", "key_item", "item", id));
+            float x = 12 + i * 124, y = 196;
+            button("", x, y, 118, 70, can, false, () -> command("cmd", "key_item", "item", id));
             blt(it.optString("icon", ""), x + 43, y + 4);
-            text(ellipsize(it.optString("name", ""), mSmallFont, 17, 108), x + 59, y + 38, mSmallFont, 17, 2, can ? WHITE : DIM, SHADOW);
+            text(ellipsize(it.optString("name", ""), mSmallFont, 17, 108), x + 59, y + 42, mSmallFont, 17, 2, can ? WHITE : DIM, SHADOW);
         }
-        if (n == 0) small("Register key items (like the Bicycle) in the Bag.", 16, 206, DIM);
+        if (n == 0) {
+            small("Register key items (like the Bicycle)", 16, 204, DIM);
+            small("in the Bag to use them from here.", 16, 230, DIM);
+        }
+        if (!can) {
+            box(6, 280, 330, 46);
+            text("Available while you're free to move.", 18, 294, mSmallFont, 17, 0, DIM, SHADOW);
+        }
         button("SCREEN OFF", 342, 280, 160, 46, true, false, () -> setScreenOn(false));
     }
 
@@ -1175,11 +1209,13 @@ public class SecondScreenView extends View
         float top = 166;
         if ("command".equals(menu)) {
             JSONArray cmds = b.optJSONArray("commands");
+            String prompt = b.optString("prompt", "");
+            if (!prompt.isEmpty()) small(ellipsize(prompt, mSmallFont, 21, 490), W / 2f, top - 2, LILAC, 2);
             for (int i = 0; i < 4; i++) {
                 String label = cmds != null && i < cmds.length() ? cmds.optString(i, "") : "";
                 if (label.isEmpty()) continue;
                 final int idx = i;
-                button(label.toUpperCase(Locale.ROOT), 6 + (i % 2) * 252, top + (i / 2) * 82, 246, 76, true, false,
+                button(label.toUpperCase(Locale.ROOT), 6 + (i % 2) * 252, top + 24 + (i / 2) * 72, 246, 66, true, false,
                     () -> command("cmd", "battle_command", "index", String.valueOf(idx)));
             }
         } else if ("fight".equals(menu)) {

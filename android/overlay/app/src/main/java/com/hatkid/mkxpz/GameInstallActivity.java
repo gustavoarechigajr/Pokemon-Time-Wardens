@@ -488,9 +488,11 @@ public class GameInstallActivity extends Activity
         if (isFinishing()) return;
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        // Test hook: "adb shell am start ... --ez tw_demo true" fills the
-        // second screen with sample data so every page can be screenshotted.
-        if (getIntent().getBooleanExtra("tw_demo", false)) intent.putExtra("tw_demo", true);
+        // Test hook: "adb shell am start ... --es tw_demo battle" fills the
+        // second screen with sample data (battle, fight, map or entry) so
+        // every page can be screenshotted.
+        String demo = getIntent().getStringExtra("tw_demo");
+        if (demo != null) intent.putExtra("tw_demo", demo);
         startActivity(intent);
         finish();
     }

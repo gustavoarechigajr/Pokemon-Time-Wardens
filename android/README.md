@@ -198,7 +198,7 @@ The workflow's last job installs the APK on an Android 11 emulator, boots
 the game, presses through the title screen and checks logcat for engine
 errors and crashes (`tools/emulator_test.sh`). It also attaches a simulated
 second display, taps through its tabs, and restarts once with sample data
-(`--ez tw_demo true`, from `assets/tw_demo_status.json`) to screenshot every
+(`--es tw_demo battle|fight|map|entry`, from `assets/tw_demo_status.json`) to screenshot every
 second-screen page, including the battle page and a summary. Screenshots are
 printed base64-encoded in that job's log.
 

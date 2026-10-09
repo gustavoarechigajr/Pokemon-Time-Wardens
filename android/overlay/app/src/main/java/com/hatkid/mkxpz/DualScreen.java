@@ -65,9 +65,9 @@ public class DualScreen implements DisplayManager.DisplayListener
     private SecondScreen mPresentation;
     private boolean mStarted = false;
 
-    private final boolean mDemo;
+    private final String mDemo;
 
-    public DualScreen(Activity activity, File gameDir, boolean demo)
+    public DualScreen(Activity activity, File gameDir, String demo)
     {
         mDemo = demo;
         mActivity = activity;
