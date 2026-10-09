@@ -41,7 +41,8 @@ adb logcat -v time > "$OUT/logcat.txt" 2>&1 &
 LOGCAT_PID=$!
 
 log "Installing $(du -h "$APK" | cut -f1) APK"
-adb install -r "$APK" || { log "!! install failed"; exit 1; }
+timeout 900 adb install -r "$APK" || { log "!! install failed or took over 15 minutes"; exit 1; }
+log "Installed"
 adb shell dumpsys package "$PKG" | grep -E "versionName|versionCode" | head -2
 
 log "Launching"

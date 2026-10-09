@@ -211,6 +211,12 @@ jobs:
         with:
           sparse-checkout: android
 
+      - name: Free disk space
+        run: |
+          # The emulator needs ~9 GB for its data partition on top of the APK
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/share/swift /usr/local/share/boost /opt/hostedtoolcache/CodeQL /usr/local/share/powershell /usr/local/lib/node_modules
+          df -h / /home/runner
+
       - name: Download APK
         env:
           GH_TOKEN: ${{ github.token }}
@@ -232,6 +238,7 @@ jobs:
           target: google_apis
           arch: x86_64
           ram-size: 4096M
-          disk-size: 8G
-          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -no-boot-anim
-          script: bash android/tools/emulator_test.sh "$APK_PATH"
+          disk-size: 7G
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -no-boot-anim -no-metrics
+          emulator-boot-timeout: 900
+          script: timeout 1800 bash android/tools/emulator_test.sh "$APK_PATH"
