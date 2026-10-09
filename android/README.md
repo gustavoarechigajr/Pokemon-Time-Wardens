@@ -112,12 +112,13 @@ along the bottom switch pages:
     item effects and messages.
   * **SWAP**: then tap another Pokémon to swap their places.
 * **BATTLE** (replaces the first tab during battles and opens by itself):
-  FIGHT / BAG / POKÉMON / RUN; the move list shows each move's type, PP and
-  how effective it is against the opponent (super effective, not very
-  effective, no effect) using Time Wardens' own type chart, including the
-  custom types. Opponents show their level, types, HP and status. BACK,
-  MEGA / SPECIAL and SHIFT appear when they apply. The physical buttons
-  keep working as usual.
+  laid out like the DS games' touch screen, using Time Wardens' own battle
+  buttons: a big FIGHT button with BAG, RUN and POKÉMON below it. The move
+  list shows each move's name, type and PP (in the game's PP colours) and,
+  as on the 3DS, whether it's super effective, effective, not very effective
+  or has no effect on the opponent (with the game's custom type chart).
+  ACTION, CANCEL and SHIFT sit in one row below. Battle text and HP stay on
+  the top screen; the physical buttons keep working as usual.
 * **JOURNAL**: the BW-style location sign, your current story objective
   (tap for the next part of long ones), trainer name, money, play time,
   the in-game clock and season and the chapters earned. **QUEST LOG** lists

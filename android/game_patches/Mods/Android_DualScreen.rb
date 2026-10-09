@@ -444,6 +444,9 @@ if (System.platform[/Android/] rescue false)
             end.compact
             st["can_special"] = menu[:special] ? true : false
             st["can_shift"] = (battle.pbCanShift?(menu[:battler]) rescue false) ? true : false
+            # Fight menu's special-action button: mode 2 = switched on for this turn
+            fw = (scene.instance_variable_get(:@sprites)["fightWindow"] rescue nil)
+            st["special_on"] = (fw && fw.respond_to?(:mode) && fw.mode == 2) ? true : false
           end
         end
         st

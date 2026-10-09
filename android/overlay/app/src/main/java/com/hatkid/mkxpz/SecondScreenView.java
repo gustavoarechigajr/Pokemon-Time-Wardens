@@ -1235,49 +1235,39 @@ public class SecondScreenView extends View
 
     // ---- Battle -------------------------------------------------------------
 
+    // Modelled on the DS games' touch screen (Diamond/Pearl, HeartGold/SoulSilver,
+    // Black/White): one big FIGHT button with BAG, RUN and POKEMON below it, and
+    // move buttons that show name, type and PP. As on the 3DS (Sun/Moon), each
+    // move also says how effective it is. The battle itself, its text and the
+    // Pokemon's HP stay on the top screen.
     private void drawBattle()
     {
         JSONObject b = mState.optJSONObject("battle");
         String menu = b.optString("menu", "none");
         drawEmblem();
-        if ("command".equals(menu)) {
-            String prompt = b.optString("prompt", "");
-            messageBox(prompt.isEmpty() ? b.optString("message", "") : prompt);
-            drawBattleCommands(b);
-        } else if ("fight".equals(menu)) {
-            drawFoeHeader(b);
-            drawBattleFight(b);
-        } else {
-            messageBox(b.optString("message", ""));
-        }
+        if ("command".equals(menu)) drawBattleCommands(b);
+        else if ("fight".equals(menu)) drawBattleFight(b);
     }
 
-    // Graphics rows used for Fight/Bag/Pokémon/Run in each command menu mode
+    // Graphics rows used for Fight/Bag/Pokemon/Run in each command menu mode
     // (Battle::Scene::CommandMenu::MODES in the game's scripts)
     private static final int[][] CMD_MODES = { {0, 2, 1, 3}, {0, 2, 1, 9}, {0, 2, 1, 4}, {5, 7, 6, 3}, {0, 8, 1, 3} };
     private static final int CMD_W = 130, CMD_H = 46, FIGHT_W = 192;
 
-    /** The battle message box (the game's own overlay_message), like the DS's touch-screen prompt. */
-    private void messageBox(String msg)
-    {
-        blt("Graphics/Pictures/Battle/overlay_message", 0, 4);
-        List<String> lines = wrap(msg == null ? "" : msg, mFont, 27, 448);
-        for (int i = 0; i < Math.min(2, lines.size()); i++)
-            text(lines.get(i), 32, 4 + 18 + i * 32 - GAME_Y, mFont, 27, 0, MSG_BASE, MSG_SHADOW);
-    }
-
-    /** A faint Poké Ball behind the battle controls, as on the DS touch screen. */
+    /** A faint, slowly pulsing Poke Ball behind the battle controls. */
     private void drawEmblem()
     {
-        float cx = W / 2f, cy = 196, r = 132;
+        float cx = W / 2f, cy = 166, r = 140;
+        double t = SystemClock.uptimeMillis() / 1600.0;
+        int a = 16 + (int) (6 * Math.sin(t));
         mShape.setStyle(Paint.Style.STROKE);
         mShape.setStrokeWidth(12);
-        mShape.setColor(0x14ffffff);
+        mShape.setColor(a << 24 | 0xffffff);
         mC.drawCircle(cx, cy, r, mShape);
-        mC.drawCircle(cx, cy, 34, mShape);
+        mC.drawCircle(cx, cy, 36, mShape);
         mShape.setStyle(Paint.Style.FILL);
-        mC.drawRect(cx - r, cy - 6, cx - 40, cy + 6, mShape);
-        mC.drawRect(cx + 40, cy - 6, cx + r, cy + 6, mShape);
+        mC.drawRect(cx - r, cy - 6, cx - 42, cy + 6, mShape);
+        mC.drawRect(cx + 42, cy - 6, cx + r, cy + 6, mShape);
     }
 
     /** One of the game's battle button graphics (unselected and selected columns), scaled. */
@@ -1294,36 +1284,16 @@ public class SecondScreenView extends View
     {
         int mode = Math.max(0, Math.min(CMD_MODES.length - 1, b.optInt("cmd_mode", 0)));
         String cmd = "Graphics/Pictures/Battle/cursor_command";
-        // FIGHT large in the middle; Bag, Run and Pokémon along the bottom
-        artButton(cmd, CMD_W, CMD_MODES[mode][0], CMD_H, (W - CMD_W * 2) / 2f, 112, 2f, false, () -> battleCommand(0));
-        artButton(cmd, CMD_W, CMD_MODES[mode][1], CMD_H, 8, 226, 1.25f, false, () -> battleCommand(1));
-        artButton(cmd, CMD_W, CMD_MODES[mode][3], CMD_H, (W - CMD_W) / 2f, 232, 1f, false, () -> battleCommand(3));
-        artButton(cmd, CMD_W, CMD_MODES[mode][2], CMD_H, W - 8 - CMD_W * 1.25f, 226, 1.25f, false, () -> battleCommand(2));
+        // FIGHT large in the middle; Bag, Run and Pokemon along the bottom
+        artButton(cmd, CMD_W, CMD_MODES[mode][0], CMD_H, (W - CMD_W * 2) / 2f, 52, 2f, false, () -> battleCommand(0));
+        artButton(cmd, CMD_W, CMD_MODES[mode][1], CMD_H, 10, 214, 1.25f, false, () -> battleCommand(1));
+        artButton(cmd, CMD_W, CMD_MODES[mode][3], CMD_H, (W - CMD_W) / 2f, 220, 1f, false, () -> battleCommand(3));
+        artButton(cmd, CMD_W, CMD_MODES[mode][2], CMD_H, W - 10 - Math.round(CMD_W * 1.25f), 214, 1.25f, false, () -> battleCommand(2));
     }
 
     private void battleCommand(int idx)
     {
         command("cmd", "battle_command", "index", String.valueOf(idx));
-    }
-
-    /** The opponent you're aiming at, with its types (for judging moves). */
-    private void drawFoeHeader(JSONObject b)
-    {
-        JSONArray foes = b.optJSONArray("foes");
-        blt("Graphics/Pictures/Battle/overlay_message", 0, 4);
-        JSONObject foe = null;
-        for (int i = 0; foes != null && i < foes.length(); i++) {
-            JSONObject f = foes.optJSONObject(i);
-            if (f != null && !f.optBoolean("fainted", false)) { foe = f; break; }
-        }
-        if (foe == null) return;
-        icon(foe.optString("icon", ""), 56, 50, 64, true, null);
-        float w = text(foe.optString("name", ""), 96, 22 - GAME_Y, mFont, 27, 0, MSG_BASE, MSG_SHADOW);
-        text("Lv." + foe.optInt("lv", 1), 96 + w + 12, 26 - GAME_Y, mSmallFont, 21, 0, MSG_BASE, MSG_SHADOW);
-        JSONArray types = foe.optJSONArray("types");
-        for (int i = 0; types != null && i < types.length(); i++) typeIcon(types.optJSONObject(i), 96 + i * 68, 58, 64);
-        int n = foes.length();
-        if (n > 1) text("+" + (n - 1) + " more", 476, 60 - GAME_Y, mSmallFont, 21, 1, MSG_BASE, MSG_SHADOW);
     }
 
     // The game's PP colours: none left, 1/4 or less, 1/2 or less, more
@@ -1335,52 +1305,102 @@ public class SecondScreenView extends View
         JSONArray moves = b.optJSONArray("moves");
         String rel = "Graphics/Pictures/Battle/cursor_fight";
         Bitmap art = image(rel);
-        float scale = 1.25f;
-        int bw = Math.round(FIGHT_W * scale), bh = Math.round(CMD_H * scale);
+        int bw = 240, bh = 96, gap = 10;
         for (int i = 0; i < 4; i++) {
             JSONObject m = moves != null && i < moves.length() ? moves.optJSONObject(i) : null;
-            float x = (i % 2 == 0) ? W / 2f - 4 - bw : W / 2f + 4, y = 112 + (i / 2) * (bh + 12);
+            float x = (i % 2 == 0) ? W / 2f - gap / 2f - bw : W / 2f + gap / 2f;
+            float y = 12 + (i / 2) * (bh + gap);
             if (m == null) continue;
             final int idx = i;
             JSONObject type = m.optJSONObject("type");
             int row = type != null ? type.optInt("icon", 0) : 0;
-            artButton(rel, FIGHT_W, row, CMD_H, x, y, scale, false,
-                () -> command("cmd", "battle_move", "index", String.valueOf(idx)));
+            int id = mHitSeq++;
+            moveButtonArt(art, row, mPressed == id, x, y, bw, bh);
+            mHits.add(new Hit(new RectF(x, y, x + bw, y + bh), id,
+                () -> command("cmd", "battle_move", "index", String.valueOf(idx))));
             // Name in the button's own colour, as the game does
             int base = MSG_BASE;
             if (art != null && row * CMD_H + 34 < art.getHeight()) base = art.getPixel(10, row * CMD_H + 34) | 0xff000000;
-            // One line inside the button: name (left), PP (right, in the game's PP colours)
-            int pp = m.optInt("pp", 0), max = Math.max(1, m.optInt("maxpp", 1));
-            int frac = pp == 0 ? 0 : Math.min(3, (int) Math.ceil(4.0 * pp / max));
-            float ppw = text(pp + "/" + max, x + bw - 22, y + 18, mSmallFont, 18, 1, PP_BASE[frac], PP_SHADOW[frac]);
-            float room = bw - 44 - ppw - 8;
-            Typeface nf = measure(m.optString("name", ""), mFont, 27) > room ? mNarrowFont : mFont;
-            text(ellipsize(m.optString("name", ""), nf, 27, room), x + 22, y + 11, nf, 27, 0, base, MSG_SHADOW);
-            // Effectiveness against the opponent, as a tag on the button's corner
+            String name = m.optString("name", "");
+            Typeface nf = measure(name, mFont, 27) > bw - 40 ? mNarrowFont : mFont;
+            text(ellipsize(name, nf, 27, bw - 40), x + bw / 2f, y + 8, nf, 27, 2, base, MSG_SHADOW);
+            // Type, effectiveness, PP
+            typeIcon(type, x + 22, y + 42, 56);
             JSONArray eff = m.optJSONArray("eff");
             String e = eff != null && eff.length() > 0 ? eff.optString(0, "") : "";
-            String tag = "super".equals(e) ? "SUPER" : "weak".equals(e) ? "WEAK" : "none".equals(e) ? "NO EFFECT" : "";
-            if (!tag.isEmpty()) {
-                int col = "super".equals(e) ? 0xff30a050 : "weak".equals(e) ? 0xffc07818 : 0xffb02828;
-                float tw = measure(tag, mSmallFont, 15) + 14;
-                RectF r = new RectF(x + bw - tw - 6, y - 8, x + bw - 6, y + 10);
-                mShape.setStyle(Paint.Style.FILL);
-                mShape.setColor(col);
-                mC.drawRoundRect(r, 8, 8, mShape);
-                mShape.setStyle(Paint.Style.STROKE);
-                mShape.setStrokeWidth(2);
-                mShape.setColor(0xfff8f8f8);
-                mC.drawRoundRect(r, 8, 8, mShape);
-                text(tag, r.centerX(), y - 7, mSmallFont, 15, 2, WHITE, 0xff282828);
-            }
+            String et = "super".equals(e) ? "Super effective" : "weak".equals(e) ? "Not very effective"
+                : "none".equals(e) ? "No effect" : "normal".equals(e) ? "Effective" : "";
+            int ec = "super".equals(e) ? 0xff208830 : "weak".equals(e) ? 0xffc06010 : "none".equals(e) ? 0xffb02828 : MSG_BASE;
+            if (!et.isEmpty()) text(et, x + bw / 2f, y + 60, mSmallFont, 18, 2, ec, MSG_SHADOW);
+            int pp = m.optInt("pp", 0), max = Math.max(1, m.optInt("maxpp", 1));
+            int frac = pp == 0 ? 0 : Math.min(3, (int) Math.ceil(4.0 * pp / max));
+            text("PP " + pp + "/" + max, x + bw - 22, y + 38, mSmallFont, 18, 1, PP_BASE[frac], PP_SHADOW[frac]);
         }
-        float by = 112 + 2 * (bh + 12) + 4;
-        if (b.optBoolean("can_special", false))
-            artButton("Graphics/Pictures/Battle/cursor_mega", 150, 0, CMD_H, 16, by, 1f, false, () -> command("cmd", "battle_special"));
-        artButton("Graphics/Pictures/Battle/cursor_command", CMD_W, 9, CMD_H, (W - CMD_W) / 2f, by, 1f, false,
-            () -> command("cmd", "battle_back"));
-        if (b.optBoolean("can_shift", false))
-            button("SHIFT", W - 16 - 130, by, 130, CMD_H, true, false, () -> command("cmd", "battle_shift"));
+        // One row below: special action, cancel, shift - same size, centred
+        boolean special = b.optBoolean("can_special", false), shift = b.optBoolean("can_shift", false);
+        int n = 1 + (special ? 1 : 0) + (shift ? 1 : 0);
+        float cw = 150, ch = 46, cgap = 12, by = 12 + 2 * (bh + gap) + 6;
+        float cx = (W - (n * cw + (n - 1) * cgap)) / 2f;
+        if (special) {
+            boolean on = b.optBoolean("special_on", false);
+            capsule("ACTION", cx, by, cw, ch, on, true, () -> command("cmd", "battle_special"));
+            cx += cw + cgap;
+        }
+        capsule("CANCEL", cx, by, cw, ch, false, false, () -> command("cmd", "battle_back"));
+        cx += cw + cgap;
+        if (shift) capsule("SHIFT", cx, by, cw, ch, false, false, () -> command("cmd", "battle_shift"));
+    }
+
+    /**
+     * A move button from cursor_fight.png, widened 1.25x and made taller by
+     * stretching the beige band, so it fits two lines like the DS buttons.
+     */
+    private void moveButtonArt(Bitmap art, int row, boolean pressed, float x, float y, float w, float h)
+    {
+        if (art == null) { box(x, y, w, h); return; }
+        int sx = pressed ? FIGHT_W : 0, sy = row * CMD_H;
+        float top = 24 * 1.25f, bottom = 10 * 1.25f;
+        mC.drawBitmap(art, new Rect(sx, sy, sx + FIGHT_W, sy + 24), new RectF(x, y, x + w, y + top), mBlit);
+        mC.drawBitmap(art, new Rect(sx, sy + 24, sx + FIGHT_W, sy + 36), new RectF(x, y + top, x + w, y + h - bottom), mBlit);
+        mC.drawBitmap(art, new Rect(sx, sy + 36, sx + FIGHT_W, sy + 46), new RectF(x, y + h - bottom, x + w, y + h), mBlit);
+    }
+
+    /**
+     * A button drawn in the style of the game's battle buttons (dark outline,
+     * white rim, night-blue fill; reddish when switched on), so buttons the
+     * game has no graphic for match the ones it has.
+     */
+    private void capsule(String label, float x, float y, float w, float h, boolean on, boolean icon, Runnable action)
+    {
+        int id = mHitSeq++;
+        boolean pressed = mPressed == id;
+        Paint p = new Paint();   // no anti-aliasing: crisp like the pixel art
+        float r = h / 2f;
+        p.setColor(0xff303030);
+        mC.drawRoundRect(new RectF(x, y, x + w, y + h), r, r, p);
+        p.setColor(0xfff8f8f8);
+        mC.drawRoundRect(new RectF(x + 4, y + 4, x + w - 4, y + h - 4), r - 4, r - 4, p);
+        int top = on ? 0xff4a1428 : pressed ? 0xff3c4a8c : 0xff1a224c;
+        int bot = on ? 0xff2c0e1c : pressed ? 0xff2c2a5c : 0xff241a33;
+        RectF in = new RectF(x + 6, y + 6, x + w - 6, y + h - 6);
+        p.setColor(bot);
+        mC.drawRoundRect(in, r - 6, r - 6, p);
+        mC.save();
+        mC.clipRect(in.left, in.top, in.right, in.centerY());
+        p.setColor(top);
+        mC.drawRoundRect(in, r - 6, r - 6, p);
+        mC.restore();
+        p.setColor(0xfff8f8f8);   // two little stars, as on the game's buttons
+        mC.drawRect(x + 14, y + 10, x + 16, y + 12, p);
+        mC.drawRect(x + w - 18, y + h - 14, x + w - 16, y + h - 12, p);
+        float tx = x + w / 2f;
+        if (icon) {
+            // The special-action orb from cursor_mega.png
+            blt("Graphics/Pictures/Battle/cursor_mega", (int) (x + 12), (int) (y + 8), 14, on ? 56 : 10, 34, 34, 30, 30, mBlit);
+            tx += 16;
+        }
+        text(label, tx, y + 4, mFont, 27, 2, 0xfff8f0e0, 0xff404040);
+        if (action != null) mHits.add(new Hit(new RectF(x, y, x + w, y + h), id, action));
     }
 
     // ---- Keyboard (naming screens) -------------------------------------
