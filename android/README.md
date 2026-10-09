@@ -120,6 +120,10 @@ runs on single-screen devices.
   exist as real files.
 * **Windows-only files** (`Game.exe`, DLLs, the PokeRover tool, shortcuts)
   are left out of the APK.
+* **Audio is normalised** so everything is in a format the Android engine
+  definitely decodes. MP3 sound effects, and the 123 `.ogg` files that really
+  contain MP3 or WAV data (including the main trainer/wild battle themes,
+  Victory! and the Poké Center music), are re-encoded to Ogg Vorbis.
 * **MIDI music** is rendered to Ogg with the game's `soundfont.sf2` at build
   time, because the Android engine has no MIDI synthesizer. Where a track
   already exists as `.ogg`, the `.mid` copy is dropped.
@@ -130,6 +134,10 @@ runs on single-screen devices.
     stores app files on case-sensitive storage. Some paths in the game don't
     match the real file names' case, e.g. `Graphics/windowskins/...` vs. the
     `Windowskins` folder, or the title music `Title` vs. `title.ogg`.
+  * Zlib (needed to load the plugins) is loaded explicitly, with a
+    pure-Ruby fallback in case the engine can't provide it.
+  * The game always stays fullscreen; its "Screen Size" option would
+    otherwise bring Android's status and navigation bars over the game.
   * F12 soft-reset is turned off, because the game's handler would relaunch
     `Game.exe` and quit, which just closes the app on Android.
 * **Saves** go to the app's internal data folder, the Android equivalent of

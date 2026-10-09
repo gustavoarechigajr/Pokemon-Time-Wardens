@@ -445,9 +445,8 @@ public class DualScreen implements DisplayManager.DisplayListener
 
         private void drawTitle()
         {
-            text("Time Wardens", W / 2f, 120, mFont, 40, 2, WHITE, SHADOW);
-            text("Your party and journal will appear here", W / 2f, 190, mSmallFont, 21, 2, LILAC, SHADOW);
-            text("once you start or continue your adventure.", W / 2f, 214, mSmallFont, 21, 2, LILAC, SHADOW);
+            // The game's own title screen art until a save is loaded
+            blt("Graphics/Titles/title", 0, 0);
         }
 
         /** Draws a party-screen button graphic stretched horizontally (end caps kept). */

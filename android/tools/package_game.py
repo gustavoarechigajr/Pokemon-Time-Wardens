@@ -10,6 +10,10 @@ Android-specific handling:
     are left out.
   * Files under android/game_patches/ are added on top of the game (Android-
     only compatibility scripts).
+  * Audio is normalised to formats the Android engine certainly decodes:
+    MP3 files, and ".ogg" files that really contain MP3/WAV data (many of
+    the game's battle and town themes), are re-encoded to Ogg Vorbis; WAVs
+    wrapping an Ogg stream are unwrapped.
   * MIDI music is rendered to Ogg Vorbis with the game's own soundfont.
     The Android engine has no FluidSynth, so .mid files would be silent
     (or raise errors) on a phone. Essentials looks audio up without an
@@ -67,6 +71,54 @@ def included(rel):
     if os.path.splitext(name)[1].lower() in EXCLUDE_EXT:
         return False
     return True
+
+
+def cached_convert(src, dst, cache_dir, tag, convert):
+    """Runs convert(src, dst) unless a cached result for this input exists."""
+    with open(src, "rb") as f:
+        digest = hashlib.sha256(tag.encode() + b"|" + f.read()).hexdigest()
+    cached = os.path.join(cache_dir, digest + ".ogg") if cache_dir else None
+    if cached and os.path.isfile(cached):
+        shutil.copyfile(cached, dst)
+        return
+    convert(src, dst)
+    if not os.path.getsize(dst):
+        raise RuntimeError("empty output for " + src)
+    if cached:
+        os.makedirs(cache_dir, exist_ok=True)
+        shutil.copyfile(dst, cached)
+
+
+def to_vorbis(src, dst):
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-map_metadata", "-1",
+                    "-c:a", "libvorbis", "-q:a", "5", "-f", "ogg", dst], check=True)
+
+
+def wav_format(path):
+    """WAVE format tag (1 = PCM, 2 = MS ADPCM, ...) or None."""
+    with open(path, "rb") as f:
+        head = f.read(64)
+    if head[:4] != b"RIFF" or head[8:12] != b"WAVE":
+        return None
+    i = head.find(b"fmt ")
+    return int.from_bytes(head[i + 8:i + 10], "little") if i >= 0 else None
+
+
+def audio_fix(path):
+    """How an audio file must be converted for Android, or None if it's fine."""
+    ext = os.path.splitext(path)[1].lower()
+    with open(path, "rb") as f:
+        magic = f.read(4)
+    if ext == ".mp3":
+        return "to_ogg"
+    if ext == ".ogg" and magic != b"OggS":
+        return "to_ogg"          # MP3/WAV data with an .ogg name
+    if ext == ".wav":
+        fmt = wav_format(path)
+        if fmt not in (1, 2, 0x11, None):
+            with open(path, "rb") as f:
+                return "unwrap_ogg" if b"OggS" in f.read(256) else "to_ogg"
+    return None
 
 
 def render_midi(src, dst, soundfont, cache_dir):
@@ -135,6 +187,17 @@ def main():
         if rel.startswith("Audio/") and ext.lower() not in MIDI_EXT:
             audio_stems.add(stem.lower())
 
+    # Real Ogg files (by content), used to drop MP3/WAV duplicates of a track
+    converted_stems = set()
+    for rel in files:
+        stem, ext = os.path.splitext(rel)
+        if rel.startswith("Audio/") and ext.lower() == ".ogg":
+            with open(os.path.join(game, rel), "rb") as f:
+                if f.read(4) == b"OggS":
+                    converted_stems.add(stem.lower())
+    converted = 0
+    written = set()
+
     zip_path = os.path.join(out, "game.zip")
     total = 0
     rendered = dropped = 0
@@ -144,7 +207,26 @@ def main():
             src = os.path.join(game, rel)
             stem, ext = os.path.splitext(rel)
             arcname = rel
-            if ext.lower() in MIDI_EXT:
+            fix = audio_fix(src) if rel.startswith("Audio/") and ext.lower() not in MIDI_EXT else None
+            if fix:
+                out_rel = stem + ".ogg"
+                if out_rel != rel and stem.lower() in converted_stems:
+                    print("drop audio (ogg twin exists):", rel)
+                    dropped += 1
+                    continue
+                conv = os.path.join(tmp, "conv.ogg")
+                if fix == "unwrap_ogg":
+                    with open(src, "rb") as f:
+                        data = f.read()
+                    with open(conv, "wb") as f:
+                        f.write(data[data.find(b"OggS"):])
+                else:
+                    cached_convert(src, conv, args.midi_cache, "vorbis-q5", to_vorbis)
+                src = conv
+                arcname = out_rel
+                converted += 1
+                print("converted audio (%s):" % fix, rel, "->", arcname)
+            elif ext.lower() in MIDI_EXT:
                 if stem.lower() in audio_stems:
                     dropped += 1
                     print("drop MIDI (ogg twin exists):", rel)
@@ -178,6 +260,11 @@ def main():
                 zf.writestr(arcname, data, compress_type=zipfile.ZIP_DEFLATED)
                 total += len(data)
                 continue
+            if arcname.lower() in written:
+                print("skip duplicate:", rel, "->", arcname)
+                dropped += 1
+                continue
+            written.add(arcname.lower())
             comp = zipfile.ZIP_STORED if os.path.splitext(arcname)[1].lower() in STORE_EXT else zipfile.ZIP_DEFLATED
             zf.write(src, arcname, compress_type=comp)
             total += os.path.getsize(src)
@@ -204,8 +291,8 @@ def main():
         f.write("uncompressed_bytes=%d\n" % total)
         f.write("files=%d\n" % (len(files) - dropped))
 
-    print("Packaged %d files, %.1f MB uncompressed, zip %.1f MB; MIDI rendered %d, dropped %d"
-          % (len(files) - dropped, total / 1e6, os.path.getsize(zip_path) / 1e6, rendered, dropped))
+    print("Packaged %d files, %.1f MB uncompressed, zip %.1f MB; MIDI rendered %d, audio converted %d, dropped %d"
+          % (len(files) - dropped, total / 1e6, os.path.getsize(zip_path) / 1e6, rendered, converted, dropped))
 
 
 if __name__ == "__main__":
