@@ -192,11 +192,12 @@ public class DualScreen implements DisplayManager.DisplayListener
     private class PadView extends View
     {
         static final int W = 512, H = 384;
-        static final int PAGE_PARTY = 0, PAGE_JOURNAL = 1;
+        static final int PAGE_PARTY = 0, PAGE_JOURNAL = 1, PAGE_MAP = 2;
+        static final int BTN_MENU = 3, BTN_SPEED = 4, BTN_SCREEN_OFF = 5, BTN_OBJECTIVE = 6;
 
-        // Bottom buttons (icon_cancel graphic, 112x48)
-        static final int BTN_Y = 330, BTN_W = 112, BTN_H = 48;
-        final String[] BTN_LABELS = { "PARTY", "JOURNAL", "MENU", "SPEED" };
+        // Bottom buttons (the party screen's icon_cancel graphic, sliced to 96 wide)
+        static final int BTN_Y = 330, BTN_W = 96, BTN_H = 48, BTN_STEP = 102, BTN_X0 = 4;
+        final String[] BTN_LABELS = { "PARTY", "JOURNAL", "MAP", "MENU", "SPEED" };
 
         final SharedPreferences mPrefs;
         final Bitmap mCanvasBmp = Bitmap.createBitmap(W, H, Bitmap.Config.ARGB_8888);
@@ -248,7 +249,7 @@ public class DualScreen implements DisplayManager.DisplayListener
         {
             super(ctx);
             mPrefs = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
-            mPage = mPrefs.getInt("page", PAGE_PARTY);
+            mPage = Math.max(PAGE_PARTY, Math.min(PAGE_MAP, mPrefs.getInt("page", PAGE_PARTY)));
             mScreenOn = mPrefs.getBoolean("panel_on", true);
             mBlit.setFilterBitmap(false);
             mFont = font("Fonts/power green.ttf");
@@ -427,6 +428,8 @@ public class DualScreen implements DisplayManager.DisplayListener
                 drawTitle();
             } else if (mPage == PAGE_JOURNAL) {
                 drawJournal();
+            } else if (mPage == PAGE_MAP) {
+                drawMap();
             } else {
                 drawParty();
             }
@@ -447,18 +450,83 @@ public class DualScreen implements DisplayManager.DisplayListener
             text("once you start or continue your adventure.", W / 2f, 214, mSmallFont, 21, 2, LILAC, SHADOW);
         }
 
+        /** Draws a party-screen button graphic stretched horizontally (end caps kept). */
+        private void button(String rel, int x, int y, int w)
+        {
+            Bitmap b = image(rel);
+            if (b == null) return;
+            int h = b.getHeight(), e = 12;
+            mC.drawBitmap(b, new Rect(0, 0, e, h), new Rect(x, y, x + e, y + h), mBlit);
+            mC.drawBitmap(b, new Rect(e, 0, b.getWidth() - e, h), new Rect(x + e, y, x + w - e, y + h), mBlit);
+            mC.drawBitmap(b, new Rect(b.getWidth() - e, 0, b.getWidth(), h), new Rect(x + w - e, y, x + w, y + h), mBlit);
+        }
+
         private void drawButtons(boolean ingame)
         {
             for (int i = 0; i < BTN_LABELS.length; i++) {
-                if (!ingame && i != 2) continue;
-                int x = 8 + i * 126;
-                boolean sel = (i == mPressed) || (i == mPage && i < 2);
-                blt(sel ? "Graphics/Pictures/Party/icon_cancel_sel" : "Graphics/Pictures/Party/icon_cancel", x, BTN_Y);
+                if (!ingame && i != BTN_MENU) continue;
+                int x = BTN_X0 + i * BTN_STEP;
+                boolean sel = (i == mPressed) || (i == mPage && i <= PAGE_MAP);
+                button(sel ? "Graphics/Pictures/Party/icon_cancel_sel" : "Graphics/Pictures/Party/icon_cancel", x, BTN_Y, BTN_W);
                 String label = BTN_LABELS[i];
-                if (i == 3 && mState != null) label = "SPEED x" + mState.optInt("speed", 1);
-                Typeface tf = label.length() > 6 ? mNarrowFont : mFont;
+                if (i == BTN_SPEED && mState != null) label = "SPEED x" + mState.optInt("speed", 1);
+                Typeface tf = label.length() > 5 ? mNarrowFont : mFont;
                 text(label, x + BTN_W / 2f, BTN_Y + 8, tf, 27, 2, WHITE, SHADOW);
             }
+        }
+
+        /** Small framed caption, used on the map page. */
+        private void label(String s, float x, float y, int color, boolean alignRight)
+        {
+            if (s == null || s.isEmpty()) return;
+            mText.setTypeface(mSmallFont);
+            mText.setTextSize(21);
+            float w = mText.measureText(s) + 16;
+            if (alignRight) x -= w;
+            RectF r = new RectF(x, y, x + w, y + 28);
+            mShape.setStyle(Paint.Style.FILL);
+            mShape.setColor(0xd2181428);
+            mC.drawRoundRect(r, 8, 8, mShape);
+            mShape.setStyle(Paint.Style.STROKE);
+            mShape.setStrokeWidth(2);
+            mShape.setColor(WHITE);
+            mC.drawRoundRect(r, 8, 8, mShape);
+            text(s, x + 8, y + 2, mSmallFont, 21, 0, color, SHADOW);
+        }
+
+        // ---- Map page: the game's Town Map with the player's position
+
+        private void drawMap()
+        {
+            // Same frame and position as the game's region map screen, moved
+            // up 24 px so it sits above the buttons
+            blt("Graphics/Pictures/mapbg", 0, -24);
+            JSONObject m = mState.optJSONObject("map");
+            if (m == null) {
+                label("No map for this area", W / 2f - 100, 160, WHITE, false);
+                return;
+            }
+            Bitmap region = image(m.optString("image", ""));
+            int ox = 16, oy = 8;
+            if (region != null) {
+                ox = (W - region.getWidth()) / 2;
+                oy = 8 + (320 - region.getHeight()) / 2;
+                mC.drawBitmap(region, ox, oy, mBlit);
+            }
+            JSONArray extras = m.optJSONArray("extras");
+            for (int i = 0; extras != null && i < extras.length(); i++) {
+                JSONArray g = extras.optJSONArray(i);
+                if (g != null) blt(g.optString(2, ""), ox + g.optInt(0) * 16, oy + g.optInt(1) * 16);
+            }
+            // point_x_to_screen_x: -8 + x * 16 + map offset
+            int px = ox - 8 + m.optInt("x") * 16, py = oy - 8 + m.optInt("y") * 16;
+            int frame = (int) ((SystemClock.uptimeMillis() / 300) % 2);
+            blt("Graphics/Pictures/mapCursor", px, py, frame * 32, 0, 32, 32, mBlit);
+            blt(m.optString("player", ""), px, py);
+
+            label(m.optString("region", ""), 24, 14, GOLD, false);
+            JSONObject loc = mState.optJSONObject("location");
+            if (loc != null) label(loc.optString("name", ""), 488, 292, WHITE, true);
         }
 
         // ---- Party page: same layout as the game's party screen (PokemonPartyPanel)
@@ -556,7 +624,7 @@ public class DualScreen implements DisplayManager.DisplayListener
             text(mapName, extended ? 73 : 59, -4, mFont, 27, 0, 0xffffffff, 0xff737373);
 
             // Screen-off button in the sign's empty corner
-            blt(mPressed == 4 ? "Graphics/Pictures/Party/icon_cancel_narrow_sel" : "Graphics/Pictures/Party/icon_cancel_narrow", 392, 22);
+            blt(mPressed == BTN_SCREEN_OFF ? "Graphics/Pictures/Party/icon_cancel_narrow_sel" : "Graphics/Pictures/Party/icon_cancel_narrow", 392, 22);
             text("SCREEN OFF", 448, 26, mNarrowFont, 22, 2, WHITE, SHADOW);
 
             // Story objective: 4 lines at a time, paged like a message box
@@ -632,12 +700,12 @@ public class DualScreen implements DisplayManager.DisplayListener
         {
             if (vy >= BTN_Y && vy < BTN_Y + BTN_H) {
                 for (int i = 0; i < BTN_LABELS.length; i++) {
-                    int x = 8 + i * 126;
+                    int x = BTN_X0 + i * BTN_STEP;
                     if (vx >= x && vx < x + BTN_W) return i;
                 }
             }
-            if (mPage == PAGE_JOURNAL && vx >= 392 && vx < 504 && vy >= 22 && vy < 58) return 4;
-            if (mPage == PAGE_JOURNAL && vx >= 8 && vx < 348 && vy >= 66 && vy < 246) return 5;
+            if (mPage == PAGE_JOURNAL && vx >= 392 && vx < 504 && vy >= 22 && vy < 58) return BTN_SCREEN_OFF;
+            if (mPage == PAGE_JOURNAL && vx >= 8 && vx < 348 && vy >= 66 && vy < 246) return BTN_OBJECTIVE;
             return -1;
         }
 
@@ -662,23 +730,23 @@ public class DualScreen implements DisplayManager.DisplayListener
             switch (e.getActionMasked()) {
                 case MotionEvent.ACTION_DOWN: {
                     int b = hit(vx, vy);
-                    if (!ingame && b != 2) b = -1;
+                    if (!ingame && b != BTN_MENU) b = -1;
                     mPressed = b;
                     // Menu and Speed act like holding the game's key
-                    if (b == 2) sendKey(KeyEvent.KEYCODE_X, true);
-                    if (b == 3) sendKey(KeyEvent.KEYCODE_Q, true);
+                    if (b == BTN_MENU) sendKey(KeyEvent.KEYCODE_X, true);
+                    if (b == BTN_SPEED) sendKey(KeyEvent.KEYCODE_Q, true);
                     return true;
                 }
                 case MotionEvent.ACTION_UP:
                 case MotionEvent.ACTION_CANCEL: {
                     int b = mPressed;
                     mPressed = -1;
-                    if (b == 2) sendKey(KeyEvent.KEYCODE_X, false);
-                    if (b == 3) sendKey(KeyEvent.KEYCODE_Q, false);
+                    if (b == BTN_MENU) sendKey(KeyEvent.KEYCODE_X, false);
+                    if (b == BTN_SPEED) sendKey(KeyEvent.KEYCODE_Q, false);
                     if (e.getActionMasked() == MotionEvent.ACTION_UP && hit(vx, vy) == b) {
-                        if (b == PAGE_PARTY || b == PAGE_JOURNAL) setPage(b);
-                        if (b == 4) setScreenOn(false);
-                        if (b == 5) nextObjectivePage();
+                        if (b >= PAGE_PARTY && b <= PAGE_MAP) setPage(b);
+                        if (b == BTN_SCREEN_OFF) setScreenOn(false);
+                        if (b == BTN_OBJECTIVE) nextObjectivePage();
                     }
                     return true;
                 }
@@ -690,7 +758,7 @@ public class DualScreen implements DisplayManager.DisplayListener
         {
             mPage = page;
             mPrefs.edit().putInt("page", page).apply();
-            Log.i(TAG, "Page " + (page == PAGE_JOURNAL ? "journal" : "party"));
+            Log.i(TAG, "Page " + (page == PAGE_JOURNAL ? "journal" : page == PAGE_MAP ? "map" : "party"));
         }
 
         private void setScreenOn(boolean on)

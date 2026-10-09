@@ -84,6 +84,10 @@ game's own artwork and fonts, so it looks like part of Time Wardens.
   * trainer name, money, play time
   * the in-game clock, time of day and season
   * the chapters you've earned
+* **MAP**: the game's Town Map of the region you're in, with your trainer
+  icon and the map's blinking cursor on your current position. It follows
+  you as you walk, and hidden areas appear once you've unlocked them in the
+  game.
 * Buttons along the bottom: switch pages, **MENU** (opens the pause menu)
   and **SPEED** (cycles the game speed). The current speed is shown there,
   since on PC it only appears in the window title.

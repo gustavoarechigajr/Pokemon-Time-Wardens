@@ -126,6 +126,39 @@ if (System.platform[/Android/] rescue false)
       nil
     end
 
+    # Where the player is on the Town Map, worked out like the game's own
+    # region map screen (PokemonRegionMap_Scene#pbStartScene)
+    def region_map
+      meta = $game_map.metadata
+      pos = meta ? meta.town_map_position : nil
+      return nil if !pos
+      data = pbLoadTownMapData[pos[0]]
+      return nil if !data
+      x, y = pos[1], pos[2]
+      size = meta.town_map_size
+      if size && size[0] && size[0] > 0
+        sqw = size[0]
+        sqh = (size[1].length.to_f / size[0]).ceil
+        x += ($game_player.x * sqw / $game_map.width).floor if sqw > 1
+        y += ($game_player.y * sqh / $game_map.height).floor if sqh > 1
+      end
+      extras = []
+      Settings::REGION_MAP_EXTRAS.each do |g|
+        next if g[0] != pos[0] || g[1] <= 0 || !$game_switches[g[1]]
+        extras.push([g[2], g[3], "Graphics/Pictures/" + g[4]])
+      end
+      {
+        "region"  => (pbGetMessage(MessageTypes::RegionNames, pos[0]) rescue data[0]).to_s,
+        "image"   => "Graphics/Pictures/" + data[1].to_s.sub(/\.png\z/i, ""),
+        "x"       => x,
+        "y"       => y,
+        "player"  => (GameData::TrainerType.player_map_icon_filename($player.trainer_type) rescue "").to_s,
+        "extras"  => extras
+      }
+    rescue StandardError
+      nil
+    end
+
     def status
       return { "ingame" => false } if !$player || !$game_map
       badges = (0...18).map { |i| $player.badges[i] ? true : false } rescue []
@@ -139,6 +172,7 @@ if (System.platform[/Android/] rescue false)
         "location" => location,
         "clock"    => clock,
         "quest"    => quest,
+        "map"      => region_map,
         "party"    => ($player.party || []).compact.first(6).map { |p| pokemon_entry(p) }
       }
     end

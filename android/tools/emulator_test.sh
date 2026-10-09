@@ -128,15 +128,16 @@ shot_display() {
   fi
 }
 shot_display "second_party"
-# Tap the JOURNAL button on the 960x540 second screen (page is scaled x1.406, offset 120)
+# Tap the page buttons on the 960x540 second screen. The 512x384 page is
+# scaled x1.40625 and centred (x offset 120); buttons are 96 wide every 102 px
+# from x=4, at y 330-378.
+tap_button() { adb shell input -d "$DISPLAY_NUM" tap "$((120 + (4 + $1 * 102 + 48) * 140625 / 100000))" 498; }
 if [ -n "$DISPLAY_NUM" ]; then
-  adb shell input -d "$DISPLAY_NUM" tap 387 498
-  sleep 2
-  shot_display "second_journal"
+  tap_button 1; sleep 2; shot_display "second_journal"
   grep -q "Page journal" "$OUT/logcat.txt" && log "Second screen journal tab works" || log "!! journal tap not registered"
-  # Back to the party page
-  adb shell input -d "$DISPLAY_NUM" tap 210 498
-  sleep 1
+  tap_button 2; sleep 2; shot_display "second_map"
+  grep -q "Page map" "$OUT/logcat.txt" && log "Second screen map tab works" || log "!! map tap not registered"
+  tap_button 0; sleep 1
 fi
 if grep -q "Second screen found" "$OUT/logcat.txt"; then
   log "Dual screen panel opened"
