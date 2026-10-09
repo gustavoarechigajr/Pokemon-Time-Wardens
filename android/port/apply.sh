@@ -22,7 +22,8 @@ grep -q '>Time Wardens<' "$PORT_DIR/app/src/main/res/values/strings.xml"
 
 # 2. Native build: optimise. The port builds everything at -O0 / APP_OPTIM
 #    debug, which makes Ruby (and so the whole game) several times slower.
-sed -i 's/^CFLAGS      := -O0 /CFLAGS      := -O2 -DNDEBUG /' "$JNI/Makefile"
+#    -fPIC: the static libraries are linked into libmkxp-z.so (x86_64 needs it).
+sed -i 's/^CFLAGS      := -O0 /CFLAGS      := -O2 -DNDEBUG -fPIC /' "$JNI/Makefile"
 grep -q '^CFLAGS      := -O2 ' "$JNI/Makefile"
 sed -i 's/^APP_OPTIM := debug/APP_OPTIM := release/' "$JNI/Application.mk"
 grep -q '^APP_OPTIM := release' "$JNI/Application.mk"
