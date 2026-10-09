@@ -160,6 +160,15 @@ def main():
                 print("rendered MIDI:", rel, "->", arcname)
             if rel == "soundfont.sf2":
                 continue  # only needed for MIDI, which is rendered above
+            if rel == "Data/PluginScripts.rxdata":
+                # Stored uncompressed so the game can read it even without Zlib
+                # (see game_patches/Scripts/000_Android_Compat.rb)
+                stored = os.path.join(tmp, "PluginScripts.rxdata")
+                subprocess.run(["ruby", os.path.join(os.path.dirname(os.path.abspath(__file__)), "store_plugins.rb"),
+                                src, stored], check=True)
+                zf.write(stored, arcname, compress_type=zipfile.ZIP_DEFLATED)
+                total += os.path.getsize(stored)
+                continue
             if rel == "mkxp.json":
                 with open(src, encoding="utf-8") as f:
                     text = re.sub(r"^\s*//.*$", "", f.read(), flags=re.M)

@@ -1,5 +1,82 @@
 #===============================================================================
 # Android compatibility (added to the game only in the Android APK build)
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# Zlib
+#-------------------------------------------------------------------------------
+# On PC the engine loads Ruby's Zlib before the game starts; the Android
+# engine only has it built in, so load it here. Essentials needs it to read
+# the plugin scripts (Data/PluginScripts.rxdata).
+#
+# Safety net: the APK stores PluginScripts.rxdata uncompressed (still valid
+# zlib data), so if Zlib can't be loaded on some device this minimal stand-in
+# can still read it and the game boots.
+#-------------------------------------------------------------------------------
+begin
+  require "zlib"
+rescue LoadError, StandardError
+end
+
+unless defined?(::Zlib)
+  module Zlib
+    class Error < StandardError; end
+    class DataError < Error; end
+    NO_COMPRESSION      = 0
+    BEST_SPEED          = 1
+    BEST_COMPRESSION    = 9
+    DEFAULT_COMPRESSION = -1
+
+    def self.adler32(data, a = 1)
+      s1 = a & 0xffff
+      s2 = (a >> 16) & 0xffff
+      data.each_byte do |b|
+        s1 = (s1 + b) % 65521
+        s2 = (s2 + s1) % 65521
+      end
+      (s2 << 16) | s1
+    end
+
+    class Inflate
+      # Reads zlib data made of stored (uncompressed) deflate blocks
+      def self.inflate(data)
+        data = data.b
+        raise DataError, "incorrect header check" if data.bytesize < 2 || (data.getbyte(0) & 0x0f) != 8
+        pos = 2
+        out = String.new(encoding: Encoding::BINARY)
+        loop do
+          header = data.getbyte(pos)
+          raise DataError, "unexpected end of data" if header.nil?
+          if (header >> 1) & 3 != 0
+            raise DataError, "compressed data needs Zlib, which is not available"
+          end
+          len = data.getbyte(pos + 1) | (data.getbyte(pos + 2) << 8)
+          out << data.byteslice(pos + 5, len)
+          pos += 5 + len
+          break if header & 1 == 1
+        end
+        out
+      end
+    end
+
+    class Deflate
+      # Writes zlib data using stored (uncompressed) deflate blocks
+      def self.deflate(data, _level = nil)
+        data = data.to_s.b
+        out = String.new("\x78\x01", encoding: Encoding::BINARY)
+        chunks = (0...[data.bytesize, 1].max).step(65535).map { |i| data.byteslice(i, 65535) || "" }
+        chunks.each_with_index do |c, i|
+          len = c.bytesize
+          out << [(i == chunks.size - 1) ? 1 : 0, len, len ^ 0xffff].pack("Cvv") << c
+        end
+        out << [Zlib.adler32(data)].pack("N")
+      end
+    end
+  end
+end
+
+#-------------------------------------------------------------------------------
+# Case-insensitive file lookups
 #-------------------------------------------------------------------------------
 # Windows treats file names case-insensitively, so the game and its plugins
 # mix cases freely ("Graphics/windowskins/..." vs the "Windowskins" folder,
