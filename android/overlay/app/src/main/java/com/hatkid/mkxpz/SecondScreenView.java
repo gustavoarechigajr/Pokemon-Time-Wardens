@@ -27,6 +27,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,6 +71,7 @@ public class SecondScreenView extends View
     private final File mGameDir;
     private final File mStatusFile;
     private final boolean mDemo;
+    private long mLastDemoShot;
     private final SharedPreferences mPrefs;
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
@@ -507,6 +509,28 @@ public class SecondScreenView extends View
         int dx = (getWidth() - dw) / 2, dy = (getHeight() - dh) / 2;
         mDst.set(dx, dy, dx + dw, dy + dh);
         canvas.drawBitmap(mCanvasBmp, null, mDst, mBlit);
+        if (mDemo) saveDemoShot();
+    }
+
+    /**
+     * Demo mode only: keeps a copy of the page in files/tw_demo_shot.png so
+     * the emulator test can capture it (overlay displays can't be
+     * screenshotted with screencap).
+     */
+    private void saveDemoShot()
+    {
+        long now = SystemClock.uptimeMillis();
+        if (now - mLastDemoShot < 1000) return;
+        mLastDemoShot = now;
+        File dir = getContext().getExternalFilesDir(null);
+        if (dir == null) return;
+        File tmp = new File(dir, "tw_demo_shot.tmp");
+        try (java.io.FileOutputStream out = new java.io.FileOutputStream(tmp)) {
+            mCanvasBmp.compress(Bitmap.CompressFormat.PNG, 100, out);
+        } catch (IOException e) {
+            return;
+        }
+        tmp.renameTo(new File(dir, "tw_demo_shot.png"));
     }
 
     private void draw()

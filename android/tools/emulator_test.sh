@@ -156,12 +156,14 @@ shot_display "second_party"
 tap_v() { adb shell input -d "$DISPLAY_NUM" tap "$((120 + $1 * 140625 / 100000))" "$(($2 * 140625 / 100000))"; }
 tap_tab() { tap_v "$((2 + $1 * 85 + 40))" 357; }
 TABS=(party journal map route log more)
-if [ -n "$DISPLAY_NUM" ]; then
+if [ -n "$DISPLAY_NUM" ] && grep -q "Status: ingame=true" "$OUT/logcat.txt"; then
   for i in 1 2 3; do
     tap_tab "$i"; sleep 2; shot_display "second_${TABS[$i]}"
     grep -q "Page ${TABS[$i]}" "$OUT/logcat.txt" && log "Second screen ${TABS[$i]} tab works" || log "!! ${TABS[$i]} tap not registered"
   done
   tap_tab 0; sleep 1
+else
+  log "Game not in a save yet (second screen shows the title); tabs are checked in the demo pass"
 fi
 if grep -q "Second screen found" "$OUT/logcat.txt"; then
   log "Dual screen panel opened"
@@ -173,17 +175,28 @@ grep "TimeWardens\[Dual\]" "$OUT/logcat.txt" | tail -5
 # so every page of the second screen can be checked in screenshots.
 if [ -n "$DISPLAY_NUM" ]; then
   log "Second screen demo pass"
+  # In demo mode the view also saves its page to files/tw_demo_shot.png
+  # (overlay displays can't be captured with screencap)
+  demo_shot() {
+    sleep 1
+    adb exec-out cat "/sdcard/Android/data/$PKG/files/tw_demo_shot.png" > "$OUT/$1.png" 2>/dev/null
+    convert "$OUT/$1.png" -quality 80 "$OUT/$1.jpg" 2>/dev/null && \
+      echo "==SHOT $1== $(base64 -w0 "$OUT/$1.jpg")"
+  }
   adb shell am force-stop "$PKG"; sleep 2
   adb shell am start -n "$PKG/com.hatkid.mkxpz.GameInstallActivity" --ez tw_demo true > /dev/null
   sleep 25
   grep -q "Demo status loaded" "$OUT/logcat.txt" && log "Demo status loaded" || log "!! demo status not loaded"
-  shot_display "demo_start"
-  tap_tab 0; sleep 2; shot_display "demo_battle"
-  tap_v 300 200; sleep 2; shot_display "demo_battle_tap"
-  tap_tab 0; sleep 2; shot_display "demo_party"
-  tap_v 128 48; sleep 2; shot_display "demo_summary"
+  demo_shot "demo_start"
+  tap_tab 0; sleep 2; demo_shot "demo_battle"
+  tap_v 300 200; sleep 2; demo_shot "demo_battle_tap"
+  tap_tab 0; sleep 2; demo_shot "demo_party"
+  tap_v 128 48; sleep 2; demo_shot "demo_summary"
+  tap_v 250 23; sleep 2; demo_shot "demo_summary_stats"
+  tap_v 354 23; sleep 2; demo_shot "demo_summary_moves"
+  tap_v 86 270; sleep 2; demo_shot "demo_items"
   for i in 1 2 3 4 5; do
-    tap_tab "$i"; sleep 2; shot_display "demo_${TABS[$i]}"
+    tap_tab "$i"; sleep 2; demo_shot "demo_${TABS[$i]}"
     grep -q "Page ${TABS[$i]}" "$OUT/logcat.txt" || log "!! demo ${TABS[$i]} tap not registered"
   done
   check_alive || { log "!! game died during the demo pass"; FAIL=1; }
