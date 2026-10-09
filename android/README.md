@@ -117,7 +117,11 @@ along the bottom switch pages:
   list shows each move's name, type and PP (in the game's PP colours) and,
   as on the 3DS, whether it's super effective, effective, not very effective
   or has no effect on the opponent (with the game's custom type chart).
-  ACTION, CANCEL and SHIFT sit in one row below. Battle text and HP stay on
+  Each move also shows whether it's physical, special or a status move.
+  ACTION, CANCEL and SHIFT sit in one row below, next to **INFO**, which
+  toggles move details: the buttons get smaller and a panel shows the
+  chosen move's category, power, accuracy, effect chance, priority and
+  description (tap a move once to read about it, again to use it). Battle text and HP stay on
   the top screen; the physical buttons keep working as usual.
 * **JOURNAL**: the BW-style location sign, your current story objective
   (tap for the next part of long ones), trainer name, money, play time,
@@ -144,11 +148,17 @@ explains why. Errors such as "it won't have any effect" come from the game
 itself.
 
 Touching the second screen never takes focus away from the physical
-controls. Before a save is loaded it shows the Time Wardens title.
+controls. Taps give a light vibration and the pressed button shows at once;
+battle controls dim until the game has acted on the choice, so a choice
+can't be sent twice. Before a save is loaded it shows the Time Wardens title.
 
 How it works: `game_patches/Mods/Android_DualScreen.rb` (loaded through the
 game's existing `Mods` folder support) writes a small status file while the
-second screen is open. `SecondScreenView.java` draws the pages from it at
+second screen is open, in a folder in the app's internal storage (passed
+to the game as `TW_IPC_DIR`; the app is notified of each change rather than
+polling). Only the parts that change often (menus, battle, text entry) are
+rebuilt every update; party, bag and map data are refreshed about once a
+second or right after they change. `SecondScreenView.java` draws the pages from it at
 the game's 512x384 resolution and scales them up pixel-perfect; taps are
 sent back as small command files that the mod runs inside the game.
 Nothing extra runs on single-screen devices.

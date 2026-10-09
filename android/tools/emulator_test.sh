@@ -217,6 +217,9 @@ PY
   # Move list
   demo_start fight
   demo_shot "demo_fight"
+  # Move details (INFO toggle on)
+  demo_start info
+  demo_shot "demo_fight_info"
   # On the map: party actions enabled, healing items, quick actions
   demo_start map
   tap_tab 0; sleep 2; demo_shot "demo_party"

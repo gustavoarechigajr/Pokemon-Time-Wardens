@@ -57,6 +57,7 @@ public class DualScreen implements DisplayManager.DisplayListener
 
     private final Activity mActivity;
     private final File mGameDir;
+    private final File mIpcDir;
     private final File mFlag;
     private final File mStatusFile;
     private final DisplayManager mDisplayManager;
@@ -72,9 +73,21 @@ public class DualScreen implements DisplayManager.DisplayListener
         mDemo = demo;
         mActivity = activity;
         mGameDir = gameDir;
-        mFlag = new File(gameDir, ".tw_dualscreen");
-        mStatusFile = new File(gameDir, ".tw_status.json");
+        mIpcDir = ipcDir(activity);
+        mFlag = new File(mIpcDir, ".tw_dualscreen");
+        mStatusFile = new File(mIpcDir, ".tw_status.json");
+        // Leftovers from a previous run (the flag is set again if a screen is found)
+        File[] old = mIpcDir.listFiles();
+        if (old != null) for (File f : old) f.delete();
         mDisplayManager = (DisplayManager) activity.getSystemService(Context.DISPLAY_SERVICE);
+    }
+
+    /** Folder in internal storage shared with the game (Mods/Android_DualScreen.rb). */
+    public static File ipcDir(Context ctx)
+    {
+        File d = new File(ctx.getFilesDir(), "ipc");
+        if (!d.isDirectory()) d.mkdirs();
+        return d;
     }
 
     public void onStart()
@@ -178,7 +191,7 @@ public class DualScreen implements DisplayManager.DisplayListener
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                 | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
             getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-            setContentView(new SecondScreenView(getContext(), mGameDir, mStatusFile, mDemo));
+            setContentView(new SecondScreenView(getContext(), mGameDir, mIpcDir, mStatusFile, mDemo));
         }
     }
 }

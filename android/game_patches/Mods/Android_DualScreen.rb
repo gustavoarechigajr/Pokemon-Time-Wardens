@@ -19,9 +19,13 @@
 #===============================================================================
 if (System.platform[/Android/] rescue false)
   module AndroidDualScreen
-    FLAG       = File.join(Dir.pwd, ".tw_dualscreen")
-    OUT        = File.join(Dir.pwd, ".tw_status.json")
-    CMD_GLOB   = File.join(Dir.pwd, ".tw_cmd_*.txt")
+    # The app passes a folder in its internal storage (much faster to poll
+    # than the shared storage the game lives in); older apps used the game folder
+    IPC_DIR    = ((d = ENV["TW_IPC_DIR"]) && File.directory?(d)) ? d : Dir.pwd
+    FAST_IPC   = IPC_DIR != Dir.pwd
+    FLAG       = File.join(IPC_DIR, ".tw_dualscreen")
+    OUT        = File.join(IPC_DIR, ".tw_status.json")
+    CMD_GLOB   = File.join(IPC_DIR, ".tw_cmd_*.txt")
     CMD_EXPIRE = 8.0   # seconds a queued command waits for a safe moment
 
     # Same word lists and order as the BW Location Signposts plugin
@@ -52,7 +56,19 @@ if (System.platform[/Android/] rescue false)
     @cache      = {}
 
     class << self
-      attr_accessor :battle_scene, :battle_menu, :entry_scene, :battle_text
+      attr_accessor :battle_scene
+      attr_reader :battle_menu, :entry_scene, :battle_text
+
+      # Changes the second screen should see right away (not at the next
+      # periodic update); slow = party/bag/map data changed too
+      def mark_dirty(slow = false)
+        @dirty = true
+        @slow_dirty = true if slow
+      end
+
+      def battle_menu=(v);  @battle_menu = v;  mark_dirty; end
+      def entry_scene=(v);  @entry_scene = v;  mark_dirty(true); end
+      def battle_text=(v);  @battle_text = v;  mark_dirty; end
       attr_reader :forced
 
       def active?; @active; end
@@ -78,6 +94,7 @@ if (System.platform[/Android/] rescue false)
       def toast(text)
         @toast_id += 1
         @toast = { "id" => @toast_id, "text" => text.to_s }
+        mark_dirty
       end
 
       #-------------------------------------------------------------------------
@@ -440,7 +457,9 @@ if (System.platform[/Android/] rescue false)
               end
               { "name" => m.name, "type" => type_info(m.type), "pp" => m.pp, "maxpp" => m.total_pp,
                 "power" => (data ? data.base_damage : 0), "acc" => (data ? data.accuracy : 0),
-                "cat" => (data ? data.category : 2), "eff" => eff }
+                "cat" => (data ? data.category : 2), "eff" => eff,
+                "chance" => (data ? data.effect_chance.to_i : 0), "priority" => (data ? data.priority.to_i : 0),
+                "desc" => (data ? data.description.to_s : "") }
             end.compact
             st["can_special"] = menu[:special] ? true : false
             st["can_shift"] = (battle.pbCanShift?(menu[:battler]) rescue false) ? true : false
@@ -454,17 +473,14 @@ if (System.platform[/Android/] rescue false)
         nil
       end
 
-      def status
-        return { "ingame" => false, "context" => "title", "log" => @log, "toast" => @toast } if !$player || !$game_map
+      # Rarely changing, more expensive part of the status
+      def slow_status
         badges = (0...18).map { |i| $player.badges[i] ? true : false } rescue []
-        st = {
-          "ingame"   => true,
-          "context"  => context,
+        {
           "player"   => $player.name,
           "money"    => ($player.money rescue 0),
           "badges"   => badges,
           "playtime" => (($stats.play_time rescue 0) || 0).to_i,
-          "speed"    => (defined?($GameSpeed) && $GameSpeed) ? $GameSpeed + 1 : 1,
           "location" => location,
           "clock"    => clock,
           "quest"    => quest,
@@ -473,7 +489,16 @@ if (System.platform[/Android/] rescue false)
           "party"    => ($player.party || []).compact.first(6).map { |p| pokemon_entry(p) },
           "heal"     => heal_items,
           "quick"    => quick_items,
-          "route"    => encounters,
+          "route"    => encounters
+        }
+      end
+
+      # What changes from moment to moment (menus, battle, text entry)
+      def fast_status
+        st = {
+          "ingame"   => true,
+          "context"  => context,
+          "speed"    => (defined?($GameSpeed) && $GameSpeed) ? $GameSpeed + 1 : 1,
           "log"      => @log,
           "toast"    => @toast
         }
@@ -486,8 +511,23 @@ if (System.platform[/Android/] rescue false)
         st
       end
 
-      def write_status
-        text = json(status)
+      def status
+        return { "ingame" => false, "context" => "title", "log" => @log, "toast" => @toast } if !$player || !$game_map
+        slow_status.merge(fast_status)
+      end
+
+      def write_status(refresh_slow = false)
+        if !$player || !$game_map
+          @slow_json = nil
+          text = json(status)
+        else
+          # The slow part is rebuilt about once a second (or when it changed)
+          if refresh_slow || !@slow_json || @frame - @slow_frame.to_i >= 60
+            @slow_json = json(slow_status)
+            @slow_frame = @frame
+          end
+          text = @slow_json[0..-2] + "," + json(fast_status)[1..-1]
+        end
         return if text == @last
         tmp = OUT + ".tmp"
         File.open(tmp, "wb") { |f| f.write(text) }
@@ -510,7 +550,10 @@ if (System.platform[/Android/] rescue false)
           rescue StandardError
           end
           File.delete(f) rescue nil
-          dispatch(cmd) if cmd["cmd"]
+          if cmd["cmd"]
+            dispatch(cmd)
+            mark_dirty(true)
+          end
         end
       end
 
@@ -558,7 +601,7 @@ if (System.platform[/Android/] rescue false)
           toast(_INTL("That didn't work."))
           echoln("Second screen command #{cmd['cmd']} failed: #{e.message}") rescue nil
         end
-        @last = nil   # refresh the screen right away
+        mark_dirty(true)   # refresh the screen right away
       end
 
       def run_map_command(cmd)
@@ -691,7 +734,7 @@ if (System.platform[/Android/] rescue false)
           end
         end
         scene.pbUpdateOverlay rescue nil
-        @last = nil
+        mark_dirty
       end
 
       #-------------------------------------------------------------------------
@@ -701,6 +744,7 @@ if (System.platform[/Android/] rescue false)
       def battle_message(msg)
         return if !msg.is_a?(String) || !@active
         @battle_text = clean_text(msg)[1]
+        mark_dirty
       end
 
       def log_message(msg)
@@ -731,13 +775,16 @@ if (System.platform[/Android/] rescue false)
       def on_graphics_update
         return if @broken
         @frame += 1
-        if (@frame % 10) == 0
-          @active = File.exist?(FLAG)
-          read_commands if @active
-        end
+        @active = File.exist?(FLAG) if (@frame % 30) == 1
         return if !@active
-        interval = (in_battle? || @entry_scene) ? 6 : 20
-        write_status if (@frame % interval) == 0
+        # Taps are picked up within 2 frames (10 on old apps' slower storage)
+        read_commands if (@frame % (FAST_IPC ? 2 : 10)) == 0
+        interval = (in_battle? || @entry_scene) ? 10 : 30
+        if @dirty || (@frame % interval) == 0
+          refresh = @slow_dirty
+          @dirty = @slow_dirty = false
+          write_status(refresh)
+        end
       rescue StandardError => e
         # Never let the second screen break the game
         @broken = true
@@ -816,6 +863,7 @@ if (System.platform[/Android/] rescue false)
       AndroidDualScreen.battle_scene = nil
       AndroidDualScreen.battle_menu = nil
       AndroidDualScreen.battle_text = nil
+      AndroidDualScreen.mark_dirty(true)
       ret
     end
 

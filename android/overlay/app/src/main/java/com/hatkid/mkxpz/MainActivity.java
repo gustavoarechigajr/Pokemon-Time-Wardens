@@ -57,6 +57,14 @@ public class MainActivity extends SDLActivity
     {
         // Must be set before SDLActivity starts the native thread
         GAME_PATH = GameInstallActivity.getGameDir(this).getAbsolutePath();
+        // Second-screen messages go through internal storage, which is much
+        // faster to watch than the shared storage the game files live in
+        java.io.File ipc = DualScreen.ipcDir(this);
+        try {
+            android.system.Os.setenv("TW_IPC_DIR", ipc.getAbsolutePath(), true);
+        } catch (Exception e) {
+            Log.w(TAG, "TW_IPC_DIR: " + e);
+        }
 
         super.onCreate(savedInstanceState);
 

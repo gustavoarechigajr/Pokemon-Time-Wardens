@@ -73,6 +73,7 @@ public class SecondScreenView extends View
     static final int GAME_Y = 8;
 
     private final File mGameDir;
+    private final File mIpcDir;
     private final File mStatusFile;
     private final boolean mDemo;
     private long mLastDemoShot;
@@ -100,6 +101,8 @@ public class SecondScreenView extends View
     private int mOverlay = O_NONE;
     private boolean mScreenOn;
     private boolean mBattlePage = false;      // showing battle controls
+    private boolean mMoveInfo;                // move details shown in the fight menu
+    private int mInfoSel;                     // move whose details are shown
     private boolean mBattleAuto = true;       // switch to battle page when a battle starts
     private String mLastContext = "";
 
@@ -146,24 +149,26 @@ public class SecondScreenView extends View
     private final Runnable mTick = new Runnable() {
         @Override public void run() {
             long now = SystemClock.uptimeMillis();
-            if (now - mLastPoll >= 150) {
+            if (now - mLastPoll >= 250) {   // fallback; changes normally arrive via mObserver
                 mLastPoll = now;
                 poll();
             }
             invalidate();
-            mHandler.postDelayed(this, mScreenOn ? 50 : 500);
+            mHandler.postDelayed(this, mScreenOn ? 33 : 500);
         }
     };
 
-    public SecondScreenView(Context ctx, File gameDir, File statusFile, String demo)
+    public SecondScreenView(Context ctx, File gameDir, File ipcDir, File statusFile, String demo)
     {
         super(ctx);
         mGameDir = gameDir;
+        mIpcDir = ipcDir;
         mStatusFile = statusFile;
         mDemo = demo != null;
         mPrefs = ctx.getSharedPreferences("dualscreen", Context.MODE_PRIVATE);
         mPage = Math.max(0, Math.min(TABS.length - 1, mPrefs.getInt("page2", P_PARTY)));
         mScreenOn = mPrefs.getBoolean("panel_on", true);
+        mMoveInfo = mPrefs.getBoolean("move_info", false);
         mBlit.setFilterBitmap(false);
         mFont = font("Fonts/power green.ttf");
         mSmallFont = font("Fonts/power green small.ttf");
@@ -187,6 +192,12 @@ public class SecondScreenView extends View
                 case "fight":
                     mState.put("battle", mState.optJSONObject("battle_fight"));
                     mBattlePage = true;
+                    break;
+                case "info":
+                    mState.put("battle", mState.optJSONObject("battle_fight"));
+                    mBattlePage = true;
+                    mMoveInfo = true;
+                    mInfoSel = 1;
                     break;
                 case "map":
                     mState.put("context", "map");
@@ -217,15 +228,32 @@ public class SecondScreenView extends View
         return Typeface.DEFAULT_BOLD;
     }
 
+    // The game renames its new status file into place: react at once
+    // instead of waiting for the next poll
+    private final Runnable mStatusChanged = () -> { poll(true); invalidate(); };
+    private android.os.FileObserver mObserver;
+
     @Override protected void onAttachedToWindow()
     {
         super.onAttachedToWindow();
         mHandler.post(mTick);
+        if (!mDemo) {
+            final String name = mStatusFile.getName();
+            mObserver = new android.os.FileObserver(mIpcDir.getPath(),
+                android.os.FileObserver.MOVED_TO | android.os.FileObserver.CLOSE_WRITE) {
+                @Override public void onEvent(int event, String path) {
+                    if (name.equals(path)) mHandler.post(mStatusChanged);
+                }
+            };
+            mObserver.startWatching();
+        }
     }
 
     @Override protected void onDetachedFromWindow()
     {
         mHandler.removeCallbacks(mTick);
+        if (mObserver != null) mObserver.stopWatching();
+        mObserver = null;
         super.onDetachedFromWindow();
     }
 
@@ -233,11 +261,13 @@ public class SecondScreenView extends View
     // Data in / commands out
     // =====================================================================
 
-    private void poll()
+    private void poll() { poll(false); }
+
+    private void poll(boolean force)
     {
         if (mDemo) return;
         long mod = mStatusFile.lastModified();
-        if (mod == 0 || mod == mLastModified) return;
+        if (mod == 0 || (mod == mLastModified && !force)) return;
         mLastModified = mod;
         try (FileInputStream in = new FileInputStream(mStatusFile)) {
             byte[] data = new byte[(int) Math.min(mStatusFile.length(), 4 << 20)];
@@ -245,6 +275,8 @@ public class SecondScreenView extends View
             while (n < data.length && (r = in.read(data, n, data.length - n)) > 0) n += r;
             JSONObject prev = mState;
             mState = new JSONObject(new String(data, 0, n, StandardCharsets.UTF_8));
+            // The game moved on from the menu that was tapped: controls are live again
+            if (mPendingUntil > 0 && !battleSig().equals(mPendingSig)) mPendingUntil = 0;
             String ctx = mState.optString("context", "");
             if (prev == null || !ctx.equals(mLastContext)) {
                 JSONArray party = mState.optJSONArray("party");
@@ -281,14 +313,14 @@ public class SecondScreenView extends View
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i + 1 < kv.length; i += 2) sb.append(kv[i]).append('=').append(kv[i + 1]).append('\n');
         String name = String.format(Locale.US, ".tw_cmd_%d_%03d.txt", System.currentTimeMillis(), (mCmdSeq++) % 1000);
-        File tmp = new File(mGameDir, name + ".tmp");
+        File tmp = new File(mIpcDir, name + ".tmp");
         try (FileOutputStream os = new FileOutputStream(tmp)) {
             os.write(sb.toString().getBytes(StandardCharsets.UTF_8));
         } catch (Exception e) {
             Log.w(TAG, "Command write failed: " + e);
             return;
         }
-        if (!tmp.renameTo(new File(mGameDir, name))) tmp.delete();
+        if (!tmp.renameTo(new File(mIpcDir, name))) tmp.delete();
         Log.i(TAG, "Command: " + sb.toString().replace('\n', ' ').trim());
     }
 
@@ -1245,8 +1277,13 @@ public class SecondScreenView extends View
         JSONObject b = mState.optJSONObject("battle");
         String menu = b.optString("menu", "none");
         drawEmblem();
+        int hits = mHits.size();
         if ("command".equals(menu)) drawBattleCommands(b);
         else if ("fight".equals(menu)) drawBattleFight(b);
+        if (SystemClock.uptimeMillis() < mPendingUntil) {
+            fillRect(0, 0, W, BAR_Y - 2, 0x70000000);
+            while (mHits.size() > hits) mHits.remove(mHits.size() - 1);
+        }
     }
 
     // Graphics rows used for Fight/Bag/Pokemon/Run in each command menu mode
@@ -1293,7 +1330,7 @@ public class SecondScreenView extends View
 
     private void battleCommand(int idx)
     {
-        command("cmd", "battle_command", "index", String.valueOf(idx));
+        sendBattle("cmd", "battle_command", "index", String.valueOf(idx));
     }
 
     // The game's PP colours: none left, 1/4 or less, 1/2 or less, more
@@ -1303,52 +1340,154 @@ public class SecondScreenView extends View
     private void drawBattleFight(JSONObject b)
     {
         JSONArray moves = b.optJSONArray("moves");
-        String rel = "Graphics/Pictures/Battle/cursor_fight";
-        Bitmap art = image(rel);
-        int bw = 240, bh = 96, gap = 10;
+        int n = moves == null ? 0 : moves.length();
+        if (mInfoSel >= n) mInfoSel = 0;
+        // Move info (toggle): shorter buttons and a details panel; a first tap
+        // picks a move to read about, a second tap on it uses it
+        boolean info = mMoveInfo;
+        int bw = 240, bh = info ? 72 : 96, gap = info ? 6 : 10;
+        float top = info ? 6 : 12;
         for (int i = 0; i < 4; i++) {
-            JSONObject m = moves != null && i < moves.length() ? moves.optJSONObject(i) : null;
+            JSONObject m = i < n ? moves.optJSONObject(i) : null;
             float x = (i % 2 == 0) ? W / 2f - gap / 2f - bw : W / 2f + gap / 2f;
-            float y = 12 + (i / 2) * (bh + gap);
+            float y = top + (i / 2) * (bh + gap);
             if (m == null) continue;
             final int idx = i;
-            JSONObject type = m.optJSONObject("type");
-            int row = type != null ? type.optInt("icon", 0) : 0;
-            int id = mHitSeq++;
-            moveButtonArt(art, row, mPressed == id, x, y, bw, bh);
-            mHits.add(new Hit(new RectF(x, y, x + bw, y + bh), id,
-                () -> command("cmd", "battle_move", "index", String.valueOf(idx))));
-            // Name in the button's own colour, as the game does
-            int base = MSG_BASE;
-            if (art != null && row * CMD_H + 34 < art.getHeight()) base = art.getPixel(10, row * CMD_H + 34) | 0xff000000;
-            String name = m.optString("name", "");
-            Typeface nf = measure(name, mFont, 27) > bw - 40 ? mNarrowFont : mFont;
-            text(ellipsize(name, nf, 27, bw - 40), x + bw / 2f, y + 8, nf, 27, 2, base, MSG_SHADOW);
-            // Type, effectiveness, PP
-            typeIcon(type, x + 22, y + 42, 56);
-            JSONArray eff = m.optJSONArray("eff");
-            String e = eff != null && eff.length() > 0 ? eff.optString(0, "") : "";
-            String et = "super".equals(e) ? "Super effective" : "weak".equals(e) ? "Not very effective"
-                : "none".equals(e) ? "No effect" : "normal".equals(e) ? "Effective" : "";
-            int ec = "super".equals(e) ? 0xff208830 : "weak".equals(e) ? 0xffc06010 : "none".equals(e) ? 0xffb02828 : MSG_BASE;
-            if (!et.isEmpty()) text(et, x + bw / 2f, y + 60, mSmallFont, 18, 2, ec, MSG_SHADOW);
-            int pp = m.optInt("pp", 0), max = Math.max(1, m.optInt("maxpp", 1));
-            int frac = pp == 0 ? 0 : Math.min(3, (int) Math.ceil(4.0 * pp / max));
-            text("PP " + pp + "/" + max, x + bw - 22, y + 38, mSmallFont, 18, 1, PP_BASE[frac], PP_SHADOW[frac]);
+            boolean sel = info && i == mInfoSel;
+            moveButton(m, x, y, bw, bh, info, sel, () -> {
+                if (mMoveInfo && mInfoSel != idx) { mInfoSel = idx; return; }
+                sendBattle("cmd", "battle_move", "index", String.valueOf(idx));
+            });
         }
-        // One row below: special action, cancel, shift - same size, centred
+        float panelTop = top + 2 * (bh + gap);
+        if (info && n > 0) drawMoveDetails(moves.optJSONObject(mInfoSel), 6, panelTop, W - 12, 284 - panelTop - 4);
+
+        // One row below: special action, cancel, shift and the info toggle
         boolean special = b.optBoolean("can_special", false), shift = b.optBoolean("can_shift", false);
-        int n = 1 + (special ? 1 : 0) + (shift ? 1 : 0);
-        float cw = 150, ch = 46, cgap = 12, by = 12 + 2 * (bh + gap) + 6;
-        float cx = (W - (n * cw + (n - 1) * cgap)) / 2f;
+        int count = 2 + (special ? 1 : 0) + (shift ? 1 : 0);
+        float cgap = 8, ch = 46, by = info ? 284 : top + 2 * (bh + gap) + 6;
+        float cw = Math.min(150, (W - 16 - (count - 1) * cgap) / count);
+        float cx = (W - (count * cw + (count - 1) * cgap)) / 2f;
         if (special) {
             boolean on = b.optBoolean("special_on", false);
-            capsule("ACTION", cx, by, cw, ch, on, true, () -> command("cmd", "battle_special"));
+            capsule("ACTION", cx, by, cw, ch, on, true, () -> sendBattle("cmd", "battle_special"));
             cx += cw + cgap;
         }
-        capsule("CANCEL", cx, by, cw, ch, false, false, () -> command("cmd", "battle_back"));
+        capsule("CANCEL", cx, by, cw, ch, false, false, () -> sendBattle("cmd", "battle_back"));
         cx += cw + cgap;
-        if (shift) capsule("SHIFT", cx, by, cw, ch, false, false, () -> command("cmd", "battle_shift"));
+        if (shift) {
+            capsule("SHIFT", cx, by, cw, ch, false, false, () -> sendBattle("cmd", "battle_shift"));
+            cx += cw + cgap;
+        }
+        capsule("INFO", cx, by, cw, ch, info, false, () -> {
+            mMoveInfo = !mMoveInfo;
+            mPrefs.edit().putBoolean("move_info", mMoveInfo).apply();
+        });
+    }
+
+    /** A move button: name in its type colour; type, physical/special/status and PP below. */
+    private void moveButton(JSONObject m, float x, float y, float bw, float bh, boolean compact, boolean sel, Runnable action)
+    {
+        Bitmap art = image("Graphics/Pictures/Battle/cursor_fight");
+        JSONObject type = m.optJSONObject("type");
+        int row = type != null ? type.optInt("icon", 0) : 0;
+        int id = mHitSeq++;
+        moveButtonArt(art, row, sel || mPressed == id, x, y, bw, bh);
+        mHits.add(new Hit(new RectF(x, y, x + bw, y + bh), id, action));
+        // Name in the button's own colour, as the game does
+        int base = MSG_BASE;
+        if (art != null && row * CMD_H + 34 < art.getHeight()) base = art.getPixel(10, row * CMD_H + 34) | 0xff000000;
+        String name = m.optString("name", "");
+        Typeface nf = measure(name, mFont, 27) > bw - 40 ? mNarrowFont : mFont;
+        text(ellipsize(name, nf, 27, bw - 40), x + bw / 2f, y + (compact ? 5 : 8), nf, 27, 2, base, MSG_SHADOW);
+        float ly = y + (compact ? 38 : 42);
+        typeIcon(type, x + 22, ly, compact ? 48 : 56);
+        categoryIcon(m.optInt("cat", 2), x + (compact ? 74 : 84), ly + 1, compact ? 44 : 48);
+        int pp = m.optInt("pp", 0), max = Math.max(1, m.optInt("maxpp", 1));
+        int frac = pp == 0 ? 0 : Math.min(3, (int) Math.ceil(4.0 * pp / max));
+        text("PP " + pp + "/" + max, x + bw - 22, ly - 4, mSmallFont, 18, 1, PP_BASE[frac], PP_SHADOW[frac]);
+        if (compact) return;
+        // As on the 3DS: how well it works against the opponent
+        JSONArray eff = m.optJSONArray("eff");
+        String e = eff != null && eff.length() > 0 ? eff.optString(0, "") : "";
+        String et = effText(e);
+        if (!et.isEmpty()) text(et, x + bw / 2f, y + 60, mSmallFont, 18, 2, effColor(e), MSG_SHADOW);
+    }
+
+    private static String effText(String e)
+    {
+        return "super".equals(e) ? "Super effective" : "weak".equals(e) ? "Not very effective"
+            : "none".equals(e) ? "No effect" : "normal".equals(e) ? "Effective" : "";
+    }
+
+    private static int effColor(String e)
+    {
+        return "super".equals(e) ? 0xff208830 : "weak".equals(e) ? 0xffc06010 : "none".equals(e) ? 0xffb02828 : MSG_BASE;
+    }
+
+    private static final String[] CATEGORY = { "Physical", "Special", "Status" };
+
+    /** Details of one move: power, accuracy, effect chance, priority and what it does. */
+    private void drawMoveDetails(JSONObject m, float x, float y, float w, float h)
+    {
+        if (m == null) return;
+        blt9("Graphics/Pictures/Battle/overlay_message", x, y, w, h);
+        float tx = x + 18, ty = y + 8;
+        int cat = Math.max(0, Math.min(2, m.optInt("cat", 2)));
+        float nw = text(m.optString("name", ""), tx, ty, mFont, 27, 0, MSG_BASE, MSG_SHADOW);
+        typeIcon(m.optJSONObject("type"), tx + nw + 12, ty + 4, 56);
+        categoryIcon(cat, tx + nw + 72, ty + 5, 48);
+        JSONArray eff = m.optJSONArray("eff");
+        String e = eff != null && eff.length() > 0 ? eff.optString(0, "") : "";
+        if (!effText(e).isEmpty()) text(effText(e), x + w - 18, ty + 4, mSmallFont, 18, 1, effColor(e), MSG_SHADOW);
+        StringBuilder sb = new StringBuilder();
+        int pw = m.optInt("power", 0), acc = m.optInt("acc", 0), chance = m.optInt("chance", 0), pri = m.optInt("priority", 0);
+        sb.append(CATEGORY[cat]);
+        if (cat != 2) sb.append("   Power ").append(pw > 1 ? String.valueOf(pw) : "-");
+        sb.append("   Accuracy ").append(acc > 0 ? acc + "%" : "-");
+        if (chance > 0 && chance < 100) sb.append("   Effect ").append(chance).append('%');
+        if (pri != 0) sb.append("   Priority ").append(pri > 0 ? "+" : "").append(pri);
+        text(sb.toString(), tx, ty + 28, mSmallFont, 18, 0, 0xff304878, 0xffa8b8d0);
+        List<String> lines = wrap(m.optString("desc", ""), mSmallFont, 17, w - 36);
+        int maxLines = Math.max(1, (int) ((h - 58) / 18));
+        for (int i = 0; i < Math.min(maxLines, lines.size()); i++) {
+            String line = lines.get(i);
+            if (i == maxLines - 1 && lines.size() > maxLines) line = ellipsize(line + " ...", mSmallFont, 17, w - 36);
+            text(line, tx, ty + 50 + i * 18, mSmallFont, 17, 0, MSG_BASE, MSG_SHADOW);
+        }
+    }
+
+    /** Stretches a framed graphic (the message box) to any size, keeping its 12px border. */
+    private void blt9(String rel, float x, float y, float w, float h)
+    {
+        Bitmap b = image(rel);
+        if (b == null) { box(x, y, w, h); return; }
+        int bw = b.getWidth(), bh = b.getHeight(), e = 12;
+        int[] sx = { 0, e, bw - e, bw };
+        int[] sy = { 0, e, bh - e, bh };
+        float[] dx = { x, x + e, x + w - e, x + w };
+        float[] dy = { y, y + e, y + h - e, y + h };
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                mC.drawBitmap(b, new Rect(sx[i], sy[j], sx[i + 1], sy[j + 1]), new RectF(dx[i], dy[j], dx[i + 1], dy[j + 1]), mBlit);
+    }
+
+    // Battle choices give instant feedback: the controls dim until the game
+    // has acted on the tap (or a moment has passed), and can't be tapped twice
+    private long mPendingUntil;
+    private String mPendingSig = "";
+
+    private String battleSig()
+    {
+        JSONObject b = mState != null ? mState.optJSONObject("battle") : null;
+        return b == null ? "" : b.optString("menu", "") + "/" + b.optInt("battler", -1) + "/" + b.optBoolean("special_on", false);
+    }
+
+    private void sendBattle(String... kv)
+    {
+        command(kv);
+        mPendingSig = battleSig();
+        mPendingUntil = SystemClock.uptimeMillis() + 1200;
     }
 
     /**
@@ -1399,7 +1538,11 @@ public class SecondScreenView extends View
             blt("Graphics/Pictures/Battle/cursor_mega", (int) (x + 12), (int) (y + 8), 14, on ? 56 : 10, 34, 34, 30, 30, mBlit);
             tx += 16;
         }
-        text(label, tx, y + 4, mFont, 27, 2, 0xfff8f0e0, 0xff404040);
+        float room = w - 24 - (icon ? 34 : 0);
+        Typeface tf = measure(label, mFont, 27) > room ? mNarrowFont : mFont;
+        float size = 27;
+        while (size > 18 && measure(label, tf, size) > room) size -= 1;
+        text(label, tx, y + 4 + (27 - size) / 2f, tf, size, 2, 0xfff8f0e0, 0xff404040);
         if (action != null) mHits.add(new Hit(new RectF(x, y, x + w, y + h), id, action));
     }
 
@@ -1472,6 +1615,11 @@ public class SecondScreenView extends View
                 mPressed = -1;
                 for (int i = mHits.size() - 1; i >= 0; i--) {
                     if (mHits.get(i).r.contains(vx, vy)) { mPressed = mHits.get(i).id; break; }
+                }
+                if (mPressed >= 0) {
+                    // Immediate feedback: pressed graphic now, and a light tick
+                    performHapticFeedback(android.view.HapticFeedbackConstants.KEYBOARD_TAP);
+                    invalidate();
                 }
                 return true;
             case MotionEvent.ACTION_MOVE:
