@@ -106,6 +106,26 @@ key KEYCODE_BACK; sleep 4; shot "back_key_menu"
 key KEYCODE_BACK; sleep 3
 check_alive || { log "!! back key closed the game"; FAIL=1; }
 
+# Dual screen: attach a simulated second display (like the AYN Thor's
+# bottom screen) while the game runs; the info panel should appear on it and
+# the game should start writing its status file.
+log "Attaching simulated second display"
+adb shell settings put global overlay_display_devices 960x540/240
+sleep 8
+pad KEYCODE_BUTTON_A; sleep 4
+shot "dual_screen"
+adb shell dumpsys display | grep -E "mDisplayId=|mName=|Overlay" | head -10
+if grep -q "Second screen found" "$OUT/logcat.txt"; then
+  log "Dual screen panel opened"
+else
+  log "!! dual screen panel did not open"; FAIL=1
+fi
+echo "---- status file ----"
+adb shell cat "/sdcard/Android/data/$PKG/files/game/.tw_status.json" 2>&1 | head -c 2000; echo
+adb shell settings put global overlay_display_devices null
+sleep 3
+check_alive || { log "!! game died when the second display was removed"; FAIL=1; }
+
 sleep 2
 kill "$LOGCAT_PID" 2>/dev/null
 

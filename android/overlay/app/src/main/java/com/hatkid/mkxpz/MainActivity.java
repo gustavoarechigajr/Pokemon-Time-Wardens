@@ -35,6 +35,9 @@ public class MainActivity extends SDLActivity
     private final Gamepad mGamepad = new Gamepad();
     private boolean mGamepadInvisible = false;
 
+    // Info panel on a second screen (dual-screen devices such as AYN Thor)
+    private DualScreen mDualScreen;
+
     private void runSDLThread()
     {
         if (!mStarted) {
@@ -56,6 +59,8 @@ public class MainActivity extends SDLActivity
         GAME_PATH = GameInstallActivity.getGameDir(this).getAbsolutePath();
 
         super.onCreate(savedInstanceState);
+
+        mDualScreen = new DualScreen(this, GameInstallActivity.getGameDir(this));
 
         // Get Debug flag
         try {
@@ -86,6 +91,14 @@ public class MainActivity extends SDLActivity
         super.onStart();
 
         runSDLThread();
+        mDualScreen.onStart();
+    }
+
+    @Override
+    protected void onStop()
+    {
+        mDualScreen.onStop();
+        super.onStop();
     }
 
     @Override

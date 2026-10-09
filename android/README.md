@@ -65,6 +65,27 @@ The phone's own back button/gesture acts as the game's **Back** button. It
 doesn't close the game, so an accidental swipe can't lose unsaved progress.
 Keyboards also work.
 
+## Dual-screen devices (e.g. AYN Thor Max)
+
+When the device has a second screen, the game runs on the main screen and
+the second screen shows a live **info panel**:
+
+* your party: icons, nicknames, levels, HP bars and status conditions
+  (shiny Pokémon are shown in gold)
+* trainer name, current location, money, badges and play time
+* touch shortcut buttons: **Menu**, **Action**, **Special**, **Speed +**,
+  **Speed -**
+
+The panel updates within about half a second of changes, including during
+battles. **Panel off** blanks the second screen (tap it to turn the panel
+back on), and the app remembers that choice. Touching the panel never takes
+focus away from the physical controls.
+
+How it works: `game_patches/Mods/Android_DualScreen.rb` (loaded through the
+game's existing `Mods` folder support) writes a small status file while the
+panel is open. `DualScreen.java` shows it on the second display. Nothing
+extra runs on single-screen devices.
+
 ## How it works
 
 * **Engine**: the game runs on mkxp-z, the same engine as `Game.exe`, using
