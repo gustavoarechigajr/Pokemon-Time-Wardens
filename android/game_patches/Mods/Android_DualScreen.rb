@@ -380,11 +380,30 @@ if (System.platform[/Android/] rescue false)
         repel = REPELS.find { |r| GameData::Item.exists?(r) && $bag.has?(r) }
         {
           "registered" => reg,
+          "field" => (field_items rescue []),
           "repel" => repel ? { "id" => repel.to_s, "name" => GameData::Item.get(repel).name, "qty" => $bag.quantity(repel),
                                "steps" => ($PokemonGlobal.repel rescue 0) } : nil
         }
       rescue StandardError
         {}
+      end
+
+      # Field tools from the Advanced Items Field Moves plugin that are used on
+      # their own (obstacles like trees and boulders clear themselves when the
+      # player interacts with them, so those aren't listed)
+      FIELD_TOOLS = %w[FLASH SWEETSCENT DEFOG WEATHERGADGET CAMOUFLAGE DIG TELEPORT FLY]
+
+      def field_items
+        return [] if !defined?(AdvancedItemsFieldMoves) || !$bag
+        FIELD_TOOLS.map do |key|
+          cfg = (AdvancedItemsFieldMoves.const_get("#{key}_CONFIG") rescue nil)
+          next nil if !cfg || !cfg[:active]
+          id = cfg[:internal_name]
+          data = GameData::Item.try_get(id)
+          next nil if !data || !(pbCanUseItem(cfg) rescue false)
+          { "id" => data.id.to_s, "name" => data.name, "icon" => (GameData::Item.icon_filename(data.id) rescue "").to_s,
+            "fly" => key == "FLY" }
+        end.compact
       end
 
       def battler_types(b)

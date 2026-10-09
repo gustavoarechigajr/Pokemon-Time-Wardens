@@ -142,7 +142,8 @@ along the bottom switch pages:
 * **MORE**: **MENU** (pause menu), **SAVE**, **SPEED** (the current game
   speed, which on PC only appears in the window title), **REPEL** (uses
   your next Repel, steps left shown), your registered key items (Bicycle,
-  rods...) and **SCREEN OFF**, which blanks the second screen until you tap
+  rods...) and the field tools you own (Lantern, Sweet Scent, Nimbus - which
+  opens the MAP page to pick where to fly...) and **SCREEN OFF**, which blanks the second screen until you tap
   it. The app remembers the page and the on/off choice.
 
 When the game asks you to type a name, the second screen turns into a

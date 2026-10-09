@@ -1301,17 +1301,38 @@ public class SecondScreenView extends View
             small(steps + " steps left", 272, 120, LILAC);
         }
 
-        JSONArray reg = quick != null ? quick.optJSONArray("registered") : null;
+        // Registered items plus the field tools you own (Lantern, Nimbus...)
+        List<JSONObject> tools = new ArrayList<>();
+        java.util.Set<String> ids = new java.util.HashSet<>();
+        for (String key : new String[] { "registered", "field" }) {
+            JSONArray arr = quick != null ? quick.optJSONArray(key) : null;
+            for (int i = 0; arr != null && i < arr.length(); i++) {
+                JSONObject it = arr.optJSONObject(i);
+                if (it != null && ids.add(it.optString("id", ""))) tools.add(it);
+            }
+        }
         box(6, 164, 500, 108);
-        small("Registered items", 16, 170, GOLD);
-        int n = reg == null ? 0 : reg.length();
-        for (int i = 0; i < Math.min(n, 4); i++) {
-            JSONObject it = reg.optJSONObject(i);
+        small("Items & tools", 16, 170, GOLD);
+        int n = Math.min(tools.size(), 8);
+        boolean compact = n > 4;   // two rows of smaller tiles
+        float tw = compact ? 118 : 118, th = compact ? 36 : 70;
+        for (int i = 0; i < n; i++) {
+            JSONObject it = tools.get(i);
             final String id = it.optString("id", "");
-            float x = 12 + i * 124, y = 196;
-            button("", x, y, 118, 70, can, false, () -> command("cmd", "key_item", "item", id));
-            icon(it.optString("icon", ""), x + 59, y + 21, 36, false, null);
-            text(ellipsize(it.optString("name", ""), mSmallFont, 17, 108), x + 59, y + 42, mSmallFont, 17, 2, can ? WHITE : DIM, SHADOW);
+            final boolean fly = it.optBoolean("fly", false);
+            float x = 12 + (i % 4) * 124, y = compact ? 194 + (i / 4) * 38 : 196;
+            button("", x, y, tw, th, can || fly, false, () -> {
+                if (fly) setPage(P_MAP);   // pick a destination on the map
+                else command("cmd", "key_item", "item", id);
+            });
+            String name = ellipsize(it.optString("name", ""), mSmallFont, 17, compact ? 76 : 108);
+            if (compact) {
+                icon(it.optString("icon", ""), x + 20, y + th / 2f, 30, false, null);
+                text(name, x + 38, capTop(mSmallFont, 17, y + th / 2f), mSmallFont, 17, 0, can || fly ? WHITE : DIM, SHADOW);
+            } else {
+                icon(it.optString("icon", ""), x + 59, y + 21, 36, false, null);
+                text(name, x + 59, y + 42, mSmallFont, 17, 2, can || fly ? WHITE : DIM, SHADOW);
+            }
         }
         if (n == 0) {
             small("Register key items (like the Bicycle)", 16, 204, DIM);
