@@ -78,7 +78,9 @@ game's own artwork and fonts, so it looks like part of Time Wardens.
 * **JOURNAL**:
   * the same BW-style location sign the game shows when you enter an area
   * your current story objective from the quest log (chapter, where to
-    go, what to do)
+    go, what to do). Long objectives show 4 lines at a time with a
+    blinking ▼ like the game's message boxes; tap the box, or wait a few
+    seconds, for the rest.
   * trainer name, money, play time
   * the in-game clock, time of day and season
   * the chapters you've earned

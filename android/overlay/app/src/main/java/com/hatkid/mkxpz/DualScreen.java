@@ -215,6 +215,19 @@ public class DualScreen implements DisplayManager.DisplayListener
         JSONObject mState;
         long mLastModified = -1;
         long mLastPoll = 0;
+        // Objective text paging
+        static final int LINES_PER_PAGE = 4;
+        String mObjectiveText = null;
+        List<String> mObjectiveLines = new ArrayList<>();
+        int mObjectivePage = 0;
+        long mObjectivePageAt = 0;
+
+        void nextObjectivePage()
+        {
+            mObjectivePage++;
+            mObjectivePageAt = SystemClock.uptimeMillis();
+        }
+
         // Displayed HP per party slot, animated towards the real value
         final float[] mShownHp = new float[6];
         final String[] mShownName = new String[6];
@@ -546,50 +559,68 @@ public class DualScreen implements DisplayManager.DisplayListener
             blt(mPressed == 4 ? "Graphics/Pictures/Party/icon_cancel_narrow_sel" : "Graphics/Pictures/Party/icon_cancel_narrow", 392, 22);
             text("SCREEN OFF", 448, 26, mNarrowFont, 22, 2, WHITE, SHADOW);
 
-            // Story objective
-            box(8, 66, 340, 184);
+            // Story objective: 4 lines at a time, paged like a message box
+            box(8, 66, 340, 180);
             JSONObject q = mState.optJSONObject("quest");
             if (q != null) {
                 text(q.optString("name", ""), 20, 72, mNarrowFont, 27, 0, GOLD, GOLD_SHADOW);
                 String where = q.optString("location", "");
                 if (!where.isEmpty()) text(where, 20, 100, mSmallFont, 21, 0, LILAC, SHADOW);
-                List<String> lines = wrap(q.optString("desc", ""), mSmallFont, 21, 318);
-                int max = 5;
-                for (int i = 0; i < Math.min(max, lines.size()); i++) {
-                    String l = lines.get(i);
-                    if (i == max - 1 && lines.size() > max) l = l + "...";
-                    text(l, 20, 126 + i * 23, mSmallFont, 21, 0, WHITE, SHADOW);
+                String desc = q.optString("desc", "");
+                if (!desc.equals(mObjectiveText)) {
+                    mObjectiveText = desc;
+                    mObjectiveLines = wrap(desc, mSmallFont, 21, 300);
+                    mObjectivePage = 0;
+                    mObjectivePageAt = SystemClock.uptimeMillis();
+                }
+                int pages = Math.max(1, (mObjectiveLines.size() + LINES_PER_PAGE - 1) / LINES_PER_PAGE);
+                long now = SystemClock.uptimeMillis();
+                if (pages > 1 && now - mObjectivePageAt > 7000) nextObjectivePage();
+                mObjectivePage %= pages;
+                int first = mObjectivePage * LINES_PER_PAGE;
+                for (int i = 0; i < LINES_PER_PAGE && first + i < mObjectiveLines.size(); i++) {
+                    text(mObjectiveLines.get(first + i), 20, 126 + i * 23, mSmallFont, 21, 0, WHITE, SHADOW);
+                }
+                if (pages > 1 && (now / 400) % 2 == 0) {
+                    android.graphics.Path arrow = new android.graphics.Path();
+                    arrow.moveTo(326, 228);
+                    arrow.lineTo(338, 228);
+                    arrow.lineTo(332, 236);
+                    arrow.close();
+                    mShape.setStyle(Paint.Style.FILL);
+                    mShape.setColor(WHITE);
+                    mC.drawPath(arrow, mShape);
                 }
             } else {
                 text("No active quest", 20, 72, mNarrowFont, 27, 0, GOLD, GOLD_SHADOW);
             }
 
             // Trainer
-            box(356, 66, 148, 184);
+            box(356, 66, 148, 180);
             text(mState.optString("player", ""), 368, 72);
             text(String.format(Locale.US, "$%,d", mState.optLong("money", 0)), 368, 102, mSmallFont, 21, 0, WHITE, SHADOW);
             long pt = mState.optLong("playtime", 0);
             text(String.format(Locale.US, "Play %d:%02d", pt / 3600, (pt / 60) % 60), 368, 126, mSmallFont, 21, 0, WHITE, SHADOW);
             JSONObject clock = mState.optJSONObject("clock");
             if (clock != null) {
-                text(clock.optString("time", ""), 368, 156, mFont, 27, 0, GOLD, GOLD_SHADOW);
+                text(clock.optString("time", ""), 368, 152, mFont, 27, 0, GOLD, GOLD_SHADOW);
                 String tod = clock.optString("tod", "");
                 int todColor = "Night".equals(tod) ? 0xff90a8f8 : "Evening".equals(tod) ? 0xffe8a060
                     : "Morning".equals(tod) ? 0xfff8e0a0 : 0xfff8f8a0;
-                text(tod, 368, 184, mSmallFont, 21, 0, todColor, SHADOW);
-                text(clock.optString("season", ""), 368, 208, mSmallFont, 21, 0, LILAC, SHADOW);
+                text(tod, 368, 180, mSmallFont, 21, 0, todColor, SHADOW);
+                text(clock.optString("season", ""), 368, 204, mSmallFont, 21, 0, LILAC, SHADOW);
             }
 
             // Chapters (Trainer Card badge sheet: 9 per row, 32x32)
-            box(8, 256, 496, 66);
+            box(8, 250, 496, 76);
             JSONArray badges = mState.optJSONArray("badges");
             for (int i = 0; i < 18; i++) {
                 boolean got = badges != null && badges.optBoolean(i, false);
                 int sx = (i % 9) * 32, sy = (i / 9) * 32;
-                int bx = 22 + (i % 9) * 52 + (i / 9) * 26, by = 262 + (i / 9) * 26;
+                int bx = 28 + (i % 9) * 52, by = 255 + (i / 9) * 34;
                 Bitmap b = image("Graphics/Pictures/Trainer Card/icon_badges");
                 if (b != null) {
-                    mC.drawBitmap(b, new Rect(sx, sy, sx + 32, sy + 32), new Rect(bx, by, bx + 28, by + 28),
+                    mC.drawBitmap(b, new Rect(sx, sy, sx + 32, sy + 32), new Rect(bx, by, bx + 32, by + 32),
                         got ? mBlit : mDim);
                 }
             }
@@ -606,6 +637,7 @@ public class DualScreen implements DisplayManager.DisplayListener
                 }
             }
             if (mPage == PAGE_JOURNAL && vx >= 392 && vx < 504 && vy >= 22 && vy < 58) return 4;
+            if (mPage == PAGE_JOURNAL && vx >= 8 && vx < 348 && vy >= 66 && vy < 246) return 5;
             return -1;
         }
 
@@ -646,6 +678,7 @@ public class DualScreen implements DisplayManager.DisplayListener
                     if (e.getActionMasked() == MotionEvent.ACTION_UP && hit(vx, vy) == b) {
                         if (b == PAGE_PARTY || b == PAGE_JOURNAL) setPage(b);
                         if (b == 4) setScreenOn(false);
+                        if (b == 5) nextObjectivePage();
                     }
                     return true;
                 }
