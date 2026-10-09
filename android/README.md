@@ -68,23 +68,34 @@ Keyboards also work.
 ## Dual-screen devices (e.g. AYN Thor Max)
 
 When the device has a second screen, the game runs on the main screen and
-the second screen shows a live **info panel**:
+the second screen becomes a **second game screen**. It is drawn with the
+game's own artwork and fonts, so it looks like part of Time Wardens.
 
-* your party: icons, nicknames, levels, HP bars and status conditions
-  (shiny Pokémon are shown in gold)
-* trainer name, current location, money, badges and play time
-* touch shortcut buttons: **Menu**, **Action**, **Special**, **Speed +**,
-  **Speed -**
+* **PARTY**: a live copy of the in-game party screen, with the same starry
+  panels, each Pokémon's own Poké Ball, animated party icons, HP bars that
+  drain and refill during battles, level, gender, status, shiny star and
+  held-item marker.
+* **JOURNAL**:
+  * the same BW-style location sign the game shows when you enter an area
+  * your current story objective from the quest log (chapter, where to
+    go, what to do)
+  * trainer name, money, play time
+  * the in-game clock, time of day and season
+  * the chapters you've earned
+* Buttons along the bottom: switch pages, **MENU** (opens the pause menu)
+  and **SPEED** (cycles the game speed). The current speed is shown there,
+  since on PC it only appears in the window title.
+* **SCREEN OFF** (on the Journal page) blanks the second screen. Tap it to
+  wake it. The app remembers the page and the on/off choice.
 
-The panel updates within about half a second of changes, including during
-battles. **Panel off** blanks the second screen (tap it to turn the panel
-back on), and the app remembers that choice. Touching the panel never takes
-focus away from the physical controls.
+Touching the second screen never takes focus away from the physical
+controls. Before a save is loaded it shows the Time Wardens title.
 
 How it works: `game_patches/Mods/Android_DualScreen.rb` (loaded through the
 game's existing `Mods` folder support) writes a small status file while the
-panel is open. `DualScreen.java` shows it on the second display. Nothing
-extra runs on single-screen devices.
+second screen is open. `DualScreen.java` draws the pages from it at the
+game's 512x384 resolution and scales them up pixel-perfect. Nothing extra
+runs on single-screen devices.
 
 ## How it works
 

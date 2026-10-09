@@ -113,8 +113,31 @@ log "Attaching simulated second display"
 adb shell settings put global overlay_display_devices 960x540/240
 sleep 8
 pad KEYCODE_BUTTON_A; sleep 4
-shot "dual_screen"
+shot "dual_screen_main"
 adb shell dumpsys display | grep -E "mDisplayId=|mName=|Overlay" | head -10
+# Screenshot the second display itself
+SECOND_ID=$(adb shell dumpsys SurfaceFlinger --display-id 2>/dev/null | sed -n '2p' | awk '{print $2}')
+DISPLAY_NUM=$(adb shell dumpsys display | grep -oE "mDisplayId=[1-9][0-9]*" | head -1 | cut -d= -f2)
+echo "second display: logical=$DISPLAY_NUM surfaceflinger=$SECOND_ID"
+shot_display() {
+  local name="$1"
+  if [ -n "$SECOND_ID" ]; then
+    adb exec-out screencap -d "$SECOND_ID" -p > "$OUT/$name.png" 2>/dev/null
+    convert "$OUT/$name.png" -resize 640x -quality 70 "$OUT/$name.jpg" 2>/dev/null && \
+      echo "==SHOT $name== $(base64 -w0 "$OUT/$name.jpg")"
+  fi
+}
+shot_display "second_party"
+# Tap the JOURNAL button on the 960x540 second screen (page is scaled x1.406, offset 120)
+if [ -n "$DISPLAY_NUM" ]; then
+  adb shell input -d "$DISPLAY_NUM" tap 387 498
+  sleep 2
+  shot_display "second_journal"
+  grep -q "Page journal" "$OUT/logcat.txt" && log "Second screen journal tab works" || log "!! journal tap not registered"
+  # Back to the party page
+  adb shell input -d "$DISPLAY_NUM" tap 210 498
+  sleep 1
+fi
 if grep -q "Second screen found" "$OUT/logcat.txt"; then
   log "Dual screen panel opened"
 else

@@ -1,17 +1,31 @@
 #===============================================================================
-# Android dual-screen status feed (added to the game only in the Android APK)
+# Android dual-screen feed (added to the game only in the Android APK)
 #-------------------------------------------------------------------------------
-# On devices with a second screen (e.g. AYN Thor) the app shows a live info
-# panel there. While that panel is open, the app creates ".tw_dualscreen" in
-# the game folder; this script then writes the player's status to
-# ".tw_status.json" whenever it changes, and the panel displays it.
-# Nothing here runs on single-screen devices or on PC.
+# On devices with a second screen (e.g. AYN Thor) the app shows a second game
+# screen there: a live copy of the party screen and a journal page (location
+# sign, current story objective, chapters, money, clock, game speed).
+# While that screen is open the app creates ".tw_dualscreen" in the game
+# folder; this script then writes the game state the screen needs to
+# ".tw_status.json" whenever it changes. Nothing here runs on single-screen
+# devices or on PC.
 #===============================================================================
 if (System.platform[/Android/] rescue false)
   module AndroidDualScreen
     FLAG     = File.join(Dir.pwd, ".tw_dualscreen")
     OUT      = File.join(Dir.pwd, ".tw_status.json")
-    INTERVAL = 30   # frames between checks (~0.5 s)
+    INTERVAL = 20   # frames between checks
+
+    # Same word lists and order as the BW Location Signposts plugin
+    SIGN_TYPES = [
+      ["town",   :TOWN,   ["town", "safari"]],
+      ["city",   :CITY,   ["city"]],
+      ["bridge", :BRIDGE, ["bridge"]],
+      ["route",  :ROUTE,  ["route", "path"]],
+      ["forest", :FOREST, ["forest", "grove"]],
+      ["cave",   :CAVE,   ["cave"]],
+      ["port",   :PORT,   ["port", "harbor"]],
+      ["desert", :DESERT, ["desert"]]
+    ]
 
     @frame  = 0
     @last   = nil
@@ -33,33 +47,99 @@ if (System.platform[/Android/] rescue false)
       end
     end
 
+    # Row of Graphics/Pictures/statuses for this Pokémon, like the party screen
+    def status_icon(pkmn)
+      return GameData::Status.count - 1 if pkmn.fainted?
+      return GameData::Status.get(pkmn.status).icon_position if pkmn.status != :NONE
+      return GameData::Status.count if pkmn.pokerusStage == 1
+      return -1
+    rescue StandardError
+      -1
+    end
+
     def pokemon_entry(pkmn)
-      egg = pkmn.egg?
-      icon = (GameData::Species.icon_filename_from_pokemon(pkmn) rescue nil)
-      status = egg ? "NONE" : (pkmn.status rescue :NONE).to_s
+      icon = (GameData::Species.icon_filename_from_pokemon(pkmn) rescue nil).to_s
+      if pkmn.egg?
+        return { "name" => pkmn.name, "egg" => true, "icon" => icon }
+      end
+      gender = pkmn.genderless? ? 2 : (pkmn.male? ? 0 : 1)
       {
-        "name"   => egg ? "Egg" : pkmn.name,
-        "lv"     => egg ? 0 : pkmn.level,
-        "hp"     => egg ? 0 : pkmn.hp,
-        "maxhp"  => egg ? 0 : pkmn.totalhp,
-        "status" => status,
-        "egg"    => egg,
-        "shiny"  => (pkmn.shiny? rescue false),
-        "icon"   => icon.to_s
+        "name"    => pkmn.name,
+        "lv"      => pkmn.level,
+        "hp"      => pkmn.hp,
+        "maxhp"   => pkmn.totalhp,
+        "gender"  => gender,
+        "status"  => status_icon(pkmn),
+        "shiny"   => (pkmn.shiny? rescue false),
+        "item"    => !pkmn.item.nil?,
+        "ball"    => (pkmn.poke_ball rescue nil).to_s,
+        "fainted" => pkmn.fainted?,
+        "icon"    => icon
       }
+    end
+
+    def location
+      name = ($game_map.name rescue "").to_s
+      map_id = $game_map.map_id
+      sign = "none"
+      SIGN_TYPES.each do |type, const, defaults|
+        words = Object.const_defined?(const) ? Object.const_get(const) : defaults
+        hit = words.any? do |w|
+          w.is_a?(String) ? (name.include?(w) || name.include?(w.sub(/^./) { |m| m.upcase })) : w == map_id
+        end
+        sign = type if hit
+      end
+      route_no = (sign == "route") ? name.gsub(/[^0-9]/, "") : ""
+      { "name" => name, "sign" => sign, "route_no" => route_no }
+    end
+
+    def clock
+      now = pbGetTimeNow
+      tod = if PBDayNight.isNight?(now) then "Night"
+            elsif PBDayNight.isMorning?(now) then "Morning"
+            elsif PBDayNight.isEvening?(now) then "Evening"
+            else "Day"
+            end
+      season = (pbGetSeasonName(pbGetSeason) rescue "")
+      { "time" => now.strftime("%H:%M"), "tod" => tod, "season" => season.to_s }
+    rescue StandardError
+      { "time" => "", "tod" => "", "season" => "" }
+    end
+
+    def quest
+      return nil if !$PokemonGlobal || !$quest_data
+      active = $PokemonGlobal.quests.active_quests
+      return nil if !active || active.empty?
+      q = active.reverse.find { |x| x.story } || active.last
+      desc = begin
+        $quest_data.getQuestDescription(q.id, q.stage)
+      rescue ArgumentError
+        $quest_data.getQuestDescription(q.id)
+      end
+      {
+        "name"     => $quest_data.getName(q.id),
+        "location" => ($quest_data.getStageLocation(q.id, q.stage) rescue ""),
+        "desc"     => desc.to_s.gsub(/\s+/, " ").strip,
+        "story"    => q.story ? true : false
+      }
+    rescue StandardError
+      nil
     end
 
     def status
       return { "ingame" => false } if !$player || !$game_map
-      party = ($player.party || []).compact.map { |p| pokemon_entry(p) }
+      badges = (0...18).map { |i| $player.badges[i] ? true : false } rescue []
       {
-        "ingame" => true,
-        "player" => $player.name,
-        "map"    => ($game_map.name rescue ""),
-        "money"  => ($player.money rescue 0),
-        "badges" => ($player.badge_count rescue 0),
-        "time"   => (($stats.play_time rescue 0) || 0).to_i,
-        "party"  => party
+        "ingame"   => true,
+        "player"   => $player.name,
+        "money"    => ($player.money rescue 0),
+        "badges"   => badges,
+        "playtime" => (($stats.play_time rescue 0) || 0).to_i,
+        "speed"    => (defined?($GameSpeed) && $GameSpeed) ? $GameSpeed + 1 : 1,
+        "location" => location,
+        "clock"    => clock,
+        "quest"    => quest,
+        "party"    => ($player.party || []).compact.first(6).map { |p| pokemon_entry(p) }
       }
     end
 
@@ -75,7 +155,7 @@ if (System.platform[/Android/] rescue false)
       File.rename(tmp, OUT)
       @last = text
     rescue StandardError
-      # Never let the info panel break the game
+      # Never let the second screen break the game
       @broken = true
     end
   end
