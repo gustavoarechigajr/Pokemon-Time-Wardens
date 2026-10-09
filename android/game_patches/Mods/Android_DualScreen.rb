@@ -52,7 +52,7 @@ if (System.platform[/Android/] rescue false)
     @cache      = {}
 
     class << self
-      attr_accessor :battle_scene, :battle_menu, :entry_scene
+      attr_accessor :battle_scene, :battle_menu, :entry_scene, :battle_text
       attr_reader :forced
 
       def active?; @active; end
@@ -97,8 +97,9 @@ if (System.platform[/Android/] rescue false)
 
       def context
         return "title" if !$player || !$game_map
-        return "battle" if in_battle?
+        # Naming comes first: a caught Pokémon is nicknamed mid-battle
         return "entry" if @entry_scene
+        return "battle" if in_battle?
         return "map" if map_safe?
         "busy"
       end
@@ -408,6 +409,7 @@ if (System.platform[/Android/] rescue false)
         end
         st = {
           "menu"  => menu ? menu[:kind].to_s : "none",
+          "message" => @battle_text.to_s,
           "foes"  => foes,
           "allies"=> allies
         }
@@ -692,8 +694,24 @@ if (System.platform[/Android/] rescue false)
       #-------------------------------------------------------------------------
       # Text history
       #-------------------------------------------------------------------------
+      # Battle message shown on the second screen's battle page
+      def battle_message(msg)
+        return if !msg.is_a?(String) || !@active
+        @battle_text = clean_text(msg)[1]
+      end
+
       def log_message(msg)
         return if !msg.is_a?(String) || !@active
+        speaker, text = clean_text(msg)
+        return if text.empty?
+        entry = speaker ? "#{speaker}: #{text}" : text
+        return if @log.last == entry
+        @log.push(entry)
+        @log.shift while @log.size > 30
+      end
+
+      # Strips message control codes; returns [speaker, text]
+      def clean_text(msg)
         text = msg.dup
         speaker = nil
         text = text.gsub(/\\xn\[(.*?)\]/i) { speaker = $1; "" }
@@ -701,11 +719,7 @@ if (System.platform[/Android/] rescue false)
         text = text.gsub(/\\v\[(\d+)\]/i) { ($game_variables[$1.to_i] rescue "").to_s }
         text = text.gsub(/\\[a-z]+\[[^\]]*\]/i, "").gsub(/\\[a-z.!|^<>]+/i, "").gsub(/<[^>]+>/, "")
         text = text.gsub(/[\x00-\x1f]/, " ").gsub(/\s+/, " ").strip
-        return if text.empty?
-        entry = speaker ? "#{speaker}: #{text}" : text
-        return if @log.last == entry
-        @log.push(entry)
-        @log.shift while @log.size > 30
+        [speaker, text]
       end
 
       #-------------------------------------------------------------------------
@@ -798,7 +812,29 @@ if (System.platform[/Android/] rescue false)
       ret = super
       AndroidDualScreen.battle_scene = nil
       AndroidDualScreen.battle_menu = nil
+      AndroidDualScreen.battle_text = nil
       ret
+    end
+
+    # pbDisplay is an alias of the original pbDisplayMessage, so both are hooked
+    def pbDisplayMessage(msg, *args)
+      (AndroidDualScreen.battle_message(msg) rescue nil)
+      super
+    end
+
+    def pbDisplay(msg, *args)
+      (AndroidDualScreen.battle_message(msg) rescue nil)
+      super
+    end
+
+    def pbDisplayPausedMessage(msg, *args, &block)
+      (AndroidDualScreen.battle_message(msg) rescue nil)
+      super
+    end
+
+    def pbShowCommands(msg, *args)
+      (AndroidDualScreen.battle_message(msg) rescue nil)
+      super
     end
 
     def pbCommandMenuEx(idxBattler, texts, mode = 0)
