@@ -496,11 +496,24 @@ public class SecondScreenView extends View
         Typeface tf = measure(label, mFont, 27) > w - 12 ? mNarrowFont : mFont;
         float size = 27;
         while (size > 16 && measure(label, tf, size) > w - 10) size -= 1;
+        text(label, x + w / 2f, capTop(tf, size, y + h / 2f), tf, size, 2, enabled ? WHITE : DIM, SHADOW);
+        if (enabled && action != null) mHits.add(new Hit(new RectF(x, y, x + w, y + h), id, action));
+    }
+
+    private final Rect mBounds = new Rect();
+
+    /**
+     * The y to give text() so capital letters are centred on cy. The game's
+     * fonts have a lot of space above the letters, so centring the whole
+     * line box puts text visibly low. (-1: half of the 2px shadow.)
+     */
+    private float capTop(Typeface tf, float size, float cy)
+    {
         mText.setTypeface(tf);
         mText.setTextSize(size);
-        float ty = y + (h - (mText.descent() - mText.ascent())) / 2f;
-        text(label, x + w / 2f, ty, tf, size, 2, enabled ? WHITE : DIM, SHADOW);
-        if (enabled && action != null) mHits.add(new Hit(new RectF(x, y, x + w, y + h), id, action));
+        mText.getTextBounds("H", 0, 1, mBounds);
+        float baseline = cy - mBounds.top / 2f;
+        return baseline + mText.ascent() - 1;
     }
 
     private void hit(float x, float y, float w, float h, Runnable action)
@@ -854,7 +867,7 @@ public class SecondScreenView extends View
         button("CLOSE", 346, 250, 160, 40, true, false, () -> mOverlay = O_NONE);
         if (!can) {
             box(6, 294, 500, 34);
-            text("Items and swapping work while you're free to move.", W / 2f, 300, mSmallFont, 17, 2, DIM, SHADOW);
+            text("Items and swapping work while you're free to move.", W / 2f, capTop(mSmallFont, 17, 311), mSmallFont, 17, 2, DIM, SHADOW);
         }
     }
 
@@ -918,7 +931,7 @@ public class SecondScreenView extends View
     {
         JSONObject p = selectedPokemon();
         box(6, 6, 500, 40);
-        text("Use on " + (p != null ? p.optString("name", "") : "") + "?", 20, 12);
+        text("Use on " + (p != null ? p.optString("name", "") : "") + "?", 20, capTop(mFont, 27, 26), mFont, 27, 0, WHITE, SHADOW);
         JSONArray items = mState.optJSONArray("heal");
         int n = items == null ? 0 : items.length();
         float top = 54, rowH = 44;
@@ -1035,7 +1048,7 @@ public class SecondScreenView extends View
     private void drawQuestLog()
     {
         box(6, 6, 500, 40);
-        text("Quest Log", 20, 12);
+        text("Quest Log", 20, capTop(mFont, 27, 26), mFont, 27, 0, WHITE, SHADOW);
         JSONArray quests = mState.optJSONArray("quests");
         float top = 52, height = 274;
         List<Object[]> rows = new ArrayList<>();   // {lines, color, header?}
@@ -1150,7 +1163,7 @@ public class SecondScreenView extends View
     {
         box(6, 6, 500, 40);
         JSONObject loc = mState.optJSONObject("location");
-        text(loc != null ? loc.optString("name", "") : "", 20, 12);
+        text(loc != null ? loc.optString("name", "") : "", 20, capTop(mFont, 27, 26), mFont, 27, 0, WHITE, SHADOW);
         JSONArray groups = mState.optJSONArray("route");
         float top = 52, height = 276;
         List<Object> rows = new ArrayList<>();   // String header or JSONObject entry
@@ -1190,7 +1203,7 @@ public class SecondScreenView extends View
     private void drawLog()
     {
         box(6, 6, 500, 40);
-        text("Recent text", 20, 12);
+        text("Recent text", 20, capTop(mFont, 27, 26), mFont, 27, 0, WHITE, SHADOW);
         JSONArray log = mState.optJSONArray("log");
         List<Object[]> lines = new ArrayList<>();
         for (int i = 0; log != null && i < log.length(); i++) {
@@ -1226,7 +1239,7 @@ public class SecondScreenView extends View
     {
         boolean can = free();
         box(6, 6, 500, 40);
-        text("Quick actions", 20, 12);
+        text("Quick actions", 20, capTop(mFont, 27, 26), mFont, 27, 0, WHITE, SHADOW);
         int speed = mState.optInt("speed", 1);
         button("MENU", 10, 54, 160, 48, can, false, () -> command("cmd", "menu"));
         button("SAVE", 176, 54, 160, 48, can, false, () -> command("cmd", "save"));
@@ -1244,7 +1257,7 @@ public class SecondScreenView extends View
 
         JSONArray reg = quick != null ? quick.optJSONArray("registered") : null;
         box(6, 164, 500, 108);
-        small("Registered items", 16, 168, GOLD);
+        small("Registered items", 16, 170, GOLD);
         int n = reg == null ? 0 : reg.length();
         for (int i = 0; i < Math.min(n, 4); i++) {
             JSONObject it = reg.optJSONObject(i);
@@ -1260,7 +1273,7 @@ public class SecondScreenView extends View
         }
         if (!can) {
             box(6, 280, 330, 46);
-            text("Available while you're free to move.", 18, 294, mSmallFont, 17, 0, DIM, SHADOW);
+            text("Available while you're free to move.", 18, capTop(mSmallFont, 17, 303), mSmallFont, 17, 0, DIM, SHADOW);
         }
         button("SCREEN OFF", 342, 280, 160, 46, true, false, () -> setScreenOn(false));
     }
@@ -1542,7 +1555,7 @@ public class SecondScreenView extends View
         Typeface tf = measure(label, mFont, 27) > room ? mNarrowFont : mFont;
         float size = 27;
         while (size > 18 && measure(label, tf, size) > room) size -= 1;
-        text(label, tx, y + 4 + (27 - size) / 2f, tf, size, 2, 0xfff8f0e0, 0xff404040);
+        text(label, tx, capTop(tf, size, y + h / 2f), tf, size, 2, 0xfff8f0e0, 0xff404040);
         if (action != null) mHits.add(new Hit(new RectF(x, y, x + w, y + h), id, action));
     }
 
