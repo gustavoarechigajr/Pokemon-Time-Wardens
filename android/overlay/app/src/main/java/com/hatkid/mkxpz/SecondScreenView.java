@@ -169,6 +169,7 @@ public class SecondScreenView extends View
         mPage = Math.max(0, Math.min(TABS.length - 1, mPrefs.getInt("page2", P_PARTY)));
         mScreenOn = mPrefs.getBoolean("panel_on", true);
         mMoveInfo = mPrefs.getBoolean("move_info", false);
+        mBagTab = Math.max(0, Math.min(2, mPrefs.getInt("bag_tab", 0)));
         mBlit.setFilterBitmap(false);
         mFont = font("Fonts/power green.ttf");
         mSmallFont = font("Fonts/power green small.ttf");
@@ -228,6 +229,43 @@ public class SecondScreenView extends View
         return Typeface.DEFAULT_BOLD;
     }
 
+    // ---- Sounds: the game's own menu sound effects -----------------------
+
+    private android.media.SoundPool mSounds;
+    private int mSndDecision, mSndCancel;
+    private boolean mSoundCancel;   // set by an action: play the cancel sound
+    private boolean mSoundSkip;     // set by an action: the game plays its own sound
+
+    private void loadSounds()
+    {
+        try {
+            mSounds = new android.media.SoundPool.Builder().setMaxStreams(3)
+                .setAudioAttributes(new android.media.AudioAttributes.Builder()
+                    .setUsage(android.media.AudioAttributes.USAGE_GAME)
+                    .setContentType(android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION).build())
+                .build();
+            mSndDecision = loadSound("Audio/SE/GUI sel decision.ogg");
+            mSndCancel = loadSound("Audio/SE/GUI sel cancel.ogg");
+        } catch (RuntimeException e) {
+            Log.w(TAG, "Sounds: " + e);
+            mSounds = null;
+        }
+    }
+
+    private int loadSound(String rel)
+    {
+        File f = resolve(rel);
+        return (f != null && mSounds != null) ? mSounds.load(f.getAbsolutePath(), 1) : 0;
+    }
+
+    private void playSound(int id)
+    {
+        if (mSounds == null || id == 0) return;
+        // Follows the game's sound-effect volume option
+        float vol = 0.8f * (mState != null ? mState.optInt("se_volume", 100) : 100) / 100f;
+        mSounds.play(id, vol, vol, 1, 0, 1f);
+    }
+
     // The game renames its new status file into place: react at once
     // instead of waiting for the next poll
     private final Runnable mStatusChanged = () -> { poll(true); invalidate(); };
@@ -237,6 +275,7 @@ public class SecondScreenView extends View
     {
         super.onAttachedToWindow();
         mHandler.post(mTick);
+        if (mSounds == null) loadSounds();
         if (!mDemo) {
             final String name = mStatusFile.getName();
             mObserver = new android.os.FileObserver(mIpcDir.getPath(),
@@ -254,6 +293,8 @@ public class SecondScreenView extends View
         mHandler.removeCallbacks(mTick);
         if (mObserver != null) mObserver.stopWatching();
         mObserver = null;
+        if (mSounds != null) mSounds.release();
+        mSounds = null;
         super.onDetachedFromWindow();
     }
 
@@ -335,7 +376,7 @@ public class SecondScreenView extends View
     /** Game-relative path (with or without .png) to a file, ignoring case. */
     private File resolve(String rel)
     {
-        String[] candidates = rel.toLowerCase(Locale.ROOT).matches(".*\\.(png|ttf)$")
+        String[] candidates = rel.toLowerCase(Locale.ROOT).matches(".*\\.(png|ttf|ogg)$")
             ? new String[] { rel } : new String[] { rel + ".png", rel };
         for (String c : candidates) {
             File f = new File(mGameDir, c);
@@ -1296,7 +1337,11 @@ public class SecondScreenView extends View
         String menu = b.optString("menu", "none");
         drawEmblem();
         int hits = mHits.size();
-        if ("command".equals(menu)) drawBattleCommands(b);
+        if (!"command".equals(menu)) mBattleSub = SUB_NONE;
+        if ("command".equals(menu) && mBattleSub == SUB_SWITCH) drawBattleParty(b, false);
+        else if ("command".equals(menu) && mBattleSub == SUB_ITEM_TARGET) drawBattleParty(b, true);
+        else if ("command".equals(menu) && mBattleSub == SUB_BAG) drawBattleBag(b);
+        else if ("command".equals(menu)) drawBattleCommands(b);
         else if ("fight".equals(menu)) drawBattleFight(b);
         if (SystemClock.uptimeMillis() < mPendingUntil) {
             fillRect(0, 0, W, BAR_Y - 2, 0x70000000);
@@ -1341,9 +1386,14 @@ public class SecondScreenView extends View
         String cmd = "Graphics/Pictures/Battle/cursor_command";
         // FIGHT large in the middle; Bag, Run and Pokemon along the bottom
         artButton(cmd, CMD_W, CMD_MODES[mode][0], CMD_H, (W - CMD_W * 2) / 2f, 52, 2f, false, () -> battleCommand(0));
-        artButton(cmd, CMD_W, CMD_MODES[mode][1], CMD_H, 10, 214, 1.25f, false, () -> battleCommand(1));
+        // Bag and Pokemon open on this screen when the game sent the lists
+        // (TOP SCREEN there opens the game's own menu instead)
+        final boolean hasItems = b.has("items"), hasParty = b.has("party");
+        artButton(cmd, CMD_W, CMD_MODES[mode][1], CMD_H, 10, 214, 1.25f, false,
+            () -> { if (hasItems && mode <= 2) mBattleSub = SUB_BAG; else battleCommand(1); });
         artButton(cmd, CMD_W, CMD_MODES[mode][3], CMD_H, (W - CMD_W) / 2f, 220, 1f, false, () -> battleCommand(3));
-        artButton(cmd, CMD_W, CMD_MODES[mode][2], CMD_H, W - 10 - Math.round(CMD_W * 1.25f), 214, 1.25f, false, () -> battleCommand(2));
+        artButton(cmd, CMD_W, CMD_MODES[mode][2], CMD_H, W - 10 - Math.round(CMD_W * 1.25f), 214, 1.25f, false,
+            () -> { if (hasParty) mBattleSub = SUB_SWITCH; else battleCommand(2); });
     }
 
     private void battleCommand(int idx)
@@ -1504,6 +1554,7 @@ public class SecondScreenView extends View
     private void sendBattle(String... kv)
     {
         command(kv);
+        mSoundSkip = true;   // the game plays its own sound when it acts on it
         mPendingSig = battleSig();
         mPendingUntil = SystemClock.uptimeMillis() + 1200;
     }
@@ -1561,7 +1612,139 @@ public class SecondScreenView extends View
         float size = 27;
         while (size > 18 && measure(label, tf, size) > room) size -= 1;
         text(label, tx, capTop(tf, size, y + h / 2f), tf, size, 2, 0xfff8f0e0, 0xff404040);
-        if (action != null) mHits.add(new Hit(new RectF(x, y, x + w, y + h), id, action));
+        final boolean cancel = "BACK".equals(label) || "CANCEL".equals(label);
+        if (action != null) mHits.add(new Hit(new RectF(x, y, x + w, y + h), id,
+            cancel ? () -> { mSoundCancel = true; action.run(); } : action));
+    }
+
+    // ---- Battle: Pokemon and Bag on the touch screen --------------------
+
+    static final int SUB_NONE = 0, SUB_SWITCH = 1, SUB_BAG = 2, SUB_ITEM_TARGET = 3;
+    static final int SCROLL_BAG = 6;
+    private int mBattleSub = SUB_NONE;
+    private String mSubItem = "", mSubItemName = "";
+    private int mBagTab = 0;   // 0 = balls, 1 = medicine, 2 = battle items
+    private static final String[] BAG_TABS = { "BALLS", "MEDICINE", "BATTLE" };
+
+    /** Title strip for the battle sub-pages, in the battle message box style. */
+    private void battleTitle(String title)
+    {
+        blt9("Graphics/Pictures/Battle/overlay_message", 6, 4, W - 12, 40);
+        text(title, 22, capTop(mFont, 27, 24), mFont, 27, 0, MSG_BASE, MSG_SHADOW);
+    }
+
+    /** Back to the commands, or open the game's own menu on the top screen. */
+    private void subPageButtons(int topCommand)
+    {
+        float by = 286, cw = 180;
+        capsule("BACK", W / 2f - cw - 6, by, cw, 46, false, false, () -> { mBattleSub = SUB_NONE; mSoundCancel = true; });
+        capsule("TOP SCREEN", W / 2f + 6, by, cw, 46, false, false, () -> { mBattleSub = SUB_NONE; battleCommand(topCommand); });
+    }
+
+    private void drawBattleParty(JSONObject b, boolean forItem)
+    {
+        battleTitle(forItem ? "Use " + mSubItemName + " on which Pokémon?" : "Switch to which Pokémon?");
+        JSONArray party = b.optJSONArray("party");
+        int n = party == null ? 0 : Math.min(6, party.length());
+        float cw = 248, ch = 74;
+        for (int i = 0; i < n; i++) {
+            JSONObject p = party.optJSONObject(i);
+            if (p == null) continue;
+            float x = (i % 2 == 0) ? 6 : W - 6 - cw, y = 50 + (i / 2) * (ch + 4);
+            boolean egg = p.optBoolean("egg", false), fainted = p.optBoolean("fainted", false);
+            boolean active = p.optBoolean("active", false);
+            boolean can = !egg && (forItem || (!fainted && !active));
+            final int idx = p.optInt("index", i);
+            int id = mHitSeq++;
+            boolean pressed = can && mPressed == id;
+            box(x, y, cw, ch, pressed ? 0xf04a3c78 : can ? 0xe8261e40 : 0xc0181428);
+            if (can) mHits.add(new Hit(new RectF(x, y, x + cw, y + ch), id, () -> {
+                if (forItem) sendBattle("cmd", "battle_item", "item", mSubItem, "index", String.valueOf(idx));
+                else sendBattle("cmd", "battle_switch", "index", String.valueOf(idx));
+            }));
+            icon(p.optString("icon", ""), x + 36, y + 38, 64, can && !fainted, fainted ? mDark : null);
+            text(ellipsize(p.optString("name", ""), mSmallFont, 21, 110), x + 72, y + 6, mSmallFont, 21, 0, can ? WHITE : DIM, SHADOW);
+            if (egg) continue;
+            text("Lv." + p.optInt("lv", 1), x + cw - 10, y + 6, mSmallFont, 18, 1, LILAC, SHADOW);
+            int hp = p.optInt("hp", 0), max = Math.max(1, p.optInt("maxhp", 1));
+            hpBar(x + 72, y + 32, cw - 84, hp / (float) max);
+            text(hp + "/" + max, x + cw - 10, y + 40, mSmallFont, 17, 1, WHITE, SHADOW);
+            int status = p.optInt("status", -1);
+            float tx = x + 72;
+            if (status >= 0) {
+                blt("Graphics/Pictures/statuses", (int) tx, (int) y + 46, 0, status * 16, 44, 16, 44, 16, mBlit);
+                tx += 50;
+            }
+            // How it matches up against the foe (like the 3DS games)
+            if (active) {
+                text("In battle", tx, y + 42, mSmallFont, 17, 0, GOLD, GOLD_SHADOW);
+            } else if (!fainted && !forItem) {
+                String off = p.optString("offense", ""), def = p.optString("defense", "");
+                String tag = null; int col = DIM;
+                if ("super".equals(def)) { tag = "Weak to foe"; col = 0xfff07060; }
+                else if ("super".equals(off)) { tag = "Hits foe hard"; col = 0xff70e070; }
+                else if ("weak".equals(def) || "none".equals(def)) { tag = "Resists foe"; col = 0xff88c8f8; }
+                if (tag != null) text(tag, tx, y + 42, mSmallFont, 17, 0, col, SHADOW);
+            }
+        }
+        subPageButtons(forItem ? 1 : 2);
+    }
+
+    private boolean inBagTab(JSONObject it, int tab)
+    {
+        int use = it.optInt("use", 0);
+        boolean ball = it.optBoolean("ball", false) || use == 4;
+        if (tab == 0) return ball;
+        if (tab == 1) return !ball && (use == 1 || use == 2);
+        return !ball && (use == 3 || use == 5);
+    }
+
+    private void drawBattleBag(JSONObject b)
+    {
+        JSONArray items = b.optJSONArray("items");
+        float tw = 160, tgap = 8, tx0 = (W - (3 * tw + 2 * tgap)) / 2f;
+        for (int t = 0; t < 3; t++) {
+            final int tab = t;
+            capsule(BAG_TABS[t], tx0 + t * (tw + tgap), 4, tw, 46, mBagTab == t, false, () -> {
+                mBagTab = tab;
+                mScroll[SCROLL_BAG] = 0;
+                mPrefs.edit().putInt("bag_tab", tab).apply();
+            });
+        }
+        List<JSONObject> list = new ArrayList<>();
+        for (int i = 0; items != null && i < items.length(); i++) {
+            JSONObject it = items.optJSONObject(i);
+            if (it != null && inBagTab(it, mBagTab)) list.add(it);
+        }
+        float top = 58, view = 222, cw = 248, ch = 50, gap = 4;
+        int rows = (list.size() + 1) / 2;
+        listScroll(SCROLL_BAG, rows * (ch + gap), view);
+        if (list.isEmpty()) small(mBagTab == 0 ? "No Poké Balls." : "Nothing here to use in battle.", W / 2f, 150, DIM, 2);
+        mC.save();
+        mC.clipRect(0, top, W, top + view);
+        for (int i = 0; i < list.size(); i++) {
+            JSONObject it = list.get(i);
+            float x = (i % 2 == 0) ? 6 : W - 6 - cw, y = top + (i / 2) * (ch + gap) - mScroll[SCROLL_BAG];
+            if (y + ch < top || y > top + view) continue;
+            final String id = it.optString("id", ""), name = it.optString("name", "");
+            final int use = it.optInt("use", 0);
+            int hid = mHitSeq++;
+            box(x, y, cw, ch, mPressed == hid ? 0xf04a3c78 : 0xe8261e40);
+            if (y >= top && y + ch <= top + view) mHits.add(new Hit(new RectF(x, y, x + cw, y + ch), hid, () -> {
+                if (use == 1) {               // on a Pokemon: pick which one here
+                    mSubItem = id; mSubItemName = name; mBattleSub = SUB_ITEM_TARGET;
+                } else if (use == 2) {        // on a move (Ethers): the game's own menu
+                    mBattleSub = SUB_NONE; battleCommand(1);
+                } else {
+                    sendBattle("cmd", "battle_item", "item", id);
+                }
+            }));
+            icon(it.optString("icon", ""), x + 26, y + ch / 2f, 40, false, null);
+            text(ellipsize(name, mSmallFont, 21, cw - 110), x + 52, capTop(mSmallFont, 21, y + ch / 2f), mSmallFont, 21, 0, WHITE, SHADOW);
+            text("x" + it.optInt("qty", 0), x + cw - 12, capTop(mSmallFont, 21, y + ch / 2f), mSmallFont, 21, 1, LILAC, SHADOW);
+        }
+        mC.restore();
+        subPageButtons(1);
     }
 
     // ---- Keyboard (naming screens) -------------------------------------
@@ -1657,7 +1840,11 @@ public class SecondScreenView extends View
                         Hit h = mHits.get(i);
                         if (h.r.contains(vx, vy)) {
                             if (h.id == pressed || pressed < 0) {
-                                if (h.action != null) h.action.run();
+                                if (h.action != null) {
+                                    mSoundCancel = mSoundSkip = false;
+                                    h.action.run();
+                                    if (!mSoundSkip) playSound(mSoundCancel ? mSndCancel : mSndDecision);
+                                }
                             }
                             break;
                         }

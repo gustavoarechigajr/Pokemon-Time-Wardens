@@ -215,6 +215,12 @@ PY
   # Mid-battle: battle page, then the party/summary and every other tab
   demo_start battle
   demo_shot "demo_battle"
+  tap_v 421 242; sleep 2; demo_shot "demo_switch"      # POKEMON -> party on this screen
+  tap_v 160 309; sleep 1                               # BACK
+  tap_v 91 242; sleep 2; demo_shot "demo_bag"          # BAG -> battle bag
+  tap_v 262 27; sleep 2; demo_shot "demo_bag_medicine" # MEDICINE tab
+  tap_v 130 82; sleep 2; demo_shot "demo_item_target"  # Potion -> which Pokemon
+  tap_v 160 309; sleep 1
   tap_tab 0; sleep 2; demo_shot "demo_party_in_battle"
   tap_v 128 48; sleep 2; demo_shot "demo_summary"
   tap_v 354 23; sleep 2; demo_shot "demo_summary_stats"

@@ -121,7 +121,13 @@ along the bottom switch pages:
   ACTION, CANCEL and SHIFT sit in one row below, next to **INFO**, which
   toggles move details: the buttons get smaller and a panel shows the
   chosen move's category, power, accuracy, effect chance, priority and
-  description (tap a move once to read about it, again to use it). Battle text and HP stay on
+  description (tap a move once to read about it, again to use it).
+  **POKÉMON** shows your team right on the touch screen, with HP, status
+  and how each matches up against the opponent ("Hits foe hard", "Weak to
+  foe", "Resists foe"); tap one to switch. **BAG** shows Poké Balls,
+  medicine and battle items as big buttons; medicine then asks which
+  Pokémon to use it on. **TOP SCREEN** opens the game's own menu instead
+  (for summaries, Ethers and so on). Battle text and HP stay on
   the top screen; the physical buttons keep working as usual.
 * **JOURNAL**: the BW-style location sign, your current story objective
   (tap for the next part of long ones), trainer name, money, play time,
@@ -148,7 +154,8 @@ explains why. Errors such as "it won't have any effect" come from the game
 itself.
 
 Touching the second screen never takes focus away from the physical
-controls. Taps give a light vibration and the pressed button shows at once;
+controls. Buttons play the game's own menu sounds, at the game's
+sound-effect volume. Taps give a light vibration and the pressed button shows at once;
 battle controls dim until the game has acted on the choice, so a choice
 can't be sent twice. Before a save is loaded it shows the Time Wardens title.
 

@@ -391,6 +391,90 @@ if (System.platform[/Android/] rescue false)
         (b.pbTypes(true) rescue b.pokemon.types).map { |t| type_info(t) }
       end
 
+      # The second screen's choice for the party/bag menu that's opening, if any
+      def take_direct(kind)
+        d = @direct
+        return nil if !d || d[:kind] != kind
+        @direct = nil
+        return nil if Time.now - d[:at] > CMD_EXPIRE
+        d
+      end
+
+      def eff_word(v)
+        return "none" if Effectiveness.ineffective?(v)
+        return "super" if Effectiveness.super_effective?(v)
+        return "weak" if Effectiveness.not_very_effective?(v)
+        "normal"
+      end
+
+      # The player's party in the battle's own order, for switching: each with
+      # how its best move fares against the foe and how the foe's types fare
+      # against it
+      def battle_party(battle, idx_battler)
+        party = battle.pbParty(idx_battler)
+        foes = battle.battlers.select { |o| o && !o.fainted? && o.opposes?(idx_battler) }
+        foe_types = foes.map { |f| f.pbTypes(true) }
+        order = battle.pbPartyOrder(idx_battler)
+        start = battle.pbTeamIndexRangeFromBattlerIndex(idx_battler)[0]
+        display = battle.pbPlayerDisplayParty(idx_battler)
+        display.each_with_index.map do |pkmn, d|
+          next nil if !pkmn
+          idx = order.index(d + start)
+          next nil if idx.nil?
+          offense = nil
+          defense = nil
+          if !pkmn.egg? && !foe_types.empty?
+            best = nil
+            pkmn.moves.each do |m|
+              data = GameData::Move.try_get(m.id)
+              next if !data || data.category == 2
+              foe_types.each do |ft|
+                v = Effectiveness.calculate(m.type, *ft)
+                best = v if best.nil? || v > best
+              end
+            end
+            offense = eff_word(best) if best
+            worst = nil
+            foe_types.flatten.uniq.each do |t|
+              v = Effectiveness.calculate(t, *pkmn.types)
+              worst = v if worst.nil? || v > worst
+            end
+            defense = eff_word(worst) if worst
+          end
+          {
+            "index"   => idx,
+            "name"    => pkmn.name,
+            "lv"      => pkmn.level,
+            "hp"      => pkmn.hp,
+            "maxhp"   => pkmn.totalhp,
+            "status"  => status_icon(pkmn),
+            "icon"    => (GameData::Species.icon_filename_from_pokemon(pkmn) rescue "").to_s,
+            "egg"     => pkmn.egg?,
+            "fainted" => pkmn.fainted?,
+            "active"  => !battle.pbFindBattler(idx, idx_battler).nil?,
+            "offense" => offense,
+            "defense" => defense
+          }
+        end.compact
+      end
+
+      # Bag items usable in battle (Poké Balls, medicine, battle items)
+      def battle_items
+        list = []
+        ($bag.pockets || []).each_with_index do |pocket, p|
+          (pocket || []).each do |entry|
+            data = GameData::Item.try_get(entry[0])
+            next if !data
+            use = data.battle_use.to_i
+            next if use <= 0
+            list.push({ "id" => data.id.to_s, "name" => data.name, "qty" => entry[1].to_i, "use" => use,
+                        "ball" => (data.is_poke_ball? rescue false),
+                        "icon" => (GameData::Item.icon_filename(data.id) rescue "").to_s, "pocket" => p })
+          end
+        end
+        list.first(80)
+      end
+
       def battle_state
         scene = @battle_scene
         return nil if !scene
@@ -437,6 +521,8 @@ if (System.platform[/Android/] rescue false)
             texts = menu[:texts] || []
             st["prompt"] = texts[0].to_s
             st["commands"] = texts[1, 4] || []
+            st["party"] = (battle_party(battle, menu[:battler]) rescue [])
+            st["items"] = (battle_items rescue [])
             st["cmd_mode"] = menu[:mode] || 0
           elsif menu[:kind] == :fight
             b = battle.battlers[menu[:battler]]
@@ -499,6 +585,7 @@ if (System.platform[/Android/] rescue false)
           "ingame"   => true,
           "context"  => context,
           "speed"    => (defined?($GameSpeed) && $GameSpeed) ? $GameSpeed + 1 : 1,
+          "se_volume"=> (($PokemonSystem.sevolume rescue 100) || 100).to_i,
           "log"      => @log,
           "toast"    => @toast
         }
@@ -566,6 +653,16 @@ if (System.platform[/Android/] rescue false)
         when "battle_command", "battle_move", "battle_back", "battle_special", "battle_shift"
           if in_battle?
             @battle_pick = { cmd: cmd["cmd"], index: cmd["index"].to_i, at: Time.now }
+          else
+            toast(_INTL("That's only for battles."))
+          end
+        when "battle_switch", "battle_item"
+          # Picked on the second screen: open the Pokémon/Bag command and hand
+          # the choice straight to the game instead of showing its menu
+          if in_battle?
+            kind = cmd["cmd"] == "battle_switch" ? :switch : :item
+            @direct = { kind: kind, idx: (cmd["index"] || -1).to_i, item: cmd["item"], at: Time.now }
+            @battle_pick = { cmd: "battle_command", index: (kind == :switch ? 2 : 1), at: Time.now }
           else
             toast(_INTL("That's only for battles."))
           end
@@ -799,6 +896,17 @@ if (System.platform[/Android/] rescue false)
       end
     end
 
+    # Stands in for the party/bag screens when a battle choice comes from the
+    # second screen; messages go to the battle's message box
+    class BattleMessages
+      def initialize(scene); @scene = scene; end
+      def pbDisplay(msg); @scene.pbDisplay(msg); end
+      def pbConfirm(msg); @scene.pbDisplayConfirmMessage(msg); end
+      def pbChooseNumber(_text, _max, _initial = 1); 1; end
+      def method_missing(*_args); nil; end
+      def respond_to_missing?(*_args); true; end
+    end
+
     # Stands in for the party screen when an item is used from the second
     # screen; messages appear on the main screen.
     class PartyAdapter
@@ -876,6 +984,34 @@ if (System.platform[/Android/] rescue false)
     def pbDisplay(msg, *args)
       (AndroidDualScreen.battle_message(msg) rescue nil)
       super
+    end
+
+    # A Pokémon picked on the second screen: switch to it without the party menu
+    def pbPartyScreen(idxBattler, canCancel = false, mode = 0, &block)
+      d = AndroidDualScreen.take_direct(:switch)
+      return super if !d || mode != 0 || !block
+      block.call(d[:idx], AndroidDualScreen::BattleMessages.new(self))
+      nil
+    end
+
+    # An item picked on the second screen: use it without the Bag menu
+    def pbItemMenu(idxBattler, firstAction, &block)
+      d = AndroidDualScreen.take_direct(:item)
+      return super if !d || !block
+      item = GameData::Item.try_get(d[:item].to_s.to_sym)
+      use = item ? item.battle_use.to_i : 0
+      if !item || use <= 0 || use == 2 || !$bag.has?(item.id)
+        pbDisplay(_INTL("That can't be used here.")) if item
+        return nil
+      end
+      target = case use
+               when 1 then d[:idx] >= 0 ? d[:idx] : @battle.battlers[idxBattler].pokemonIndex
+               when 3 then @battle.battlers[idxBattler].pokemonIndex
+               when 4 then (@battle.allOtherSideBattlers(idxBattler).find { |b| !b.fainted? } || @battle.allOtherSideBattlers(idxBattler).first)&.index || -1
+               else idxBattler
+               end
+      block.call(item.id, use, target, -1, AndroidDualScreen::BattleMessages.new(self))
+      nil
     end
 
     def pbDisplayPausedMessage(msg, *args, &block)
