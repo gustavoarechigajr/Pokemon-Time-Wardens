@@ -832,8 +832,9 @@ public class SecondScreenView extends View
             JSONObject m = moves != null && i < moves.length() ? moves.optJSONObject(i) : null;
             if (m == null) { small("-", 290, y + 8, DIM); continue; }
             typeIcon(m.optJSONObject("type"), 206, y + 4, 64);
-            small(ellipsize(m.optString("name", ""), mSmallFont, 21, 150), 278, y, WHITE);
-            small("PP " + m.optInt("pp") + "/" + m.optInt("maxpp"), 500, y, LILAC, 1);
+            String pp = "PP " + m.optInt("pp") + "/" + m.optInt("maxpp");
+            float ppw = text(pp, 500, y + 2, mSmallFont, 18, 1, LILAC, SHADOW);
+            small(ellipsize(m.optString("name", ""), mSmallFont, 21, 500 - ppw - 8 - 278), 278, y, WHITE);
             categoryIcon(m.optInt("cat", 2), 278, y + 24, 40);
             int pw = m.optInt("power", 0), acc = m.optInt("acc", 0);
             text("Pow " + (pw > 1 ? pw : "-") + "   Acc " + (acc > 0 ? acc : "-"), 324, y + 22, mSmallFont, 18, 0, DIM, SHADOW);
@@ -862,7 +863,7 @@ public class SecondScreenView extends View
             if (y + rowH < top || y > top + 220) continue;
             final String id = it.optString("id", "");
             box(x, y, 246, rowH - 4, 0xdc28203c);
-            blt(it.optString("icon", ""), x + 6, y + 4);
+            icon(it.optString("icon", ""), x + 22, y + 20, 36, false, null);
             small(ellipsize(it.optString("name", ""), mSmallFont, 21, 150), x + 44, y + 8, WHITE);
             small("x" + it.optInt("qty", 0), x + 238, y + 8, LILAC, 1);
             if (y >= top && y + rowH <= top + 220) {
@@ -1179,7 +1180,7 @@ public class SecondScreenView extends View
             final String id = it.optString("id", "");
             float x = 12 + i * 124, y = 196;
             button("", x, y, 118, 70, can, false, () -> command("cmd", "key_item", "item", id));
-            blt(it.optString("icon", ""), x + 43, y + 4);
+            icon(it.optString("icon", ""), x + 59, y + 21, 36, false, null);
             text(ellipsize(it.optString("name", ""), mSmallFont, 17, 108), x + 59, y + 42, mSmallFont, 17, 2, can ? WHITE : DIM, SHADOW);
         }
         if (n == 0) {
@@ -1232,7 +1233,7 @@ public class SecondScreenView extends View
                 text("PP " + m.optInt("pp") + "/" + m.optInt("maxpp"), x + 70, y + 30, mSmallFont, 18, 0, LILAC, SHADOW);
                 JSONArray eff = m.optJSONArray("eff");
                 String e = eff != null && eff.length() > 0 ? eff.optString(0, "") : "";
-                String et = "super".equals(e) ? "Super effective" : "weak".equals(e) ? "Not very effective" : "none".equals(e) ? "No effect" : "";
+                String et = "super".equals(e) ? "Super eff." : "weak".equals(e) ? "Not very eff." : "none".equals(e) ? "No effect" : "";
                 int ec = "super".equals(e) ? GREEN : "none".equals(e) ? RED : 0xfff0c060;
                 if (!et.isEmpty()) text(et, x + 238, y + 31, mSmallFont, 16, 1, ec, SHADOW);
                 categoryIcon(m.optInt("cat", 2), x + 8, y + 34, 40);
