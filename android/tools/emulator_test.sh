@@ -29,6 +29,21 @@ shot() {
 
 key() { adb shell input keyevent "$@"; }
 
+# Fails the test if the game shows an error dialog (Ruby exception, engine
+# error). The process stays alive behind such a dialog, so check the screen.
+check_errors() {
+  adb shell uiautomator dump /sdcard/tw_ui.xml >/dev/null 2>&1 || return 0
+  local ui
+  ui=$(adb shell cat /sdcard/tw_ui.xml 2>/dev/null)
+  if echo "$ui" | grep -qiE "Exception|Backtrace|Script error|Error initializing|Failed to"; then
+    log "!! error dialog on screen ($1):"
+    echo "$ui" | grep -oE 'text="[^"]{3,}"' | sed 's/^text="//; s/"$//; s/&#10;/\n/g' | head -40
+    FAIL=1
+    return 1
+  fi
+  return 0
+}
+
 check_alive() {
   if ! adb shell pidof "$PKG" >/dev/null 2>&1; then
     log "!! game process is not running"
@@ -71,6 +86,7 @@ for t in 10 20 30 45; do
   shot "boot_${t}"
   check_alive || FAIL=1
 done
+check_errors "after boot"
 
 # Inputs below go through the controller path (as on handhelds like the
 # AYN Thor): "input gamepad"/"input dpad" inject events with a gamepad/D-pad
@@ -86,12 +102,15 @@ for step in 1 2 3 4 5 6; do
   check_alive || { FAIL=1; break; }
 done
 
+check_errors "title / new game"
+
 # Advance intro dialogue with A
 for step in 1 2 3 4 5 6 7 8 9 10; do
   pad KEYCODE_BUTTON_A
   sleep 3
 done
 shot "after_dialogue"
+check_errors "intro"
 
 # D-pad movement from a controller
 dpad KEYCODE_DPAD_DOWN KEYCODE_DPAD_DOWN KEYCODE_DPAD_LEFT KEYCODE_DPAD_RIGHT
@@ -106,6 +125,8 @@ pad KEYCODE_BUTTON_B; sleep 3; shot "pad_b_closed"
 key KEYCODE_BACK; sleep 4; shot "back_key_menu"
 key KEYCODE_BACK; sleep 3
 check_alive || { log "!! back key closed the game"; FAIL=1; }
+check_errors "menus"
+grep -q "TimeWardens\[Pad\]" "$OUT/logcat.txt" && log "Controller buttons reached the game" || { log "!! no controller button reached the game"; FAIL=1; }
 
 # Dual screen: attach a simulated second display (like the AYN Thor's
 # bottom screen) while the game runs; the info panel should appear on it and
@@ -145,8 +166,7 @@ if grep -q "Second screen found" "$OUT/logcat.txt"; then
 else
   log "!! dual screen panel did not open"; FAIL=1
 fi
-echo "---- status file ----"
-adb shell cat "/sdcard/Android/data/$PKG/files/game/.tw_status.json" 2>&1 | head -c 2000; echo
+grep "TimeWardens\[Dual\]" "$OUT/logcat.txt" | tail -5
 adb shell settings put global overlay_display_devices null
 sleep 3
 check_alive || { log "!! game died when the second display was removed"; FAIL=1; }

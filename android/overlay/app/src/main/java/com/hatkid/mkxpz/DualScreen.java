@@ -295,7 +295,17 @@ public class DualScreen implements DisplayManager.DisplayListener
                 byte[] data = new byte[(int) Math.min(mStatusFile.length(), 1 << 20)];
                 int n = 0, r;
                 while (n < data.length && (r = in.read(data, n, data.length - n)) > 0) n += r;
+                JSONObject prev = mState;
                 mState = new JSONObject(new String(data, 0, n, StandardCharsets.UTF_8));
+                boolean ingame = mState.optBoolean("ingame", false);
+                if (prev == null || prev.optBoolean("ingame", false) != ingame) {
+                    JSONArray party = mState.optJSONArray("party");
+                    JSONObject loc = mState.optJSONObject("location");
+                    Log.i(TAG, "Status: ingame=" + ingame
+                        + " party=" + (party != null ? party.length() : 0)
+                        + " location=" + (loc != null ? loc.optString("name") : "")
+                        + " map=" + (mState.optJSONObject("map") != null));
+                }
             } catch (Exception e) {
                 Log.w(TAG, "Status file: " + e);
             }
