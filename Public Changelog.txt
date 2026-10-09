@@ -1,0 +1,742 @@
+TIME WARDENS
+PUBLIC CHANGE LOG
+
+#----------------------------------------------------------------------------------------------------------------------
+Postgame Launch - v2.05 - TBD
+#----------------------------------------------------------------------------------------------------------------------
+- Tweaks to Carnivine along with some small trainer team changes.
+- Correcting text from certain question men after certain item changes to Protective Pads and Rocky helmet.
+- Distributing Hi-Vis Jacket to various shops and making it appear on Route 7B in the overworld.
+- Carnivine resprite by Hypertox.
+- Steadfast changed to work when the target hasn't moved yet in the turn.
+- Big Pecks reworked, now it increases damage dealt to low HP foes.
+- T.Furret: Unaware -> Cute Charm. Dedenne: Feedback -> Cute Charm. Dhelmise: Intuition -> Feedback.
+- New item called Topography Map that only Castform can use. It uses the first terrain move it knows on entry when held.
+- Jaw fossil image in Mining items png was cut off.
+- Elara 1 wasn't setting sun.
+- Updated some of the weaker MBD on Adept+.
+- Updated Fabula and Riptide's Dev fights.
+- Gyarados and Mega Gyarados reworked: 95,125,110,71,55,84, 95,135,150,86,75,99. Blacklight -> Illuminate, Strong Jaw -> Leeching Fangs, Mold Breaker -> Reckless. Adjusted level up set.
+- Mega Sawsbuck stat adjustment: 70,115,90,145,65,90.
+- Dragonfish Basculegion now has different stats and abilities than regular form. Stats: 90,122,70,79,69,100. Abil: Swift Swim, Infiltrator, Reaper.
+- T.Sylveon can no longer learn Execution and Cosmic Avatar.
+- Fixed illegal sets on Battle Tower mons.
+- Adjusted the MBD for the Karma trainers so they aren't lopsided towards physical attackers.
+- Adjusted Otter's art gallery team.
+- Toxel now has boosted base stats (60,54,55,50,38,55) and the same level learnset as Toxtricity.
+- New mining graphics thanks to Boro.
+- Updating a holographic pylon icon because it was hard to see against the backdrop of the Leviathan's Maw map.
+- Riptidecord dev battles now have updated MBD with Fabula's changes incorporated.
+- Topography Map is now added to held item vendor and is available in the overworld in the Route 8A Underwater map.
+- Hypertox Blissbot plush added to Ara City Art Gallery.
+- Dex entry fixes for T.Parasect
+- Some Pokemon on the poached pokemon lists for Cecil (Corona Marketplace) and Ebenezer (Black Market) were incorrect and not giving you the right mon.
+- Added an Egg Incubator to your menu. Whenever you get an egg for the first time, this automatically gets added to your key items and your menu so you can incubate up to 6 eggs at once. The fast egg hatch man will also hatch eggs sitting in your incubator.
+- Abilities that increase Egg hatching speed now will stack if you have multiple of them on the team at once.
+- Removed drop shadow from almost all instances of cinematic transition font to make the white text more readable.
+- Adding a bunch of fail safes to certain tutor.net tutors to make sure you are not locked out of getting certain moves if we shuffled them in the past.
+- New Options UI and graphic
+- Difficulty setter ghost in Breloom's Penthouse was still saying that you can't change difficulty after Ch9.
+- Swalot: Water Compaction -> Regenerator
+- Sylveon: Anger Point -> Regenerator
+- Garchomp no longer learns Spectral Thief, replaced with Shadow Bone.
+- Happiny no longer learns Double Iron Bash by Egg.
+- Dondozo now learns Slack Off by Egg.
+- Comfey Base Stats: -20 Spe, +10 HP/SpDef
+- Dudunsparce Base Stats: -10 Atk, +10 Def
+
+#----------------------------------------------------------------------------------------------------------------------
+Postgame Launch - v2.04 - June 7, 2026
+#----------------------------------------------------------------------------------------------------------------------
+- Buffed Arcanine's defenses and lowered SpAtk: 95,115,95,95,60,95.
+- Scaled back encounter rates on land maps to avoid too many encounters.
+- Zebstrika ability change: Natural Cure -> Misty Surge.
+- T. Sinistcha ability change: Serene Grace -> Psychic Surge.
+- The Toxic counter on bosses resets on the shield being broken.
+- Burning Bulwark, Bitter Bastion, King's Shield, Obstruct, Asteroid Belt, Spiky Shield, Baneful Bunker, and Storm Shield have had their PP reduced to 5.
+- Burning Bulwark now works for all physical moves.
+- New script feature added: All trades in the game now let you trade directly from your PC so you don't need to fetch the mon from your PC first.
+- A large pass over most move descriptions in the game to improve wording. High Jump Kick-likes now specify they fail in gravity, all moves with random secondary effects now specify the chance, multiple moves were showing outdated gen descriptions, stored power-likes now specify the base power, and many more.
+- Gems buffed to 40% damage.
+- New abilities Feedback, Retribution, and Forcefield which all do the same thing: When user is hit by a special move, attacker takes damage equal to 1/8 of their max HP.
+- Distributed Forcefield: Scolipede (Analytic), Kangaskhan (Full Metal Body), Cryogonal (Wonder Skin), Omastar Magic Bounce), Ledian (Clear Body), Lucario (Spellcaster).
+- Distributed Retribution: T. Bronzong (Levitate), Illumise (Insomnia), Indeedee (Poison Point), Tsareena (Synchronize), Politoed (Justified).
+- Distributed Feedback: Clawitzer (Mega Launcher), T. Spiritomb (Static), Dedenne (Cacophony), Mr. Rime (Oblivious), Exeggutor (Levitate).
+- New item Hi-Vis Jacket: Damages attackers for 1/8th of their HP when they hit the holder with special attacks.
+- Cute Charm reworked: The user takes 25% less damage from opponents that share one of their typings.
+- Relic Castle links in credits were updated to Eevee Expo.
+- Item descriptions were updated to remove incorrect maniac references.
+- T. Raichu line adjusted: Steadfast -> Stamina, -15 Defense, +5 Spatk, +10 Sp. Def. Loses No Retreat.
+- Pokemon and Player name character limits are now 16.
+- Adrenaline Orb activates when affected by Dishearten.
+- New setting Quick Level Up which makes levelling up much faster by removing learning moves on level up and showing the stat increases. You can still relearn level up moves with the Action button on the moves screen.
+- A Chapter 13 final boss no longer has Spore and has 10 less base speed.
+- Ability Neuroforce distributed. Oranguru (Gorilla Tactics), Golduck (Intuition), Kecleon (Trace), Drampa (Cloud Nine).
+- Itemfinder was missing from AP Shop at the final instance of the cool key items shop.
+- Adria's hut was causing an escape rope bug so I nudged the ladder up a bit so that you don't get stuck.
+- Reuniclus overworld sprite replaced.
+- Moved the raid den in the Sewers to avoid being close to the plot cut scene.
+- Fixing Siren's Song, Battle Cry, Swarm Attack and Thousand Waves not properly trapping targets.
+- Slightly changed some boss teams to reduce mon overlap a bit more.
+- Fixed Frost Grumpig not having a proper TM/Tutor set. Flame/Toxic Grumpig also got slightly expanded TM/Tutor sets.
+- Rocky Helmet, Iron Barbs and Rough Skin now proc against physical attacks instead of contact.
+- Rocky Helmet nerfed to 1/8th max HP damage.
+- Long Reach/Protective Pads will now also protect against most "on physical/special attack" negative effects (e.g. Bitter Bastion, Jaboca Berry, Toxic Debris, etc).
+- Fixed Ethereal not being bypassed by Long Reach/Protective Pads.
+- Steel has a new type icon (a Gear) in the battle UI to avoid it getting confused with Normal.
+- Stone Edge tutor in Eridanus Tunnels was erroneously calling it a Ground-type move.
+- Earthen Lance gets the Slicing flag now so Roserade gets a Ground-type Slicing STAB move.
+- Tweak in stats to M-Houndoom: 85,65,110,105,125,110 and Palafin 100,90,87,115,50,85
+- A few megas have had their Mega's BST spreads changed as a lot of the +100 BST was being wasted in a stat they weren't using. This hopefully makes them a little more interesting to use
+- Reuniclus Old Mega: BaseStats = 70,85,110,70,145,110 | New Mega: BaseStats = 70,55,120,80,145,120. To avoid this becoming too broken though, it loses Recover and gets Wish instead.
+- Staraptor Old Mega BaseStats = 80,80,90,120,125,90 | New Mega BaseStats = 80,50,105,120,125,105
+- Corviknight Old Mega BaseStats = 75,120,100,120,80,100 | New Mega BaseStats = 75,120,105,120,70,105
+- T.Furret Old Mega BaseStats = 75,115,85,125,60,70 | New Mega BaseStats = 75,115,85,125,50,80
+- T.Ampharos Old Mega BaseStats = 100,135,100,75,100,100 | New Mega BaseStats = 100,135,105,75,85,110
+- Removing drop shadows from the white font in transition cutscene text throughout.
+- Flock animation shortened.
+
+
+#----------------------------------------------------------------------------------------------------------------------
+Postgame Launch - v2.03 - May 31, 2026
+#----------------------------------------------------------------------------------------------------------------------
+- Clarified wording on randomizer/inverse mode pre-requisites requiring remitting HOF entry in the Discord to accesss the special code.
+- Wild T.Delcatties now may spawn with Dandelights as held items.
+- Eldegoss learnset updated.
+- Duskull resprite thanks to Raffs.
+- Wild T. Delcatty hold the Dandelight.
+- Slowpoke line gets Rivalry instead of Own Tempo.
+- Impulsive backported on the Dusknoir line.
+- Mega Raticate stat spread adjustment: 80,85,115,88,50,115.
+- Rotom's Contrary and Trace abilities replaced with Dark Aura and Pounce.
+- FullDesc for Ability descriptions are shown in the Advanced Pokedex.
+- Replacing a 56th bone found in Route 8B Underwater that was undocumented with Heavy Ball (x5)
+- Standardizing move descriptions for upcoming Rover Move Description search feature to search untagged groups of moves. Multihits can be searched with "two to five", rampaging moves with "rampages", two hitting moves with "hitting two times", future sight like moves with "foretells", draining moves can be searched with "drain", recovery moves with "restores its own HP", recharge moves with "exhaust", recoil moves with "recoil", two turn invulnerable moves with "hidden", trapping moves with "trap", stat resetters with "resetting", screen breakers with "break screens", and water spout likes with "weakens in damage".
+- Replacing abilities on mons with 2 weather abilities: Primarina: Leaf Guard <-> Healer, Shiftry: Chlorophyll -> Vandal, T.Roserade: Leaf Guard -> Aroma Veil, Brambleghast: Solar Power -> Symbiosis, Ludicolo: Solar Power -> Dancer, Mandibuzz: Sand Rush -> Reaper, Electrode: Snow Cloak -> Flexible, Steelix: Ice Body -> Vengeful, Magmortar: Icy Veins -> No Guard, Empoleon: Icy Veins -> Moxie, T.Typhlosion: Ice Body -> Pressure.
+- Cherrim now has 3 abilities so it's less Hail-dependant: Winter Gift, Charisma, and Symbiosis.
+- Greedent: Gluttony -> Stamina.
+- Disabled the Atk/Def Swapper items and removed them from being purchased as they weren't working as intended
+- One of Christina's boss teams in Ch11 had an overleveled Slaking relative to the content.
+- Twins in the Temple of Space's Team 1 MBD was quoting the wrong side during a confrontation
+- FullDesc given to Sharpshooter to mention it also functions like Stalwart.
+- Knock Off-like moves descriptions all clarified.
+- CozyBrozy's Joiplay patch added to the main download for better Joiplay support.
+- Item descriptions for almost every item updates for clarity.
+- Rare and Rarest Candies now correctly cause a mon that evolves by level to evolve even if they're at max level.
+- Anomaly teams have been slightly revised for more species variety.
+- Stone Evolutions reduced and partially reworked. Lilligant: lvl 32, T. Exeggutor: lvl 36, T. Dodrio: Water Stone, Magmortar: lvl 40, Garbodor: lvl 36, Exeggutor: lvl 36, Mamoswine: lvl 38, Shiinotic: Moon, T. Leavanny: Sun, T. Zoroark: Sun, T. Mamoswine: lvl 38, Malamar: lvl 30, Leavanny: Link, Zoroark: Ice, Jynx: lvl 30, Spidops: lvl 25, Bellibolt: lvl 30, Lopunny: lvl 30, Leavanny: Link, Gliscor: Sand, Heliolisk: Sand, Lokix: lvl 25, Cursola: lvl 38, Polteageist: lvl 38, Electivire: lvl 40, Aggron: lvl 40, Forretress: lvl 30, T. Spidops: lvl 25, Rhyperior: lvl 40, Basculegion: lvl 40.
+- Both Swinubs now evolve into their respective Piloswine at level 28.
+- Scraggy now evolves into Scrafty at level 32.
+
+#----------------------------------------------------------------------------------------------------------------------
+Postgame Launch - v2.02 - Tuesday 26 May 2026
+#----------------------------------------------------------------------------------------------------------------------
+- New ability for Mega Meowstic, Funeral Pyre which doubles damage of Fire and Ghost type moves. Becomes pure psychic, altered stat spread: 74,109,70,134,109,70. Possessed Meowstic gains more fire coverage.
+- Captivate is no longer spread.
+- Gumshoos stat rework: 90,40,100,45,60,115. Gains obstruct and follow me, increased evolution level to 25.
+- Oinkologne stat rework: 100,110,80,95,39,65.
+- Eelektross resprite, and new Mega Eelektross added.
+- T. Abomasnow added.
+- T. Kleavor gains some support moves.
+- One of the coin vendors in the Black Market and Casino had the wrong labels on the mons you would get if you gave them coins.
+- Rune Items PBS file had some errors.
+- Changing Season 4 veteran reward to be a sword/shield combo; also correcting randomized gem giver to give you prizes in order of the type chart
+- Eldegoss stats reworked to be a special attacker: 100,30,105,30,90,105
+- T. Dipplin stat adjustment: 70,105,70,75,85,80
+- Sand Stream and Sand Rush distribution altered. Base Avalugg: Impenetrable -> Sand Stream, Frosmoth: Weak Armor -> Sand Stream, Chesnaught: Sand Stream -> Sand Rush, Kingler: Sand Force-> Sand Rush, Vaporeon: Sand Veil -> Sand Rush
+- Corona Marketplace trade was asking a Ducklett for a T.Skrelp but had a typo and not accepting Ducklett properly.
+- Trimming down unnecessary wording in the Epoch mine.
+
+#----------------------------------------------------------------------------------------------------------------------
+Postgame Launch - v2.01 - Sunday 24 May 2026
+#----------------------------------------------------------------------------------------------------------------------
+- Corrected title screen for new MCs.
+- Pokedex wording fixes for certain mons: T.Sliggoo
+- Removed difficulty being locked after Ch9. The NPC in Breloom's penthouse now lets you change difficulty whenever you want. If you increase or decrease your difficulty, there is a marker now presented on HOF screen that indicates if you changed your difficulty.
+- Overworld encounters now has a shiny failsafe option activated by default. If you are blasting through wild shinies, and clicking away quickly, a shiny encounter will give you a confirmation message so you don't accidentally run away from the shiny.
+- Fire wall animation fixed
+- Cacnea trade in Epoch Mine-R2B GH was not accepting Cacnea in error
+- Icy Veins and Sand Force buffed to no longer be limited to specific types (i.e. they're just a 30% power boost to all moves under the specific weather).
+- Flexible buffed from 20% to 30% more damage.
+- Slightly revised movesets of some Flexible mons (T.Dugtrio, Furret, Pachirisu, Sandaconda). T.Dugtrio also got more TM/Tutor compatibility.
+- T. Perrserker: Irradiate -> Sand Stream
+- Whimsicott: Shield Dust -> Sand Stream
+- Coalossal: Sand Stream ->Solid Rock
+- Swalot: Sand Stream -> Sand Spit
+- Gastrantrum: Unbreakable -> Shell Armor
+- Toxic/Frost Orbs are now Common on Toxic/Frost Grumpig to match the Flame Grumpig.
+- Stoutland, Ursaring, Breloom, Tentacruel line resprites
+- The special QoL upgrade vendors in Breloom's penthouse were charging you again for the L3 Live Support Drone and L2 Demonic Eye. Now they will check if you claimed either of these items as part of your S5 Veteran reward first.
+
+#----------------------------------------------------------------------------------------------------------------------
+v2.0 - POST GAME RELEASE - Saturday 23 May 2026
+#----------------------------------------------------------------------------------------------------------------------
+- Now available for play!
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.54 - Monday 19 May 2025
+#----------------------------------------------------------------------------------------------------------------------
+- Revised icons for T.Charmander, Zubat and Goodra lines
+- Fixed some dialogue in Ara City for an NPC
+- Ethereal fix for when a mon is in the invulnerable Shadow Force stage.
+- Fixed icons for Goodra line based on Boro's resprites.
+- AP Vendor will not upgrade your Demonic Eye until you have actually obtained it first from Elizabeth in Auriga Town.
+- Fixed weird error around not having a full party and trying to change your Pokemon in a wild battle.
+- Removed Coil and QD from T.Gallade/T.Gardevoir as evo moves. Still kept as Level 1 moves though.
+- Hypnosis accuracy nerfed back to 60%
+- Adjusted kits of: Musharna
+- Randomizer was still producing runes.
+- Copium has claimed too many victims. I have added an Artie check on each floor as you progress, so that you need to find all the books/interviews on a specific floor and speak with him at the stairwell before you can progress. This prevents the need for having to backtrack through floors until you've done your business on each floor. Note that this check does not apply to the Well Read quest.
+- Updated party showcase to show not just EV's, but IV's, actual stats, and the order in which they are displayed, as well as nature highlights.
+- New sprites for Toxicroak line by Boro and T.Meganium by Badman
+- T.Chikorita line now gets Solar beam at 53 (instead of Storm Shield) and solar power as its HA (instead of Magnet Pull).
+- Scizor now has a mega. Mega stone added to black market mega stone shop.
+- Clobbopus now had Rock Smash switch places with PUP in its egg set to avoid early trainers from using it with Contrary.
+- New sprites for Lapras, Sunkern and Fletchling lines
+- Adjusted BST and swapped out No Retreat with Swords Dance on T.Sneasler
+- Shellder was still learning Core Collapse instead of Void Drift
+- T.Vanilluxe now learns Gem Storm at 60 instead of Eruption.
+- Fixed encounters so Shapinch and Shible forms can appear in the wild in Corona and Lower Mt.Titania
+- Sand Stream, Sand Spit, Snow Warning, Slush Rush now shields you from the respective weather's damage.
+- T.Scyther now has Volt Tackle as an egg move.
+- Fixed wizard hat not being in dept store past Ch5
+- Replaced Hustle with Overcoat on the Jangmo-o line.
+- Replaced Hustle with Rocky Payload on the T.Wigglytuff line.
+- Changed Lokix and Nimble to both have the same 3 abilities: Flame Body, Flash Fire and Speed Boost.
+- Fixed an escape rope bug in the Indus Ruins relating to the secret area for the Ruined Riddles Quest.
+- Added some new music tracks to a few postgame areas as well as shuffled some existing areas (Route 13A/13B, Route 16A/16B, Route 14A, Fornax Town, Lyra City, Route 17A/17B), courtesy of custom tracks provided by EchanTheMan
+- Updated trainer teams (YGS, Artie's Starly/Staravia)
+- Updated evo levels on both Duosion lines, Pawniard, Elgyem, Meltan (not available anyway).
+- Skrelp Overgrow ability replaced with Regrowth
+- Minior now appears in the In-Between instead of Arcanine.
+- Trivega used to have 15PP instead of 10PP as intended.
+- Added a teleporter to the Time Matrix direct to the Remnants of the Origin when you have gotten to that point of the story.
+- Increased catch rates of mons in PBS across the board.
+- Fixed animation bug on sand wave.
+- Fixed pathing on toilets in Copium city indoors.
+- Protosynthesis, Orichalcum Pulse, Quark Drive and Booster energy added to the game.
+- T.Roserade, T.Lapras and Armaldo now have these abilities instead of Synthesize, Sand Force and Unbreakable respectively.
+- Swapped Jolteon Sp.Atk and Sp.Def and switched Tinted Lens with Compound Eyes for Leafeon.
+- Added new Auriga Town music courtesy of Yeth_half
+- Streamlined wonder trade script to allow for new mons to be added seamlessly.
+- New trainer sprites for Ethereal Guild, Eth Guild Anomalies, and Captains, courtesy of Raffs07
+
+- Immunity abilities greatly curtailed as follows:
+		Vanilluxe - Earth Eater > Liquid Ooze 
+		Yanmega - Levitate > Tinted Lens
+		Torkoal - Levitate > Static
+		T.Jumpluff - Levitate > Vitality
+		Accelgor - Levitate > Shed Skin
+		Lokix - Levitate > Speed Boost
+		Lickilicky - Levitate > Pressure
+		Carbink - Levitate > Dazzling
+		Mega Gyarados - Levitate > Mold Breaker
+		Mega Altaria - Levitate > Corrosion
+		Mega Corviknight - Levitate > Blacklight
+		Mega Barbaracle - Levitate > Solid Rock
+		Mega T.Gigalith - Eartheater > Conductor
+		Dudunsparce - Eartheater > Regenerator
+		Plusle - Volt absorb > Cloud Nine and Lightningrod > Clear Body
+		Quagsire - Water Absorb > Magic Guard
+		Tangrowth - Water Absorb > Regrowth
+		Palossand - Water Absorb > Icy veins
+		Lapras - Storm Drain > Steam Engine
+		Vanilluxe - Water absorb > Drought
+		Kingler - Water Absorb > Tough Claws
+		Feraligatr - Dry Skin > Sand Force
+		Dondozo - Motor Drive > Filter
+		Mega T.Wyrdeer - Motor Drive > Sheer Force
+		Raichu - Cacophony > Maestro and Lightningrod > Filter
+		Lilligant - Cacophony > Flame Body
+		Vikavolt - Cacophony > Battery
+		Lapras - Water Compaction > Anger Shell (BST also changed)
+
+- A bunch of Pokemon had incorrect BSTs with canon forms (where they were nerfed vs their canon counterparts!). Fixed thanks to WitchyAlex spotting these for us.
+- Poochyena and Mightyena
+BaseStats = 45,65,35,45,20,30
+BaseStats = 80,100,70,90,40,70
+- Rhyperior BaseStats = 110,110,120,60,60,75
+- Leavanny BaseStats = 75,103,85,102,50,85
+- Decidueye BaseStats = 80,75,85,95,105,90
+- Unfezant BaseStats = 75,95,85,100,50,83
+- Noivern BaseStats = 95,90,75,112,88,75
+- Sunflora BaseStats = 75,50,80,55,105,85
+- Corviknight BaseStats = 75,100,86,100,49,85
+- M-Corviknight BaseStats = 75,120,100,120,80,100
+- T.Corviknight BaseStats = 75,54,81,105,100,80
+- Crobat BaseStats = 85,95,85,120,70,80
+
+These ones were nerfed because they had more BST than intended
+Sceptile BaseStats = 105,100,90,105,65,65
+M-Sceptile BaseStats = 105,130,105,130,65,95
+T.Sceptile BaseStats = 75,100,75,105,100,75
+
+Nerfed Dugtrio and T.Dugtrio stats and megas by 20 BST each. Changed Wugtrio's spread and Analytic ability with Earth Eater Ability. Wugtrio also lost shift gear.
+Typhlosion: Replaced Technician with Full Metal Body, and analytic with sturdy.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.53 - Sunday February 16, 2025
+#----------------------------------------------------------------------------------------------------------------------
+- Added quest flash to Twisted Fate quest when you complete the quest.
+- Removed Nature Power from egg moves for the handful of mons that had it. It's a super niche move that's not used widely.
+- Upgraded the type lookup menu in the Pokegear.
+- Arcing Blow target list changed to AllNearFoes
+- Removed Contact flag from Enchantment.
+- Added a fade to black on Ruined Riddles quest chain after stage 1 is complete to avoid the NPC popping.
+- Lowered evo levels on Spheal lines to 28 and 38 respectively.
+- Fixed sprite positions on some sprites that looked off.
+- Added Wishiwashi to Callisto Caverns encounters.
+- Canonized Team showcase from Pokemon Tectonic (with their permission, obviously).
+- Minccino gets draining kiss as an egg move so Artie isn't using an illegal move on the first Minccino battle.
+- Fixed randomizer event to appear only during randomizer runs.
+- New resprites of Skiddo and Gogoat imported based on Sacred Phoenix's sprites that are allowed to be used. Our credits list has been updated to include the artists that came up with the concepts now. Thank you Sacred Phoenix team!
+- Made some map changes to Cassiopeia City to avoid a very niche soft lock from possibly occurring.
+- Made a bunch of changes to Maurizio's team as he had some illegal mons/moves and incorrect EV allocations or held items on his teams.
+- Fixed cut scene in the In-Between from causing a possible soft lock if you wiped against them.
+- Fixed Burmy form spelling error in egg list for Ice and Rock-type eggs that was causing a game crash.
+- Tweaked BST spread of Scizor.
+- Fixed item distribution excel file as it was missing some hidden items.
+- Added the Sound flag to Sonic Nova.
+- Made some minor dex entry changes for words being cut off.
+- Beedrill's abilities were not synced up across its evolutionary line.
+- Fixed the length of some move descriptions that were getting cut off.
+- Charcadet was appearing in Ground-type eggs.
+- Fixed some typos and sentence structure in dialogue.
+- Resprites of Qwilfish, Pinsir lines and minor change to Seaking by Boro.
+- Anomaly Hydrapple was not in the randomizer blacklist.
+- Added message to clarify that you need level 30 for many evo stone mons
+- Fixed sprites for Dhelmise and Shiny Maractus and Shiny Gastrodon (ARGHHH, FORMS!!!)
+- Buffed Jango's Cubchoo as it had some incorrect moves.
+- Fixed Anomalies from appearing in evo page of the advanced dex.
+- Fixed some ability full descriptions
+- Fixed BST spread on Anomaly Murkrow
+- Volbeat and Illumise held items were messed up and boosting wrong stat and held by wrong mon.
+- Resprites for Ariados, Sceptile, Serperior, Zubat line by Boro
+- Resprites of Grimer line, Onix line by Zeta
+- Added Anomaly Grimer to PBS and to randomizer blacklist.
+- Resprite of Pinchurchin, Cinccino lines by Raffs07
+- Season 4 gift mon password has been changed and any season 5 veteran holders will get a password announcement right away to be able to skip puzzles (refer to Discord server for the relevant passwords).
+- Fixed some donation NPCs that were taking your money without doing a proper check on if you had enough.
+- Advanced dex was removing last move in error from the learnset move list.
+- Total rework of Meganium and new ability Regrowth added to Meganium, Bronzong, Ferrothorn, Carnivine, and Glimmora
+- Yoshi, Jos and PDM have new art gallery/dev battles because of the reworked Meganium on the team.
+- Runes (Postgame system) were appearing in randomizer if items were randomized which was causing a crash.
+- Mega Azumarill added, but tweaks to its kit made to keep it balanced.
+- M-Meloetta now has Pure Heart as an ability
+- Siren's Song and Battle Cry both now have 100% accuracy.
+- Kricketune BST changed to: BaseStats = 70,40,61,94,85,70 and now evolves at Level 26.
+
+- Various Nerfs including learnset or ability changes, BST tweaks to some of the stronger-rated Pokemon: Meganium, Kingdra, Manectric, Lopunny, Leafeon, M-Mismagius, Dragonite, T.Aromatisse, M-Plusle, M-Minun, Hariyama, Basculegion, Cloyster, Simisage, Gallade, M-Raichu, Musharna, Quaquaval, M-Froslass, T.Garchomp, M-Gengar, Scyther, M-Arbok, T.Steelix, M-Beheeyem
+- Various buffs including learnset, ability or BST tweaks to some lower-rated mons: Reuniclus, T.Kingdra, Ambipom, Beartic and M-Beartic, Probopass, Primarina, Cramorant, Spiritomb, Emboar, Exploud, Frosmoth, Florges, Glalie, Glimmora
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.52 - Sunday January 5, 2025
+#----------------------------------------------------------------------------------------------------------------------
+- Fixed some typos in dialogue
+- Fixed a TT player in Corona Marketplace not asking you for consent to battle them.
+- Fixed Moody ability description.
+- Updated No Trespassing Quest and Busking for Business to show quest signal when the screen isn't black.
+- Adjusted kits for T.Gogoat, Torterra, Tyrantrum, Salamence, Sealeo, Garganacl, T.Sceptile, Noctowl, Persian, T.Electrode, Vikavolt, Tsareena, Chesnaught, Kingambit, Dragonite, Glimmora
+- Tweaked Rexy's art gallery fight
+- Contraband Tech was giving out a duplicate TM23 as a reward instead of TM28 as intended.
+- Adjusted surfing/fishing battle back for Route 6B
+- Fixed incorrect presentation of evolution conditions in advanced Pokedex.
+- Fixed UI issue on battle belt when attempting to move items from Pokemon.
+- Fleeting blow in Excel documents was not listed with correct BP.
+- Fixed Pokemon PBS data listing Excel file for some minor issues identified.
+- Fixed Badman's weather effect in dev battle.
+- Teleport -6 priority restored.
+- Fixed a bug with Powder and fire moves causing you to explode to death.
+- Fixed a bug relating to demonic eye upgrade enabled blank encounter maps crashing the game.
+- Fixed animation bugs on Lucky Chant and Salamander Toss (opposing).
+- Mega Noctowl added to game files along with a sprite touch-up.
+- Corrected typo in refusal text for Gift T.Igglybuff, Scraggy and Venipede
+- Boosted held item chances by wild Pokemon to at least WildItemCommon to ensure that low RNG is not an issue.
+- Drampa was in the Cosmic egg list in error. Moved to Dragon.
+- Put in more safeguards to ensure graffiti boy in Orion Underground doesn't get you stuck.
+- Fixed some tile issues. Fixed PDM's randomizer resetter event.
+- Fixed Togedemaru form issue.
+- Fixed various tile issues
+- Fixed typo in level trainer text.
+- Added Pincurchin to R15A encounters in place of Shuppet.
+- Changed evo methods for both Kirlia lines (Kirlia is male/female at level 30, down from 40, while T.Kirlia evolves now using stones and gender doesn't matter).
+- Nature psychologist NPC now sells you nature-changing mints for $2,500 each in addition to changing nature directly so you can change nature on the fly now.
+- Terrain seeds are now sold in Corona Marketplace and Orion Dept. Store after chapter 7. Seeds are also sold for 1BP in the BP shop.
+- T.Eevee gift mon in the Orion slums can now be either gender.
+- Fixed B9K terminal checkpoints on maps where bosses are causing bugs in event locations resetting.
+- Resprites for several mons (Kabuto line, Mega. T.Jumpluff, Swirlix line, Stantler line, Durant, Haxorus line) thanks to Boro
+- Mega. T.Cacturne sprite wasn't sized correctly and was causing some animation bugs.
+- Tatsugiri forms added to eggs and also added forms handlers for Tatsugiri forms.
+- Fixed the evo levels of a bunch of different mons that had Temporal variants with different evo levels/methods such as Croconaw, Dartrix, Doduo, Duskull, Geodude, Hoothoot, Machop, Nacli, Naclstack, Slugma, Steenee, Swablu, Wooloo
+- Fixed map metadata in anticipation of revision to mapregion1 map.
+- Added missing/incorrect shiny sprites for both Pyroar lines.
+- Fixed save/load screens to say "Ch. Completed" instead of "Chapter"
+
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.15 - Updated December 17, 2023 @ 9:00pm EST (GMT-5)
+#----------------------------------------------------------------------------------------------------------------------
+- Reworked Magnitude to be like Night Shade
+- Added some new low-tier physical Ground moves to broaden selection (Tremor and Trample respectively).
+- Fixed animation bug on arrow flurry
+- Fixed the user interface tutorial that pops up at the beginning of the game as M was incorrectly saying what N did and vice versa.
+- Smeargle now has universal tutor compatibility to expedite the process of creating an optimal kit for him, rather than having to sketch moves you want.
+- Modified kit of a number of physically-oriented ground types to accommodate the new early-tier physical ground moves: Charmander (egg and learnset), Learnsets of Machop, Totodile, Mamoswine, Donphan, Chesanught, T. Lapras, Emboar, T. Mamoswine
+- Duskull now evolves to Dusclops at Level 32.
+- Hydro Pump move description was incorrect but has now been turned into an Arcane Energy clone.
+- Clarified ability description for Moxie/Charisma to make it clearer they don't work like canon.
+- Gave Sharpedo barrage and rapid strike and tweaked the rest of Sharpedo's kit to fit these in.
+- Aligned TM learnset between Froslass and Snorunt to make sure Froslass can learn everything that Snorunt could in addition to its own unique moves. Same done for Applin line.
+- Psycho Cut had a chance to confuse which was wrong.
+- Added more notable quest alert pings for every quest when the completion text is noted to make it clear when you've finished the objective.
+- Tweaked kits of a bunch of SS1 mons: Tangela, Tympole, Gulpin, Spinarak, Golett, Ponyta, Amaura, Skrelp, Drowzee, Seel, Skiddo, Kabuto, Roggenrola, Finneon, Gliscor, Druddigon, Krabby, Hoothoot, Voltorb, Sandygast, Vanillite, Popplio, Exeggcute, Treecko, Larvitar, Hippopotas, Swirlix.
+- Modified kits of SS1 mons: Mareep, Swablu, Abra, Venipede, Heracross, Teddiursa, Psyduck, Duskull, Skitty, Deerling and Aron.
+- Edited vials held by the Avatars and Simulacrums as they were suboptimal
+- Made Wand Honedge appear on Route 4A during the day.
+- The ability precision wasn't working correctly.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.14 - Updated December 3, 2023 @ 7:00pm EST (GMT-5)
+#----------------------------------------------------------------------------------------------------------------------
+- The Auriga Resort bed was not a save checkpoint
+- Certain Breloom terminals now act as a save checkpoint but not all of them.
+- Soul shield had priority and a sound flag in error.
+- Dirty bomb was missing the Bomb flag
+- Ethereal burst description edited to clarify that it hits everyone on the field.
+- Modified kits of: Incineroar (moves), Raticate (telepathy instead of infiltrator ability), Aegismash (Contrary instead of Conductor ability), Aegibow (mixed attacker with BST and moveset changes), Mismagius (Ethereal swapped out for Healer), Dracarys is now compatible with Aurorus and T.Sylveon, Grapploct (BST, move and ability tweaks).
+- Refraction wasn't doing anything. Like literally nothing.
+- Clarifies the ability description of Genius, Pure Power and Huge Power to specify that they double the respective stat.
+- Nebula cloud wasn't working correctly for partners.
+- Adjusted quest reward in Triton Cave to give you Ice Gems rather than an Ice Stone to avoid giving you an early evolve mon way too early.
+- Anomaly story boss battles now are a bit tougher as they have more than just one enemy (Galvantula, Hoopa, etc.)
+- You can now choose to randomize boss battles at the beginning of the game if you want. For existing save files, the last boss's team that you faced will determine what team number you are facing from now on.
+- Some more AI improvements to fix misplays
+- Changes (unused) in the F1 control menu to the appropriate speed change trigger
+- At the end of the game, WT now lets you choose your tier you want to trade from.
+- Manaphy now has Hidden Power (Fairy) in the Swalot battle so it doesn't end up being a stall war.
+- Modified kits of: Golisopod (Hyper Cutter instead of Vengeful, and removed compatibility with Nectar Tap.
+- Reworked difficulty a bunch. MBD effects are greatly scaled back in standard difficulty now to allow lower skilled players to be successful. For example:
+- MBD Standard difficulty: Instead of getting "toxic" spikes and stealth rocks on entry, it's been scaled down to be poison on entry (i.e. toxic spikes variant 1 rather than variant 2 where you get "badly" poisoned) and one layer of spikes 
+- MBD Standard difficulty: In many cases, where screens were tossed up, it's now 3 turns instead of 5.
+- MBD Standard difficulty: in many cases where there were multiple stat boosts on certain triggers being met, it's now been scaled back so it's fewer stats and in some cases, an entire set of triggers have been removed.
+- Fixed an issue with the free boat ride events in Auriga Bay and Lyra City.
+- Fixed a bug around Instruct locking the enemy into a chain of moves that couldn't end until out of PP.
+- Changed how the demonic eye works. It is now a key item that can be activated or turned off at will and no longer needs to be held. This will only work on new save files going forward.
+- Reoriented the mining game graphics for unique fossil graphics for each fossil mon.
+- Adjusted quest reward for Temple Sentries to now award you a Power Stone as a Swarm Stone was found in close proximity already.
+- Made underwater air vents as part of story in Chapter 7 more visible.
+- Modified kits of: Unfezant (BST), Cherrim (BST), Forretress (BST), Mudsdale (Scrappy replaces Stalwart), Centiskorch (moves and egg moves)
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.13 - Updated November 4, 2023 @ 12:00pm EST (GMT-5)
+#----------------------------------------------------------------------------------------------------------------------
+- Modified kits of: Claydol (Psychic Surge as an ability instead of Battery as well as moveset), Beldum (kit so that it's not crippled until it evolves to Metang)
+- Smog buffed to 40bp and 100% accuracy
+- Talonflame line had incorrect BST. Talonflame was incorrectly in Tier 2 when he should have been tier 3, so wonder trade and booster pack lists have been updated accordingly.
+- Fixed the issue where incorrect time was being displayed on continue and save screens.
+- Corrected the held items that many wild Pokemon hold when they appear as some were still their canon held items (e.g. Pikachu and Light ball)
+- Black Market player no longer has an Arceus card that he gives you for beating him as it was too OP.
+- Fixed a bug with the Robbing the Robbers quest that he hung around if you hadn't talked to him first, and had cleared the ethereal guild from Triton cave before speaking to him. He now disappears along with his quest if you only speak to him for the first time after clearing the ethereal guild out and his quest goes away with him.
+- Fixed a bug with a tutorial skipping turns.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.12 - Updated November 1, 2023 @ 9:45pm EST (GMT-5)
+#----------------------------------------------------------------------------------------------------------------------
+- Shiny stone was coded over a dawn stone in the mining rocks in error.
+- Exeggcute egg group fixed.
+- Added Drapion's Front Shiny, T. Lapras Back shiny, and Mega Gliscor Front shiny as they were missing.
+- Added corrected egg sprites for Goomy and Sheino (Shellos Dark/Dragon form)
+- Fixed getting full AP on shift mode and added a halving to AP earned if room extender was used (basically if it detects room is over 5 turns)
+- Incorrect AP was being awarded if you had a max revive in a belt.
+- Fixed certain areas being accessible.
+- Battle belt couldn't accept Guard Specs 
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.11 - Updated October 29, 2023 @ 7:30pm EST (GMT-5)
+#----------------------------------------------------------------------------------------------------------------------
+- Modified kits of: Houndoom (entire kit - it is now a special attacker), Dodrio (moves), Scraggy, M-Ninetales (ability), Tentacool (ability and kit including its mega), Solrock/Lunatone (kits), Grapploct (kit), Copperajah (kit), Gastaria (ability)
+- Lost Heaven had its chance to raise its attack reduced to 10%.
+- Checkmate Atheists, we found the source of the lag on certain routes when walking through grass and killed it.
+- Differentiated certain bosses into minibosses to change their AP yield.
+- Tempest Flare is now a Close Combat clone vs. a special Superpower clone.
+- Encounters weren't working on underwater maps.
+- Three new side areas have been created with trainers and items to pick up: Auriga Coast, Route 4C and Orion Docks.
+- Contact flags have been removed from the following special moves: Dark Void, Luster Purge, Magic Palm, Time Bomb, Holy Ward, Iron Sparks, Penance, Meteor Shower, Astral Barrage, Sound Barrier, Chaos Blast, Zephyr Purge
+- Tutor.net now has a new tutorial guidance with the key that's being used to filter on moves by mon changed to accommodate controller use.
+- Added new functionality in the type matchup UI in the Pokegear to press :SPECIAL to sort by type. Pressing :USE still brings up the full list of mons.
+- The "Not Enough Minerals" Quest was giving you a duplicate TM86 as a reward (same as the Just Following Orders quest). This has now been changed to TM41 Magnetic Cannon. This unfortunately won't apply to existing save files.
+- Moves that did not have a contact flag earlier but now it does: Cruel Whip, Sweeping Talon, Celestial Fury, Jaw Lock, Death Reap, Static Shock, Infernal Blade, Scorch, Stream Rush, Branch Poke, Zeal, Coup de Grace, Neurotoxin, Mind Drain
+- Fixed a MBD with Sienna where the player's name was being called rather than Sienna.
+- Fixed a bug where you're hovering over Battle Belt, and you press the 'Quick Swap' button (:ACTION), and use on another pokemon
+- Fixed double battles granting AP equivalent to  being on set mode if the player's side is a double battle
+- Patched an exploit where playing with the HP EVs would let you heal a pokemon.
+- Turned Vital Throw, Vendetta, Astral Barrage and Refraction into Chip Away clones.
+- Changed quest rewards for Not Enough Minerals and Ruined Riddles
+- Gardevoir line have new sprites.
+- Built in a check for Harry and Marv to ensure you have at least 2 pokemon in your party so the game doesn't crash when you face them.
+- Serene grace has been nerfed so that if the effect chance of a move is 30%, it will double the chance of that secondary effect to 60% but now the dmg of the move is lowered by 30% in exchange. This won't apply to moves with a 100% effect chance.
+- Made AI not spam status moves on a mon with hydration under rain
+- Made AI know ice types are immune to sheer cold and sturdy mons in general are immune to OHKOs
+- Moxie and Charisma now work independently of one another, as they were previously conflicting with one another. AI has been updated to reflect this change too.
+- Order of options in the IV master have changed so changing all IVs is the default option
+- Reduced frequency of lightning flashes on R13A and R13B.
+- Added another tier of exp trainer in between the boss in the Underwater Lab and the Epoch Corporation HQ
+- Artie's practice battle on Route 10B has had his levels increased to level 50.
+- Switched the type icons for Ground and Rock on the Battle UI because people were getting confused.
+- Fixed a tile error on the outside of telescopium academy that required some new tiles and a fix to the fog effect.
+- Created a new signature ability for Copperajah - Tropical Hide.
+- Changed kits of: Milotic (ability), Slaking (ability), Watchog and Klefki (have disarray instead of Psychic Surge and Prankster respectively), Hatterene/M-Hatterene (ability and BST spread respectively), Lillipup (rearranged Necrophagy in its kit given its interaction with Strong Jaw)
+- Wonder room had -7 priority instead of 0 as intended.
+- Barbaracle is no longer the terror of the seas (Sturdy replaces Disarray).
+- Experience is now equalized so growth curves don't matter anymore. For those of you that have a mod of this, please remove this as this is now standard. 
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.1 - Updated October 21, 2023 @ 1:00am EST (GMT-5)
+#----------------------------------------------------------------------------------------------------------------------
+- Fixed PP on Mist Ball to 15. There was no reason for a 70BP move to have only 5 PP.
+- Fixed an issue in the Antimatter Temple where the partner trainer would get you stuck.
+- Modified kits of: T.Dugtrio (moveset), Carnivine (learnset, eggs and one ability), Purrloin (TM Compatibility), Barbaracle (BST), Appletun (moves), Breloom (moves), Ninetales (ability), T.Gothitelle (entire kit), Helilolisk (ability), Venomoth (kit), T.Masquerain (moves and egg moves), Corsola (ability), M-Corviknight (BST)
+- Adjusted kits of a number of SS1 regionals: Koffing, Reuniclus, Doduo, Magcargo, Wailmer, Talonflame, Xatu, Rufflet, Crobat, Larvitar
+- Stone Gaze has been turned into a Fake Out clone.
+- Double Slap, Barrage, Fury Attack and Comet Punch all updated to 100% accuracy
+- Golden Bullet turned into a Sucker Punch clone and shifted around in Scrafty and Floatzel kits.
+- Gave you the ability to turn down the free Honedge in Telescopium City.
+- Added an auto heal after the underwater temple boss battle.
+- Nincada evo methods changed to be a split evo (level at Day into Shedinja, level at night into Ninjask).
+- Leaf tornado - increased to 100% acc but secondary effect chance reduced to 30%. This is basically what i did to Octazooka.
+- Moves increased to 100% accuracy: skitter smack, dual chop, dual wingbeat, bonemerang, wrap, twin needle, play rough, sky uppercut, double kick, nymph's spell, zen headbutt
+- Added some additional custom UI art for the battle menus.
+- Hopefully improved some performance on some event-heavy maps like Route 2A, 6B and Underwater maps by removing bush animations.
+- Death Waltz and Scented shield had the contact flag in error.
+- New UI for stat overlay and changes to the nameplates on enemy side.
+- Acupressure and its clones now boosts the highest and lowest stat by 1 stage each.
+- Moody works differently, with its stat boosted temporarily, then taken back and another mood boosting another stat.
+- Toxic boost mons don't take poison damage now
+- Fell Stinger and its physical/special clones now only boost their stat by 2 stages instead of 3 as it was too powerful otherwise.
+- The change made earlier to dream eater wasn't working correctly.
+- Rock slide has 90% accuracy again.
+- Quiver Dance has been removed from tutor kits and replaced with a new 70bp, 30% chance to drop accuracy Bug special-type move called "Rainbow Scales". Some mons that learned Quiver Dance have lost compatibility with this new move altogether as it didn't fit, but others just had Quiver Dance replaced with it.
+- Pin Missile tutor in Auriga Bay switched with Fury Cutter (1 Green). Pin Missile tutor is now found in Fornax Town PC (2 Yellow). This change won't affect existing save files that have already learned the move.
+- Gave Diamond Blade to Glaceon, Pinsir, Crawdaunt, Skarmory instead of Rock Slide to spread that move out more. Onix just got it as an extra move now, and Avalugg + Armaldo got it as an egg move.
+- Hidden power crystals can now be mined.
+- Exp trainer pacing adjusted between Chapter 5 and Chapter 6's completion because of the length of it.
+- Dig changed back to 80bp as it was 90bp in error.
+- We finally found the accursed bug that was causing the partner trainer to prevent you from being able to run!!!
+- Hopefully found a fix for items appearing in the wrong bag pocket.
+- Bolt Beak and Fishious Rend now only deal 1.5x damage (down from 2x) if you outspeed. Both moves are also only 70bp now.
+- Better AI around flinching moves and cosmic power
+- Reworked the Swalot Anomaly boss battle at the end of Chapter 4 to make it more threatening.
+- Gothita now has covet as an egg move AND klefki has thief as an egg move.
+- Aligned encounters across all rods for Orion City East water spots.
+- Pseudos were banned from the battle facilities in error.
+- Modified kits of: Pawmot (moves), Tentacruel (ability), Lanturn (kit)
+- Artie's teams in Mensa Village now has fully evolved starters.
+- Adjusted some encounters in Orion City East (fishing) and Mt. Oberon (Shellos Tyrunt form)
+- Stardust Reverie now has a chance to confuse targets, while Moonblast has been returned to its canon effect (95bp, 30% chance to lower target's SpAtk, 15PP)
+- Dragon Fury, Goblin Strike, Maim, Megaphone, Metal Claw all have had their chance to raise attack nerfed to 30% and all have had their punching flags removed, except for Maim.
+- Swapped Quicksand (now 1 orange shard) with Wail (now 3 orange shards) tutor costs.
+- Void Drift and String Shot buffed to lower speed by 2 stages.
+- Sewer Monster Indeedee and Lost Guppies Grapploct now has 31 IVs each.
+- Minor anomaly horde trainers are no longer subject to the randomizer as it was returning odd results.
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.9 - Updated October 15, 2023 @ 8:00pm EST (GMT-5)
+#----------------------------------------------------------------------------------------------------------------------
+- Fixed the transition art graphic for the Gang Leader
+- Made some mapping fixes for Route 10B so the pit south of Aquila City isn't right below so if you're speeding through, you don't fall in.
+- Surging Blow was missing priority.
+- Aligned PP on revenge-like moves to 10 each
+- Terrorize now reduces incoming Bug-type moves rather than Poison-type moves.
+- Modified kits of: Jynx, Volcarona, Honedge Hammer, Dustox, Slurpuff, Cradily.
+- Accuracy of Fortissimo and Execution were not consistent with other similar moves.
+- Added Eruption/Water Spout AI depending on user speed vs opponent speed and if they have priority move.
+- Did some further tweaks on AI checking for psyshock/mixed waves.
+- Made the AI calculate the damage of Fury Cutter properly.
+- Created the moveLocked method that handles all cases where a battler is locked into a move. Edited all sections in the AI that involve checking for if a battler is locked in a move.
+- Fixed a couple typos in AI and incorrect checks that were causing partner AI to misplay.
+- Attempted some improvements for Baton Pass.
+- Added more advanced AI for some more functions: Bide, Stockpile, More draining moves, Strength Sap
+- AI can now stall better and won't switch needlessly ...as much.
+- Better Hyper Beam AI. Added AI for Protect moves and Wish.
+- Improved AI decision-making in double battles
+- Hall of fame was showing wrong form of mon instead of mega evolving it (Aegislashes).
+- Q increases speed while W now decreases speed rather than forcing you to have to cycle all the way around.
+- Battle Tower min levels are now level 60 or level 100 to avoid the EV deleveling issue.
+- Death Vortex now hits all enemy Pokemon when it wasn't doing so before.
+- Aegislash Bow couldn't learn icicle spear by tutor moves despite having it in its egg set.
+- A few lower power moves that had 90% accuracy for no reason have had their accuracy increased to 100% since moves that miss is not very fun.
+- Reduced frequency of lightning flashes in Orion Slums.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.8 - Updated: October 11, 2023 @ 9:00pm EST (GMT - 5)
+#----------------------------------------------------------------------------------------------------------------------
+- Missing shiny back sprites for Mr. Mime line and fixed some sprite positions (Poochyena), Buizel (moves and egg moves).
+- Modified kits of the following pokemon: Beedrill (abilities), Kommo-o (moves and egg moves), Roserade (Justified instead of Limber), Movesets for Furret, Klefki, Serperior and Hattrem.
+- Fixed a minor bug with the box swap script that prevented you from actually using multibox mod.
+- Changed what Glacial Lance did as it was too strong in its old form.
+- Seismic shift no longer has the contact flag.
+- Made schools of fish trainers give you money now even though it might be a bit unrealistic for them to be carrying money to award you with when you beat them.
+- Sandygast now evolves at 34 instead of 42.
+- Love loop had priority which was not intended.
+- Added a new 50bp Dark move: Dirty Bomb, 20% chance to poison, bomb flag and added it to Sandile so it had a strong Dark STAB that benefited from its cannonfire ability. Also added this to egg set of Gothita and Applin (other cannonfire users).
+- Gang Leader Nigel now has some custom art and is now exempted from the randomizer given he is now considered a boss (this will not affect existing randomizer files though) and his defeat will also award AP.
+- Plasma Fists and Electron Crush have had their move effects changed.
+- Fixed some more AI bugs.
+- Made AI able to potentially execute  lockon/mind reader + ohko move combo
+- Fury cutter was showing incorrect base power in the move UI
+- Fixed an AI bug that was happening with the Harry and Marv battle in the Draco City Attack
+- Fixed an interaction with Leeching Fangs and Liquid Ooze throwing an error.
+- Made it so the Total AP shown in the hall of fame are stored in a separate variable.  That variable will be the one that is used when the hall of fame is viewed from the PC. This means that the AP shown will remain the same even if the player collects more AP afterwards. Also created a placeholder system for the second hall of fame  entry that will happen at the end of the postgame
+- Nudged the difficulty mode text more to the right
+- Battle facilities now reward double BP on unfair
+- Moxie and Charisma have been nerfed given they are OP abilities. They now work similarly to Supreme Overlord in that every KO results in a 10% attack boost/spatk boost as appropriate, up to a max of 50%.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.7 - Updated: October 9, 2023 @ 8:30pm EST (GMT - 5)
+#----------------------------------------------------------------------------------------------------------------------
+- Tweaked the kits of the following Pokemon: Houndour, Bow Aegislash, Hydreigon, Pyroar, Meowstic (Pyro), Gengar, Furfrou, Staraptor, T.Jumpluff, Azumarill, Hitmon lines, Corviknight
+- Found some more incorrectly sized sprites which are now fixed.
+- Dragon Energy and Siren's Song were able to bypass Protect in error.
+- Reverb was doing the wrong thing and trapping a target when it was intended as a multi-hit move.
+- The following moves now have 100% accuracy as they were changed from canon in error: Struggle Bug, Arm Thrust, Infestation, Flash?, Poison Tail, Sludge Wave, Spike Cannon
+- The following moves have 100% accuracy and were not canon moves: Antimatter
+- The following moves now do new things instead of trapping given there was a lot of trapping moves: Ice Vortex (lower BP Dragon Tail), Backstabbing (Dark Quick Attack), Fairy Ring (now guaranteed chance to -1 speed), Haunt now has a small chance to lower speed instead of being a trapping move, Gale Hold now has a chance to lower attack.
+- Jump Kick is the only move left with 95% accuracy. All other 95% accuracy moves bumped up to 100% accuracy.
+- AI now finally takes safeguard  into account for status moves. AI now takes Contrary into account when deciding to use stat boosting items or moves
+- AI now takes these new things into account when calculating damage and speed differences for new pokemon to switch into battle: Weather setting abilities, Terrain setting abilities, Intimidate, Dishearten
+- Battle Belt fixes: No longer subtracts AP after boss battles if an item already had 0 quantity (grayed out in the party screen) before the battle started.
+- Difficulty Mode Tweaks: Revival items can't be put on the belt on higher difficulties.
+- A number of moves have had their pulse flag benefit removed (Meteor Beam, Flame Burst, Mirror Shot, Dracarys, Draco Surge, Ender Shock, Magnet Force, Bejeweled, Sonic Blast
+- Exp trainers have had their levels adjusted to be one level below the boss of the chapter so you can be on par with the boss of each chapter.
+- Replaced Anomaly battle music.
+- Shortened the description of several moves that were being cut off in the UI.
+- Fixed the critical bug of the battle tower/battle factory stealing and emptying your bag!
+- AI properly recognizes gale wings/pounce/leadership boosted moves and grassy glide on grassy terrain as priority moves in all parts of the code, instead of just self-move scoring.
+- AI properly recognizes when its priority moves are gonna get cockblocked by psychic terrain / dazzling etc  in all parts of the code
+- Fixed bug on encounters UI
+- Dream eater now works similar to belch, in that it will do 50 bp damage if the target is not sleeping and double if it is sleeping.
+- Attempted fix for the to_i AI error
+- Added PDM's multibox mod as standard.
+- Prevented farming of practice battles for AP. Battles can still happen but no AP is awarded for them now.
+- Fixed a checkpoint registering issue in the Antimatter temple.
+- Fixed forms producing the wrong eggs.
+- Made black market goomy sale be a random colour form.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.6 - Updated: October 7, 2023 @ 2:00am EST (GMT - 5)
+#----------------------------------------------------------------------------------------------------------------------
+- F12 now results in a hard reset to avoid triggering a host of issues that were happening.
+- Hall of fame now doesn't cause team members to fade out in opacity and a tutorial was now added to show how to navigate it to show info about the mon in question.
+- Modified various regionals such as: Tyranitar, Salamence, Garchomp, Ninetales, Finizen, Solrock, Gogoat, Falinks, Smoochum
+- Removed evo items held by certain wild Pokemon.
+- Fly trap now has a Biting flag, to benefit from Strong Jaw.
+- The sprites for Mega Tsareena X and Y were switched. All of these have been swapped to their correct position.
+- Fixed a crash on battle belt and also on the type lookup tool.
+- Fixed a number of tile issues identified
+- Fixed overworld sprites that were spilling over frames.
+- Incorrect mon was being awarded when requesting a Munna from the Black Market vendor.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.5 - Updated: October 5, 2023 @ 9:00pm EST (GMT - 5)
+#----------------------------------------------------------------------------------------------------------------------
+- Tweaked kits of: Nincada, Sudowoodo, Lillipup, both Hoothoots, Gothitelle line, T.Diglett, Gastly, Ditto, Caterpie, Weedle, T.Sableye, Poliwrath line, Dustox/Beautifly, 
+- Tweaked abilities of: M-Metagross, Dragapult and M-Dragapult, T.Altaria and Mega, T.Doduo, Hippopotas and Mega, Rolycoly and T.Roggenrola, T.Vaporeon, Steelix (can also now learn Dragon dance), M-Jumpluff
+- Added Frisk to Gothitelle (Limber), Magnezone (Static), Klefki (Light Metal) given its strategic uses (replaced abilities are in brackets).
+- Adjusted map metadata for Orion Slums and Landfill as they were inverted.
+- Klink and the Vanillite lines now evolve at 25 and 40 respectively.
+- The Encounters UI plugin has now received a glow-up thanks to PDM! You can see the types of the Pokemon you're attempting to catch in the menu itself by clicking Action, open the Pokedex entry for any mon you've caught directly from the UI, and page up and down to key through mons on the list! 
+- Huntail was in the water gift egg list for some reason.
+- Falinks has received a bit of a rework. It now learns more electric moves because its Mega gets Hadron Engine on mega evolving.
+- For fun, we've made it so that if a mon can mega evolve and has the mega stone equipped, your hall of fame will now show its mega sprite.
+- Buneary now evolves at level 32 into Lopunny because it was being accessed really early via an Ice Stone evolution.
+- Tweaked enemy teams of Maximillion in Triton Cave as he had some mons with illegal moves.
+- M-Charizard and M-Dodrio had some incorrect mega stats.
+- The heals HP in weather was misstated as saying they recover 1/8 when they only were recovering 1/16 health so they are now fixed to work as described (1/8 health).
+- Leeching fangs now heals 1/8 of the target's HP with biting contact moves.
+- Leech Life is now a biting move so will benefit from Strong Jaw and Leeching Fangs.
+- Clarified description of Astral Majesty, Irredeemable and Thick Fat to state that they halve damage from certain types.
+- Route 14A had surf/fish encounters but there was no way to access the water. They have now been removed.
+- New landfill battle back as people didn't like it.
+- Fixed illegal mons on some boss teams.
+- Chatter was missing comment about it having a chance to confuse.
+- Made the entrances to Indus Village and Route 17B more obvious as people were getting confused that this was an exit.
+- Remade the bridge in Europa Forest as it was causing some graphical glitches.
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.4 - Updated: October 2, 2023 @ 9:00pm EST (GMT - 5)
+#----------------------------------------------------------------------------------------------------------------------
+- Added Goomy cosmetic forms to pokemonforms.txt to avoid crashing the fairy egg man when he gave you one of these in Pisces Village
+- Added tutorials to almost everything.
+- Arranged the stat change overlay so that it doesn't take precedence over sending stuff to your box.
+- Fixed the exp trainer clarity text to only trigger in cases where you would normally exceed the limit, instead of always.
+- Corrected incorrect ability descriptions.
+- Adjusted held items for a few Pokemon that didn't need these items.
+- Fixed levels of some boss Pokemon that had incorrect levels on teams.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.3 - Updated: October 1, 2023 @ 9:15pm EST (GMT - 5)
+#----------------------------------------------------------------------------------------------------------------------
+- Caitlin Maguffin quest continuity updated so that you can't find the vents on Route 8A until you speak to her in Pisces Village.
+- Song of Passion effect chance nerfed to 30%
+- Made some tweaks to kits of the following mons: T.Swampert, Slowpoke, Cubchoo, Binacle, Venipede, New eeveelution lines. Check over the new PBS file in the download package for changes.
+- The Hall of Fame screen now shows your difficulty mode and total AP.
+- AI updated to account for new Tail Glow behaviour.
+- Fixed egg/icon sprites of Ponyta line, Miltank
+- Achievement points now properly calculate based on party members.
+- Edited exp gain message on exp trainers to confirm that you cannot exceed 1 level past them.
+- Removed the auto teleport after Chapter 2 events in Triton Cave to help make sure people don't miss the Mining Kit. Instead, added a Drifblimp Pilot outside Triton Cave.
+- Bug bite wasn't properly eating someone's berry at low health.
+- Renamed a boss in the In-Between to properly classify as a boss so that it provides AP on beating it. There's some new art for this graphic.
+- Put in a fix for the EV allocation screen randomly bugging out.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.2 - Updated: September 30, 2023 @ 9:15pm EST (GMT - 5)
+#----------------------------------------------------------------------------------------------------------------------
+- Modified the intro screen to provide a description of the Difficulty modes.
+- Durant was in WT1 instead of WT2 because of a logic error and being 484 BST.
+- Allowed people to unlock more boxes
+- Fixed typo in item use around vials with the AI
+- More changes made to unfair difficulty mode and accompanying changes to the AI
+- Naivety renamed as Dishearten everywhere.
+- If you refused an egg from the daycare man, the game was crashing.
+- Removed rock smash encounters from 10a/10b/cassiopeia oasis and added rocks to forgotten tombs because they had encounters but there were no rocks!
+- Litwick's Illuminate replaced with Dazzling. Some moves edited to accommodate its Transistor ability. Added Triattack to TM compatibility.
+- Agnes now tells you about the advanced Pokedex when you receive it from her during your birthday picnic.
+- Forretress and Shuppet get Misty Explosion in learnset, while Clefable and Gastaria get it through egg. Misty explosion BP increased to 150bp
+- Grassy glide nerfed to 65bp but net buff because of terrain buffs.
+- Safeguard for grinding trainer exploit applied. cannot bypass the level of these opponents by more than 1 level
+- Sleep Talk and Snore wasn't working on Aipom/Ambipom when they had Comatose.
+- Jaboca and Rowap berries were bugged.
+- Terrain move powers changed
+- Advanced Pokedex wasn't showing evo methods for level during the day/night evos.
+- Elizabeth added to Mensa Village to now give you a free Drifblimp Pass.
+- Mega ring wasn't being sensed on adept and unfair difficulties
+- M-Ninetales was missing an icon.
+- Added T.Eevee's TM compatibility to its evolutions along with its evos getting their own TM/tutor sets.
+- New ability Maelstrom for M-Sandaconda
+- Changed Tail Glow effect as it was too widely distributed to become Special Hone Claws. Purrloin/Liepard's BST spread was adjusted to increase SpAtk now because Tail Glow was nerfed.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.0.1 - Updated: September 29, 2023 @ 8:00pm EST (GMT - 5)
+#----------------------------------------------------------------------------------------------------------------------
+- Fixed Battle Belt shifting changing set and switch mode on higher difficulty modes
+- Fixed the crash when you open the game's options on the welcome screen with no pre-existing save files
+- Prevented camping gear not working while on bridge tiles
+- Demonic eye tutorial now updated at Elizabeth and her assistant in the lab
+- Fixed an issue with the Season 3 code clown
+- Added achievement points discussion to Breloom 9000
+- New theme songs for Eth Guild teams
+- Adjusted Cubchoo's learn set so it doesn't end up with having only attacking moves if you catch it in the wild at an early level.
+- Fixed weird bug around hidden abilities spawning on mons
+- Type look up feature now displays forms too
+- Dynamic speed changing thing and  terrain move power boost adjusted to be like gen 7
+- If you invested in HP EVs and then reduced the HP EVs, your HP would stay at the higher amount. This has been fixed now.
+- Elizabeth and assistant now indicate that first use of tutor moves in Tutor.net require a shard cost but are free thereafter.
+- Misdreavus was evolving with a Shiny Stone instead of a Dawn Stone as intended.
+- Got rid of the lights that were supposed to be an ambient effect that was just confusing people.
+- The random egg script has been fixed as he was providing unobtainable Pokemon. If you obtained Pokemon with a blurred sprite, please release them as they can bug your game!
+- Terrains have been reverted back to Gen 7 and provide a 50% boost (up from 30%).
+- An NPC has been added to Auriga Town to lower difficulty mode (only lower, not increase). He is a one-time use, and then he disappears.
+
+#----------------------------------------------------------------------------------------------------------------------
+v1.0 - MAIN GAME RELEASE
+#----------------------------------------------------------------------------------------------------------------------
+- Now available for play!

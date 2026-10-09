@@ -1,0 +1,29 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[0]
+StartMoney = 5000
+StartItemStorage = POTION
+Home = 122,12,13,8
+StorageCreator = Breloom 9000
+WildBattleBGM = Wild Battle 2 - Regular.ogg
+TrainerBattleBGM = Trainer Battle - Regular.ogg
+WildVictoryBGM = Victory!.ogg
+TrainerVictoryBGM = Victory!.ogg
+#-------------------------------
+[1]
+TrainerType = POKEMONTRAINER_Red
+WalkCharset = trainer_POKEMONTRAINER_Red
+RunCharset = boy_run
+CycleCharset = boy_bike
+SurfCharset = boy_surf
+FishCharset = boy_fish_offset
+DiveCharset = boy_dive
+#-------------------------------
+[2]
+TrainerType = POKEMONTRAINER_Leaf
+WalkCharset = trainer_POKEMONTRAINER_Leaf
+RunCharset = girl_run
+CycleCharset = girl_bike
+SurfCharset = girl_surf
+FishCharset = girl_fish_offset
+DiveCharset = girl_dive

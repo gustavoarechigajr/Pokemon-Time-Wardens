@@ -1,0 +1,6 @@
+﻿Name       = Voltseon's A-Star Pathfinding
+Essentials   = 20.1
+Version    = 1.2
+Essentials = 20
+Website    = https://www.voltseon.com/
+Credits    = Voltseon, Golisopod User, ENLS

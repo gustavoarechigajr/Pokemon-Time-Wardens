@@ -1,0 +1,34 @@
+Rune 	Number		Diablo 2 Rune Equivalent	Corresponding SS2 Ability	Rune Tier	
+1		El			Liquid Ooze					LIQUIDOOZE					C	
+2		Eld			Aftermath					AFTERMATH					C	
+3		Tir			Sand Veil					SANDVEIL					C	
+4		Nef			Snow Cloak					SNOWCLOAK					C	
+5		Eth			Vital Spirit				VITALSPIRIT					C	
+6		Ith			Synchronize					SYNCHRONIZE					C	
+7		Tal			Unnerve						UNNERVE						C	
+8		Ral			Poison Point				POISONPOINT					C	
+9		Ort			Natural Cure				NATURALCURE					C	
+10		Thul		Healer						HEALER						C	
+11		Amn			Ice Body					ICEBODY						C	
+12		Sol			Clay Form					CLAYFORM					C	
+13		Shael		Synthesize					SYNTHESIZE					C	
+14		Dol			Rain Dish					RAINDISH					C	
+15		Hel			Battle Armor				BATTLEARMOR					C	
+16		Io			Flame Body					FLAMEBODY					C	
+17		Lum			Mold Breaker				MOLDBREAKER					C	
+18		Ko			Shield Dust					SHIELDDUST					C	
+19		Fal			Infiltrator					INFILTRATOR					C	
+20		Lem			Analytic					ANALYTIC					C	
+21		Pul			Static						STATIC						C	
+22		Um			Compound Eyes				COMPOUNDEYES				C	
+23		Mal			Tough Claws					TOUGHCLAWS					C	
+24		Ist			Rivalry						RIVALRY						C	
+25		Gul			Sniper						SNIPER						C	
+26		Vex			Impenetrable				IMPENETRABLE				C	
+27		Ohm			Telepathy					TELEPATHY					B		
+28		Lo			Gooey						GOOEY						B		
+29		Sur			Inner Focus					INNERFOCUS					B		
+30		Ber			Prism Armor					PRISMARMOR					A			
+31		Jah			Arena Trap					ARENATRAP					A			
+32		Cham		Clear Body					CLEARBODY					A			
+33		Zod			Pastel Veil					PASTELVEIL					S				

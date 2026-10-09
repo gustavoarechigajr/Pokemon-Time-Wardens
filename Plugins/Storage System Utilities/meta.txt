@@ -1,0 +1,6 @@
+Name         = Storage System Utilities
+Essentials   = 20.1
+Version      = 2023.07.07
+Website      = NONE
+Credits      = Swdfm,PDM20, and badhaas
+Essentials   = 20

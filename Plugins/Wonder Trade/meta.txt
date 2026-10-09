@@ -1,0 +1,5 @@
+Name         = Wonder Trade
+Version      = 1.0
+Essentials	 = 20.1
+Website      = Not applicable
+Credits      = Black Eternity, PDM20, Upgraded to v20.1 by Jos_Louis, TechSkylander1518 and Thunder

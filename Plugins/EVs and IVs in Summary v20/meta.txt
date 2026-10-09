@@ -1,0 +1,7 @@
+Name       = EVs and IVs in Summary v20
+Version    = 1.0.1
+Essentials = 20.1
+Conflicts  = v19 Hotfixes
+Conflicts  = v19.1 Updates
+Conflicts  = v19 Hotfixes
+Credits    = Deoxysprime, SoulfulLex for Compatibility for v20

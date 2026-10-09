@@ -1,0 +1,5 @@
+Name         = Trainers Species Usage
+Version      = 1.0
+Essentials	 = 20.1
+Website      = https://www.pokecommunity.com/showthread.php?t=477929
+Credits      = FL

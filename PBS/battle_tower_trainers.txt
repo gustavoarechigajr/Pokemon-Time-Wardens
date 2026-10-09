@@ -1,0 +1,4012 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#------------------------------#
+[000]
+EndSpeechLose = That was an amazing battle! You really gave it your all.
+Name = Max
+PokemonNos = 10, 14, 22, 27, 33, 38, 46, 57, 65, 73, 80, 83, 91, 102, 109, 116, 123, 128, 137, 146
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#----------------------
+[001]
+EndSpeechLose = That was a great battle! I hope we can battle again sometime.
+Name = Lily
+PokemonNos = 16, 19, 29, 37, 47, 58, 64, 72, 79, 84, 92, 98, 103, 110, 119, 126, 132, 139, 145, 151
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#----------------------
+[002]
+EndSpeechLose = You deserve the victory!
+Name = Bradley
+PokemonNos = 0,1,2,3,4,5,6,7,10,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[003]
+EndSpeechLose = You deserve the victory!
+Name = Cybil
+PokemonNos = 0,1,2,3,4,5,6,7,10,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[004]
+EndSpeechLose = You deserve the victory!
+Name = Rodette
+PokemonNos = 0,1,2,3,4,5,6,7,10,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[005]
+EndSpeechLose = You deserve the victory!
+Name = Peggy
+PokemonNos = 0,1,2,3,4,5,6,7,10,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[006]
+EndSpeechLose = A fantastic battle!
+Name = Keith
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[007]
+EndSpeechLose = A fantastic battle!
+Name = Grayson
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[008]
+EndSpeechLose = A fantastic battle!
+Name = Glenn
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[009]
+EndSpeechLose = A fantastic battle!
+Name = Liliana
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[010]
+EndSpeechLose = A fantastic battle!
+Name = Elise
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[011]
+EndSpeechLose = A fantastic battle!
+Name = Zoey
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[012]
+EndSpeechLose = You deserve the victory!
+Name = Manuel
+PokemonNos = 5,20,21,25,27,35,46,47,48,50,53,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,119,121,124,127,146,147,154,158,160
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[013]
+EndSpeechLose = A dazzling display of skill!
+Name = Russ
+PokemonNos = 5,20,21,25,27,35,46,47,48,50,53,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,119,121,124,127,146,147,154,158,160
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[014]
+EndSpeechLose = A dazzling display of skill!
+Name = Dustin
+PokemonNos = 5,20,21,25,27,35,46,47,48,50,53,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,119,121,124,127,146,147,154,158,160
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[015]
+EndSpeechLose = A dazzling display of skill!
+Name = Tina
+PokemonNos = 5,20,21,25,27,35,46,47,48,50,53,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,119,121,124,127,146,147,154,158,160
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[016]
+EndSpeechLose = A dazzling display of skill!
+Name = Acheron
+PokemonNos = 5,20,21,25,27,35,46,47,48,50,53,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,119,121,124,127,146,147,154,158,160
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[017]
+EndSpeechLose = A dazzling display of skill!
+Name = Zoe
+PokemonNos = 5,20,21,25,27,35,46,47,48,50,53,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,119,121,124,127,146,147,154,158,160
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[018]
+EndSpeechLose = A dazzling display of skill!
+Name = Chen
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[019]
+EndSpeechLose = A dazzling display of skill!
+Name = Al
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[020]
+EndSpeechLose = A dazzling display of skill!
+Name = Mitch
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[021]
+EndSpeechLose = You deserve the victory!
+Name = Anne
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[022]
+EndSpeechLose = I am not worthy!
+Name = Alize
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[023]
+EndSpeechLose = I am not worthy!
+Name = Lauren
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[024]
+EndSpeechLose = I am not worthy!
+Name = Kipp
+PokemonNos = 5,6,7,14,19,28,35,42,45,48,50,55,59,60,68,73,83,84,86,87,90,96,97,98,99,103,105,106,109,112,114,121
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[025]
+EndSpeechLose = I am not worthy!
+Name = Jason
+PokemonNos = 5,6,7,14,19,28,35,42,45,48,50,55,59,60,68,73,83,84,86,87,90,96,97,98,99,103,105,106,109,112,114,121
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[026]
+EndSpeechLose = I am not worthy!
+Name = John
+PokemonNos = 5,6,7,14,19,28,35,42,45,48,50,55,59,60,68,73,83,84,86,87,90,96,97,98,99,103,105,106,109,112,114,121
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[027]
+EndSpeechLose = I am not worthy!
+Name = Ann
+PokemonNos = 5,6,7,14,19,28,35,42,45,48,50,55,59,60,68,73,83,84,86,87,90,96,97,98,99,103,105,106,109,112,114,121
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[028]
+EndSpeechLose = I am not worthy!
+Name = Eileen
+PokemonNos = 5,6,7,14,19,28,35,42,45,48,50,55,59,60,68,73,83,84,86,87,90,96,97,98,99,103,105,106,109,112,114,121
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[029]
+EndSpeechLose = I am not worthy!
+Name = Carlie
+PokemonNos = 5,6,7,14,19,28,35,42,45,48,50,55,59,60,68,73,83,84,86,87,90,96,97,98,99,103,105,106,109,112,114,121
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[030]
+EndSpeechLose = I am not worthy!
+Name = Gordon
+PokemonNos = 1,13,15,16,17,22,23,24,26,32,34,36,43,50,51,54,56,68,72,73,81,82,83,86,87,96,97,98,99,103,105,107,109,111,113,116,117,123,124,128,131,134,138,139,142,144,145,151,152,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[031]
+EndSpeechLose = I am not worthy!
+Name = Ayden
+PokemonNos = 1,13,15,16,17,22,23,24,26,32,34,36,43,50,51,54,56,68,72,73,81,82,83,86,87,96,97,98,99,103,105,107,109,111,113,116,117,123,124,128,131,134,138,139,142,144,145,151,152,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[032]
+EndSpeechLose = I am not worthy!
+Name = Marco
+PokemonNos = 1,13,15,16,17,22,23,24,26,32,34,36,43,50,51,54,56,68,72,73,81,82,83,86,87,96,97,98,99,103,105,107,109,111,113,116,117,123,124,128,131,134,138,139,142,144,145,151,152,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[033]
+EndSpeechLose = I am not worthy!
+Name = Cierra
+PokemonNos = 1,13,16,17,23,24,26,32,34,36,43,51,54,56,68,72,73,76,83,84,86,87,96,97,98,99,103,105,107,109,111,113,116,117,118,123,124,128,131,134,138,139,142,144,145,151,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[034]
+EndSpeechLose = I am not worthy!
+Name = Marcy
+PokemonNos = 1,13,16,17,23,24,26,32,34,36,43,51,54,56,68,72,73,76,83,84,86,87,96,97,98,99,103,105,107,109,111,113,116,117,118,123,124,128,131,134,138,139,142,144,145,151,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[035]
+EndSpeechLose = I am not worthy!
+Name = Kathy
+PokemonNos = 1,13,16,17,23,24,26,32,34,36,43,51,54,56,68,72,73,76,83,84,86,87,96,97,98,99,103,105,107,109,111,113,116,117,118,123,124,128,131,134,138,139,142,144,145,151,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[036]
+EndSpeechLose = I am not worthy!
+Name = Peyton
+PokemonNos = 84,85,87,88,89,93,94,95,96,97,98,99,100,101,102,103,105,106,107,109,112,113,117,120,121,123,129,134,142,143,145,148,149,151,152,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[037]
+EndSpeechLose = I am not worthy!
+Name = Julian
+PokemonNos = 84,85,87,88,89,93,94,95,96,97,98,99,100,101,102,103,105,106,107,109,112,113,117,120,121,123,129,134,142,143,145,148,149,151,152,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[038]
+EndSpeechLose = I am not worthy!
+Name = Quinn
+PokemonNos = 84,85,87,88,89,93,94,95,96,97,98,99,100,101,102,103,105,106,107,109,112,113,117,120,121,123,129,134,142,143,145,148,149,151,152,155
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[039]
+EndSpeechLose = I am not worthy!
+Name = Haylee
+PokemonNos = 1,5,6,10,13,14,16,17,18,19,20,23,24,26,28,29,31,32,33,34,35,36,42,43,44,45,46,47,48,49,54,56,59,61,65,66,67,68,71,72,79
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[040]
+EndSpeechLose = I am not worthy!
+Name = Amanda
+PokemonNos = 1,5,6,10,13,14,16,17,18,19,20,23,24,26,28,29,31,32,33,34,35,36,42,43,44,45,46,47,48,49,54,56,59,61,65,66,67,68,71,72,79
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[041]
+EndSpeechLose = You deserve the victory!
+Name = Stacy
+PokemonNos = 1,5,6,10,13,14,16,17,18,19,20,23,24,26,28,29,31,32,33,34,35,36,42,43,44,45,46,47,48,49,54,56,59,61,65,66,67,68,71,72,79
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[042]
+EndSpeechLose = You are worthy of your title!
+Name = Rafael
+PokemonNos = 0,1,2,3,4,5,6,7,10,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[043]
+EndSpeechLose = You are worthy of your title!
+Name = Oliver
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[044]
+EndSpeechLose = You are worthy of your title!
+Name = Payton
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[045]
+EndSpeechLose = You are worthy of your title!
+Name = Pamela
+PokemonNos = 0,1,2,3,4,5,6,7,10,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[046]
+EndSpeechLose = You are worthy of your title!
+Name = Eliza
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[047]
+EndSpeechLose = You are worthy of your title!
+Name = Marisa
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[048]
+EndSpeechLose = You are worthy of your title!
+Name = Lewis
+PokemonNos = 2,3,4,8,9,21,27,39,40,41,42,52,57,58,80,112,132,141,153,154,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[049]
+EndSpeechLose = You deserve the victory!
+Name = Yoshi
+PokemonNos = 2,3,4,11,12,21,27,39,40,41,42,52,57,58,80,112,132,141,153,154,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[050]
+EndSpeechLose = Incredible!
+Name = Destin
+PokemonNos = 2,3,4,21,27,39,40,41,42,52,57,58,80,112,132,141,153,154,157,158,159,160,161
+BeginSpeech = Are you ready to face the trial?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[051]
+EndSpeechLose = Incredible!
+Name = Keon
+PokemonNos = 5,21,25,27,35,39,40,41,42,46,47,48,50,52,53,57,58,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,121,124,127,132,141,146,147,153,154,157,158,159,160,161
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[052]
+EndSpeechLose = Incredible!
+Name = Stuart
+PokemonNos = 5,21,25,27,35,39,40,41,42,46,47,48,50,52,53,57,58,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,121,124,127,132,141,146,147,153,154,157,158,159,160,161
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[053]
+EndSpeechLose = Incredible!
+Name = Nestor
+PokemonNos = 5,21,25,27,35,39,40,41,42,46,47,48,50,52,53,57,58,62,63,69,75,78,79,80,84,90,92,99,100,102,106,110,112,114,121,124,127,132,141,146,147,153,154,157,158,159,160,161
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[054]
+EndSpeechLose = Incredible!
+Name = Derrick
+PokemonNos = 21,27,29,39,40,41,42,52,57,58,61,62,63,69,80,92,102,112,125,129,132,140,141,153,154,157,158,159,160,161
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[055]
+EndSpeechLose = Incredible!
+Name = Bryson
+PokemonNos = 21,27,29,39,40,41,42,52,57,58,61,62,63,69,80,92,102,112,125,129,132,140,141,153,154,157,158,159,160,161
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[056]
+EndSpeechLose = Incredible!
+Name = Clayton
+PokemonNos = 21,27,29,39,40,41,42,52,57,58,61,62,63,69,80,92,102,112,125,129,132,140,141,153,154,157,158,159,160,161
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[057]
+EndSpeechLose = Incredible!
+Name = Trenton
+PokemonNos = 6,7,55,60,68,73,83,86,87,105,111,116,123,124,128,134,138,139,151
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[058]
+EndSpeechLose = Incredible!
+Name = Jenson
+PokemonNos = 6,7,55,60,68,73,83,86,87,105,111,116,123,124,128,134,138,139,151
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[059]
+EndSpeechLose = Incredible!
+Name = Wesley
+PokemonNos = 6,7,55,60,68,73,83,86,87,105,111,116,123,124,128,134,138,139,151
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[060]
+EndSpeechLose = Incredible!
+Name = Anton
+PokemonNos = 31,39,58,67,70,74,75,78,85,104,108,120,122,133,138,139,140,141,150,151,152,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[061]
+EndSpeechLose = Incredible!
+Name = Lawson
+PokemonNos = 31,39,58,67,70,74,75,78,85,104,108,120,122,133,138,139,140,141,150,151,152,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[062]
+EndSpeechLose = Incredible!
+Name = Sammy
+PokemonNos = 31,39,58,67,70,74,75,78,85,104,108,120,122,133,138,139,140,141,150,151,152,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[063]
+EndSpeechLose = Incredible!
+Name = Arnie
+PokemonNos = 0,1,2,3,4,5,6,7,10,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[064]
+EndSpeechLose = Incredible!
+Name = Adrian
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[065]
+EndSpeechLose = I am in awe of your skill!
+Name = Tristan
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[066]
+EndSpeechLose = You deserve the victory!
+Name = Juliana
+PokemonNos = 0,14,19,28,42,58,59,67,68,85,118,120,123,155,156,193
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[067]
+EndSpeechLose = You deserve the victory!
+Name = Rylee
+PokemonNos = 0,14,19,28,42,58,59,67,68,85,118,120,123,155,156,193
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[068]
+EndSpeechLose = You deserve the victory!
+Name = Chelsea
+PokemonNos = 0,14,19,28,42,58,59,67,68,85,118,120,123,155,156,193
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[069]
+EndSpeechLose = You deserve the victory!
+Name = Danela
+PokemonNos = 0,1,2,3,4,5,6,7,10,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[070]
+EndSpeechLose = You deserve the victory!
+Name = Lizbeth
+PokemonNos = 66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[071]
+EndSpeechLose = You deserve the victory!
+Name = Amelia
+PokemonNos = 110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[072]
+EndSpeechLose = You deserve the victory!
+Name = Jillian
+PokemonNos = 0,5,18,19,29,35,48,50,52,61,69,75,78,84,90,94,99,100,101,102,106,112,114,121,125,129,130,131,140
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[073]
+EndSpeechLose = I am in awe of your skill!
+Name = Abbie
+PokemonNos = 0,5,18,19,29,35,48,50,52,61,69,75,78,84,90,94,99,100,101,102,106,112,114,121,125,129,130,131,140
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[074]
+EndSpeechLose = I am in awe of your skill!
+Name = Briana
+PokemonNos = 0,5,18,19,29,35,48,50,52,61,69,75,78,84,90,94,99,100,101,102,106,112,114,121,125,129,130,131,140
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[075]
+EndSpeechLose = I am in awe of your skill!
+Name = Antonio
+PokemonNos = 5,10,20,35,48,49,50,62,63,64,66,71,75,77,78,84,90,92,99,106,108,112,114,115,116,119,121,122,143,148,152
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[076]
+EndSpeechLose = I am in awe of your skill!
+Name = Jaden
+PokemonNos = 5,10,20,35,48,49,50,62,63,64,66,71,75,77,78,84,90,92,99,106,108,112,114,115,116,119,121,122,143,148,152
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[077]
+EndSpeechLose = I am in awe of your skill!
+Name = Dakota
+PokemonNos = 5,10,20,35,48,49,50,62,63,64,66,71,75,77,78,84,90,92,99,106,108,112,114,115,116,119,121,122,143,148,152
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[078]
+EndSpeechLose = I am in awe of your skill!
+Name = Brayden
+PokemonNos = 1,13,16,17,23,24,25,26,32,33,34,36,37,38,43,44,45,51,54,56,72,91,93,95,106,107,113,117,118,135,137,142,144,145
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[079]
+EndSpeechLose = I am in awe of your skill!
+Name = Corson
+PokemonNos = 1,13,16,17,23,24,25,26,32,33,34,36,37,38,43,44,45,51,54,56,72,91,93,95,106,107,113,117,118,135,137,142,144,145
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[080]
+EndSpeechLose = I am in awe of your skill!
+Name = Trevin
+PokemonNos = 1,13,16,17,23,24,25,26,32,33,34,36,37,38,43,44,45,51,54,56,72,91,93,95,106,107,113,117,118,135,137,142,144,145
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[081]
+EndSpeechLose = I am in awe of your skill!
+Name = Patrick
+PokemonNos = 15,22,50,67,70,71,74,77,81,82,83,86,87,96,97,98,99,103,104,109,111,120,124,128,131,133,134,138,139,151,155,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[082]
+EndSpeechLose = I am in awe of your skill!
+Name = Kaden
+PokemonNos = 15,22,50,67,70,71,74,77,81,82,83,86,87,96,97,98,99,103,104,109,111,120,124,128,131,133,134,138,139,151,155,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[083]
+EndSpeechLose = I am in awe of your skill!
+Name = Maxwell
+PokemonNos = 15,22,50,67,70,71,74,77,81,82,83,86,87,96,97,98,99,103,104,109,111,120,124,128,131,133,134,138,139,151,155,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[084]
+EndSpeechLose = I am in awe of your skill!
+Name = Daryl
+PokemonNos = 15,22,31,39,50,51,58,67,70,74,75,81,82,85,104,120,122,132,133,138,139,140,141,142,144,150,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[085]
+EndSpeechLose = I am in awe of your skill!
+Name = Kenneth
+PokemonNos = 15,22,31,39,50,51,58,67,70,74,75,81,82,85,104,120,122,132,133,138,139,140,141,142,144,150,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[086]
+EndSpeechLose = I am in awe of your skill!
+Name = Rich
+PokemonNos = 15,22,31,39,50,51,58,67,70,74,75,81,82,85,104,120,122,132,133,138,139,140,141,142,144,150,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[087]
+EndSpeechLose = I am in awe of your skill!
+Name = Caden
+PokemonNos = 30,62,63,65,70,74,77,78,85,88,89,95,108,119,122,133,136,149,150,152,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[088]
+EndSpeechLose = I am in awe of your skill!
+Name = Marlon
+PokemonNos = 30,62,63,65,70,74,77,78,85,88,89,95,108,119,122,133,136,149,150,152,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[089]
+EndSpeechLose = I am in awe of your skill!
+Name = Nash
+PokemonNos = 30,62,63,65,70,74,77,78,85,88,89,95,108,119,122,133,136,149,150,152,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[090]
+EndSpeechLose = I am in awe of your skill!
+Name = Robby
+PokemonNos = 1,13,15,16,17,22,23,24,26,32,33,34,36,37,38,43,44,50,51,54,56,67,70,72,74,75,81,82,85,91,93,104,107,113,117,120,132,133,135,137,142,144,145,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[091]
+EndSpeechLose = I am in awe of your skill!
+Name = Reece
+PokemonNos = 1,13,15,16,17,22,23,24,26,32,33,34,36,37,38,43,44,50,51,54,56,67,70,72,74,75,81,82,85,91,93,104,107,113,117,120,132,133,135,137,142,144,145,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[092]
+EndSpeechLose = I am in awe of your skill!
+Name = Kathryn
+PokemonNos = 1,13,15,16,17,22,23,24,26,32,33,34,36,37,38,43,44,50,51,54,56,67,70,72,74,75,81,82,85,91,93,104,107,113,117,120,132,133,135,137,142,144,145,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[093]
+EndSpeechLose = I am in awe of your skill!
+Name = Ellen
+PokemonNos = 1,13,15,16,17,22,23,24,26,32,33,34,36,37,38,43,44,50,51,54,56,67,70,72,74,75,81,82,85,91,93,104,107,113,117,120,132,133,135,137,142,144,145,156
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[094]
+EndSpeechLose = I am in awe of your skill!
+Name = Ramon
+PokemonNos = 15,22,50,71,72,76,77,81,82,83,84,87,96,97,98,99,103,107,109,111,113,117,118,131,134,138,139,142,144,145,151,155
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[095]
+EndSpeechLose = I am in awe of your skill!
+Name = Arthur
+PokemonNos = 15,22,50,71,72,76,77,81,82,83,84,87,96,97,98,99,103,107,109,111,113,117,118,131,134,138,139,142,144,145,151,155
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[096]
+EndSpeechLose = I am in awe of your skill!
+Name = Alondra
+PokemonNos = 15,22,50,71,72,76,77,81,82,83,84,87,96,97,98,99,103,107,109,111,113,117,118,131,134,138,139,142,144,145,151,155
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[097]
+EndSpeechLose = I am in awe of your skill!
+Name = Adriana
+PokemonNos = 15,22,50,71,72,76,77,81,82,83,84,87,96,97,98,99,103,107,109,111,113,117,118,131,134,138,139,142,144,145,151,155
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[098]
+EndSpeechLose = I am in awe of your skill!
+Name = Malik
+PokemonNos = 10,15,22,49,50,64,66,71,72,77,78,81,82,91,93,107,108,113,115,117,122,135,137,142,143,144,145,148,152
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[099]
+EndSpeechLose = I am in awe of your skill!
+Name = Jill
+PokemonNos = 10,15,22,49,50,64,66,71,72,77,78,81,82,91,93,107,108,113,115,117,122,135,137,142,143,144,145,148,152
+BeginSpeech = Behold my fabled strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[100]
+EndSpeechLose = I am in awe of your skill!
+Name = Erik
+PokemonNos = 162,164,168,178,183,184,189,197,199,200,203,204,207,210,213,214,218,220,221,224,227,231,232,233,234,235,236,238,240,243,245,246,250,263
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[101]
+EndSpeechLose = I am in awe of your skill!
+Name = Yazmin
+PokemonNos = 162,164,168,178,183,184,189,197,199,200,203,204,207,210,213,214,218,220,221,224,227,231,232,233,234,235,236,238,240,243,245,246,250,263
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[102]
+EndSpeechLose = ...
+Name = Jamal
+PokemonNos = 170,176,178,182,189,190,192,196,211,212,213,219,228,230,232,233,234,236,242,245,249,253,256,257,258,259,260,261,262,265,266
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[103]
+EndSpeechLose = ...
+Name = Leslie
+PokemonNos = 170,176,178,182,189,190,192,196,211,212,213,219,228,230,232,233,234,236,242,245,249,253,256,257,258,259,260,261,262,265,266
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[104]
+EndSpeechLose = ...
+Name = Dave
+PokemonNos = 162,164,168,178,183,186,187,189,197,199,200,203,204,206,207,214,215,218,220,221,224,227,232,233,234,235,236,240,244,246,250
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[105]
+EndSpeechLose = ...
+Name = Carlo
+PokemonNos = 162,164,168,178,183,186,187,189,197,199,200,203,204,206,207,214,215,218,220,221,224,227,232,233,234,235,236,240,244,246,250
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[106]
+EndSpeechLose = ...
+Name = Emilia
+PokemonNos = 162,164,168,178,183,186,187,189,197,199,200,203,204,206,207,214,215,218,220,221,224,227,232,233,234,235,236,240,244,246,250
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[107]
+EndSpeechLose = ...
+Name = Dalia
+PokemonNos = 162,164,168,178,183,186,187,189,197,199,200,203,204,206,207,214,215,218,220,221,224,227,232,233,234,235,236,240,244,246,250
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[108]
+EndSpeechLose = ...
+Name = Hitomi
+PokemonNos = 164,166,175,178,181,189,191,193,194,195,197,199,200,202,203,205,206,207,210,215,218,220,221,222,223,225,227,230,232,233,234,235,236,240,241,246,247,252,254,262
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[109]
+EndSpeechLose = ...
+Name = Ricardo
+PokemonNos = 164,166,175,178,181,189,191,193,194,195,197,199,200,202,203,205,206,207,210,215,218,220,221,222,223,225,227,230,232,233,234,235,236,240,241,246,247,252,254,262
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[110]
+EndSpeechLose = ...
+Name = Shizuka
+PokemonNos = 164,166,175,178,181,189,191,193,194,195,197,199,200,202,203,205,206,207,210,215,218,220,221,222,223,225,227,230,232,233,234,235,236,240,241,246,247,252,254,262
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[111]
+EndSpeechLose = ...
+Name = Joana
+PokemonNos = 164,166,175,178,181,189,191,193,194,195,197,199,200,202,203,205,206,207,210,215,218,220,221,222,223,225,227,230,232,233,234,235,236,240,241,246,247,252,254,262
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[112]
+EndSpeechLose = ...
+Name = Kelly
+PokemonNos = 164,166,175,178,181,189,191,193,194,195,197,199,200,202,203,205,206,207,210,215,218,220,221,222,223,225,227,230,232,233,234,235,236,240,241,246,247,252,254,262
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[113]
+EndSpeechLose = ...
+Name = Rayna
+PokemonNos = 164,166,175,178,181,189,191,193,194,195,197,199,200,202,203,205,206,207,210,215,218,220,221,222,223,225,227,230,232,233,234,235,236,240,241,246,247,252,254,262
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[114]
+EndSpeechLose = ...
+Name = Evan
+PokemonNos = 162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[115]
+EndSpeechLose = ...
+Name = Jordan
+PokemonNos = 200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[116]
+EndSpeechLose = ...
+Name = Joel
+PokemonNos = 237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[117]
+EndSpeechLose = ...
+Name = Kristen
+PokemonNos = 162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[118]
+EndSpeechLose = ...
+Name = Selphy
+PokemonNos = 200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[119]
+EndSpeechLose = ...
+Name = Chloe
+PokemonNos = 237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[120]
+EndSpeechLose = ...
+Name = Norton
+PokemonNos = 267,268,273,274,276,284,289,290,291,292,307,308,311,312,314,317,325,327,328,329,331,332,340,342,347,349,351,352,354,356,359,363,370
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[121]
+EndSpeechLose = ...
+Name = Lukas
+PokemonNos = 267,268,273,274,276,284,289,290,291,292,307,308,311,312,314,317,325,327,328,329,331,332,340,342,347,349,351,352,354,356,359,363,370
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[122]
+EndSpeechLose = ...
+Name = Zach
+PokemonNos = 267,268,273,274,276,284,289,290,291,292,307,308,311,312,314,317,325,327,328,329,331,332,340,342,347,349,351,352,354,356,359,363,370
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[123]
+EndSpeechLose = ...
+Name = Kaitlyn
+PokemonNos = 267,268,273,274,276,284,289,290,291,292,307,308,311,312,314,317,325,327,328,329,331,332,340,342,347,349,351,352,354,356,359,363,370
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[124]
+EndSpeechLose = ...
+Name = Breanna
+PokemonNos = 267,268,273,274,276,284,289,290,291,292,307,308,311,312,314,317,325,327,328,329,331,332,340,342,347,349,351,352,354,356,359,363,370
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[125]
+EndSpeechLose = ...
+Name = Kendra
+PokemonNos = 267,268,273,274,276,284,289,290,291,292,307,308,311,312,314,317,325,327,328,329,331,332,340,342,347,349,351,352,354,356,359,363,370
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[126]
+EndSpeechLose = ...
+Name = Molly
+PokemonNos = 268,270,272,274,282,284,289,290,303,307,311,314,317,322,327,328,331,336,340,342,344,347,352,353,354,356,359
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[127]
+EndSpeechLose = ...
+Name = Jazmin
+PokemonNos = 268,270,272,274,282,284,289,290,303,307,311,314,317,322,327,328,331,336,340,342,344,347,352,353,354,356,359
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[128]
+EndSpeechLose = ...
+Name = Kelsey
+PokemonNos = 268,270,272,274,282,284,289,290,303,307,311,314,317,322,327,328,331,336,340,342,344,347,352,353,354,356,359
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[129]
+EndSpeechLose = ...
+Name = Jalen
+PokemonNos = 269,271,275,279,280,281,283,285,286,287,293,294,295,300,302,307,310,311,320,322,326,330,332,335,344,345,346,348,350,353,357
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[130]
+EndSpeechLose = ...
+Name = Griffen
+PokemonNos = 269,271,275,279,280,281,283,285,286,287,293,294,295,300,302,307,310,311,320,322,326,330,332,335,344,345,346,348,350,353,357
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[131]
+EndSpeechLose = ...
+Name = Xander
+PokemonNos = 269,271,275,279,280,281,283,285,286,287,293,294,295,300,302,307,310,311,320,322,326,330,332,335,344,345,346,348,350,353,357
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[132]
+EndSpeechLose = ...
+Name = Marvin
+PokemonNos = 267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[133]
+EndSpeechLose = ...
+Name = Brennan
+PokemonNos = 305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[134]
+EndSpeechLose = ...
+Name = Baley
+PokemonNos = 159,160,161,172,173,177,198,226,238,263,264,277,278,282,303,331,343,368,369
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[135]
+EndSpeechLose = ...
+Name = Zackary
+PokemonNos = 271,283,294,295,298,299,300,311,315,320,327,328,330,335,337,338,339,341,346,364,365,366
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[136]
+EndSpeechLose = ...
+Name = Gabriel
+PokemonNos = 342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[137]
+EndSpeechLose = ...
+Name = Emily
+PokemonNos = 272,301,309,330,348,349,350,359,360,362,363,365
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[138]
+EndSpeechLose = ...
+Name = Jordyn
+PokemonNos = 267,269,270,272,273,276,279,284,288,302,304,305,308,309,312,316,319,322,323,325,326,329,331,332,336,340,344,345,351,353,355
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[139]
+EndSpeechLose = ...
+Name = Sofia
+PokemonNos = 270,272,274,276,279,282,285,290,293,313,314,321,334,340,348,356,359,360
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[140]
+EndSpeechLose = ...
+Name = Braden
+PokemonNos = 372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[141]
+EndSpeechLose = ...
+Name = Kayden
+PokemonNos = 405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[142]
+EndSpeechLose = ...
+Name = Cooper
+PokemonNos = 438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[143]
+EndSpeechLose = ...
+Name = Julia
+PokemonNos = 372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[144]
+EndSpeechLose = ...
+Name = Amara
+PokemonNos = 405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[145]
+EndSpeechLose = ...
+Name = Lynn
+PokemonNos = 438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[146]
+EndSpeechLose = ...
+Name = Jovan
+PokemonNos = 238,331,343,368,369,375,376,379,382,383,389,394,395,397,398,400,406,408,411,416,417,423,424,425,432,436,438,441,445,453,460,462,467
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[147]
+EndSpeechLose = ...
+Name = Dominic
+PokemonNos = 238,331,343,368,369,375,376,379,382,383,389,394,395,397,398,400,406,408,411,416,417,423,424,425,432,436,438,441,445,453,460,462,467
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[148]
+EndSpeechLose = ...
+Name = Nikolas
+PokemonNos = 238,331,343,368,369,375,376,379,382,383,389,394,395,397,398,400,406,408,411,416,417,423,424,425,432,436,438,441,445,453,460,462,467
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[149]
+EndSpeechLose = ...
+Name = Valeria
+PokemonNos = 238,331,343,368,369,375,376,379,382,383,389,394,395,397,398,400,406,408,411,416,417,423,424,425,432,436,438,441,445,453,460,462,467
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[150]
+EndSpeechLose = ...
+Name = Delaney
+PokemonNos = 238,331,343,368,369,375,376,379,382,383,389,394,395,397,398,400,406,408,411,416,417,423,424,425,432,436,438,441,445,453,460,462,467
+BeginSpeech = I wish to challenge you!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[151]
+EndSpeechLose = ...
+Name = Meghan
+PokemonNos = 238,331,343,368,369,375,376,379,382,383,389,394,395,397,398,400,406,408,411,416,417,423,424,425,432,436,438,441,445,453,460,462,467
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[152]
+EndSpeechLose = ...
+Name = Roberto
+PokemonNos = 386,403,412,413,414,433,435,440,450,453,454,456,459,461,463,464,465
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[153]
+EndSpeechLose = ...
+Name = Damian
+PokemonNos = 386,403,412,413,414,433,435,440,450,453,454,456,459,461,463,464,465
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[154]
+EndSpeechLose = ...
+Name = Brody
+PokemonNos = 386,403,412,413,414,433,435,440,450,453,454,456,459,461,463,464,465
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[155]
+EndSpeechLose = ...
+Name = Graham
+PokemonNos = 386,403,412,413,414,433,435,440,450,453,454,456,459,461,463,464,465
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[156]
+EndSpeechLose = ...
+Name = Tylor
+PokemonNos = 374,381,382,385,388,389,391,392,394,409,411,412,419,430,432,436,440,456,460,462,463,467
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[157]
+EndSpeechLose = ...
+Name = Jaren
+PokemonNos = 374,381,382,385,388,389,391,392,394,409,411,412,419,430,432,436,440,456,460,462,463,467
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[158]
+EndSpeechLose = ...
+Name = Cordell
+PokemonNos = 420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[159]
+EndSpeechLose = ...
+Name = Jazlyn
+PokemonNos = 372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[160]
+EndSpeechLose = ...
+Name = Zachery
+PokemonNos = 468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[161]
+EndSpeechLose = ...
+Name = Johan
+PokemonNos = 469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[162]
+EndSpeechLose = ...
+Name = Shea
+PokemonNos = 468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[163]
+EndSpeechLose = ...
+Name = Kaila
+PokemonNos = 468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[164]
+EndSpeechLose = ...
+Name = Isiah
+PokemonNos = 501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[165]
+EndSpeechLose = ...
+Name = Garrett
+PokemonNos = 501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[166]
+EndSpeechLose = ...
+Name = Haylie
+PokemonNos = 501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[167]
+EndSpeechLose = ...
+Name = Megan
+PokemonNos = 501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[168]
+EndSpeechLose = ...
+Name = Issac
+PokemonNos = 534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[169]
+EndSpeechLose = ...
+Name = Quinton
+PokemonNos = 534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[170]
+EndSpeechLose = ...
+Name = Salma
+PokemonNos = 534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[171]
+EndSpeechLose = ...
+Name = Ansley
+PokemonNos = 534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[172]
+EndSpeechLose = ...
+Name = Holden
+PokemonNos = 343,368,369,383,417,423,424,432,480,481,490,491,494,496,512,513,519,520,528,534,537,541,549
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[173]
+EndSpeechLose = ...
+Name = Luca
+PokemonNos = 343,368,369,383,417,423,424,432,480,481,490,491,494,496,512,513,519,520,528,534,537,541,549
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[174]
+EndSpeechLose = ...
+Name = Jamison
+PokemonNos = 282,331,343,368,369,469,472,475,476,478,481,484,490,491,497,500,501,509,510,513,516,517,519,520,524,528,530,533,534,537,542,553
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[175]
+EndSpeechLose = ...
+Name = Gunnar
+PokemonNos = 282,331,343,368,369,469,472,475,476,478,481,484,490,491,497,500,501,509,510,513,516,517,519,520,524,528,530,533,534,537,542,553
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[176]
+EndSpeechLose = ...
+Name = Craig
+PokemonNos = 471,474,475,479,483,485,488,493,495,496,502,504,505,506,507,514,521,525,530,532,535,538,544,545,548,552,554,555,556,557,558,559,563
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[177]
+EndSpeechLose = ...
+Name = Pierce
+PokemonNos = 471,474,475,479,483,485,488,493,495,496,502,504,505,506,507,514,521,525,530,532,535,538,544,545,548,552,554,555,556,557,558,559,563
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[178]
+EndSpeechLose = ...
+Name = Regina
+PokemonNos = 471,474,475,479,483,485,488,493,495,496,502,504,505,506,507,514,521,525,530,532,535,538,544,545,548,552,554,555,556,557,558,559,563
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[179]
+EndSpeechLose = ...
+Name = Alison
+PokemonNos = 471,474,475,479,483,485,488,493,495,496,502,504,505,506,507,514,521,525,530,532,535,538,544,545,548,552,554,555,556,557,558,559,563
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[180]
+EndSpeechLose = ...
+Name = Hank
+PokemonNos = 277,278,282,303,331,343,368,369,383,417,423,424,432,481,513,519,520,528,575,609,615,616,624
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[181]
+EndSpeechLose = ...
+Name = Earl
+PokemonNos = 277,278,282,303,331,343,368,369,383,417,423,424,432,481,513,519,520,528,575,609,615,616,624
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[182]
+EndSpeechLose = ...
+Name = Ramiro
+PokemonNos = 316,333,347,350,354,358,361,362,363,364,573,576,621,626,631
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[183]
+EndSpeechLose = ...
+Name = Hunter
+PokemonNos = 316,333,347,350,354,358,361,362,363,364,573,576,621,626,631
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[184]
+EndSpeechLose = ...
+Name = Aiden
+PokemonNos = 564,575,576,578,579,580,594,595,605,606,608,609,615,619,620,624,625,627,632,642,650,658
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[185]
+EndSpeechLose = ...
+Name = Xavier
+PokemonNos = 564,575,576,578,579,580,594,595,605,606,608,609,615,619,620,624,625,627,632,642,650,658
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[186]
+EndSpeechLose = ...
+Name = Clinton
+PokemonNos = 564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[187]
+EndSpeechLose = ...
+Name = Jesse
+PokemonNos = 564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[188]
+EndSpeechLose = ...
+Name = Eduardo
+PokemonNos = 268,307,317,349,352,573,583,585,588,590,599,614,618,635,639
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[189]
+EndSpeechLose = ...
+Name = Hal
+PokemonNos = 268,307,317,349,352,573,583,585,588,590,599,614,618,635,639
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[190]
+EndSpeechLose = ...
+Name = Gage
+PokemonNos = 289,318,319,329,355,375,379,385,386,457,473,477,482,484,553,567,571,577,578,649
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[191]
+EndSpeechLose = ...
+Name = Arnold
+PokemonNos = 289,318,319,329,355,375,379,385,386,457,473,477,482,484,553,567,571,577,578,649
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[192]
+EndSpeechLose = ...
+Name = Jarrett
+PokemonNos = 565,573,576,580,582,584,592,601,602,610,621,623,626,631,634,640,641,644,648,650,651,653,655
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[193]
+EndSpeechLose = ...
+Name = Garett
+PokemonNos = 565,573,576,580,582,584,592,601,602,610,621,623,626,631,634,640,641,644,648,650,651,653,655
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[194]
+EndSpeechLose = ...
+Name = Emanuel
+PokemonNos = 564,565,574,579,582,594,595,605,606,608,609,616,619,620,623,624,625,627,642,643
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[195]
+EndSpeechLose = ...
+Name = Gustavo
+PokemonNos = 564,565,574,579,582,594,595,605,606,608,609,616,619,620,623,624,625,627,642,643
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[196]
+EndSpeechLose = ...
+Name = Kameron
+PokemonNos = 568,581,589,598,600,603,607,611,617,618,622,636,643,646,647,652,654,656,659
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[197]
+EndSpeechLose = ...
+Name = Alfredo
+PokemonNos = 568,581,589,598,600,603,607,611,617,618,622,636,643,646,647,652,654,656,659
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[198]
+EndSpeechLose = ...
+Name = Ruben
+PokemonNos = 612,613,614,615,616,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[199]
+EndSpeechLose = ...
+Name = Lamar
+PokemonNos = 612,613,614,615,616,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[200]
+EndSpeechLose = ...
+Name = Jaxon
+PokemonNos = 660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692
+BeginSpeech = I have heard stories of your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[201]
+EndSpeechLose = ...
+Name = Logan
+PokemonNos = 660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[202]
+EndSpeechLose = ...
+Name = Emilee
+PokemonNos = 660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[203]
+EndSpeechLose = ...
+Name = Josie
+PokemonNos = 660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[204]
+EndSpeechLose = ...
+Name = Armando
+PokemonNos = 693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[205]
+EndSpeechLose = ...
+Name = Skyler
+PokemonNos = 693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[206]
+EndSpeechLose = ...
+Name = Ruth
+PokemonNos = 693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[207]
+EndSpeechLose = ...
+Name = Melody
+PokemonNos = 693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[208]
+EndSpeechLose = ...
+Name = Pedro
+PokemonNos = 347,661,664,669,672,676,677,678,680,685,688,694,696,697,698,699,706,713,717,719,722,724,727,730,736,737,740,744,746,747,748,749,750,751,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[209]
+EndSpeechLose = ...
+Name = Erick
+PokemonNos = 347,661,664,669,672,676,677,678,680,685,688,694,696,697,698,699,706,713,717,719,722,724,727,730,736,737,740,744,746,747,748,749,750,751,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[210]
+EndSpeechLose = ...
+Name = Elaine
+PokemonNos = 664,665,669,672,676,677,680,685,687,688,694,696,697,698,699,706,713,717,722,724,727,730,736,737,740,744,746,747,748,749,750,751,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[211]
+EndSpeechLose = ...
+Name = Joyce
+PokemonNos = 664,665,669,672,676,677,680,685,687,688,694,696,697,698,699,706,713,717,722,724,727,730,736,737,740,744,746,747,748,749,750,751,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[212]
+EndSpeechLose = ...
+Name = Todd
+PokemonNos = 267,273,305,312,325,332,352,662,665,668,669,670,672,673,676,677,679,680,682,688,697,698,699,700,707,710,718,720,724,725,728,730,731,732,734,735,744,748,750,751
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[213]
+EndSpeechLose = ...
+Name = Gavin
+PokemonNos = 267,273,305,312,325,332,352,662,665,668,669,670,672,673,676,677,679,680,682,688,697,698,699,700,707,710,718,720,724,725,728,730,731,732,734,735,744,748,750,751
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[214]
+EndSpeechLose = ...
+Name = Malory
+PokemonNos = 267,273,305,312,325,332,352,662,665,668,669,670,672,673,676,677,679,680,682,688,697,698,699,700,707,710,718,720,724,725,728,730,731,732,734,735,744,748,750,751
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[215]
+EndSpeechLose = ...
+Name = Esther
+PokemonNos = 267,273,305,312,325,332,352,662,665,668,669,670,672,673,676,677,679,680,682,688,697,698,699,700,707,710,718,720,724,725,728,730,731,732,734,735,744,748,750,751
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[216]
+EndSpeechLose = ...
+Name = Oscar
+PokemonNos = 726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[217]
+EndSpeechLose = ...
+Name = Wilson
+PokemonNos = 726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[218]
+EndSpeechLose = ...
+Name = Clare
+PokemonNos = 726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[219]
+EndSpeechLose = ...
+Name = Tess
+PokemonNos = 726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[220]
+EndSpeechLose = ...
+Name = Leon
+PokemonNos = 420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537,538,539,612,613,614,615,616,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,730,731
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[221]
+EndSpeechLose = ...
+Name = Alonzo
+PokemonNos = 444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[222]
+EndSpeechLose = ...
+Name = Vince
+PokemonNos = 421,425,431,437,439,456,460,465,466,517,521,527,533,535,552,556,561,562,613,617,623,629,631,648,652,657,658,709,713,719,725,727,744,748,753,754,766,777,788,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[223]
+EndSpeechLose = ...
+Name = Bryon
+PokemonNos = 756,757,758,759,760,761,762,763,764,766,767,768,769,770,771,772,773,774,775,777,778,779,780,781,782,783,784,785,786,788,789,790,791,792,793,794,795,796,797,799,836,837,838,839,840,841,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874,875,876,877,878,879,880,881
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[224]
+EndSpeechLose = ...
+Name = Ava
+PokemonNos = 372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[225]
+EndSpeechLose = ...
+Name = Miriam
+PokemonNos = 396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,705,706,707
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[226]
+EndSpeechLose = ...
+Name = Carrie
+PokemonNos = 421,425,431,437,439,456,460,465,466,517,521,527,533,535,552,556,561,562,613,617,623,629,631,648,652,657,658,709,713,719,725,727,744,748,753,754,765,776,787,798,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,842,843,844,845,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[227]
+EndSpeechLose = ...
+Name = Gillian
+PokemonNos = 756,757,758,759,760,761,762,763,764,765,767,768,769,770,771,772,773,774,775,776,778,779,780,781,782,783,784,785,786,787,789,790,791,792,793,794,795,796,797,798,836,837,838,839,840,841,842,843,844,845,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874,875,876,877,878,879,880,881
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[228]
+EndSpeechLose = ...
+Name = Tyler
+PokemonNos = 660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[229]
+EndSpeechLose = ...
+Name = Chaz
+PokemonNos = 564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611,612,613,614,615,616,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[230]
+EndSpeechLose = ...
+Name = Nelson
+PokemonNos = 756,757,758,759,760,761,762,763,764,766,767,768,769,770,771,772,773,774,775,777,778,779,780,781,782,783,784,785,786,788,789,790,791,792,793,794,795,796,797,799,836,837,838,839,840,841,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874,875,876,877,878,879,880,881
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[231]
+EndSpeechLose = ...
+Name = Shania
+PokemonNos = 468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[232]
+EndSpeechLose = ...
+Name = Stella
+PokemonNos = 372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[233]
+EndSpeechLose = ...
+Name = Dorine
+PokemonNos = 756,757,758,759,760,761,762,763,764,765,767,768,769,770,771,772,773,774,775,776,778,779,780,781,782,783,784,785,786,787,789,790,791,792,793,794,795,796,797,798,836,837,838,839,840,841,842,843,844,845,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874,875,876,877,878,879,880,881
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[234]
+EndSpeechLose = ...
+Name = Maddox
+PokemonNos = 403,412,413,414,433,435,440,450,454,456,459,461,463,465,499,508,509,510,529,531,536,546,550,552,555,557,559,561,595,604,605,606,625,627,632,642,646,648,651,653,655,657,691,700,701,702,721,723,728,738,742,744,747,749,751,753,765,766,776,777,787,788,798,799,828,829,830,831,842,843,844,845,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[235]
+EndSpeechLose = ...
+Name = Davin
+PokemonNos = 403,412,413,414,433,435,440,450,454,456,459,461,463,465,499,508,509,510,529,531,536,546,550,552,555,557,559,561,595,604,605,606,625,627,632,642,646,648,651,653,655,657,691,700,701,702,721,723,728,738,742,744,747,749,751,753,765,766,776,777,787,788,798,799,828,829,830,831,842,843,844,845,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[236]
+EndSpeechLose = ...
+Name = Trevon
+PokemonNos = 403,412,413,414,433,435,440,450,454,456,459,461,463,465,499,508,509,510,529,531,536,546,550,552,555,557,559,561,595,604,605,606,625,627,632,642,646,648,651,653,655,657,691,700,701,702,721,723,728,738,742,744,747,749,751,753,765,766,776,777,787,788,798,799,828,829,830,831,842,843,844,845,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[237]
+EndSpeechLose = ...
+Name = Mateo
+PokemonNos = 373,382,390,402,403,416,417,424,431,432,435,450,451,469,480,486,498,499,512,513,520,527,528,531,546,547,565,574,582,594,595,608,609,616,623,624,627,642,643,661,670,678,690,691,704,705,712,719,720,723,738,739,808,809,810,811
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[238]
+EndSpeechLose = ...
+Name = Bret
+PokemonNos = 373,382,390,415,419,424,426,430,431,444,451,454,455,464,469,480,486,511,515,520,522,526,527,540,547,550,551,560,565,574,582,607,611,616,618,622,623,636,643,646,647,656,661,670,678,703,707,712,714,718,719,732,739,742,743,752,808,809,810,811
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[239]
+EndSpeechLose = ...
+Name = Raul
+PokemonNos = 373,382,383,386,390,423,424,431,433,450,451,466,469,480,481,482,486,519,520,527,529,546,547,562,565,574,575,578,582,615,616,623,625,642,643,658,661,670,671,674,678,711,712,719,721,738,739,754,808,809,810,811,832,833,834,835
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[240]
+EndSpeechLose = ...
+Name = Kay
+PokemonNos = 373,382,387,390,402,403,413,414,424,427,431,433,451,469,470,480,486,498,499,509,510,520,523,527,529,547,565,574,579,582,594,595,605,606,616,619,623,625,643,661,670,675,678,690,691,701,702,712,715,719,721,739,808,809,810,811
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[241]
+EndSpeechLose = ...
+Name = Elena
+PokemonNos = 373,382,390,415,419,424,426,430,431,444,451,454,455,464,469,480,486,511,515,520,522,526,527,540,547,550,551,560,565,574,582,607,611,616,618,622,623,636,643,646,647,656,661,670,678,703,707,712,714,718,719,732,739,742,743,752,808,809,810,811
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[242]
+EndSpeechLose = ...
+Name = Alana
+PokemonNos = 373,382,383,386,390,423,424,431,433,450,451,466,469,480,481,482,486,519,520,527,529,546,547,562,565,574,575,578,582,615,616,623,625,642,643,658,661,670,671,674,678,711,712,719,721,738,739,754,808,809,810,811,832,833,834,835
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[243]
+EndSpeechLose = ...
+Name = Alexas
+PokemonNos = 382,387,403,423,424,425,431,433,435,450,459,461,465,466,470,480,499,519,520,521,527,529,531,546,555,557,561,562,574,579,595,615,616,617,623,625,627,642,651,653,657,658,670,675,691,711,712,713,719,721,723,738,747,749,753,754,762,763,764,773,774,775,784,785,786,795,796,797,804,805,806,807,808,809,810,811,828,829,830,831,832,833,834,835,836,837,838,839,840,841,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[244]
+EndSpeechLose = ...
+Name = Weston
+PokemonNos = 374,377,404,421,422,426,437,439,446,451,453,457,458,472,475,500,517,518,522,533,535,542,547,549,553,554,566,569,596,613,614,618,629,631,638,643,645,649,650,662,665,692,709,710,714,725,727,734,739,741,745,746,762,763,764,766,773,774,775,777,784,785,786,788,795,796,797,799,800,801,802,803,812,813,814,815,816,817,818,819,836,837,838,839,840,841,846,847,848,849,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[245]
+EndSpeechLose = ...
+Name = Jasper
+PokemonNos = 378,388,400,409,410,411,416,429,432,438,447,452,456,460,462,463,471,476,496,505,506,507,512,525,528,534,543,548,552,556,558,559,570,580,592,601,602,603,608,621,624,630,639,644,648,652,654,655,666,676,688,697,698,699,704,717,720,726,735,740,744,748,750,751,762,763,764,773,774,775,784,785,786,795,796,797,820,821,822,823,824,825,826,827,836,837,838,839,840,841,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[246]
+EndSpeechLose = ...
+Name = Nadia
+PokemonNos = 382,387,403,423,424,425,431,433,435,450,459,461,465,466,470,480,499,519,520,521,527,529,531,546,555,557,561,562,574,579,595,615,616,617,623,625,627,642,651,653,657,658,670,675,691,711,712,713,719,721,723,738,747,749,753,754,762,763,764,773,774,775,784,785,786,795,796,797,804,805,806,807,808,809,810,811,828,829,830,831,832,833,834,835,836,837,838,839,840,841,850,851,852,853,854,855,856,857,858,859
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[247]
+EndSpeechLose = ...
+Name = Miranda
+PokemonNos = 374,377,404,421,422,426,437,439,446,451,453,457,458,472,475,500,517,518,522,533,535,542,547,549,553,554,566,569,596,613,614,618,629,631,638,643,645,649,650,662,665,692,709,710,714,725,727,734,739,741,745,746,762,763,764,765,773,774,775,776,784,785,786,787,795,796,797,798,800,801,802,803,812,813,814,815,816,817,818,819,836,837,838,839,840,841,842,843,844,845,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[248]
+EndSpeechLose = ...
+Name = Emma
+PokemonNos = 378,388,400,409,410,411,416,429,432,438,447,452,456,460,462,463,471,476,496,505,506,507,512,525,528,534,543,548,552,556,558,559,570,580,592,601,602,603,608,621,624,630,639,644,648,652,654,655,666,676,688,697,698,699,704,717,720,726,735,740,744,748,750,751,762,763,764,773,774,775,784,785,786,795,796,797,820,821,822,823,824,825,826,827,836,837,838,839,840,841,850,851,852,853,854,855,856,857,858,859
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[249]
+EndSpeechLose = ...
+Name = Rolando
+PokemonNos = 185,290,377,380,385,401,404,409,410,428,437,438,439,446,466,475,478,484,497,500,505,506,524,533,534,535,542,562,569,572,577,593,596,601,602,620,629,630,631,638,658,665,668,673,689,692,697,698,716,725,726,727,734,754,756,757,758,766,767,768,769,777,778,779,780,788,789,790,791,799,812,813,814,815,816,817,818,819,832,833,834,835,846,847,848,849,870,871,872,873,874,875
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[250]
+EndSpeechLose = ...
+Name = Stanly
+PokemonNos = 185,290,377,380,385,401,404,409,410,428,437,438,439,446,466,475,478,484,497,500,505,506,524,533,534,535,542,562,569,572,577,593,596,601,602,620,629,630,631,638,658,665,668,673,689,692,697,698,716,725,726,727,734,754,759,760,761,766,770,771,772,777,781,782,783,788,792,793,794,799,812,813,814,815,816,817,818,819,832,833,834,835,846,847,848,849,876,877,878,879,880,881
+BeginSpeech = Will you do me the honour of having a battle?
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[251]
+EndSpeechLose = ...
+Name = Dario
+PokemonNos = 185,290,377,380,385,401,404,409,410,428,437,438,439,446,466,475,478,484,497,500,505,506,524,533,534,535,542,562,569,572,577,593,596,601,602,620,629,630,631,638,658,665,668,673,689,692,697,698,716,725,726,727,734,754,762,763,764,766,773,774,775,777,784,785,786,788,795,796,797,799,812,813,814,815,816,817,818,819,832,833,834,835,836,837,838,839,840,841,846,847,848,849
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[252]
+EndSpeechLose = ...
+Name = Karlee
+PokemonNos = 185,290,377,380,385,401,404,409,410,428,437,438,439,446,466,475,478,484,497,500,505,506,524,533,534,535,542,562,569,572,577,593,596,601,602,620,629,630,631,638,658,665,668,673,689,692,697,698,716,725,726,727,734,754,756,757,758,765,767,768,769,776,778,779,780,787,789,790,791,798,812,813,814,815,816,817,818,819,832,833,834,835,842,843,844,845,870,871,872,873,874,875
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[253]
+EndSpeechLose = ...
+Name = Jaylin
+PokemonNos = 185,290,377,380,385,401,404,409,410,428,437,438,439,446,466,475,478,484,497,500,505,506,524,533,534,535,542,562,569,572,577,593,596,601,602,620,629,630,631,638,658,665,668,673,689,692,697,698,716,725,726,727,734,754,759,760,761,765,770,771,772,776,781,782,783,787,792,793,794,798,812,813,814,815,816,817,818,819,832,833,834,835,842,843,844,845,876,877,878,879,880,881
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[254]
+EndSpeechLose = ...
+Name = Ingrid
+PokemonNos = 185,290,377,380,385,401,404,409,410,428,437,438,439,446,466,475,478,484,497,500,505,506,524,533,534,535,542,562,569,572,577,593,596,601,602,620,629,630,631,638,658,665,668,673,689,692,697,698,716,725,726,727,734,754,762,763,764,765,773,774,775,776,784,785,786,787,795,796,797,798,812,813,814,815,816,817,818,819,832,833,834,835,836,837,838,839,840,841,842,843,844,845
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[255]
+EndSpeechLose = ...
+Name = Delilah
+PokemonNos = 347,352,374,378,398,421,426,447,472,476,494,517,522,543,566,570,590,613,618,639,662,666,686,709,714,735,800,801,802,803
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[256]
+EndSpeechLose = ...
+Name = Carly
+PokemonNos = 344,374,378,394,395,405,413,414,420,421,434,441,457,472,476,490,491,501,509,510,516,517,530,537,553,566,570,586,587,597,605,606,612,613,626,633,649,662,666,682,683,693,701,702,708,709,722,729,745,800,801,802,803
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[257]
+EndSpeechLose = ...
+Name = Lexie
+PokemonNos = 344,347,352,394,395,398,405,413,414,420,421,426,434,441,447,457,490,491,494,501,509,510,516,517,522,530,537,543,553,586,587,590,597,605,606,612,613,618,626,633,639,649,682,683,686,693,701,702,708,709,714,722,729,735,745,800,801,802,803
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[258]
+EndSpeechLose = ...
+Name = Miller
+PokemonNos = 345,376,386,387,397,399,402,403,406,408,411,413,414,425,427,429,433,435,440,441,445,448,449,450,452,454,456,458,459,460,462,465,466,467,470,474,482,493,495,498,499,502,504,507,509,510,521,523,525,529,531,536,537,541,544,545,546,548,550,552,554,555,556,558,561,562,563,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[259]
+EndSpeechLose = ...
+Name = Marv
+PokemonNos = 345,568,578,579,589,591,594,595,598,600,603,605,606,617,619,621,625,627,632,633,637,640,641,642,644,646,648,650,651,652,654,657,658,659,664,674,675,685,687,690,691,694,696,699,701,702,713,715,717,721,723,728,729,733,736,737,738,740,742,744,746,747,748,750,753,754,755,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[260]
+EndSpeechLose = ...
+Name = Layton
+PokemonNos = 345,425,433,435,445,450,454,456,458,459,460,465,466,521,529,531,541,546,550,552,554,555,556,561,562,617,625,627,637,642,646,648,650,651,652,657,658,713,721,723,733,738,742,744,746,747,748,753,754,804,805,806,807,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[261]
+EndSpeechLose = ...
+Name = Brooks
+PokemonNos = 660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[262]
+EndSpeechLose = ...
+Name = Gregory
+PokemonNos = 421,425,431,437,439,456,460,465,466,517,521,527,533,535,552,556,561,562,613,617,623,629,631,648,652,657,658,709,713,719,725,727,744,748,753,754,765,766,776,777,787,788,798,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[263]
+EndSpeechLose = ...
+Name = Reese
+PokemonNos = 756,757,758,759,760,761,762,763,764,765,766,767,768,769,770,771,772,773,774,775,776,777,778,779,780,781,782,783,784,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,836,837,838,839,840,841,842,843,844,845,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874,875,876,877,878,879,880,881
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[264]
+EndSpeechLose = ...
+Name = Mason
+PokemonNos = 660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[265]
+EndSpeechLose = ...
+Name = Toby
+PokemonNos = 564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611,612,613,614,615,616,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[266]
+EndSpeechLose = ...
+Name = Dorothy
+PokemonNos = 468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[267]
+EndSpeechLose = ...
+Name = Piper
+PokemonNos = 372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[268]
+EndSpeechLose = ...
+Name = Finn
+PokemonNos = 317,371,373,377,390,392,399,431,452,456,469,475,486,488,495,527,548,552,565,569,573,576,580,582,584,591,592,601,602,610,621,623,626,631,634,640,641,644,648,650,651,653,655,661,665,669,672,676,678,680,687,688,697,698,706,717,719,722,727,730,736,737,740,744,746,747,749,751,808,809,810,811,816,817,818,819,820,821,822,823
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[269]
+EndSpeechLose = ...
+Name = Samir
+PokemonNos = 317,371,373,377,390,392,399,431,452,456,469,475,486,488,495,527,548,552,565,569,573,576,580,582,584,591,592,601,602,610,621,623,626,631,634,640,641,644,648,650,651,653,655,661,665,669,672,676,678,680,687,688,697,698,706,717,719,722,727,730,736,737,740,744,746,747,749,751,808,809,810,811,816,817,818,819,820,821,822,823
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[270]
+EndSpeechLose = ...
+Name = Fiona
+PokemonNos = 317,371,373,377,381,384,388,390,392,399,400,409,410,418,429,431,434,439,442,448,449,452,456,458,459,461,463,469,471,475,479,483,486,488,495,496,505,506,514,525,527,530,535,538,544,545,548,552,554,555,557,559,565,569,582,584,591,623,644,648,661,665,678,680,687,719,740,744,808,809,810,811,816,817,818,819,820,821,822,823
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[271]
+EndSpeechLose = ...
+Name = Gloria
+PokemonNos = 317,371,373,377,381,384,388,390,392,399,400,409,410,418,429,431,434,439,442,448,449,452,456,458,459,461,463,469,471,475,479,483,486,488,495,496,505,506,514,525,527,530,535,538,544,545,548,552,554,555,557,559,565,569,582,584,591,623,644,648,661,665,678,680,687,719,740,744,808,809,810,811,816,817,818,819,820,821,822,823
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[272]
+EndSpeechLose = ...
+Name = Nico
+PokemonNos = 660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[273]
+EndSpeechLose = ...
+Name = Jeremy
+PokemonNos = 564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611,612,613,614,615,616,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[274]
+EndSpeechLose = ...
+Name = Caitlin
+PokemonNos = 468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[275]
+EndSpeechLose = ...
+Name = Reena
+PokemonNos = 372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[276]
+EndSpeechLose = ...
+Name = Avery
+PokemonNos = 21,238,282,303,331,343,368,369,383,417,423,424,432,481,513,519,520,528,575,609,615,616,624,671,705,711,712,720
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[277]
+EndSpeechLose = ...
+Name = Liam
+PokemonNos = 21,238,282,303,331,343,368,369,383,417,423,424,432,481,513,519,520,528,575,609,615,616,624,671,705,711,712,720
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[278]
+EndSpeechLose = ...
+Name = Theo
+PokemonNos = 333,347,350,354,358,361,362,363,364,371,381,384,429,434,439,479,483,525,530,535,573,576,621,626,631,669,672,717,722,727,816,817,818,819
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[279]
+EndSpeechLose = ...
+Name = Bailey
+PokemonNos = 333,347,350,354,358,361,362,363,364,371,381,384,429,434,439,479,483,525,530,535,573,576,621,626,631,669,672,717,722,727,816,817,818,819
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[280]
+EndSpeechLose = ...
+Name = Hugo
+PokemonNos = 383,386,402,403,416,417,423,432,433,435,450,466,481,482,498,499,512,513,519,528,529,531,546,562,575,578,594,595,608,609,615,624,625,627,642,658,671,674,690,691,704,705,711,720,721,723,738,754,762,763,764,773,774,775,784,785,786,795,796,797,832,833,834,835,836,837,838,839,840,841
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[281]
+EndSpeechLose = ...
+Name = Bryce
+PokemonNos = 383,386,402,403,416,417,423,432,433,435,450,466,481,482,498,499,512,513,519,528,529,531,546,562,575,578,594,595,608,609,615,624,625,627,642,658,671,674,690,691,704,705,711,720,721,723,738,754,762,763,764,773,774,775,784,785,786,795,796,797,832,833,834,835,836,837,838,839,840,841
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[282]
+EndSpeechLose = ...
+Name = Gideon
+PokemonNos = 441,445,448,449,451,453,454,455,458,537,541,544,545,547,549,550,551,554,633,637,640,641,643,645,646,647,650,729,733,736,737,739,741,742,743,746
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[283]
+EndSpeechLose = ...
+Name = Triston
+PokemonNos = 441,445,448,449,451,453,454,455,458,537,541,544,545,547,549,550,551,554,633,637,640,641,643,645,646,647,650,729,733,736,737,739,741,742,743,746
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[284]
+EndSpeechLose = ...
+Name = Charles
+PokemonNos = 352,381,391,393,396,398,407,422,426,443,447,479,487,489,492,494,503,518,522,539,543,573,583,585,588,590,599,614,618,635,639,669,679,681,684,686,695,710,714,731,735,756,757,758,767,768,769,778,779,780,789,790,791,870,871,872,873,874,875
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[285]
+EndSpeechLose = ...
+Name = Raymond
+PokemonNos = 374,376,381,404,407,422,439,443,459,472,500,506,507,518,532,546,566,585,588,628,635,679,681,684,710,731,785,795,796,797,817,842,843,846,847
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[286]
+EndSpeechLose = ...
+Name = Dirk
+PokemonNos = 355,375,379,385,386,412,435,440,454,457,459,465,473,477,482,484,508,531,536,550,553,555,561,567,571,577,578,604,627,632,646,649,651,657,663,667,673,674,700,723,728,742,745,747,753,756,757,758,767,768,769,778,779,780,789,790,791,828,829,830,831
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[287]
+EndSpeechLose = ...
+Name = Harold
+PokemonNos = 355,375,379,385,386,412,435,440,454,457,459,465,473,477,482,484,508,531,536,550,553,555,561,567,571,577,578,604,627,632,646,649,651,657,663,667,673,674,700,723,728,742,745,747,753,756,757,758,767,768,769,778,779,780,789,790,791,828,829,830,831
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[288]
+EndSpeechLose = ...
+Name = Omar
+PokemonNos = 373,388,390,392,400,409,410,418,431,442,448,449,452,456,458,459,461,463,469,471,486,488,496,505,506,514,527,538,544,545,548,552,554,555,557,559,565,580,582,584,592,601,602,610,623,634,640,641,644,648,650,651,653,655,661,676,678,680,688,697,698,706,719,730,736,737,740,744,746,747,749,751,808,809,810,811,820,821,822,823
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[289]
+EndSpeechLose = ...
+Name = Peter
+PokemonNos = 373,388,390,392,400,409,410,418,431,442,448,449,452,456,458,459,461,463,469,471,486,488,496,505,506,514,527,538,544,545,548,552,554,555,557,559,565,580,582,584,592,601,602,610,623,634,640,641,644,648,650,651,653,655,661,676,678,680,688,697,698,706,719,730,736,737,740,744,746,747,749,751,808,809,810,811,820,821,822,823
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[290]
+EndSpeechLose = ...
+Name = Dev
+PokemonNos = 372,387,402,403,413,414,416,417,427,428,432,433,435,440,450,466,468,470,498,499,509,510,512,513,523,524,528,529,531,536,546,562,564,579,594,595,605,606,608,609,619,620,624,625,627,632,642,658,660,675,690,691,701,702,704,705,715,716,720,721,723,728,738,754,832,833,834,835,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[291]
+EndSpeechLose = ...
+Name = Corey
+PokemonNos = 372,387,402,403,413,414,416,417,427,428,432,433,435,440,450,466,468,470,498,499,509,510,512,513,523,524,528,529,531,536,546,562,564,579,594,595,605,606,608,609,619,620,624,625,627,632,642,658,660,675,690,691,701,702,704,705,715,716,720,721,723,728,738,754,832,833,834,835,860,861,862,863,864,865,866,867,868,869
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[292]
+EndSpeechLose = ...
+Name = Andre
+PokemonNos = 374,378,415,419,421,426,430,444,451,454,455,464,472,476,511,515,517,522,526,540,547,550,551,560,566,570,607,611,613,618,622,636,643,646,647,656,662,666,703,707,709,714,718,732,739,742,743,752,800,801,802,803,850,851,852,853,854,855,856,857,858,859
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[293]
+EndSpeechLose = ...
+Name = Ferris
+PokemonNos = 374,378,415,419,421,426,430,444,451,454,455,464,472,476,511,515,517,522,526,540,547,550,551,560,566,570,607,611,613,618,622,636,643,646,647,656,662,666,703,707,709,714,718,732,739,742,743,752,800,801,802,803,850,851,852,853,854,855,856,857,858,859
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[294]
+EndSpeechLose = ...
+Name = Alivia
+PokemonNos = 399,400,409,422,438,441,445,448,449,451,452,454,455,489,492,493,503,526,532,535,536,560,573,583,590,592,608,611,620,651,682,688,714,729,732
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[295]
+EndSpeechLose = ...
+Name = Paige
+PokemonNos = 399,400,409,422,438,441,445,448,449,451,452,454,455,489,492,493,503,526,532,535,536,560,573,583,590,592,608,611,620,651,682,688,714,729,732
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[296]
+EndSpeechLose = ...
+Name = Anya
+PokemonNos = 442,443,444,446,447,538,539,540,542,543,634,635,636,638,639,730,731,732,734,735,1451
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[297]
+EndSpeechLose = ...
+Name = Dawn
+PokemonNos = 377,381,410,421,422,443,456,460,461,471,472,473,484,491,502,503,507,508,515,520,540,549,569,574,583,586,601,622,624,639,644,655,734,804,810,815,823,831,843
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[298]
+EndSpeechLose = ...
+Name = Abby
+PokemonNos = 185,290,313,334,348,359,360,377,380,382,385,394,395,398,400,401,404,409,410,416,437,438,439,441,445,446,453,475,478,480,484,490,491,494,496,497,500,505,506,512,533,534,535,537,541,542,549,569,572,574,577,586,587,590,592,593,596,601,602,608,629,630,631,633,637,638,645,665,668,670,673,682,683,686,688,689,692,697,698,704,725,726,727,729,733,734,741,812,813,814,815,816,817,818,819
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[299]
+EndSpeechLose = ...
+Name = Gretel
+PokemonNos = 185,290,313,334,348,359,360,377,380,382,385,394,395,398,400,401,404,409,410,416,437,438,439,441,445,446,453,475,478,480,484,490,491,494,496,497,500,505,506,512,533,534,535,537,541,542,549,569,572,574,577,586,587,590,592,593,596,601,602,608,629,630,631,633,637,638,645,665,668,670,673,682,683,686,688,689,692,697,698,704,725,726,727,729,733,734,741,812,813,814,815,816,817,818,819
+BeginSpeech = I wish to test your strength!
+Type = FABLEDHERO
+EndSpeechWin = ...
+#------------------------------#
+[300]
+EndSpeechLose = You have bested me today. Well done.
+Name = Roland
+PokemonNos = 894,902,907,913,920,927,935,940,945,952,960,968,973,981,986,993,1001,1008,1014,1019,1451
+BeginSpeech = Show me what you are capable of in battle!
+Type = FABLEDHERO
+EndSpeechWin = It seems my strength was greater this time.
+#------------------------------#
+[301]
+EndSpeechLose = Impressive! Your skills are formidable.
+Name = Ingrid
+PokemonNos = 886,889,892,897,905,911,917,925,929,937,944,950,959,965,972,980,989,995,1004,1011
+BeginSpeech = Let us see if you can match my power!
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine today. You fought well.
+#------------------------------#
+[302]
+EndSpeechLose = It seems I have much to learn from you.
+Name = Alaric
+PokemonNos = 884,887,891,900,903,910,918,926,931,938,946,953,962,969,974,982,991,998,1005,1010
+BeginSpeech = Prepare yourself! I won't go easy on you.
+Type = FABLEDHERO
+EndSpeechWin = A splendid battle, but my strategy prevailed.
+#------------------------------#
+[303]
+EndSpeechLose = What a remarkable fight! I am truly impressed.
+Name = Freya
+PokemonNos = 885,888,890,899,904,909,916,923,928,934,942,949,958,964,970,979,988,994,1002,1007
+BeginSpeech = Show me the spirit of a true warrior!
+Type = FABLEDHERO
+EndSpeechWin = I knew my tactics would see me through!
+#------------------------------#
+[304]
+EndSpeechLose = I must admit defeat this time. Well played.
+Name = Sigurd
+PokemonNos = 883,895,898,906,914,919,930,936,943,948,957,961,967,975,983,990,997,1003,1009,1015
+BeginSpeech = This will be a battle to remember. Come at me!
+Type = FABLEDHERO
+EndSpeechWin = It was a tough fight, but I came out on top.
+#------------------------------#
+[305]
+EndSpeechLose = Your power exceeds my expectations. Well fought.
+Name = Elise
+PokemonNos = 896,901,908,915,921,933,941,947,954,963,971,978,984,992,996,1000,1006,1012,1017,1018
+BeginSpeech = Let us engage in a clash of strength and strategy!
+Type = FABLEDHERO
+EndSpeechWin = I emerge victorious this time. Well battled.
+#------------------------------#
+[306]
+EndSpeechLose = I concede defeat. You were the stronger one today.
+Name = Tristan
+PokemonNos = 887,893,900,906,912,920,924,930,939,946,955,962,973,976,985,999,1008,1013,1016,1019
+BeginSpeech = I hope you are ready for an intense battle!
+Type = FABLEDHERO
+EndSpeechWin = A worthy effort, but I take the win this time.
+#------------------------------#
+[307]
+EndSpeechLose = Such skill! I am truly humbled by your talent.
+Name = Beatrix
+PokemonNos = 884,890,895,902,911,917,928,932,937,945,951,958,964,970,977,987,994,998,1007,1014
+BeginSpeech = Only one of us will walk away victorious. Show me your strength!
+Type = FABLEDHERO
+EndSpeechWin = I knew I could count on my strategy to secure victory!
+#------------------------------#
+[308]
+EndSpeechLose = I am amazed by your skills. Well done.
+Name = Victor
+PokemonNos = 882,888,892,897,904,910,918,927,931,938,948,956,966,972,980,988,995,1001,1010,1015
+BeginSpeech = Let's put our skills to the test in this epic battle!
+Type = FABLEDHERO
+EndSpeechWin = You fought valiantly, but my tactics were superior.
+#------------------------------#
+[309]
+EndSpeechLose = You are a force to be reckoned with. Incredible battle!
+Name = Aurora
+PokemonNos = 889,891,899,905,913,919,925,929,935,940,950,957,965,974,981,990,996,1002,1009,1018
+BeginSpeech = I challenge you to show me the strength of a true hero!
+Type = FABLEDHERO
+EndSpeechWin = The stars were in my favor today. Well played!
+#------------------------------#
+[310]
+EndSpeechLose = I must accept defeat. Your talent is undeniable.
+Name = Leon
+PokemonNos = 883,886,898,907,914,922,926,933,942,949,952,961,968,975,983,991,997,1005,1011,1016,1451
+BeginSpeech = Prepare yourself for a battle you won't forget!
+Type = FABLEDHERO
+EndSpeechWin = That was a close one, but I managed to come out on top!
+#------------------------------#
+[311]
+EndSpeechLose = A splendid victory for you. I bow to your strength.
+Name = Selene
+PokemonNos = 885,891,894,903,908,916,921,934,941,948,953,959,967,977,984,992,1000,1006,1013,1017
+BeginSpeech = I will not hold back. Show me your true power!
+Type = FABLEDHERO
+EndSpeechWin = What a fight! I am proud to claim victory.
+#------------------------------#
+[312]
+EndSpeechLose = You've proven yourself a formidable opponent.
+Name = Gareth
+PokemonNos = 887,889,891,897,902,911,920,929,932,939,947,955,964,976,982,989,998,1004,1012,1018,1563
+BeginSpeech = Let's see whose training has been the toughest!
+Type = FABLEDHERO
+EndSpeechWin = My experience gave me the edge this time. Well done.
+#------------------------------#
+[313]
+EndSpeechLose = Well played! I see I still have much to learn.
+Name = Elysia
+PokemonNos = 890,893,896,901,909,915,924,928,936,943,950,958,965,973,981,986,994,999,1003,1008
+BeginSpeech = May the best trainer win! I won't hold back.
+Type = FABLEDHERO
+EndSpeechWin = I knew I could count on my Pokémon to win!
+#------------------------------#
+[314]
+EndSpeechLose = That was an extraordinary match! You've earned this victory.
+Name = Thorne
+PokemonNos = 888,892,895,900,912,918,922,930,938,944,951,960,969,978,987,993,1001,1007,1010,1014,1563
+BeginSpeech = I challenge you to show your full potential in this battle!
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine! You fought with honor.
+#------------------------------#
+[315]
+EndSpeechLose = It seems you were the stronger one today. Well played!
+Name = Darian
+PokemonNos = 892,894,896,899,907,910,918,923,931,937,944,950,958,963,971,979,988,993,1002,1009
+BeginSpeech = Let's see if you can match my skill in battle!
+Type = FABLEDHERO
+EndSpeechWin = I knew I could outlast you this time. Great match!
+#------------------------------#
+[316]
+EndSpeechLose = What an amazing battle! You have truly impressed me.
+Name = Liora
+PokemonNos = 893,895,898,905,913,919,924,929,936,941,947,955,962,968,977,985,990,996,1005,1013
+BeginSpeech = Are you ready to face my powerful team?
+Type = FABLEDHERO
+EndSpeechWin = A splendid victory for me! You fought well.
+#------------------------------#
+[317]
+EndSpeechLose = Incredible! Your skills are truly remarkable.
+Name = Caius
+PokemonNos = 886,891,897,902,911,916,921,927,934,942,949,953,961,967,973,982,987,994,1001,1008
+BeginSpeech = I won't hold back, so prepare yourself!
+Type = FABLEDHERO
+EndSpeechWin = My tactics paid off. Victory is mine this time!
+#------------------------------#
+[318]
+EndSpeechLose = I didn't see that coming! Well fought.
+Name = Seraphine
+PokemonNos = 884,888,890,895,900,908,915,922,928,933,940,946,956,965,970,981,989,997,1004,1011
+BeginSpeech = Show me what you're capable of! Let's have a great battle.
+Type = FABLEDHERO
+EndSpeechWin = I knew I could trust my Pokémon to secure the win.
+#------------------------------#
+[319]
+EndSpeechLose = You outplayed me this time. Nicely done!
+Name = Orion
+PokemonNos = 885,889,892,897,903,909,917,925,931,938,945,951,960,969,978,983,992,998,1006,1015
+BeginSpeech = Let's make this a battle to remember!
+Type = FABLEDHERO
+EndSpeechWin = That was close, but I managed to come out on top.
+#------------------------------#
+[320]
+EndSpeechLose = I must admit, you have exceptional skill. Well fought.
+Name = Isolde
+PokemonNos = 887,890,894,901,906,914,920,927,935,941,948,954,964,975,980,988,995,1003,1012,1016,1563
+BeginSpeech = I hope you're ready for a tough challenge!
+Type = FABLEDHERO
+EndSpeechWin = A hard-fought victory, but I prevailed this time!
+#------------------------------#
+[321]
+EndSpeechLose = Amazing! I did not expect such a strong challenge.
+Name = Cassian
+PokemonNos = 882,889,896,904,911,918,926,932,939,944,952,958,968,974,982,990,997,1000,1007,1014,1451
+BeginSpeech = I want to see your best moves! Let's begin!
+Type = FABLEDHERO
+EndSpeechWin = You put up a good fight, but I was prepared.
+#------------------------------#
+[322]
+EndSpeechLose = You really gave it your all. I'm impressed.
+Name = Thalia
+PokemonNos = 886,893,899,905,912,919,923,931,937,943,949,957,965,973,981,989,994,1002,1010,1018
+BeginSpeech = Let's see whose training pays off in this battle!
+Type = FABLEDHERO
+EndSpeechWin = I emerged victorious this time. Well played!
+#------------------------------#
+[323]
+EndSpeechLose = I see now why you are so highly regarded. Excellent match!
+Name = Percival
+PokemonNos = 883,891,897,902,908,916,922,929,934,942,950,956,963,971,978,986,992,999,1005,1013
+BeginSpeech = Are you ready? This is going to be intense!
+Type = FABLEDHERO
+EndSpeechWin = My strategy worked perfectly. I claim victory today!
+#------------------------------#
+[324]
+EndSpeechLose = It seems my tactics weren't enough. Well done!
+Name = Sigrun
+PokemonNos = 884,890,893,900,907,914,921,928,933,940,947,955,962,970,979,984,991,998,1004,1011
+BeginSpeech = Prepare yourself for a tough fight. I won't go easy on you!
+Type = FABLEDHERO
+EndSpeechWin = A tough battle, but I managed to secure the win.
+#------------------------------#
+[325]
+EndSpeechLose = You were the better trainer today. Impressive!
+Name = Lucina
+PokemonNos = 887,892,898,905,912,918,926,932,938,945,950,958,966,973,981,988,995,1001,1008,1017
+BeginSpeech = I hope you are ready for a real challenge!
+Type = FABLEDHERO
+EndSpeechWin = A hard-fought victory. You gave me quite the challenge!
+#------------------------------#
+[326]
+EndSpeechLose = Your strategy was flawless. Well played!
+Name = Eamon
+PokemonNos = 884,891,896,902,910,915,923,929,937,944,952,957,964,972,979,987,993,1003,1009,1016,1563
+BeginSpeech = Show me the strength of your Pokémon!
+Type = FABLEDHERO
+EndSpeechWin = My Pokémon and I make a great team. Victory is ours!
+#------------------------------#
+[327]
+EndSpeechLose = I have been defeated... what an incredible battle!
+Name = Isolde
+PokemonNos = 885,890,895,900,907,913,919,925,933,940,948,954,962,970,977,986,992,1000,1005,1014
+BeginSpeech = Prepare yourself. I won't hold back!
+Type = FABLEDHERO
+EndSpeechWin = I knew my Pokémon could pull through. Well battled!
+#------------------------------#
+[328]
+EndSpeechLose = It seems you have outmaneuvered me. Impressive!
+Name = Galen
+PokemonNos = 882,888,894,899,906,914,920,928,936,943,949,956,965,971,978,984,991,997,1004,1012
+BeginSpeech = Let's see how far your training has taken you!
+Type = FABLEDHERO
+EndSpeechWin = I came out on top this time. Well done nonetheless!
+#------------------------------#
+[329]
+EndSpeechLose = Your strength is truly admirable. I concede.
+Name = Lydia
+PokemonNos = 889,892,897,904,911,917,924,930,938,945,953,959,968,975,983,990,996,1002,1007,1015
+BeginSpeech = I hope you're ready for a fierce fight!
+Type = FABLEDHERO
+EndSpeechWin = I was prepared, and it paid off. A fine victory!
+#------------------------------#
+[330]
+EndSpeechLose = You have bested me this time. Excellent battle!
+Name = Ronan
+PokemonNos = 886,890,893,898,905,912,916,922,931,939,947,950,958,967,973,981,989,994,1006,1011
+BeginSpeech = Let's put our skills to the test in this battle!
+Type = FABLEDHERO
+EndSpeechWin = A narrow victory, but a victory nonetheless!
+#------------------------------#
+[331]
+EndSpeechLose = I am defeated, but I am glad to have battled you.
+Name = Serena
+PokemonNos = 883,887,895,901,909,915,921,927,935,941,946,955,963,971,976,985,992,998,1003,1013
+BeginSpeech = May the best trainer win. I won't hold back!
+Type = FABLEDHERO
+EndSpeechWin = That was a thrilling battle. Victory is mine this time!
+#------------------------------#
+[332]
+EndSpeechLose = Your skills have proven superior today. Congratulations.
+Name = Edmund
+PokemonNos = 888,893,896,902,910,918,926,930,937,942,950,957,965,972,980,988,995,1001,1008,1014,1451
+BeginSpeech = Prepare yourself for an intense fight!
+Type = FABLEDHERO
+EndSpeechWin = I knew I could count on my Pokémon to secure the win!
+#------------------------------#
+[333]
+EndSpeechLose = You fought with great skill. I am impressed.
+Name = Rowena
+PokemonNos = 882,891,894,900,907,913,919,925,933,940,948,954,962,970,977,984,991,997,1005,1012,1563
+BeginSpeech = Show me what you've got! I won't go easy on you!
+Type = FABLEDHERO
+EndSpeechWin = A splendid match. I emerged victorious this time!
+#------------------------------#
+[334]
+EndSpeechLose = You have shown incredible strength. Well done.
+Name = Lionel
+PokemonNos = 889,892,898,905,911,917,923,929,936,943,949,956,965,971,978,983,990,996,1004,1010
+BeginSpeech = Let's make this an unforgettable battle!
+Type = FABLEDHERO
+EndSpeechWin = That was a tough one, but I managed to pull through!
+#------------------------------#
+[335]
+EndSpeechLose = You have proven your might today. Well battled!
+Name = Alaric
+PokemonNos = 883,889,897,904,910,916,925,930,938,944,950,957,963,972,979,987,993,1002,1007,1015
+BeginSpeech = Let’s see if you can handle my team’s power!
+Type = FABLEDHERO
+EndSpeechWin = A well-earned victory for me. Well fought!
+#------------------------------#
+[336]
+EndSpeechLose = I gave it my all, but you were the better trainer today.
+Name = Thea
+PokemonNos = 882,888,894,900,906,915,922,927,935,941,947,956,961,970,977,985,992,998,1005,1013
+BeginSpeech = I’m ready for an intense battle. Are you?
+Type = FABLEDHERO
+EndSpeechWin = I emerged victorious this time. A great match!
+#------------------------------#
+[337]
+EndSpeechLose = What a battle! You’ve earned this win.
+Name = Leif
+PokemonNos = 886,891,896,902,908,913,921,928,933,942,948,955,964,971,980,988,995,1003,1009,1016,1450
+BeginSpeech = Show me the strength you’ve honed through training!
+Type = FABLEDHERO
+EndSpeechWin = My strategy worked! A solid victory for me.
+#------------------------------#
+[338]
+EndSpeechLose = It looks like I still have much to learn.
+Name = Morgana
+PokemonNos = 885,890,895,899,907,914,920,926,932,940,946,952,960,968,976,984,991,1000,1006,1014,1563
+BeginSpeech = Let’s make this a battle to remember!
+Type = FABLEDHERO
+EndSpeechWin = A splendid match. I claim the victory today!
+#------------------------------#
+[339]
+EndSpeechLose = I was bested by your strategy. Well done!
+Name = Cedric
+PokemonNos = 884,892,897,903,911,918,924,931,937,945,951,959,967,974,982,989,994,1001,1008,1012
+BeginSpeech = Ready yourself. This is going to be tough!
+Type = FABLEDHERO
+EndSpeechWin = My training paid off! I win this round.
+#------------------------------#
+[340]
+EndSpeechLose = Your strength and resolve are remarkable.
+Name = Ingrid
+PokemonNos = 887,891,899,905,910,917,923,929,936,942,948,955,963,971,979,986,992,998,1004,1011
+BeginSpeech = I hope you’re ready. I’m going all out!
+Type = FABLEDHERO
+EndSpeechWin = I knew we could do it! A well-earned victory.
+#------------------------------#
+[341]
+EndSpeechLose = An outstanding battle! I learned a lot from you.
+Name = Finn
+PokemonNos = 885,890,893,898,906,914,920,928,935,941,947,953,962,969,978,983,990,996,1007,1013
+BeginSpeech = Let’s give it our all in this battle!
+Type = FABLEDHERO
+EndSpeechWin = A well-fought match! I came out on top.
+#------------------------------#
+[342]
+EndSpeechLose = You have earned this victory. Great match!
+Name = Elara
+PokemonNos = 882,887,894,902,909,915,922,930,934,943,950,957,966,973,981,989,993,1002,1008,1015
+BeginSpeech = Let’s see if you can handle the power of my Pokémon!
+Type = FABLEDHERO
+EndSpeechWin = I secured the win this time. Well fought!
+#------------------------------#
+[343]
+EndSpeechLose = I was not expecting that. Impressive battle!
+Name = Gareth
+PokemonNos = 886,891,897,903,911,916,921,927,935,940,946,955,964,970,977,986,992,999,1005,1010,1563
+BeginSpeech = Let’s see if you can outsmart my team!
+Type = FABLEDHERO
+EndSpeechWin = My tactics were spot-on. A great victory!
+#------------------------------#
+[344]
+EndSpeechLose = A powerful display! You deserve this win.
+Name = Astrid
+PokemonNos = 883,888,896,901,908,913,919,925,933,941,947,953,962,969,978,985,991,1000,1004,1012
+BeginSpeech = Prepare yourself. This battle will be tough!
+Type = FABLEDHERO
+EndSpeechWin = I knew we could do it! Victory is ours!
+#------------------------------#
+[345]
+EndSpeechLose = You have outmatched me. Well played!
+Name = Brin
+PokemonNos = 884,890,895,899,907,914,921,928,936,944,950,958,967,973,981,988,994,1001,1009,1016
+BeginSpeech = Are you ready for a fierce battle?
+Type = FABLEDHERO
+EndSpeechWin = My strategy led us to victory!
+#------------------------------#
+[346]
+EndSpeechLose = What an amazing display of skill!
+Name = Freya
+PokemonNos = 886,892,897,903,910,918,925,931,939,947,954,961,968,976,983,989,996,1003,1007,1013,1450
+BeginSpeech = Show me what you’ve got. I’m ready!
+Type = FABLEDHERO
+EndSpeechWin = It was close, but I emerged victorious!
+#------------------------------#
+[347]
+EndSpeechLose = I gave it my all, but you were superior.
+Name = Edgar
+PokemonNos = 882,889,895,900,905,913,919,927,934,942,949,956,964,971,980,987,993,1002,1005,1014
+BeginSpeech = I’m going all out. Let’s see if you can keep up!
+Type = FABLEDHERO
+EndSpeechWin = A narrow victory, but it’s mine!
+#------------------------------#
+[348]
+EndSpeechLose = Well done! I am truly impressed.
+Name = Selene
+PokemonNos = 883,891,896,902,908,917,924,932,938,946,953,962,968,975,984,991,998,1004,1010,1017
+BeginSpeech = I won’t hold anything back. Let’s battle!
+Type = FABLEDHERO
+EndSpeechWin = My Pokémon and I make an unbeatable team!
+#------------------------------#
+[349]
+EndSpeechLose = I concede. You are a formidable opponent.
+Name = Lucan
+PokemonNos = 884,890,897,905,913,920,928,935,941,947,954,961,970,976,983,990,995,1003,1008,1015
+BeginSpeech = Ready yourself. This will be a challenge!
+Type = FABLEDHERO
+EndSpeechWin = We fought hard and won!
+#------------------------------#
+[350]
+EndSpeechLose = An impressive battle. I’ve learned a lot.
+Name = Imogen
+PokemonNos = 885,892,894,900,907,914,919,926,933,939,946,955,963,972,978,986,993,1000,1006,1012
+BeginSpeech = Give me your best shot!
+Type = FABLEDHERO
+EndSpeechWin = A tough match, but I claimed the victory.
+#------------------------------#
+[351]
+EndSpeechLose = Your skills are truly remarkable. Well done!
+Name = Victor
+PokemonNos = 888,895,901,908,915,923,931,937,945,951,959,966,974,981,989,996,1002,1005,1011,1018
+BeginSpeech = Let’s see who will come out on top!
+Type = FABLEDHERO
+EndSpeechWin = My strategy paid off this time!
+#------------------------------#
+[352]
+EndSpeechLose = You were truly the better trainer today.
+Name = Thorne
+PokemonNos = 886,892,898,903,910,917,925,932,939,947,954,962,971,978,985,992,1003,1007,1014,1019
+BeginSpeech = I won’t go easy on you. Prepare yourself!
+Type = FABLEDHERO
+EndSpeechWin = A well-deserved victory for me!
+#------------------------------#
+[353]
+EndSpeechLose = I am amazed by your strength. Well fought!
+Name = Cora
+PokemonNos = 882,889,897,902,909,916,923,931,936,944,950,958,965,972,979,986,994,1001,1008,1013
+BeginSpeech = This will be a fight to remember!
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine this time!
+#------------------------------#
+[354]
+EndSpeechLose = That was an incredible match! Well done.
+Name = Keir
+PokemonNos = 883,891,896,904,912,918,926,932,938,946,953,961,968,975,984,990,997,1004,1009,1016,1450
+BeginSpeech = Let’s make this an epic battle!
+Type = FABLEDHERO
+EndSpeechWin = I knew my Pokémon wouldn’t let me down!
+#------------------------------#
+[355]
+EndSpeechLose = A great match. You’ve bested me today.
+Name = Helena
+PokemonNos = 884,890,897,903,910,917,924,930,938,947,952,959,968,973,982,988,996,1003,1010,1017
+BeginSpeech = I’ve been training hard for this moment. Let’s battle!
+Type = FABLEDHERO
+EndSpeechWin = My training paid off. Victory is mine!
+#------------------------------#
+[356]
+EndSpeechLose = What an impressive display of strength!
+Name = Donovan
+PokemonNos = 882,889,894,900,905,912,919,926,934,941,949,957,965,971,979,987,993,1000,1006,1013
+BeginSpeech = Let’s see if you can handle my team’s might!
+Type = FABLEDHERO
+EndSpeechWin = A well-fought match. I’m the victor!
+#------------------------------#
+[357]
+EndSpeechLose = Your skills are exceptional. I’ve lost this time.
+Name = Seraphina
+PokemonNos = 886,891,896,902,908,914,920,928,936,945,951,958,966,974,982,989,995,1002,1008,1014
+BeginSpeech = I won’t go easy on you. Prepare for battle!
+Type = FABLEDHERO
+EndSpeechWin = My strategy led us to a flawless victory!
+#------------------------------#
+[358]
+EndSpeechLose = I underestimated you. Well done!
+Name = Hugo
+PokemonNos = 883,888,895,899,907,913,921,927,935,940,948,956,963,970,978,985,992,1001,1007,1012
+BeginSpeech = Get ready for an unforgettable battle!
+Type = FABLEDHERO
+EndSpeechWin = My plan worked perfectly. A solid win for me!
+#------------------------------#
+[359]
+EndSpeechLose = You’re an incredible trainer. I need more practice.
+Name = Rowena
+PokemonNos = 884,890,898,905,910,917,923,931,939,944,951,959,967,973,981,989,996,1004,1009,1015
+BeginSpeech = Let’s give it our all in this battle!
+Type = FABLEDHERO
+EndSpeechWin = I knew we could do it. A well-earned victory!
+#------------------------------#
+[360]
+EndSpeechLose = A splendid performance! You deserve this win.
+Name = Tristan
+PokemonNos = 885,891,897,903,911,918,924,930,937,945,952,960,968,976,983,990,997,1003,1008,1016
+BeginSpeech = I’m bringing my strongest team. Are you ready?
+Type = FABLEDHERO
+EndSpeechWin = Victory is ours! Well played!
+#------------------------------#
+[361]
+EndSpeechLose = You’ve earned this win with your strategy.
+Name = Eveline
+PokemonNos = 882,889,896,902,908,914,922,929,936,943,951,958,965,973,981,988,994,1000,1005,1011
+BeginSpeech = Let’s see who has trained harder!
+Type = FABLEDHERO
+EndSpeechWin = We did it! Another victory in the bag!
+#------------------------------#
+[362]
+EndSpeechLose = I gave it my all, but you were the better trainer.
+Name = Malcolm
+PokemonNos = 883,887,893,899,907,913,919,926,932,940,947,955,964,970,979,986,992,1001,1006,1012
+BeginSpeech = Prepare yourself. This is going to be a tough fight!
+Type = FABLEDHERO
+EndSpeechWin = My tactics were superior this time. I win!
+#------------------------------#
+[363]
+EndSpeechLose = You have outmatched me. Well done!
+Name = Odette
+PokemonNos = 886,892,898,904,911,917,923,929,937,944,950,958,966,974,981,987,995,1003,1008,1014
+BeginSpeech = I hope you’re ready for this challenge!
+Type = FABLEDHERO
+EndSpeechWin = We fought hard and secured the win!
+#------------------------------#
+[364]
+EndSpeechLose = I’ve been defeated, but I won’t give up!
+Name = Alistair
+PokemonNos = 884,890,897,903,909,915,922,928,936,942,949,957,964,971,980,986,994,1002,1009,1015,1450
+BeginSpeech = Let’s make this a battle to remember!
+Type = FABLEDHERO
+EndSpeechWin = My Pokémon were unstoppable today!
+#------------------------------#
+[365]
+EndSpeechLose = Your skill is truly remarkable. I’m impressed!
+Name = Isla
+PokemonNos = 882,889,895,901,908,916,924,931,939,945,953,961,968,975,983,989,996,1004,1007,1016
+BeginSpeech = I’ve been waiting for a challenge like this!
+Type = FABLEDHERO
+EndSpeechWin = A tough match, but we pulled through!
+#------------------------------#
+[366]
+EndSpeechLose = I’ve been bested. Well played!
+Name = Evander
+PokemonNos = 883,888,896,900,907,914,921,927,935,941,949,955,963,970,978,985,992,1000,1006,1011
+BeginSpeech = Let’s have a battle worth remembering!
+Type = FABLEDHERO
+EndSpeechWin = I win this time. Great match!
+#------------------------------#
+[367]
+EndSpeechLose = What an intense battle! You’ve earned this victory.
+Name = Selina
+PokemonNos = 886,891,894,899,905,912,918,925,933,940,948,956,964,971,980,987,995,1003,1008,1013
+BeginSpeech = I’m not going to hold back. Let’s battle!
+Type = FABLEDHERO
+EndSpeechWin = A well-fought match. I claim the win!
+#------------------------------#
+[368]
+EndSpeechLose = A well-deserved victory for you.
+Name = Ragnar
+PokemonNos = 885,892,897,903,910,916,922,929,937,944,952,959,967,973,981,989,997,1005,1010,1017
+BeginSpeech = Let’s test our strengths against each other!
+Type = FABLEDHERO
+EndSpeechWin = My Pokémon and I emerge victorious!
+#------------------------------#
+[369]
+EndSpeechLose = You have bested me this time. Well done!
+Name = Isolde
+PokemonNos = 884,890,895,900,908,913,919,926,934,941,948,956,965,972,980,987,994,1001,1007,1014
+BeginSpeech = Prepare yourself. This will be a challenge!
+Type = FABLEDHERO
+EndSpeechWin = A victorious battle for me and my team!
+#------------------------------#
+[370]
+EndSpeechLose = You’ve proven your strength. I’m impressed!
+Name = Rowan
+PokemonNos = 882,889,894,899,907,915,922,930,938,944,951,958,966,974,982,988,996,1004,1010,1015
+BeginSpeech = Let’s make this an unforgettable fight!
+Type = FABLEDHERO
+EndSpeechWin = I knew we could do it. A solid victory!
+#------------------------------#
+[371]
+EndSpeechLose = I’ll need to train harder for next time!
+Name = Gwen
+PokemonNos = 883,887,893,898,905,912,920,927,935,942,949,957,965,973,981,988,995,1002,1009,1016
+BeginSpeech = Ready yourself. I’m giving this my all!
+Type = FABLEDHERO
+EndSpeechWin = A hard-fought match, but I prevailed!
+#------------------------------#
+[372]
+EndSpeechLose = What a fantastic battle. Well played!
+Name = Alaric
+PokemonNos = 886,891,896,901,909,917,924,932,939,947,954,961,968,975,983,990,998,1005,1011,1017
+BeginSpeech = Let’s see who has the stronger resolve!
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine today!
+#------------------------------#
+[373]
+EndSpeechLose = An impressive victory on your part. Well fought!
+Name = Clara
+PokemonNos = 884,890,895,899,906,914,922,929,936,944,951,959,967,974,982,989,996,1003,1010,1016
+BeginSpeech = I won’t hold anything back. Let’s go!
+Type = FABLEDHERO
+EndSpeechWin = My Pokémon shined in this battle!
+#------------------------------#
+[374]
+EndSpeechLose = You have outmatched me. I must train harder.
+Name = Nolan
+PokemonNos = 885,892,897,902,910,918,925,932,939,947,953,961,968,976,983,991,998,1004,1011,1015,1450
+BeginSpeech = Let’s give it everything we’ve got!
+Type = FABLEDHERO
+EndSpeechWin = A thrilling match. Victory is ours!
+#------------------------------#
+[375]
+EndSpeechLose = You’ve proven your strength. I’ve been defeated.
+Name = Tobias
+PokemonNos = 1015,1022,1030,1038,1045,1053,1061,1069,1077,1084,1092,1100,1107,1114,1122,1129,1137,1145,1152,1160,1561
+BeginSpeech = Time to show you the power of my team!
+Type = FABLEDHERO
+EndSpeechWin = Victory was inevitable with such a powerful team!
+#------------------------------#
+[376]
+EndSpeechLose = That was an excellent match. You’ve earned this.
+Name = Sienna
+PokemonNos = 1016,1023,1031,1039,1046,1054,1062,1070,1078,1085,1093,1101,1108,1115,1123,1130,1138,1146,1153,1161
+BeginSpeech = Let’s battle with everything we’ve got!
+Type = FABLEDHERO
+EndSpeechWin = I knew my team could do it. A fantastic win!
+#------------------------------#
+[377]
+EndSpeechLose = You’ve outdone me. I’ll get stronger for next time!
+Name = Corwin
+PokemonNos = 1017,1024,1032,1040,1047,1055,1063,1071,1079,1086,1094,1102,1109,1116,1124,1131,1139,1147,1154,1162,1561
+BeginSpeech = Let’s see if you can stand up to my power!
+Type = FABLEDHERO
+EndSpeechWin = A victory for me and my team. Well done, everyone!
+#------------------------------#
+[378]
+EndSpeechLose = That was a hard-fought battle. You were stronger this time.
+Name = Finnian
+PokemonNos = 1018,1025,1033,1041,1048,1056,1064,1072,1080,1087,1095,1103,1110,1117,1125,1132,1140,1148,1155,1163
+BeginSpeech = I’ve been waiting for a real challenge. Let’s battle!
+Type = FABLEDHERO
+EndSpeechWin = A great battle, and I emerged victorious!
+#------------------------------#
+[379]
+EndSpeechLose = You’ve bested me today, but I’ll keep training!
+Name = Ansel
+PokemonNos = 1019,1026,1034,1042,1049,1057,1065,1073,1081,1088,1096,1104,1111,1118,1126,1133,1141,1149,1156,1164,1452
+BeginSpeech = Time to show you the strength of my team!
+Type = FABLEDHERO
+EndSpeechWin = I’m the victor today. Well played!
+#------------------------------#
+[380]
+EndSpeechLose = You have bested me. My Pokémon and I need more work.
+Name = Keira
+PokemonNos = 1020,1027,1035,1043,1050,1058,1066,1074,1082,1089,1097,1105,1112,1119,1127,1134,1142,1150,1157,1165
+BeginSpeech = This is where I show my true strength!
+Type = FABLEDHERO
+EndSpeechWin = Victory! My team has proven their worth!
+#------------------------------#
+[381]
+EndSpeechLose = A tough defeat. I’ll keep training for next time!
+Name = Ezra
+PokemonNos = 1021,1028,1036,1044,1051,1059,1067,1075,1083,1090,1098,1106,1113,1120,1128,1135,1143,1151,1158,1166,1561
+BeginSpeech = Let’s make this a battle to remember!
+Type = FABLEDHERO
+EndSpeechWin = My strategy led to a well-earned victory!
+#------------------------------#
+[382]
+EndSpeechLose = You’ve shown your strength. I will come back stronger!
+Name = Iris
+PokemonNos = 1022,1029,1037,1045,1052,1060,1068,1076,1084,1091,1099,1107,1114,1121,1129,1136,1144,1152,1159,1167
+BeginSpeech = Let’s see how tough you really are!
+Type = FABLEDHERO
+EndSpeechWin = A brilliant win for me today!
+#------------------------------#
+[383]
+EndSpeechLose = I gave it my all, but you were the better trainer.
+Name = Roderick
+PokemonNos = 1023,1030,1038,1046,1053,1061,1069,1077,1085,1092,1100,1108,1115,1122,1130,1137,1145,1153,1160,1168,1452
+BeginSpeech = I won’t hold back. Let’s see who’s stronger!
+Type = FABLEDHERO
+EndSpeechWin = Victory was inevitable with my strategy!
+#------------------------------#
+[384]
+EndSpeechLose = You’ve proven yourself today. I’m going to train harder.
+Name = Linnea
+PokemonNos = 1024,1031,1039,1047,1054,1062,1070,1078,1086,1093,1101,1109,1116,1123,1131,1138,1146,1154,1161,1169
+BeginSpeech = I’m ready for the challenge you bring!
+Type = FABLEDHERO
+EndSpeechWin = My team was unstoppable today. Victory is mine!
+#------------------------------#
+[385]
+EndSpeechLose = You’re too strong for me. I’ve been defeated.
+Name = Galen
+PokemonNos = 1025,1032,1040,1048,1055,1063,1071,1079,1087,1094,1102,1110,1117,1124,1132,1139,1147,1155,1162,1170,1561
+BeginSpeech = Prepare for the strongest battle of your life!
+Type = FABLEDHERO
+EndSpeechWin = A hard-fought victory. I’ve won!
+#------------------------------#
+[386]
+EndSpeechLose = I’ll have to train harder for next time!
+Name = Cassius
+PokemonNos = 1026,1033,1041,1049,1056,1064,1072,1080,1088,1095,1103,1111,1118,1125,1133,1140,1148,1156,1163,1171
+BeginSpeech = My team’s power is unmatched. Let’s see what you’ve got!
+Type = FABLEDHERO
+EndSpeechWin = A flawless victory. I’ve claimed the win!
+#------------------------------#
+[387]
+EndSpeechLose = That was an amazing battle. Well done!
+Name = Alina
+PokemonNos = 1027,1034,1042,1050,1057,1065,1073,1081,1089,1096,1104,1112,1119,1126,1134,1141,1149,1157,1164,1172
+BeginSpeech = I’m ready to give you a battle you’ll never forget!
+Type = FABLEDHERO
+EndSpeechWin = I won, and I’ll keep getting stronger!
+#------------------------------#
+[388]
+EndSpeechLose = I’ll be better next time. This defeat only fuels me!
+Name = Cedric
+PokemonNos = 1028,1035,1043,1051,1058,1066,1074,1082,1090,1097,1105,1113,1120,1127,1135,1142,1150,1158,1165,1173,1561
+BeginSpeech = Time for you to face my ultimate challenge!
+Type = FABLEDHERO
+EndSpeechWin = Another victory to add to my record!
+#------------------------------#
+[389]
+EndSpeechLose = I’ve been defeated, but I won’t give up!
+Name = Marcellus
+PokemonNos = 1029,1036,1044,1052,1059,1067,1075,1083,1091,1098,1106,1114,1121,1128,1136,1143,1151,1159,1166,1174
+BeginSpeech = My Pokémon are ready for battle. Are you?
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine. My team is unstoppable!
+#------------------------------#
+[390]
+EndSpeechLose = You’ve earned this win, but I’ll be back stronger!
+Name = Delilah
+PokemonNos = 1030,1037,1045,1053,1060,1068,1076,1084,1092,1099,1107,1115,1122,1130,1137,1144,1152,1160,1167,1175
+BeginSpeech = Time to prove my strength in this battle!
+Type = FABLEDHERO
+EndSpeechWin = A well-earned victory for me today!
+#------------------------------#
+[391]
+EndSpeechLose = I’ll keep training harder, but this time, you win!
+Name = Jace
+PokemonNos = 1031,1038,1046,1054,1061,1069,1077,1085,1093,1100,1108,1116,1123,1131,1138,1145,1153,1161,1168,1176,1452
+BeginSpeech = Prepare to face my most powerful Pokémon!
+Type = FABLEDHERO
+EndSpeechWin = That was a victory well earned. I’m the strongest!
+#------------------------------#
+[392]
+EndSpeechLose = I’ve learned from this defeat. Thank you for the battle!
+Name = Iris
+PokemonNos = 1032,1039,1047,1055,1062,1070,1078,1086,1094,1101,1109,1117,1124,1132,1139,1146,1154,1162,1169,1177,1561
+BeginSpeech = Let’s see if you can stand against my might!
+Type = FABLEDHERO
+EndSpeechWin = My strategy prevailed. I am victorious!
+#------------------------------#
+[393]
+EndSpeechLose = That was a tough loss. I’ll be better next time.
+Name = Theron
+PokemonNos = 1033,1040,1048,1056,1063,1071,1079,1087,1095,1102,1110,1117,1125,1132,1140,1148,1155,1163,1171,1178
+BeginSpeech = I’m bringing my A-game. Let’s do this!
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine today. Another win for my team!
+#------------------------------#
+[394]
+EndSpeechLose = That was a hard-fought battle. I’ll train more.
+Name = Eliza
+PokemonNos = 1034,1041,1049,1057,1064,1072,1080,1088,1096,1103,1111,1118,1126,1133,1141,1149,1156,1164,1172,1179,1561
+BeginSpeech = Time to show you my full strength in this battle!
+Type = FABLEDHERO
+EndSpeechWin = Victory! I couldn’t have asked for a better outcome!
+#------------------------------#
+[395]
+EndSpeechLose = You’ve bested me. I’ll be stronger next time.
+Name = Vance
+PokemonNos = 1035,1042,1050,1058,1065,1073,1081,1089,1097,1104,1112,1120,1127,1134,1142,1150,1157,1165,1173,1180,1452
+BeginSpeech = Let’s see if you can stand up to my power!
+Type = FABLEDHERO
+EndSpeechWin = A fantastic victory! I’m proud of my team!
+#------------------------------#
+[396]
+EndSpeechLose = I’ll take this loss in stride. More training ahead!
+Name = Claire
+PokemonNos = 1036,1043,1051,1059,1066,1074,1082,1090,1098,1105,1113,1121,1128,1135,1143,1151,1158,1166,1174,1181
+BeginSpeech = Prepare for an unforgettable battle!
+Type = FABLEDHERO
+EndSpeechWin = A great victory! My team’s power is unmatched!
+#------------------------------#
+[397]
+EndSpeechLose = That was a tough match. I need to train more.
+Name = Damien
+PokemonNos = 1037,1044,1052,1060,1067,1075,1083,1091,1099,1106,1114,1122,1129,1136,1144,1152,1160,1167,1175,1182,1561
+BeginSpeech = Let’s get this battle started with full power!
+Type = FABLEDHERO
+EndSpeechWin = Another win for me. My team is unstoppable!
+#------------------------------#
+[398]
+EndSpeechLose = You’ve shown me your strength. I’ll be back!
+Name = Sonia
+PokemonNos = 1038,1045,1053,1061,1068,1076,1084,1092,1100,1107,1115,1123,1130,1137,1145,1153,1161,1168,1176,1452
+BeginSpeech = You won’t be able to beat me this time!
+Type = FABLEDHERO
+EndSpeechWin = Another victory. I’m unstoppable today!
+#------------------------------#
+[399]
+EndSpeechLose = I’ve been defeated. But I’ll rise again!
+Name = Harlan
+PokemonNos = 1039,1046,1054,1062,1069,1077,1085,1093,1101,1108,1116,1124,1131,1138,1146,1154,1162,1169,1177,1451
+BeginSpeech = You’re in for a real challenge now!
+Type = FABLEDHERO
+EndSpeechWin = A victory for me. My team is truly incredible!
+#------------------------------#
+[400]
+EndSpeechLose = A defeat today. But I’ll return stronger next time!
+Name = Nia
+PokemonNos = 1040,1047,1055,1063,1070,1078,1086,1094,1102,1109,1117,1125,1132,1139,1147,1155,1163,1170,1178,1450
+BeginSpeech = I’m ready to show you my team’s true power!
+Type = FABLEDHERO
+EndSpeechWin = I’ve won again! That’s the power of my team!
+#------------------------------#
+[401]
+EndSpeechLose = I pushed hard, but your strategy outmatched mine today.
+Name = Selene
+PokemonNos = 1473,1502,1557,1461,1524,1490,1560,1458,1533,1487,1511,1546,1469,1508,1499,1551,1478,1529,1454,1538,1561
+BeginSpeech = Let’s see if you can withstand the strength of my carefully trained team.
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine. Your team still has room to grow.
+#------------------------------#
+[402]
+EndSpeechLose = I misread your tactics… that won’t happen again.
+Name = Rowan
+PokemonNos = 1482,1554,1471,1506,1539,1459,1497,1560,1521,1464,1548,1510,1476,1501,1559,1492,1530,1453,1527,1489,1452
+BeginSpeech = Let’s make this a battle worth remembering.
+Type = FABLEDHERO
+EndSpeechWin = A clean victory. My preparation paid off today.
+#------------------------------#
+[403]
+EndSpeechLose = You’ve bested me this time… impressive work.
+Name = Mira
+PokemonNos = 1560,1491,1534,1470,1518,1456,1542,1509,1483,1550,1526,1462,1498,1537,1479,1503,1558,1488,1520,1467
+BeginSpeech = I hope you're ready. I don’t hold back.
+Type = FABLEDHERO
+EndSpeechWin = Another triumph. My instincts never fail me.
+#------------------------------#
+[404]
+EndSpeechLose = Looks like I still have more training to do.
+Name = Calder
+PokemonNos = 1458,1523,1494,1549,1474,1512,1560,1481,1536,1500,1463,1555,1499,1528,1472,1519,1541,1486,1507,1455
+BeginSpeech = Brace yourself. I’m coming at you with everything I’ve got.
+Type = FABLEDHERO
+EndSpeechWin = Victory secured. Your resolve was admirable, though.
+#------------------------------#
+[405]
+EndSpeechLose = You’ve outplayed me… well done.
+Name = Elara
+PokemonNos = 1532,1477,1504,1556,1485,1525,1460,1493,1544,1516,1457,1508,1560,1475,1531,1496,1522,1484,1553,1468,1561
+BeginSpeech = Let’s see how you handle a true test of skill.
+Type = FABLEDHERO
+EndSpeechWin = Another flawless performance. I won’t be stopped.
+#------------------------------#
+[406]
+EndSpeechLose = I gave it my all… but it wasn’t enough.
+Name = Bronn
+PokemonNos = 1540,1502,1473,1552,1490,1524,1480,1513,1454,1535,1505,1478,1560,1495,1529,1461,1547,1482,1517,1459
+BeginSpeech = Ready yourself. I don’t plan on going easy.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. Strength comes from discipline.
+#------------------------------#
+[407]
+EndSpeechLose = You’ve earned this victory… I’ll be back stronger.
+Name = Liora
+PokemonNos = 1514,1489,1551,1476,1501,1538,1465,1499,1527,1483,1546,1509,1471,1560,1492,1520,1453,1533,1511,1469
+BeginSpeech = Let’s make this an unforgettable clash.
+Type = FABLEDHERO
+EndSpeechWin = Another win for me. My team shines brightest under pressure.
+#------------------------------#
+[408]
+EndSpeechLose = I underestimated you… that won’t happen again.
+Name = Garrick
+PokemonNos = 1498,1530,1472,1515,1559,1487,1506,1466,1543,1521,1491,1560,1479,1500,1539,1458,1526,1481,1545,1463,1562
+BeginSpeech = Show me what you’ve got. I’m eager to see your strength.
+Type = FABLEDHERO
+EndSpeechWin = A solid victory. My training speaks for itself.
+#------------------------------#
+[409]
+EndSpeechLose = You’ve proven your skill… I concede this match.
+Name = Seraphine
+PokemonNos = 1528,1474,1507,1557,1486,1534,1462,1490,1541,1518,1455,1503,1560,1477,1536,1494,1523,1482,1552,1468,1452
+BeginSpeech = Prepare yourself. I won’t be holding anything back.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My resolve never wavers.
+#------------------------------#
+[410]
+EndSpeechLose = Well fought… you’ve earned this win.
+Name = Thane
+PokemonNos = 1549,1508,1475,1522,1497,1554,1484,1510,1461,1531,1504,1470,1560,1493,1529,1488,1542,1516,1457,1537
+BeginSpeech = Let’s see whose strategy stands tall today.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. Strength and focus carry the day.
+#------------------------------#
+[411]
+EndSpeechLose = Your strategy was sharper… I’ll need to rethink my approach.
+Name = Varek
+PokemonNos = 1495,1531,1478,1556,1504,1462,1543,1489,1520,1457,1560,1492,1537,1471,1514,1550,1483,1528,1466,1509,1562
+BeginSpeech = Let’s see how well you handle a relentless offense.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My momentum never falters.
+#------------------------------#
+[412]
+EndSpeechLose = You’ve bested me… but I’ll rise above this setback.
+Name = Nyssa
+PokemonNos = 1541,1480,1526,1473,1507,1558,1499,1464,1534,1519,1458,1560,1486,1522,1479,1503,1552,1490,1539,1467
+BeginSpeech = I hope you’re ready. I don’t plan on holding anything back.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My training speaks for itself.
+#------------------------------#
+[413]
+EndSpeechLose = Well played… your timing was impeccable.
+Name = Orrin
+PokemonNos = 1525,1497,1553,1476,1512,1484,1548,1501,1463,1530,1560,1494,1521,1470,1557,1488,1506,1542,1469,1536
+BeginSpeech = Let’s make this a battle worth remembering.
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine. Precision always prevails.
+#------------------------------#
+[414]
+EndSpeechLose = I pushed hard, but you pushed harder.
+Name = Selka
+PokemonNos = 1472,1517,1545,1493,1560,1481,1529,1508,1460,1538,1554,1475,1510,1498,1523,1487,1540,1468,1502,1532,1562
+BeginSpeech = Brace yourself! My team won’t go easy on you.
+Type = FABLEDHERO
+EndSpeechWin = Another triumph. Strength and focus carry the day.
+#------------------------------#
+[415]
+EndSpeechLose = You’ve earned this win… I’ll return stronger.
+Name = Dorian
+PokemonNos = 1533,1485,1509,1551,1474,1527,1491,1466,1546,1513,1560,1482,1500,1535,1477,1524,1496,1559,1461,1518
+BeginSpeech = Let’s see how you handle a true test of skill.
+Type = FABLEDHERO
+EndSpeechWin = A decisive victory. My resolve never wavers.
+#------------------------------#
+[416]
+EndSpeechLose = Impressive… you read my moves perfectly.
+Name = Kaela
+PokemonNos = 1505,1549,1479,1521,1483,1555,1494,1462,1537,1515,1560,1471,1507,1544,1489,1528,1498,1467,1531,1511,1452
+BeginSpeech = I hope you're ready. I won’t be holding back.
+Type = FABLEDHERO
+EndSpeechWin = Another win. My instincts never fail me.
+#------------------------------#
+[417]
+EndSpeechLose = You’ve outplayed me… well done.
+Name = Torren
+PokemonNos = 1547,1503,1470,1526,1492,1558,1486,1514,1465,1539,1560,1478,1501,1541,1480,1520,1497,1469,1534,1516,1562
+BeginSpeech = Show me what you’ve got. I’m eager to see your strength.
+Type = FABLEDHERO
+EndSpeechWin = A solid victory. Discipline makes all the difference.
+#------------------------------#
+[418]
+EndSpeechLose = I underestimated you… that won’t happen again.
+Name = Maren
+PokemonNos = 1522,1488,1552,1490,1473,1519,1540,1506,1464,1536,1560,1481,1527,1499,1476,1511,1543,1500,1468,1532
+BeginSpeech = Let’s see if your team can withstand my tactics.
+Type = FABLEDHERO
+EndSpeechWin = Another flawless performance. I won’t be stopped.
+#------------------------------#
+[419]
+EndSpeechLose = You’ve proven your strength today.
+Name = Sylas
+PokemonNos = 1538,1475,1504,1557,1487,1523,1495,1461,1542,1517,1560,1472,1509,1531,1484,1525,1498,1466,1549,1510
+BeginSpeech = Prepare yourself. I’m bringing everything I’ve got.
+Type = FABLEDHERO
+EndSpeechWin = Victory secured. My team stands unmatched.
+#------------------------------#
+[420]
+EndSpeechLose = A tough loss… but I’ll learn from it.
+Name = Elowen
+PokemonNos = 1502,1545,1477,1528,1493,1554,1480,1516,1463,1535,1560,1479,1508,1541,1489,1524,1497,1467,1530,1512,1562
+BeginSpeech = Let’s make this an unforgettable battle.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My preparation paid off.
+#------------------------------#
+[421]
+EndSpeechLose = You read me like a book… impressive work.
+Name = Halden
+PokemonNos = 1534,1479,1506,1558,1482,1521,1497,1463,1547,1514,1560,1472,1509,1539,1486,1528,1493,1468,1553,1510
+BeginSpeech = Let’s see how well you handle a shifting strategy.
+Type = FABLEDHERO
+EndSpeechWin = A strong win. Adaptability always pays off.
+#------------------------------#
+[422]
+EndSpeechLose = I pushed hard, but you pushed harder.
+Name = Rinna
+PokemonNos = 1527,1484,1551,1492,1470,1518,1543,1500,1465,1536,1560,1489,1523,1498,1476,1512,1549,1507,1461,1531,1562
+BeginSpeech = Brace yourself, my team is ready for anything.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My preparation shows.
+#------------------------------#
+[423]
+EndSpeechLose = Well fought… I’ll need to rethink my approach.
+Name = Corvin
+PokemonNos = 1542,1503,1471,1529,1496,1557,1481,1515,1464,1538,1560,1478,1505,1546,1487,1524,1491,1469,1533,1519
+BeginSpeech = Let’s make this a battle worth remembering.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. Precision makes all the difference.
+#------------------------------#
+[424]
+EndSpeechLose = You’ve earned this one… I’ll be back stronger.
+Name = Elira
+PokemonNos = 1530,1486,1508,1554,1473,1522,1494,1467,1541,1517,1560,1475,1502,1537,1483,1526,1499,1462,1550,1511
+BeginSpeech = I hope you're ready. I won’t be holding back.
+Type = FABLEDHERO
+EndSpeechWin = Another triumph. My instincts never fail me.
+#------------------------------#
+[425]
+EndSpeechLose = A tough loss… but I’ll learn from it.
+Name = Jarek
+PokemonNos = 1521,1490,1556,1485,1472,1513,1545,1501,1460,1534,1560,1488,1529,1497,1479,1506,1548,1518,1466,1532,1562
+BeginSpeech = Let’s see if your team can withstand my tactics.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My training speaks for itself.
+#------------------------------#
+[426]
+EndSpeechLose = You’ve outplayed me… well done.
+Name = Maelis
+PokemonNos = 1544,1509,1477,1525,1493,1552,1480,1516,1463,1539,1560,1474,1507,1541,1482,1528,1495,1468,1531,1512
+BeginSpeech = Show me what you’ve got. I’m eager to see your strength.
+Type = FABLEDHERO
+EndSpeechWin = A solid victory. Discipline makes all the difference.
+#------------------------------#
+[427]
+EndSpeechLose = I underestimated you… that won’t happen again.
+Name = Brennor
+PokemonNos = 1536,1481,1504,1559,1476,1520,1498,1465,1547,1511,1560,1470,1503,1535,1489,1527,1492,1469,1555,1514
+BeginSpeech = Let’s see whose strategy stands tall today.
+Type = FABLEDHERO
+EndSpeechWin = Another flawless performance. I won’t be stopped.
+#------------------------------#
+[428]
+EndSpeechLose = You’ve proven your strength today.
+Name = Selwyn
+PokemonNos = 1549,1501,1478,1523,1490,1553,1487,1519,1462,1537,1560,1473,1508,1542,1484,1526,1496,1467,1557,1515
+BeginSpeech = Prepare yourself. I’m bringing everything I’ve got.
+Type = FABLEDHERO
+EndSpeechWin = Victory secured. My team stands unmatched.
+#------------------------------#
+[429]
+EndSpeechLose = You read my moves perfectly… impressive.
+Name = Thalia
+PokemonNos = 1524,1483,1550,1499,1471,1517,1546,1504,1468,1532,1560,1477,1506,1538,1481,1529,1493,1464,1554,1510,1562
+BeginSpeech = Let’s make this an unforgettable battle.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My preparation paid off.
+#------------------------------#
+[430]
+EndSpeechLose = I fought hard… but you fought harder.
+Name = Garron
+PokemonNos = 1538,1495,1474,1521,1486,1558,1502,1463,1540,1514,1560,1479,1507,1533,1488,1525,1491,1466,1551,1518
+BeginSpeech = Let’s see how you handle a relentless offense.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My momentum never falters.
+#------------------------------#
+[431]
+EndSpeechLose = You’ve bested me… I’ll return stronger.
+Name = Lioraine
+PokemonNos = 1543,1508,1472,1527,1494,1556,1480,1512,1465,1535,1560,1476,1501,1547,1489,1523,1497,1469,1552,1516
+BeginSpeech = I hope you're ready. I don’t plan on holding anything back.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. My resolve never wavers.
+#------------------------------#
+[432]
+EndSpeechLose = Well played… your timing was impeccable.
+Name = Corra
+PokemonNos = 1528,1487,1555,1492,1475,1519,1541,1506,1461,1534,1560,1483,1522,1498,1478,1509,1549,1513,1467,1530,1562
+BeginSpeech = Let’s make this a battle worth remembering.
+Type = FABLEDHERO
+EndSpeechWin = Victory is mine. Precision always prevails.
+#------------------------------#
+[433]
+EndSpeechLose = You’ve earned this win… I’ll learn from it.
+Name = Fenric
+PokemonNos = 1531,1490,1473,1524,1485,1554,1503,1468,1548,1517,1560,1471,1505,1536,1482,1529,1496,1464,1559,1514
+BeginSpeech = Brace yourself, my team won’t go easy on you.
+Type = FABLEDHERO
+EndSpeechWin = Another triumph. Strength and focus carry the day.
+#------------------------------#
+[434]
+EndSpeechLose = I misread your tactics… impressive work.
+Name = Ysolde
+PokemonNos = 1546,1504,1479,1522,1497,1551,1484,1510,1462,1538,1560,1474,1508,1533,1481,1527,1493,1469,1557,1515
+BeginSpeech = Let’s see how well you handle a shifting strategy.
+Type = FABLEDHERO
+EndSpeechWin = A strong win. Adaptability always pays off.
+#------------------------------#
+[435]
+EndSpeechLose = You’ve outmaneuvered me… well done.
+Name = Kaelen
+PokemonNos = 1520,1489,1553,1491,1476,1514,1542,1507,1465,1539,1560,1472,1500,1535,1487,1528,1495,1463,1556,1512
+BeginSpeech = Show me what you’ve got. I’m eager to see your strength.
+Type = FABLEDHERO
+EndSpeechWin = A solid victory. Discipline makes all the difference.
+#------------------------------#
+[436]
+EndSpeechLose = I underestimated you… that won’t happen again.
+Name = Mirelle
+PokemonNos = 1537,1493,1470,1526,1488,1558,1501,1467,1544,1516,1560,1478,1509,1531,1483,1523,1499,1464,1552,1511,1562
+BeginSpeech = Let’s see if your team can withstand my tactics.
+Type = FABLEDHERO
+EndSpeechWin = Another flawless performance. I won’t be stopped.
+#------------------------------#
+[437]
+EndSpeechLose = You’ve proven your strength today.
+Name = Torvald
+PokemonNos = 1541,1506,1475,1529,1498,1557,1482,1513,1461,1534,1560,1477,1504,1538,1486,1525,1492,1469,1554,1517
+BeginSpeech = Prepare yourself. I’m bringing everything I’ve got.
+Type = FABLEDHERO
+EndSpeechWin = Victory secured. My team stands unmatched.
+#------------------------------#
+[438]
+EndSpeechLose = You read my moves perfectly… impressive.
+Name = Selara
+PokemonNos = 1523,1484,1550,1496,1471,1518,1547,1502,1468,1532,1560,1479,1507,1536,1481,1527,1494,1463,1555,1514
+BeginSpeech = Let’s make this an unforgettable battle.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My preparation paid off.
+#------------------------------#
+[439]
+EndSpeechLose = I fought hard… but you fought harder.
+Name = Garrin
+PokemonNos = 1539,1497,1474,1521,1487,1553,1505,1462,1540,1515,1560,1476,1508,1534,1489,1526,1491,1466,1558,1512
+BeginSpeech = Let’s see how you handle a relentless offense.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My momentum never falters.
+#------------------------------#
+[440]
+EndSpeechLose = You’ve bested me… I’ll return stronger.
+Name = Elsin
+PokemonNos = 1545,1509,1472,1528,1493,1556,1480,1511,1464,1537,1560,1475,1503,1531,1488,1524,1496,1469,1551,1518,1562
+BeginSpeech = I hope you're ready. I don’t plan on holding anything back.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. My resolve never wavers.
+#------------------------------#
+[441]
+EndSpeechLose = You caught me off guard… well played.
+Name = Marrek
+PokemonNos = 1532,1481,1507,1554,1476,1523,1498,1464,1549,1515,1560,1473,1502,1538,1486,1527,1491,1469,1557,1510
+BeginSpeech = Let’s see how you handle a shifting battle plan.
+Type = FABLEDHERO
+EndSpeechWin = A strong win. My strategy held firm.
+#------------------------------#
+[442]
+EndSpeechLose = I pushed hard, but you pushed harder.
+Name = Selphine
+PokemonNos = 1541,1494,1472,1528,1489,1556,1503,1467,1535,1518,1560,1479,1506,1531,1483,1524,1497,1463,1552,1514
+BeginSpeech = Brace yourself, my team is ready for anything.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My preparation shows.
+#------------------------------#
+[443]
+EndSpeechLose = You’ve earned this one… I’ll return stronger.
+Name = Toric
+PokemonNos = 1526,1488,1551,1490,1475,1519,1544,1507,1461,1533,1560,1478,1504,1539,1482,1521,1496,1466,1555,1513
+BeginSpeech = Let’s make this a battle worth remembering.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. Precision makes all the difference.
+#------------------------------#
+[444]
+EndSpeechLose = Well fought… I’ll need to rethink my approach.
+Name = Elayne
+PokemonNos = 1537,1492,1470,1525,1484,1553,1501,1468,1546,1516,1560,1474,1509,1534,1487,1528,1493,1465,1558,1512
+BeginSpeech = I hope you're ready. I won’t be holding back.
+Type = FABLEDHERO
+EndSpeechWin = Another triumph. My instincts never fail me.
+#------------------------------#
+[445]
+EndSpeechLose = You’ve outplayed me… impressive work.
+Name = Garrith
+PokemonNos = 1548,1505,1477,1522,1491,1559,1483,1514,1462,1536,1560,1471,1500,1532,1489,1527,1495,1469,1554,1517
+BeginSpeech = Show me what you’ve got. I’m eager to see your strength.
+Type = FABLEDHERO
+EndSpeechWin = A solid victory. Discipline makes all the difference.
+#------------------------------#
+[446]
+EndSpeechLose = I underestimated you… that won’t happen again.
+Name = Maerra
+PokemonNos = 1523,1486,1557,1498,1473,1517,1542,1504,1464,1539,1560,1476,1508,1535,1481,1529,1494,1467,1551,1511,1563
+BeginSpeech = Let’s see if your team can withstand my tactics.
+Type = FABLEDHERO
+EndSpeechWin = Another flawless performance. I won’t be stopped.
+#------------------------------#
+[447]
+EndSpeechLose = You’ve proven your strength today.
+Name = Roderic
+PokemonNos = 1534,1497,1475,1526,1488,1552,1506,1463,1540,1513,1560,1472,1501,1537,1485,1524,1499,1468,1556,1515
+BeginSpeech = Prepare yourself. I’m bringing everything I’ve got.
+Type = FABLEDHERO
+EndSpeechWin = Victory secured. My team stands unmatched.
+#------------------------------#
+[448]
+EndSpeechLose = You read my moves perfectly… impressive.
+Name = Sylvette
+PokemonNos = 1529,1482,1550,1493,1471,1518,1547,1502,1466,1531,1560,1479,1507,1538,1484,1525,1496,1464,1555,1514
+BeginSpeech = Let’s make this an unforgettable battle.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My preparation paid off.
+#------------------------------#
+[449]
+EndSpeechLose = I fought hard… but you fought harder.
+Name = Kaelor
+PokemonNos = 1538,1491,1474,1520,1487,1554,1508,1462,1543,1516,1560,1477,1503,1536,1489,1527,1492,1469,1558,1512
+BeginSpeech = Let’s see how you handle a relentless offense.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My momentum never falters.
+#------------------------------#
+[450]
+EndSpeechLose = You’ve bested me… I’ll return stronger.
+Name = Mirelda
+PokemonNos = 1545,1509,1476,1528,1494,1551,1480,1511,1465,1534,1560,1473,1506,1532,1488,1523,1497,1468,1557,1514
+BeginSpeech = I hope you're ready. I don’t plan on holding anything back.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. My resolve never wavers.
+#------------------------------#
+[451]
+EndSpeechLose = You caught me off guard… well played.
+Name = Fenwick
+PokemonNos = 1521,1489,1553,1490,1472,1515,1546,1504,1467,1537,1560,1478,1501,1535,1483,1529,1498,1464,1559,1513,1563
+BeginSpeech = Let’s see how you handle a shifting battle plan.
+Type = FABLEDHERO
+EndSpeechWin = A strong win. My strategy held firm.
+#------------------------------#
+[452]
+EndSpeechLose = I pushed hard, but you pushed harder.
+Name = Seloria
+PokemonNos = 1536,1493,1470,1524,1486,1558,1502,1461,1541,1517,1560,1475,1507,1533,1481,1526,1495,1468,1554,1514
+BeginSpeech = Brace yourself, my team is ready for anything.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My preparation shows.
+#------------------------------#
+[453]
+EndSpeechLose = You’ve earned this one… I’ll return stronger.
+Name = Corven
+PokemonNos = 1528,1484,1552,1497,1473,1519,1543,1505,1462,1530,1560,1479,1509,1538,1487,1522,1491,1466,1556,1515
+BeginSpeech = Let’s make this a battle worth remembering.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. Precision makes all the difference.
+#------------------------------#
+[454]
+EndSpeechLose = Well fought… I’ll need to rethink my approach.
+Name = Elsinne
+PokemonNos = 1531,1496,1478,1523,1482,1555,1500,1469,1547,1514,1560,1471,1504,1539,1485,1527,1493,1465,1558,1512
+BeginSpeech = I hope you're ready. I won’t be holding back.
+Type = FABLEDHERO
+EndSpeechWin = Another triumph. My instincts never fail me.
+#------------------------------#
+[455]
+EndSpeechLose = You’ve outplayed me… impressive work.
+Name = Garridan
+PokemonNos = 1540,1503,1476,1529,1492,1557,1481,1516,1464,1535,1560,1474,1508,1534,1489,1521,1497,1468,1553,1513,1563
+BeginSpeech = Show me what you’ve got. I’m eager to see your strength.
+Type = FABLEDHERO
+EndSpeechWin = A solid victory. Discipline makes all the difference.
+#------------------------------#
+[456]
+EndSpeechLose = I underestimated you… that won’t happen again.
+Name = Maerwyn
+PokemonNos = 1524,1487,1551,1499,1471,1518,1542,1506,1463,1538,1560,1477,1505,1536,1483,1528,1494,1466,1554,1515
+BeginSpeech = Let’s see if your team can withstand my tactics.
+Type = FABLEDHERO
+EndSpeechWin = Another flawless performance. I won’t be stopped.
+#------------------------------#
+[457]
+EndSpeechLose = You’ve proven your strength today.
+Name = Roderan
+PokemonNos = 1539,1490,1475,1527,1488,1553,1501,1462,1544,1517,1560,1472,1503,1531,1486,1525,1498,1469,1556,1514
+BeginSpeech = Prepare yourself. I’m bringing everything I’ve got.
+Type = FABLEDHERO
+EndSpeechWin = Victory secured. My team stands unmatched.
+#------------------------------#
+[458]
+EndSpeechLose = You read my moves perfectly… impressive.
+Name = Sylara
+PokemonNos = 1522,1485,1550,1496,1474,1514,1547,1508,1461,1533,1560,1479,1506,1537,1482,1526,1493,1467,1558,1512
+BeginSpeech = Let’s make this an unforgettable battle.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My preparation paid off.
+#------------------------------#
+[459]
+EndSpeechLose = I fought hard… but you fought harder.
+Name = Kaelorin
+PokemonNos = 1535,1498,1473,1520,1487,1554,1504,1465,1541,1516,1560,1476,1509,1532,1484,1527,1491,1468,1557,1513
+BeginSpeech = Let’s see how you handle a relentless offense.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My momentum never falters.
+#------------------------------#
+[460]
+EndSpeechLose = You’ve bested me… I’ll return stronger.
+Name = Mirellin
+PokemonNos = 1546,1502,1478,1528,1494,1551,1480,1510,1463,1536,1560,1475,1507,1534,1489,1523,1497,1469,1555,1514,1563
+BeginSpeech = I hope you're ready. I don’t plan on holding anything back.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. My resolve never wavers.
+#------------------------------#
+[461]
+EndSpeechLose = You caught me off guard… well battled.
+Name = Thorian
+PokemonNos = 1533,1491,1476,1524,1488,1557,1502,1464,1549,1515,1560,1479,1506,1538,1483,1527,1494,1469,1553,1512
+BeginSpeech = Let’s see how you handle a shifting battle plan.
+Type = FABLEDHERO
+EndSpeechWin = A strong win. My strategy held firm.
+#------------------------------#
+[462]
+EndSpeechLose = I pushed hard, but your resolve was stronger.
+Name = Elsinora
+PokemonNos = 1528,1487,1554,1493,1472,1519,1541,1505,1461,1536,1560,1478,1509,1534,1486,1523,1497,1466,1558,1514
+BeginSpeech = Brace yourself, my team is ready for anything.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My preparation shows.
+#------------------------------#
+[463]
+EndSpeechLose = You’ve earned this win… I’ll return stronger.
+Name = Corvath
+PokemonNos = 1537,1490,1474,1526,1485,1552,1501,1468,1544,1517,1560,1471,1503,1539,1489,1528,1496,1463,1555,1513
+BeginSpeech = Let’s make this a battle worth remembering.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. Precision makes all the difference.
+#------------------------------#
+[464]
+EndSpeechLose = Well fought… I’ll need to rethink my approach.
+Name = Maelira
+PokemonNos = 1542,1504,1479,1521,1483,1556,1507,1462,1535,1516,1560,1475,1500,1531,1487,1529,1492,1467,1551,1514,1563
+BeginSpeech = I hope you're ready. I won’t be holding back.
+Type = FABLEDHERO
+EndSpeechWin = Another triumph. My instincts never fail me.
+#------------------------------#
+[465]
+EndSpeechLose = You’ve outplayed me… impressive work.
+Name = Garridan
+PokemonNos = 1525,1484,1553,1498,1471,1514,1547,1503,1465,1532,1560,1477,1508,1536,1481,1524,1495,1469,1559,1511
+BeginSpeech = Show me what you’ve got. I’m eager to see your strength.
+Type = FABLEDHERO
+EndSpeechWin = A solid victory. Discipline makes all the difference.
+#------------------------------#
+[466]
+EndSpeechLose = I underestimated you… that won’t happen again.
+Name = Selvaria
+PokemonNos = 1531,1496,1473,1528,1489,1554,1500,1464,1543,1518,1560,1476,1505,1538,1482,1526,1493,1468,1557,1512
+BeginSpeech = Let’s see if your team can withstand my tactics.
+Type = FABLEDHERO
+EndSpeechWin = Another flawless performance. I won’t be stopped.
+#------------------------------#
+[467]
+EndSpeechLose = You’ve proven your strength today.
+Name = Torvyn
+PokemonNos = 1548,1502,1475,1523,1487,1551,1509,1463,1539,1514,1560,1472,1506,1535,1484,1527,1491,1469,1556,1517
+BeginSpeech = Prepare yourself. I’m bringing everything I’ve got.
+Type = FABLEDHERO
+EndSpeechWin = Victory secured. My team stands unmatched.
+#------------------------------#
+[468]
+EndSpeechLose = You read my moves perfectly… impressive.
+Name = Sylphira
+PokemonNos = 1527,1483,1550,1494,1478,1516,1545,1501,1466,1534,1560,1479,1507,1532,1485,1529,1498,1462,1558,1513,1563
+BeginSpeech = Let’s make this an unforgettable battle.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My preparation paid off.
+#------------------------------#
+[469]
+EndSpeechLose = I fought hard… but you fought harder.
+Name = Kaelthorn
+PokemonNos = 1539,1497,1472,1520,1486,1553,1504,1465,1541,1516,1560,1474,1509,1537,1481,1525,1492,1468,1557,1511
+BeginSpeech = Let’s see how you handle a relentless offense.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My momentum never falters.
+#------------------------------#
+[470]
+EndSpeechLose = You’ve bested me… I’ll return stronger.
+Name = Mirellia
+PokemonNos = 1546,1508,1476,1529,1493,1555,1480,1512,1464,1538,1560,1473,1501,1533,1488,1524,1497,1469,1552,1515
+BeginSpeech = I hope you're ready. I don’t plan on holding anything back.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. My resolve never wavers.
+#------------------------------#
+[471]
+EndSpeechLose = You caught me off guard… well battled.
+Name = Fenlor
+PokemonNos = 1522,1489,1554,1491,1470,1517,1548,1506,1463,1531,1560,1478,1504,1536,1483,1528,1496,1467,1559,1514
+BeginSpeech = Let’s see how you handle a shifting battle plan.
+Type = FABLEDHERO
+EndSpeechWin = A strong win. My strategy held firm.
+#------------------------------#
+[472]
+EndSpeechLose = I pushed hard, but your resolve was stronger.
+Name = Selvarin
+PokemonNos = 1534,1492,1475,1527,1484,1558,1503,1461,1542,1519,1560,1476,1507,1535,1481,1523,1498,1469,1556,1513
+BeginSpeech = Brace yourself, my team is ready for anything.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My preparation shows.
+#------------------------------#
+[473]
+EndSpeechLose = You’ve earned this win… I’ll return stronger.
+Name = Corvessa
+PokemonNos = 1529,1486,1552,1497,1473,1518,1544,1505,1462,1530,1560,1479,1509,1538,1487,1521,1494,1466,1555,1516,1563
+BeginSpeech = Let’s make this a battle worth remembering.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. Precision makes all the difference.
+#------------------------------#
+[474]
+EndSpeechLose = Well fought… I’ll need to rethink my approach.
+Name = Elsinthia
+PokemonNos = 1536,1494,1478,1522,1485,1553,1501,1468,1547,1514,1560,1471,1506,1539,1482,1527,1493,1465,1557,1512
+BeginSpeech = I hope you're ready. I won’t be holding back.
+Type = FABLEDHERO
+EndSpeechWin = Another triumph. My instincts never fail me.
+#------------------------------#
+[475]
+EndSpeechLose = You’ve outplayed me… impressive work.
+Name = Garrion
+PokemonNos = 1540,1503,1476,1525,1492,1556,1481,1515,1464,1538,1560,1474,1508,1534,1489,1523,1497,1469,1554,1511
+BeginSpeech = Show me what you’ve got. I’m eager to see your strength.
+Type = FABLEDHERO
+EndSpeechWin = A solid victory. Discipline makes all the difference.
+#------------------------------#
+[476]
+EndSpeechLose = I underestimated you… that won’t happen again.
+Name = Maeryn
+PokemonNos = 1524,1487,1551,1499,1472,1516,1543,1507,1463,1535,1560,1477,1505,1532,1484,1528,1496,1468,1558,1514
+BeginSpeech = Let’s see if your team can withstand my tactics.
+Type = FABLEDHERO
+EndSpeechWin = Another flawless performance. I won’t be stopped.
+#------------------------------#
+[477]
+EndSpeechLose = You’ve proven your strength today.
+Name = Torvellan
+PokemonNos = 1538,1490,1475,1529,1488,1557,1502,1462,1541,1517,1560,1473,1504,1536,1486,1525,1491,1469,1553,1514
+BeginSpeech = Prepare yourself. I’m bringing everything I’ve got.
+Type = FABLEDHERO
+EndSpeechWin = Victory secured. My team stands unmatched.
+#------------------------------#
+[478]
+EndSpeechLose = You read my moves perfectly… impressive.
+Name = Sylvarra
+PokemonNos = 1523,1485,1550,1496,1471,1519,1546,1508,1466,1533,1560,1479,1507,1537,1482,1526,1494,1464,1555,1512
+BeginSpeech = Let’s make this an unforgettable battle.
+Type = FABLEDHERO
+EndSpeechWin = A clean win. My preparation paid off.
+#------------------------------#
+[479]
+EndSpeechLose = I fought hard… but you fought harder.
+Name = Kaelvorn
+PokemonNos = 1535,1498,1474,1520,1487,1554,1504,1465,1542,1516,1560,1476,1509,1532,1483,1527,1492,1468,1557,1513,1563
+BeginSpeech = Let’s see how you handle a relentless offense.
+Type = FABLEDHERO
+EndSpeechWin = Another victory. My momentum never falters.
+#------------------------------#
+[480]
+EndSpeechLose = You’ve bested me… I’ll return stronger.
+Name = Mirellith
+PokemonNos = 1547,1501,1478,1528,1493,1551,1480,1510,1463,1536,1560,1475,1506,1534,1489,1523,1497,1469,1552,1514
+BeginSpeech = I hope you're ready. I don’t plan on holding anything back.
+Type = FABLEDHERO
+EndSpeechWin = A decisive win. My resolve never wavers.
+#------------------------------#
+#------------------------------#
+#---- Secret Boss Trainers ----#
+#------------------------------#
+[481]
+EndSpeechLose = well, guess its time to train up a new batch Pokemon, since you killed these ones.
+Name = Anime
+PokemonNos = 1186,1187,1188,1189,1190,1191
+BeginSpeech = Was not expecting to see a living person here, everyone ive seen so far are shadows, spirits, or some abomination thing that the shadows and spirits kill. I was just here to fight them and train up some spare pokemon, since im cursed and all. If you want a fight, sure, but be ready to work for it.
+Type = BETATESTER_Anime
+EndSpeechWin = These mons did better then i expected, these are just spare mons i was training in case others died
+#------------------------------#
+[482]
+EndSpeechLose = Noooooo my Vevees.
+Name = MissNyakura
+PokemonNos = 1192,1193,1194,1195,1196,1197
+BeginSpeech = I want to nap, but ok let's play!
+Type = BETATESTER_MissNyakura
+EndSpeechWin = ...How did you beat the game but lost to me?
+#------------------------------#
+[483]
+EndSpeechLose = you should pet me or I'm gonna lick your face off,,,
+Name = WitchyAlex
+PokemonNos = 1198,1199,1200,1201,1202,1203
+BeginSpeech = what da dog doin, I'm Alex!!! Go my puppers, slayyy your enemies lmao
+Type = BETATESTER_WitchyAlex
+EndSpeechWin = wait I won???????? pupper gayming, skill issue lmao
+#------------------------------#
+[484]
+EndSpeechLose = This is bull you're a cheater this game sucks what a scam I'm not even using my real controller I'm on mouse and keyboard you had aim assist carrying you.
+Name = Boro
+PokemonNos = 1204,1205,1206,1207,1208,1209
+BeginSpeech = What's up, I'm Boro. Have you been collecting my masterpieces around the region? If not, you should get on that.
+Type = COMMUNITYARTIST_Boro
+EndSpeechWin = Wow you suck. But if you wanna slide me a twenty we can pretend this never happened...
+#------------------------------#
+[485]
+EndSpeechLose = Do you know how many times I missed Toxic? And I still won?
+Name = Ignotus68
+PokemonNos = 1210,1211,1212,1213,1214,1215
+BeginSpeech = 'How could a ghost burn?' You're wondering.
+Type = COMMUNITYARTIST_Ignotus68
+EndSpeechWin = Figures.
+#------------------------------#
+[486]
+EndSpeechLose = nooo...you made my scepter upset. Apologize right now!
+Name = Zeta
+PokemonNos = 1216,1217,1218,1219,1220,1221
+BeginSpeech = hehehHHAHAH, lets have some fun!!
+Type = COMMUNITYARTIST_Zeta
+EndSpeechWin = ew! dont cry, you'll get snot on my outfit-
+#------------------------------#
+[487]
+EndSpeechLose = Well, that’s not a surprise...
+Name = Otter
+PokemonNos = 1222,1223,1224,1225,1226,1227
+BeginSpeech = Howdy! I’m Otter. Don’t you love all the different kinds of Pokémon there are? Let me show you some of my favorites!
+Type = COMMUNITYARTIST_Otter
+EndSpeechWin = I can’t believe I did it!
+#------------------------------#
+[488]
+EndSpeechLose = Eh, whatever, I was just kinda wingin' it.
+Name = YGS
+PokemonNos = 1228,1229,1230,1231,1232,1233
+BeginSpeech = Wus good? You're fighting ME now.
+Type = COMMUNITYARTIST_YGS
+EndSpeechWin = Better luck next time, EEDIOT. >:)
+#------------------------------#
+[489]
+EndSpeechLose = You can't catch me, even if you just won.
+Name = Attea
+PokemonNos = 1234,1235,1236,1237,1238,1239
+BeginSpeech = I'm a pokemon that trains Pokemon, don't ask how it works idk either dude. Anyway want a Pokemon battle while i'm stuck here
+Type = COMMUNITYARTIST_Attea
+EndSpeechWin = Get dunked on.
+#------------------------------#
+[490]
+EndSpeechLose = Wheeze… that really took alot out of... Wheeze… me...
+Name = Hypertox
+PokemonNos = 1240,1241,1242,1243,1244,1245
+BeginSpeech = Wheeze… He... He's coming.
+Type = COMMUNITYARTIST_Hypertox
+EndSpeechWin = I feel better than ever! Now a Relicanth is coming for you!
+#------------------------------#
+[491]
+EndSpeechLose = Ah it seems I have lost. Raffs suggest you reas some manga for our next match.
+Name = Raffs07
+PokemonNos = 1246,1247,1248,1249,1250,1251
+BeginSpeech = Hello sir/ma’am/mx. I’ve taken the placement of Raffs as he decided to quit. Are you ready to battle now?
+Type = COMMUNITYARTIST_Raffs07
+EndSpeechWin = Ah it seems I have lost! Raffs suggest read some monga while you plan your team to defeat me.
+#------------------------------#
+[492]
+EndSpeechLose = I Lost.
+Name = SexyRexy
+PokemonNos = 1252,1253,1254,1255,1256,1257
+BeginSpeech = Fite me.
+Type = ROVERDEV_SexyRexy
+EndSpeechWin = I won.
+#------------------------------#
+[493]
+EndSpeechLose = I Lost.
+Name = HexxVixtar
+PokemonNos = 1258,1259,1260,1261,1262,1263,1264,1265,1266,1267,1268,1269,1270,1271,1272,1273,1274,1275,1276,1277,1278,1279,1280,1281
+BeginSpeech = Fite me.
+Type = DEV_HexxVixtar
+EndSpeechWin = I won.
+#------------------------------#
+[494]
+EndSpeechLose = Hmmm, I guess some of these are too gimmicky.
+Name = FabulaFares
+PokemonNos = 1282,1283,1284,1285,1286,1287,1288,1289,1290,1291,1292,1293,1294,1295,1296,1297,1298,1299,1300,1301,1302,1303,1304,1305
+BeginSpeech = This seems like a good chance for me to test out some sets.
+Type = BETATESTER_FabulaFares
+EndSpeechWin = Maybe I was a bit too mean with these?
+#------------------------------#
+[495]
+EndSpeechLose = I Lost.
+Name = Badman
+PokemonNos = 1306,1307,1308,1309,1310,1311,1312,1313,1314,1315,1316,1317,1318,1319,1320,1321,1322,1323,1324,1325,1326,1327,1328,1329
+BeginSpeech = Fite me.
+Type = DEV_Badman
+EndSpeechWin = I won.
+#------------------------------#
+[496]
+EndSpeechLose = You Fucking what mate!? How the hell did you beat Helios!?
+Name = PDM20
+PokemonNos = 1330,1331,1332,1333,1334,1335,1336,1337,1338,1339,1340,1341,1342,1343,1344,1345,1346,1347,1348,1349,1350,1351,1352,1353
+BeginSpeech = Surpise Bitch! I'm Invading the Battle Frontier!
+Type = DEV_PDM20
+EndSpeechWin = Suck it lil bitch~! o7 to your win streak!
+#------------------------------#
+[497]
+EndSpeechLose = I Lost.
+Name = Endless
+PokemonNos = 1354,1355,1356,1357,1358,1359,1360,1361,1362,1363,1364,1365,1366,1367,1368,1369,1370,1371,1372,1373,1374,1375,1376,1377
+BeginSpeech = Fite me.
+Type = DEV_Endless
+EndSpeechWin = I won.
+#------------------------------#
+[498]
+EndSpeechLose = Lose lose days...
+Name = Riptidecord
+PokemonNos = 1378,1379,1380,1381,1382,1383,1384,1385,1386,1387,1388,1389,1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400,1401
+BeginSpeech = BOAT GOES BINTED UPN.
+Type = BETATESTER_Riptidecord
+EndSpeechWin = You really lost to me? Pasting in the entire Bee movie script now- wait I can't do that? Copyright? Fine.
+#------------------------------#
+[499]
+EndSpeechLose = I Lost.
+Name = DemICE
+PokemonNos = 1402,1403,1404,1405,1406,1407,1408,1409,1410,1411,1412,1413,1414,1415,1416,1417,1418,1419,1420,1421,1422,1423,1424,1425
+BeginSpeech = Fite me.
+Type = DEV_DemICE
+EndSpeechWin = I won.
+#------------------------------#
+[500]
+EndSpeechLose = I Lost.
+Name = Breloom 9000
+PokemonNos = 1426,1427,1428,1429,1430,1431,1432,1433,1434,1435,1436,1437,1438,1439,1440,1441,1442,1443,1444,1445,1446,1447,1448,1449
+BeginSpeech = Fite me.
+Type = B9K_FINALFORM
+EndSpeechWin = I won.

@@ -1,0 +1,13 @@
+Name       = Soulstones 2 Plugin Changes
+Version    = 0.1
+Essentials = 20.1
+Optional   = v20.1 Hotfixes,v1.0
+Optional   = Advanced Items - Field Moves,v1.0
+Optional   = Modern Quest System + UI,v1.0
+Optional   = Voltseon's Pause Menu,v1.0
+Optional   = Enhanced UI,v1.0
+Optional   = Essentials Deluxe,v1.0
+Optional   = BW Location Signposts,v1.0
+Optional   = Bag Screen w/int. Party,v1.0
+Optional   = Randomizer X,v1.0
+Credits    = Jos_Louis,DemICE

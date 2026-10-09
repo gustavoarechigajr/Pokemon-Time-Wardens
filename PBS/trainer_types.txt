@@ -1,0 +1,1952 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[POKEMONTRAINER_Red]
+Name = Pokémon Trainer
+Gender = Male
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[POKEMONTRAINER_Leaf]
+Name = Pokémon Trainer
+Gender = Female
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[POKEMONTRAINER_Brendan]
+Name = Pokémon Trainer
+Gender = Male
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[POKEMONTRAINER_May]
+Name = Pokémon Trainer
+Gender = Female
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[RIVAL1]
+Name = Rival
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[RIVAL2]
+Name = Rival
+Gender = Male
+BaseMoney = 36
+SkillLevel = 100
+#-------------------------------
+[AROMALADY]
+Name = Aroma Lady
+Gender = Female
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[BEAUTY]
+Name = Beauty
+Gender = Female
+BaseMoney = 56
+SkillLevel = 100
+#-------------------------------
+[BEAUTY_2]
+Name = Beauty
+Gender = Female
+BaseMoney = 56
+SkillLevel = 100
+#-------------------------------
+[BIKER]
+Name = Biker
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[BIRDKEEPER]
+Name = Bird Keeper
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[BUGCATCHER]
+Name = Bug Catcher
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[BURGLAR]
+Name = Burglar
+Gender = Male
+BaseMoney = 88
+SkillLevel = 100
+#-------------------------------
+[CHANELLER]
+Name = Channeler
+Gender = Female
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[CUEBALL]
+Name = Cue Ball
+Gender = Male
+BaseMoney = 24
+SkillLevel = 100
+#-------------------------------
+[ENGINEER]
+Name = Engineer
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[FISHERMAN]
+Name = Fisherman
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[GAMBLER]
+Name = Gambler
+Gender = Male
+BaseMoney = 72
+SkillLevel = 100
+#-------------------------------
+[GENTLEMAN]
+Name = Gentleman
+Gender = Male
+BaseMoney = 72
+SkillLevel = 100
+#-------------------------------
+[HARLEQUIN]
+Name = Harlequin
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[HIKER]
+Name = Hiker
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[JUGGLER]
+Name = Juggler
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[LADY]
+Name = Lady
+Gender = Female
+BaseMoney = 160
+SkillLevel = 100
+#-------------------------------
+[PAINTER]
+Name = Painter
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEMANIAC]
+Name = Poké Maniac
+Gender = Male
+BaseMoney = 64
+SkillLevel = 100
+#-------------------------------
+[POKEMONBREEDER]
+Name = Pokémon Breeder
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[PROFESSOR]
+Name = Professor
+Gender = Male
+BaseMoney = 100
+#-------------------------------
+[ROCKER]
+Name = Rocker
+Gender = Male
+BaseMoney = 24
+SkillLevel = 100
+#-------------------------------
+[RUINMANIAC]
+Name = Ruin Maniac
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[SAILOR]
+Name = Sailor
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[SCIENTIST_M]
+Name = Scientist
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[SUPERNERD]
+Name = Super Nerd
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[TAMER]
+Name = Tamer
+Gender = Male
+BaseMoney = 40
+SkillLevel = 100
+#-------------------------------
+[BLACKBELT]
+Name = Black Belt
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[BATTLEGIRL]
+Name = Battle Girl
+Gender = Female
+BaseMoney = 24
+SkillLevel = 100
+#-------------------------------
+[CAMPER]
+Name = Camper
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[PICKNICKER]
+Name = Picknicker
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[COOLTRAINER_M]
+Name = Cool Trainer
+Gender = Male
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[COOLTRAINER_F]
+Name = Cool Trainer
+Gender = Female
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[YOUNGSTER]
+Name = Youngster
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[LASS]
+Name = Lass
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[LASS2]
+Name = Lass
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[LASS3]
+Name = Lass
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[CLERK_F]
+Name = Office Worker
+Gender = Female
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[CLERK_M]
+Name = Office Worker
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[RANGER_M]
+Name = Ranger
+Gender = Male
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[RANGER2_M]
+Name = Ranger
+Gender = Male
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[RANGER_F]
+Name = Ranger
+Gender = Female
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[RANGER2_F]
+Name = Ranger
+Gender = Female
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[PSYCHIC_M]
+Name = Psychic
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[PSYCHIC_F]
+Name = Psychic
+Gender = Female
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[SWIMMER_M]
+Name = Swimmer
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SWIMMER_F]
+Name = Swimmer
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SWIMMER2_M]
+Name = Swimmer
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SWIMMER2_F]
+Name = Swimmer
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SWIMMER3_M]
+Name = Swimmer
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SWIMMER3_F]
+Name = Swimmer
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[TUBER_M]
+Name = Tuber
+Gender = Male
+BaseMoney = 4
+SkillLevel = 100
+#-------------------------------
+[TUBER_F]
+Name = Tuber
+Gender = Female
+BaseMoney = 4
+SkillLevel = 100
+#-------------------------------
+[TUBER2_M]
+Name = Tuber
+Gender = Male
+BaseMoney = 4
+SkillLevel = 100
+#-------------------------------
+[TUBER2_F]
+Name = Tuber
+Gender = Female
+BaseMoney = 4
+SkillLevel = 100
+#-------------------------------
+[COOLCOUPLE]
+Name = Cool Couple
+Gender = Unknown
+BaseMoney = 72
+SkillLevel = 100
+#-------------------------------
+[CRUSHKIN]
+Name = Crush Kin
+Gender = Unknown
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[SISANDBRO]
+Name = Sis and Bro
+Gender = Unknown
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[TWINS]
+Name = Twins
+Gender = Unknown
+BaseMoney = 24
+SkillLevel = 100
+#-------------------------------
+[YOUNGCOUPLE]
+Name = Young Couple
+Gender = Unknown
+BaseMoney = 60
+SkillLevel = 100
+#-------------------------------
+[TEAMROCKET_M]
+Name = Team Rocket
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[TEAMROCKET_F]
+Name = Team Rocket
+Gender = Female
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[ROCKETBOSS]
+Name = Rocket Boss
+Gender = Male
+BaseMoney = 100
+#-------------------------------
+[LEADER_Brock]
+Name = Gym Leader
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Misty]
+Name = Gym Leader
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Surge]
+Name = Gym Leader
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Erika]
+Name = Gym Leader
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Koga]
+Name = Gym Leader
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Sabrina]
+Name = Gym Leader
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Blaine]
+Name = Gym Leader
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Giovanni]
+Name = Gym Leader
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[ELITEFOUR_Lorelei]
+Name = Elite Four
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Elite
+VictoryBGM = Battle victory leader
+#-------------------------------
+[ELITEFOUR_Bruno]
+Name = Elite Four
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Elite
+VictoryBGM = Battle victory leader
+#-------------------------------
+[ELITEFOUR_Agatha]
+Name = Elite Four
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Elite
+VictoryBGM = Battle victory leader
+#-------------------------------
+[ELITEFOUR_Lance]
+Name = Elite Four
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Elite
+VictoryBGM = Battle victory leader
+#-------------------------------
+[CHAMPION]
+Name = Champion
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Champion
+VictoryBGM = Battle victory leader
+#-------------------------------
+[BUGCATCHER_F]
+Name = Bug Catcher
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# NEW CUSTOM TRAINER CLASSES
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[SCHOOLKID_M]
+Name = School Kid
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SCHOOLKID_F]
+Name = School Kid
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[PROTESTER_M]
+Name = Protester
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[PROTESTER_F]
+Name = Protester
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SKIER_M]
+Name = Skier
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SKIER_F]
+Name = Skier
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[BACKPACKER_M]
+Name = Backpacker
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[BACKPACKER_F]
+Name = Backpacker
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[PARASOLLADY]
+Name = Parasol Lady
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[MEDIUM]
+Name = Medium
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SAGE]
+Name = Sage
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[RANCHER]
+Name = Rancher
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[COWGIRL]
+Name = Cowgirl
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[HOMELESS]
+Name = Vagrant
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[URCHIN]
+Name = Urchin
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[DOXY]
+Name = Doxy
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[ROUGHNECK]
+Name = Roughneck
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+#-------------------------------
+[BREEDER_F]
+Name = Breeder
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[BREEDER_M]
+Name = Breeder
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[WORKER]
+Name = Worker
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[WORKER2]
+Name = Worker
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[WORKER3]
+Name = Worker
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[NATIVE_M]
+Name = Native
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[NATIVE_F]
+Name = Native
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[CULTIST_M]
+Name = Cultist
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[CULTIST_F]
+Name = Cultist
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[PARAGON]
+Name = Avatar
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_FISH]
+Name = School of Water
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_FISH1]
+Name = School of Water
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_FISH2]
+Name = School of Water
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_FISH3]
+Name = School of Water
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_URBAN]
+Name = Gang of Urban
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_CAVE]
+Name = Pack of Cave-Dwelling
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_SCAVENGER]
+Name = Band of Scavenging
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_SCAVENGER1]
+Name = Band of Scavenging
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_SCAVENGER2]
+Name = Band of Scavenging
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_SCAVENGER3]
+Name = Band of Scavenging
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_SWARM]
+Name = Swarm of
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_SWARM1]
+Name = Swarm of
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_SWARM2]
+Name = Swarm of
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_ROBOT]
+Name = Cluster of Lab
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_ROBOT1]
+Name = Cluster of Lab
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_ROBOT2]
+Name = Cluster of Lab
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_ROBOT3]
+Name = Cluster of Lab
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_WATER]
+Name = Flock of Sea
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_WATER1]
+Name = Flock of Sea
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[POKEGANG_WATER2]
+Name = Flock of Sea
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[VETERAN_F]
+Name = Veteran
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[VETERAN_M]
+Name = Veteran
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SCIENTIST_F]
+Name = Scientist
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+#-------------------------------
+[CULTIST2_M]
+Name = Acolyte
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[CULTIST2_F]
+Name = Acolyte
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[CULTIST3_M]
+Name = Disciple
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[CULTIST3_F]
+Name = Disciple
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[CULTISTANOMALY_M]
+Name = Corrupted
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[CULTISTANOMALY_F]
+Name = Corrupted
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[SPIRIT_M]
+Name = Time Wraith
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[SPIRIT_F]
+Name = Time Wraith
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[SPIRIT2_M]
+Name = Restless
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SPIRIT2_F]
+Name = Restless
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SENTRY1]
+Name = Temple
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[SENTRY2]
+Name = Temple
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[INFANTRY_F]
+Name = Libram
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[INFANTRY_M]
+Name = Libram
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[ROGUE]
+Name = Rogue
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[ROGUE2]
+Name = Bandit
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[ROGUE3]
+Name = Merchant
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[SPECTRE_SURVIVOR]
+Name = Spectre of
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[ACOLYTE]
+Name = Drowned Acolyte
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[CORSAIR]
+Name = Phantom
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[ZOMBIE_SCIENTIST_M]
+Name = Zombie Scientist
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+#-------------------------------
+[ZOMBIE_SCIENTIST_F]
+Name = Zombie Scientist
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+#-------------------------------
+[ACOLYTE2]
+Name = Hungerer Acolyte
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+#-------------------------------
+[NOMAD_M]
+Name = Exiled Nomad
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[NOMAD_F]
+Name = Exiled Nomad
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# ETHEREAL GUILD TRAINERS
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[ETHGUILD_M]
+Name = Ethereal Guild
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Ethereal Guild
+VictoryBGM = Victory!
+#-------------------------------
+[ETHGUILD_F]
+Name = Ethereal Guild
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Ethereal Guild
+VictoryBGM = Victory!
+#-------------------------------
+[ETHGUILD_Captain]
+Name = Ethereal Guild
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Ethereal Guild
+VictoryBGM = Victory!
+#-------------------------------
+[ETHGUILD_F_Captain]
+Name = Ethereal Guild
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Ethereal Guild
+VictoryBGM = Victory!
+#-------------------------------
+[EGADMIN_Maximillion]
+Name = Ethereal Guild Admin
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Ethereal Guild Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ETHGUILD_Christina]
+Name = Ethereal Guild Admin
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle - Ethereal Guild Admin
+VictoryBGM = Victory!
+#-------------------------------
+[EGADMIN_Claude]
+Name = Mad Scientist
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Ethereal Guild Admin
+VictoryBGM = Victory!
+#-------------------------------
+[EGADMIN_Angelo]
+Name = Ethereal Guild Admin
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = 08 The Opened Way _Battle With the Colossus_
+VictoryBGM = Victory!
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# STORY TRAINERS
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[RIVAL_Artie]
+Name = Rival
+Gender = Male
+BaseMoney = 36
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[TIMEWARDEN_Cara]
+Name = Time Warden
+Gender = Female
+BaseMoney = 36
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[ETHGUILD_Aki]
+Name = Guardian
+Gender = Male
+BaseMoney = 36
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[TECHWIZARD_Caitlin]
+Name = Tech Wizard
+Gender = Female
+BaseMoney = 36
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[PRIESTESS_Sienna]
+Name = Priestess
+Gender = Female
+BaseMoney = 36
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[RETIRED_Wesley]
+Name = Vacationer
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[HEADMASTER_Maurizio]
+Name = Headmaster
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[GANGLEADER]
+Name = Gang Leader
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[CHAMBER_GUARDIAN]
+Name = Chamber Guardian
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[PRIESTESS_Sienna2]
+Name = Priestess
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle- Countdown
+VictoryBGM = Victory!
+#-------------------------------
+[PRIEST_Leo]
+Name = Priest
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle- Countdown
+VictoryBGM = Victory!
+#-------------------------------
+[PRIESTESS_Selene]
+Name = Priestess
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle- Countdown
+VictoryBGM = Victory!
+#-------------------------------
+[PRIESTS_Leo_Selene]
+Name = Priests
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle- Countdown
+VictoryBGM = Victory!
+#-------------------------------
+[INFESTEDCULTIST_F]
+Name = Corrupted
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[INFESTEDWITCH]
+Name = Betrayer
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ORIGIN_GIRATINA]
+Name = Origin Form
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = 08 The Opened Way _Battle With the Colossus_
+VictoryBGM = Victory!
+#-------------------------------
+[AVATAR_Time]
+Name = Temporal
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Countdown
+VictoryBGM = Victory!
+#-------------------------------
+[AVATAR_Space]
+Name = Temporal
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Countdown
+VictoryBGM = Victory!
+#-------------------------------
+[SIMULACRUM_Ezreal]
+Name = Simulacrum
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle- Countdown
+VictoryBGM = Victory!
+#-------------------------------
+[CHAD_Ronnie]
+Name = Chad
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Mini Boss
+VictoryBGM = Victory!
+#-------------------------------
+[CHAINED_SPIRIT]
+Name = Chained Spirit
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle- Countdown
+VictoryBGM = Victory!
+#-------------------------------
+[COUNCILLOR_Alexis]
+Name = Prelate
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Pseudo Contribution
+VictoryBGM = Victory!
+#-------------------------------
+[PRELATE_Victor]
+Name = Prelate
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Regis
+VictoryBGM = Victory!
+#-------------------------------
+[DESTROYER_WUGTRIO]
+Name = Destroyer
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+BattleBGM = Battle - Mini Boss
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_SWALOT2]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[CONCLAVE_Aldric]
+Name = Conclave Member
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Legendary
+VictoryBGM = Victory!
+#-------------------------------
+[SUPERINTENDENT]
+Name = Superintendent
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Intense
+VictoryBGM = Victory!
+#-------------------------------
+[CONCLAVE_Grigori]
+Name = Conclave Member
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Legendary
+VictoryBGM = Victory!
+#-------------------------------
+[CONCLAVE_Thaddeus]
+Name = Conclave Member
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Legendary
+VictoryBGM = Victory!
+#-------------------------------
+[CONCLAVE_Elara]
+Name = Conclave Member
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle - Legendary
+VictoryBGM = Victory!
+#-------------------------------
+[MAFIOSO]
+Name = Mafioso
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Mini Boss
+VictoryBGM = Victory!
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# MISC OTHER TRAINERS
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[EXPTRAINER]
+Name = Experience Trainer
+Gender = Female
+BaseMoney = 0
+SkillLevel = 100
+#-------------------------------
+[EXPTRAINERTW]
+Name = Experience Trainer
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+#-------------------------------
+[FABLEDHERO]
+Name = Fabled Hero
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[NOTORIETY_Male]
+Name = Notorious Trainer
+Gender = Male
+BaseMoney = 32
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+[NOTORIETY_Female]
+Name = Notorious Trainer
+Gender = Female
+BaseMoney = 32
+SkillLevel = 100
+BattleBGM = Battle- Gym
+VictoryBGM = Victory!
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# ANOMALY TRAINERS
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[ANOMALY_SWALOT]
+Name = Anomaly
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MINOR0]
+Name = Minor Horde
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GALVANTULA]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GALVANTULA2]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MINOR1]
+Name = Minor Horde
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_ARBOK]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MINOR2]
+Name = Minor Horde
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_STARMIE]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_SWOOBAT]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GROUP0]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GROUP1]
+Name = Anomaly
+Gender = Female
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GROUP2]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GROUP3]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GROUP4]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GROUP5]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GROUP6]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_HOOPA]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MEGANIUM]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GYARADOS]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MUK]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_GRAPPLOCT]
+Name = Anomaly
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MINOR3]
+Name = Minor Horde
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MINOR4]
+Name = Minor Horde
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MINOR5]
+Name = Minor Horde
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MINOR6]
+Name = Minor Horde
+Gender = Male
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[EGANOMALY_M]
+Name = Absorbed
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[EGANOMALY_F]
+Name = Absorbed
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[EGANOMALY_Captain]
+Name = Absorbed
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[EGANOMALY_F_Captain]
+Name = Absorbed
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[EGANOMALY_Christina]
+Name = Infested
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle - Ethereal Guild Admin
+VictoryBGM = Victory!
+#-------------------------------
+[EGANOMALY_Claude]
+Name = Infested
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Ethereal Guild Admin
+VictoryBGM = Victory!
+#-------------------------------
+[EGANOMALY_Rogues]
+Name = Rogue Anomalies
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Ethereal Guild Admin
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_MINER]
+Name = Corrupted
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_INFANTRY_M]
+Name = Corrupted
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+BattleBGM = Battle - Anomalies
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_VILEPLUME]
+Name = Anomaly
+Gender = Female
+BaseMoney = 0
+SkillLevel = 100
+BattleBGM = Battle - Meteor Admin
+VictoryBGM = Victory!
+#-------------------------------
+[DTRINITY_Damocles]
+Name = The Herald
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Regis
+VictoryBGM = Victory!
+#-------------------------------
+[DTRINITY_Arachne]
+Name = The Psion
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle - Regis
+VictoryBGM = Victory!
+#-------------------------------
+[DTRINITY_Prometheus]
+Name = The Shepherd
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Regis
+VictoryBGM = Victory!
+#-------------------------------
+[EGANOMALY_Victor]
+Name = Infested
+Gender = Male
+BaseMoney = 100
+BattleBGM = 1-18 Beneath the Blue Tree
+VictoryBGM = Victory!
+#-------------------------------
+[PHANTOM_M]
+Name = Chained
+Gender = Male
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[PHANTOM_F]
+Name = Chained
+Gender = Female
+BaseMoney = 16
+SkillLevel = 100
+#-------------------------------
+[DARKPRIEST_Khronus]
+Name = Dark Priest
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Regis
+VictoryBGM = Victory!
+#-------------------------------
+[HOSTAGE_Aki]
+Name = Hostage
+Gender = Male
+BaseMoney = 100
+BattleBGM = 1-23. Taking Down the Paintress
+VictoryBGM = Victory!
+#-------------------------------
+[HOSTAGE_Artie]
+Name = Hostage
+Gender = Male
+BaseMoney = 100
+BattleBGM = 1-23. Taking Down the Paintress
+VictoryBGM = Victory!
+#-------------------------------
+[HOSTAGE_Sienna]
+Name = Hostage
+Gender = Female
+BaseMoney = 100
+BattleBGM = 1-23. Taking Down the Paintress
+VictoryBGM = Victory!
+#-------------------------------
+[HOSTAGE_Caitlin]
+Name = Hostage
+Gender = Female
+BaseMoney = 100
+BattleBGM = 1-23. Taking Down the Paintress
+VictoryBGM = Victory!
+#-------------------------------
+[HOSTAGE_Ezreal]
+Name = Hostage
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle - Final Duel
+VictoryBGM = Victory!
+#-------------------------------
+[HOSTAGE_Christina]
+Name = Infested
+Gender = Female
+BaseMoney = 100
+BattleBGM = 09. Travincal
+VictoryBGM = Victory!
+#-------------------------------
+[ANOMALY_LEVIATHAN]
+Name = Ascended Anomaly
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = 80. Malthael
+VictoryBGM = Victory!
+#-------------------------------
+[ABOMINATION_LEVIATHAN]
+Name = Ascended Anomaly
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = 80. Malthael
+VictoryBGM = Victory!
+#-------------------------------
+[SOULSTONE_Guard]
+Name = Corrupted
+Gender = Male
+BaseMoney = 100
+BattleBGM = 1-58. Lampmaster
+VictoryBGM = Victory!
+#-------------------------------
+[POSSESSED_TIMEWARDEN]
+Name = Time Warden
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = 2-6. Dualliste
+VictoryBGM = Victory!
+#-------------------------------
+[MINDLINK_Prime]
+Name = Leviathan
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = 2-52. Visages - Portrait Imparfait
+VictoryBGM = Victory!
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# DEV CASTLE/COMMUNITY TRAINERS
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[COMMUNITYARTIST_Boro]
+Name = Community Artist
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[COMMUNITYARTIST_Ignotus68]
+Name = Community Artist
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[COMMUNITYARTIST_Zeta]
+Name = Community Artist
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[COMMUNITYARTIST_Otter]
+Name = Community Artist
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[COMMUNITYARTIST_YGS]
+Name = Community Artist
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[COMMUNITYARTIST_Attea]
+Name = Community Artist
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[COMMUNITYARTIST_Hypertox]
+Name = Community Artist
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[COMMUNITYARTIST_Raffs07]
+Name = Community Artist
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[BETATESTER_WitchyAlex]
+Name = Beta Tester
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[BETATESTER_Anime]
+Name = Beta Tester
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[BETATESTER_MissNyakura]
+Name = Beta Tester
+Gender = Female
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[ROVERDEV_SexyRexy]
+Name = Rover Dev
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Artists
+VictoryBGM = Victory!
+#-------------------------------
+[BETATESTER_FabulaFares]
+Name = Beta Tester
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Dev Castle
+VictoryBGM = Victory!
+#-------------------------------
+[DEV_DemICE]
+Name = Cosmic Dev
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - DemICE
+VictoryBGM = Victory!
+#-------------------------------
+[DEV_HexxVixtar]
+Name = Developer
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Dev Castle
+VictoryBGM = Victory!
+#-------------------------------
+[DEV_Endless]
+Name = Developer
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Dev Castle
+VictoryBGM = Victory!
+#-------------------------------
+[DEV_Badman]
+Name = Developer
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Badman
+VictoryBGM = Victory!
+#-------------------------------
+[DEV_PDM20]
+Name = Developer
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - PDM20
+VictoryBGM = Victory!
+#-------------------------------
+[BETATESTER_Riptidecord]
+Name = Beta Tester
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = Battle - Riptidecord
+VictoryBGM = Victory!
+#-------------------------------
+[B9K_FINALFORM]
+Name = Lead Developer
+Gender = Male
+BaseMoney = 48
+SkillLevel = 100
+BattleBGM = 41. Elder
+VictoryBGM = Victory!
+#-------------------------------

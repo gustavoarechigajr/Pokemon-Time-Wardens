@@ -1,0 +1,5 @@
+Name         = BW Location Signposts
+Essentials   = 20.1
+Version      = 1.0.0
+Website	     = https://reliccastle.com/resources/755/
+Credits      = Shashu-Greninja,DeepBlue PacificWaves,Shiney570

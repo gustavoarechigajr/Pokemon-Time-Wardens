@@ -1,0 +1,3962 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[001]
+# Intro
+Name = Intro
+#-------------------------------
+[022]
+# Cygnus Village
+Bicycle = true
+MapPosition=0,4,15
+HealingSpot = 122,12,13
+BattleBack=field
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[122]
+# \PN's Home
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[123]
+# Artie's Home
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[125]
+# Cygnus Village (Indoor)
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[124]
+# Dr. Campbell's Lab
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[140]
+# Dr. Campbell's Lab
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[297]
+# Dr. Campbell's Lab
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[336]
+# Dr. Campbell's Lab
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[343]
+# Dr. Campbell's Lab
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[348]
+# CUTSCENE DIVIDER
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[349]
+# Dr. Campbell's Lab - Cutscene
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[111]
+# Cygnus-Europa Gatehouse
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[110]
+# Europa Lake
+Bicycle=true
+MapPosition=0,3,15
+BattleBack=field
+Outdoor=true
+DiveMap = 422
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[422]
+# Europa Lake Underwater
+BattleBack=underwater
+MapPosition=0,3,15
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[112]
+# Europa Forest
+Bicycle=true
+MapPosition=0,3,14
+Outdoor=true
+BattleBack=forest
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[113]
+# Europa Cave L1
+Bicycle=true
+MapPosition=0,3,13
+BattleBack=cave2
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[114]
+# Europa Cave L2
+Bicycle=true
+MapPosition=0,3,13
+BattleBack=cave2
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[115]
+# Europa Cave L3
+Bicycle=true
+MapPosition=0,3,13
+BattleBack=cave2
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[095]
+# Cygnus-R1 Gatehouse
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[097]
+# Cygnus-R3 Gatehouse
+MapPosition=0,4,15
+SnapEdges = true
+#-------------------------------
+[032]
+# Route 1
+Bicycle = true
+MapPosition=0,4,16
+BattleBack=field
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[096]
+# R1-Auriga Gatehouse
+MapPosition=0,4,18
+SnapEdges = true
+#-------------------------------
+[033]
+# Auriga Town
+Bicycle = true
+MapPosition=0,4,18
+BattleBack=beach
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[083]
+# Auriga PokéCenter
+MapPosition=0,4,18
+HealingSpot=33,37,23
+SnapEdges = true
+#-------------------------------
+[084]
+# Auriga PokéCenter
+MapPosition=0,4,18
+SnapEdges = true
+#-------------------------------
+[085]
+# Auriga Poke Mart
+MapPosition=0,4,18
+SnapEdges = true
+#-------------------------------
+[086]
+# Auriga Town
+MapPosition=0,4,18
+SnapEdges = true
+#-------------------------------
+[099]
+# Auriga Bay Gatehouse
+MapPosition=0,5,18
+SnapEdges = true
+#-------------------------------
+[042]
+# Auriga Bay
+Bicycle = true
+MapPosition=0,5,18
+BattleBack=beach
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[446]
+# Auriga Coast
+Bicycle = true
+MapPosition=0,6,18
+BattleBack=beach
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[023]
+# Auriga Caverns
+Bicycle = true
+MapPosition=0,6,18
+BattleBack=cave3
+Environment = Cave
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[116]
+# Auriga Resort
+MapPosition=0,4,18
+SnapEdges = true
+#-------------------------------
+[117]
+# Indoor Pool
+BattleBack=pool
+MapPosition=0,4,18
+SnapEdges = true
+#-------------------------------
+[118]
+# Bar
+MapPosition=0,4,18
+SnapEdges = true
+#-------------------------------
+[119]
+# Auriga Resort - 2F
+MapPosition=0,4,18
+BattleBack=hotel
+SnapEdges = true
+#-------------------------------
+[120]
+# Guest Room
+MapPosition=0,4,18
+BattleBack=hotel
+SnapEdges = true
+#-------------------------------
+[121]
+# Restaurant
+MapPosition=0,4,18
+SnapEdges = true
+#-------------------------------
+[144]
+# Dr. Linklater's Room
+MapPosition=0,4,18
+BattleBack=hotel
+SnapEdges = true
+#-------------------------------
+[076]
+# Lyra City
+Bicycle = true
+MapPosition=0,4,7
+BattleBack=snowycity
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[147]
+# Lyra PokéCenter
+MapPosition=0,4,7
+HealingSpot=33,37,23
+SnapEdges = true
+#-------------------------------
+[243]
+# Lyra PokéCenter
+MapPosition=0,4,7
+SnapEdges = true
+#-------------------------------
+[148]
+# Lyra Poke Mart
+MapPosition=0,4,7
+SnapEdges = true
+#-------------------------------
+[145]
+# Lyra City
+MapPosition=0,4,7
+SnapEdges = true
+#-------------------------------
+[028]
+# Lyra Aquarium
+MapPosition=0,4,7
+BattleBack=aquarium
+SnapEdges = true
+#-------------------------------
+[146]
+# Caitlin's Villa
+MapPosition=0,4,7
+BattleBack=indoor1
+SnapEdges = true
+#-------------------------------
+[130]
+# Route 2A
+Bicycle = true
+MapPosition=0,4,6
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[131]
+# Epoch Mine
+Bicycle = true
+MapPosition=0,4,5
+BattleBack=snowymine
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[041]
+# Cold Storage
+Bicycle = true
+MapPosition=0,4,5
+ShowArea = true
+BattleBack=coldstorage
+SnapEdges = true
+#-------------------------------
+[132]
+# Lyra-R2A Gatehouse
+MapPosition=0,4,6
+SnapEdges = true
+#-------------------------------
+[133]
+# R2A-Epoch Mine Gatehouse
+MapPosition=0,4,5
+SnapEdges = true
+#-------------------------------
+[134]
+# Route 2B
+Bicycle = true
+MapPosition=0,4,4
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[135]
+# Epoch Mine-R2B Gatehouse
+MapPosition=0,4,4
+SnapEdges = true
+#-------------------------------
+[149]
+# Triton Cave L1
+Bicycle=true
+MapPosition=0,4,3
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[150]
+# Triton Cave L2
+Bicycle=true
+MapPosition=0,4,3
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[178]
+# Triton Cave L3
+Bicycle=true
+MapPosition=0,4,3
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# OPTIONAL AREAS
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[030]
+# Corona Outskirts
+Outdoor = true
+MapPosition=0,1,11
+Bicycle = true
+BattleBack=reddesert
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[449]
+# Corona City
+Outdoor = true
+MapPosition=0,1,10
+Bicycle = true
+BattleBack=reddesertlake
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[031]
+# Corona PokéCenter
+MapPosition=0,1,10
+HealingSpot=449,63,41
+SnapEdges = true
+#-------------------------------
+[034]
+# Corona PokéCenter
+MapPosition=0,1,10
+SnapEdges = true
+#-------------------------------
+[035]
+# Corona Poke Mart
+MapPosition=0,1,10
+SnapEdges = true
+#-------------------------------
+[036]
+# Corona City
+MapPosition=0,1,10
+SnapEdges = true
+#-------------------------------
+[039]
+# Corona-Bazaar GH
+MapPosition=0,1,10
+SnapEdges = true
+#-------------------------------
+[037]
+# Corona Bazaar
+Outdoor = true
+MapPosition=0,1,10
+Bicycle = true
+BattleBack=desertbazaar
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[040]
+# Corona Bazaar Interior
+MapPosition=0,1,10
+SnapEdges = true
+BattleBack=desertmarketplace
+#-------------------------------
+[038]
+# Corona Marketplace
+MapPosition=0,1,10
+SnapEdges = true
+BattleBack=desertmarketplace
+#-------------------------------
+[168]
+# Breloom's Penthouse
+MapPosition=0,13,9
+BattleBack=cyberindoor
+SnapEdges = true
+#-------------------------------
+[044]
+# Lower Mt. Titania L1
+Bicycle=true
+MapPosition=0,2,9
+BattleBack=reddesertcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[045]
+# Lower Mt. Titania L2
+Bicycle=true
+MapPosition=0,2,9
+BattleBack=reddesertcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[046]
+# Lower Mt. Titania L3
+Bicycle=true
+MapPosition=0,2,9
+BattleBack=reddesertcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[047]
+# Lower Mt. Titania L4
+Bicycle=true
+MapPosition=0,2,9
+BattleBack=reddesertcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[049]
+# Lower Mt. Titania L5
+Bicycle=true
+MapPosition=0,2,9
+BattleBack=reddesertcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[050]
+# Lower Mt. Titania L0
+Bicycle=true
+MapPosition=0,2,9
+BattleBack=reddesertcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# BACK TO MAIN STORY AREA
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[043]
+# Route 3
+Bicycle = true
+MapPosition=0,6,15
+BattleBack=field
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[081]
+# Telescopium City
+Bicycle = true
+MapPosition=0,7,14
+BattleBack=oriental
+Weather = Sakura,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[103]
+# Telescopium PokéCenter
+MapPosition=0,7,14
+HealingSpot=81,58,21
+SnapEdges = true
+#-------------------------------
+[104]
+# Telescopium PokéCenter
+MapPosition=0,7,14
+SnapEdges = true
+#-------------------------------
+[105]
+# Telescopium Poke Mart
+MapPosition=0,7,14
+SnapEdges = true
+#-------------------------------
+[142]
+# Telescopium City
+MapPosition=0,7,14
+SnapEdges = true
+#-------------------------------
+[098]
+# R3-Telescopium Gatehouse
+MapPosition=0,6,14
+SnapEdges = true
+#-------------------------------
+[244]
+# Telescopium-R4A Gatehouse
+MapPosition=0,8,12
+SnapEdges = true
+#-------------------------------
+[127]
+# Route 4A
+Bicycle = true
+MapPosition=0,8,13
+BattleBack=field
+Outdoor = true
+Weather = Sakura,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[211]
+# R4A-4B Cable Car
+MapPosition=0,8,13
+SnapEdges = true
+#-------------------------------
+[128]
+# Route 4B
+Bicycle = true
+MapPosition=0,9,12
+BattleBack=rocky
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[445]
+# Route 4C
+Bicycle = true
+MapPosition=0,8,12
+BattleBack=rocky
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[129]
+# Telescopium Academy
+Bicycle = true
+MapPosition=0,9,11
+BattleBack=rocky
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[151]
+# Telescopium Academy 1F
+ShowArea = true
+MapPosition=0,9,11
+BattleBack=academy
+SnapEdges = true
+#-------------------------------
+[152]
+# Telescopium Academy 2F
+BattleBack=academy
+MapPosition=0,9,11
+SnapEdges = true
+#-------------------------------
+[153]
+# Telescopium Academy 3F
+BattleBack=academy
+MapPosition=0,9,11
+SnapEdges = true
+#-------------------------------
+[154]
+# Telescopium Academy 4F
+BattleBack=academy
+MapPosition=0,9,11
+SnapEdges = true
+#-------------------------------
+[155]
+# Telescopium Academy 5F
+BattleBack=academy
+MapPosition=0,9,11
+SnapEdges = true
+#-------------------------------
+[245]
+# Academy-R5A Cable Car
+MapPosition=0,8,12
+SnapEdges = true
+#-------------------------------
+[180]
+# Route 5A
+Bicycle = true
+MapPosition=0,11,11
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[183]
+# R5A-Underground Gatehouse
+MapPosition=0,12,11
+SnapEdges = true
+#-------------------------------
+[184]
+# Orion Underground
+Bicycle = true
+MapPosition=0,12,10
+BattleBack=urbantunnel
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[185]
+# Underground-Orion Gatehouse
+MapPosition=0,12,10
+SnapEdges = true
+#-------------------------------
+[156]
+# Orion City - Central
+Bicycle = true
+MapPosition=0,13,9
+BattleBack=cybercity
+Outdoor = true
+ShowArea = true
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[161]
+# Orion City - Central
+MapPosition=0,13,9
+BattleBack=cyberindoor
+SnapEdges = true
+#-------------------------------
+[170]
+# Orion PokéCenter
+MapPosition=0,13,9
+HealingSpot=156,25,42
+SnapEdges = true
+#-------------------------------
+[171]
+# Orion PokéCenter
+MapPosition=0,13,9
+SnapEdges = true
+#-------------------------------
+[298]
+# Caitlin's Penthouse
+MapPosition=0,13,9
+SnapEdges = true
+#-------------------------------
+[157]
+# Orion City - West
+Bicycle = true
+MapPosition=0,12,9
+BattleBack=cyberpark
+Outdoor = true
+ShowArea = true
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[166]
+# Orion City - West
+MapPosition=0,12,9
+BattleBack=cyberindoor
+SnapEdges = true
+#-------------------------------
+[443]
+# Orion Docks
+Bicycle = true
+MapPosition=0,12,9
+Outdoor = true
+BattleBack=pier
+ShowArea = true
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[444]
+# Storage Warehouse
+Bicycle = true
+MapPosition=0,12,9
+ShowArea = true
+BattleBack=warehouse
+SnapEdges = true
+#-------------------------------
+[025]
+# Locked Warehouse
+Bicycle = true
+MapPosition=0,12,9
+ShowArea = true
+BattleBack=warehouse
+SnapEdges = true
+#-------------------------------
+[026]
+# Shipping Basement
+Bicycle = true
+MapPosition=0,13,9
+BattleBack=urbantunnel
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[158]
+# Orion City - East
+Bicycle = true
+MapPosition=0,13,8
+Outdoor = true
+BattleBack=cybercity
+ShowArea = true
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[167]
+# Orion City - East
+MapPosition=0,13,8
+BattleBack=cyberindoor
+SnapEdges = true
+#-------------------------------
+[299]
+# Orion Night Club
+MapPosition=0,13,8
+BattleBack=cyberindoor
+SnapEdges = true
+#-------------------------------
+[165]
+# Dept. Store
+MapPosition=0,13,9
+SnapEdges = true
+#-------------------------------
+[169]
+# Elevator
+MapPosition=0,13,9
+SnapEdges = true
+#-------------------------------
+[163]
+# Orion Sewers - L1
+Bicycle = true
+MapPosition=0,13,8
+ShowArea = true
+BattleBack=sewer
+SnapEdges = true
+#-------------------------------
+[160]
+# Orion Sewers - L2
+Bicycle = true
+MapPosition=0,13,8
+ShowArea = true
+BattleBack=sewer
+SnapEdges = true
+#-------------------------------
+[162]
+# Orion Sewers - L3
+Bicycle = true
+MapPosition=0,13,8
+ShowArea = true
+BattleBack=sewer
+SnapEdges = true
+#-------------------------------
+[159]
+# Orion Sewers - Small Rooms
+Bicycle = true
+MapPosition=0,13,8
+ShowArea = true
+BattleBack=sewer
+SnapEdges = true
+#-------------------------------
+[212]
+# Orion Slums
+Bicycle = true
+MapPosition=0,12,8
+Outdoor = true
+ShowArea = true
+BattleBack=slums
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[213]
+# Orion Slums
+BattleBack=slumindoor
+MapPosition=0,12,8
+SnapEdges = true
+#-------------------------------
+[214]
+# Orion-Slums Gatehouse
+MapPosition=0,12,8
+SnapEdges = true
+#-------------------------------
+[300]
+# Orion Slums
+BattleBack=slumindoor
+MapPosition=0,12,8
+SnapEdges = true
+#-------------------------------
+[177]
+# Orion Landfill
+Bicycle = true
+MapPosition=0,12,7
+Outdoor = true
+ShowArea = true
+BattleBack=landfill
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[447]
+# Orion Side Street
+Bicycle = true
+MapPosition=0,12,9
+BattleBack=urbantunnel
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[505]
+# Orion Slums-R15B GH
+MapPosition=0,11,7
+SnapEdges = true
+#-------------------------------
+[448]
+# Route 15B
+Bicycle = true
+MapPosition=0,11,7
+Outdoor = true
+ShowArea = true
+BattleBack=slumrail
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[507]
+# R15B-R15A GH
+MapPosition=0,11,6
+SnapEdges = true
+#-------------------------------
+[506]
+# Route 15A
+Bicycle = true
+MapPosition=0,11,6
+Outdoor = false
+ShowArea = true
+BattleBack=railtunnel
+SnapEdges = true
+#-------------------------------
+[302]
+# Telescopium-R6A Gatehouse
+MapPosition=0,9,14
+SnapEdges = true
+#-------------------------------
+[381]
+# Callisto Lake - Cutscene
+Bicycle = true
+MapPosition=0,14,5
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[301]
+# Route 6A
+Bicycle = true
+MapPosition=0,10,14
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[308]
+# R6A-R6B Gatehouse
+MapPosition=0,10,15
+SnapEdges = true
+#-------------------------------
+[226]
+# Route 6B
+Bicycle = true
+MapPosition=0,10,16
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[172]
+# Mt. Oberon L1
+Bicycle=true
+MapPosition=0,11,17
+BattleBack=cave3
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[173]
+# Mt. Oberon L2
+Bicycle=true
+MapPosition=0,11,17
+BattleBack=cave3
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[174]
+# Mt. Oberon L3
+Bicycle=true
+MapPosition=0,11,17
+BattleBack=cave3
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[175]
+# Mt. Oberon L4
+Bicycle=true
+MapPosition=0,11,17
+BattleBack=cave3
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[176]
+# Mt. Oberon L5
+Bicycle=true
+MapPosition=0,11,17
+BattleBack=cave3
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[079]
+# Fornax Town
+Bicycle = true
+MapPosition=0,12,17
+BattleBack=beach
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[100]
+# Fornax PokéCenter
+MapPosition=0,12,17
+HealingSpot=79,51,15
+SnapEdges = true
+#-------------------------------
+[101]
+# Fornax PokéCenter
+MapPosition=0,12,17
+SnapEdges = true
+#-------------------------------
+[102]
+# Fornax Poke Mart
+MapPosition=0,12,17
+SnapEdges = true
+#-------------------------------
+[109]
+# Fornax Town
+MapPosition=0,12,17
+SnapEdges = true
+#-------------------------------
+[303]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[304]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[305]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[306]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[307]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+# Revised versions of the Town Hall Maps after story sequences
+[309]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[310]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[311]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[312]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[313]
+# Fornax Town Hall
+MapPosition=0,12,17
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[136]
+# Route 8A
+Bicycle = true
+MapPosition=0,14,17
+BattleBack=beach
+Outdoor = true
+DiveMap = 272
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[272]
+# Route 8A Underwater
+BattleBack=underwater
+MapPosition=0,15,17
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[316]
+# 8A Dive Map Placeholder
+Bicycle = true
+MapPosition=0,15,17
+BattleBack=beach
+Outdoor = true
+DiveMap = 314
+SnapEdges = true
+#-------------------------------
+[314]
+# Route 8A Underwater Houses
+BattleBack=underwaterhouse
+MapPosition=0,15,17
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[265]
+# Pisces Village
+Bicycle = true
+MapPosition=0,16,17
+BattleBack=beach
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[267]
+# Pisces PokéCenter
+MapPosition=0,16,17
+HealingSpot=265,68,38
+SnapEdges = true
+#-------------------------------
+[268]
+# Pisces PokéCenter
+MapPosition=0,16,17
+SnapEdges = true
+#-------------------------------
+[269]
+# Pisces Poke Mart
+MapPosition=0,16,17
+SnapEdges = true
+#-------------------------------
+[270]
+# Pisces Village
+MapPosition=0,16,17
+SnapEdges = true
+#-------------------------------
+[271]
+# Route 8B
+Bicycle = true
+MapPosition=0,17,17
+BattleBack=beach
+Outdoor = true
+DiveMap = 273
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[273]
+# Route 8B Underwater
+BattleBack=underwater
+MapPosition=0,18,17
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[317]
+# 8B Dive Map Placeholder
+Bicycle = true
+MapPosition=0,18,17
+BattleBack=beach
+Outdoor = true
+DiveMap = 318
+SnapEdges = true
+#-------------------------------
+[318]
+# Route 8B Underwater Houses
+BattleBack=underwaterhouse
+MapPosition=0,18,17
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[137]
+# Indus Beach
+Bicycle = true
+MapPosition=0,19,17
+BattleBack=beach
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[078]
+# Indus Village
+Bicycle = true
+MapPosition=0,19,16
+Outdoor = true
+ShowArea = true
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[092]
+# Indus PokéCenter
+MapPosition=0,19,16
+HealingSpot=78,58,38
+SnapEdges = true
+#-------------------------------
+[093]
+# Indus PokéCenter
+MapPosition=0,19,16
+SnapEdges = true
+#-------------------------------
+[094]
+# Indus Poke Mart
+MapPosition=0,19,16
+SnapEdges = true
+#-------------------------------
+[091]
+# Indus Village
+MapPosition=0,19,16
+SnapEdges = true
+#-------------------------------
+[319]
+# Indus Jungles
+Bicycle = true
+MapPosition=0,19,15
+BattleBack=jungleruins
+Outdoor = true
+ShowArea = true
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[320]
+# Indus Ruins
+MapPosition=0,19,15
+BattleBack=jungletemple
+SnapEdges = true
+#-------------------------------
+[024]
+# Indus Shrine
+MapPosition=0,19,15
+BattleBack=jungletemple
+SnapEdges = true
+#-------------------------------
+[321]
+# Indus Caverns L1
+Bicycle=true
+MapPosition=0,19,15
+BattleBack=cave5
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[322]
+# Indus Caverns L2
+Bicycle=true
+MapPosition=0,19,15
+BattleBack=cave5
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[323]
+# Indus Caverns L3
+Bicycle=true
+MapPosition=0,19,15
+BattleBack=cave5
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[138]
+# Indus Temple Grounds
+Bicycle = true
+MapPosition=0,19,14
+BattleBack=jungleruins
+Outdoor = true
+ShowArea = true
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[204]
+# Temple of Time
+MapPosition=0,18,14
+BattleBack=jungletemple2
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[324]
+# Temple of Time
+MapPosition=0,18,14
+BattleBack=jungletemple2
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[202]
+# Temple of Time
+MapPosition=0,18,14
+BattleBack=jungletemple2
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[203]
+# Heart of Time
+MapPosition=0,18,14
+BattleBack=jungletemple2
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[224]
+# Hyperion Lake
+Bicycle = true
+MapPosition=0,12,12
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[225]
+# Route 5B
+Bicycle = true
+MapPosition=0,13,12
+BattleBack=floating
+Weather = Sakura,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[252]
+# R5B-Mensa Gatehouse
+MapPosition=0,13,12
+SnapEdges = true
+#-------------------------------
+[181]
+# Mensa Village
+Bicycle = true
+MapPosition=0,14,12
+BattleBack=floating
+Weather = Sakura,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[246]
+# Mensa PokéCenter
+MapPosition=0,14,12
+HealingSpot=181,25,47
+SnapEdges = true
+#-------------------------------
+[247]
+# Mensa PokéCenter
+MapPosition=0,14,12
+SnapEdges = true
+#-------------------------------
+[248]
+# Mensa Poke Mart
+MapPosition=0,14,12
+SnapEdges = true
+#-------------------------------
+[227]
+# Mensa Village
+MapPosition=0,14,12
+SnapEdges = true
+#-------------------------------
+[342]
+# Mensa Weather Centre
+MapPosition=0,14,12
+SnapEdges = true
+#-------------------------------
+[249]
+# Mensa-R7A Gatehouse
+MapPosition=0,14,12
+SnapEdges = true
+#-------------------------------
+[223]
+# Route 7A
+Bicycle = true
+MapPosition=0,15,12
+BattleBack=floating
+Weather = Sakura,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[250]
+# R7A-R7B Gatehouse
+MapPosition=0,14,12
+SnapEdges = true
+#-------------------------------
+[251]
+# Route 7B
+Bicycle = true
+MapPosition=0,15,13
+BattleBack=floating
+Weather = Sakura,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[337]
+# Caverns of Rhea L1
+Bicycle=true
+MapPosition=0,16,13
+BattleBack=crystalcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[338]
+# Caverns of Rhea L2
+Bicycle=true
+MapPosition=0,16,13
+BattleBack=crystalcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[339]
+# Caverns of Rhea L3
+Bicycle=true
+MapPosition=0,16,13
+BattleBack=crystalcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[340]
+# Caverns of Rhea - Pockets
+Bicycle=true
+MapPosition=0,16,13
+BattleBack=crystalcave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[077]
+# Indus Marsh
+Bicycle = true
+MapPosition=0,20,16
+BattleBack=swamp
+Outdoor = true
+ShowArea = true
+Weather = Rain,100
+SnapEdges = true
+#-------------------------------
+[179]
+# Indus Cove
+Bicycle = true
+MapPosition=0,22,16
+BattleBack=beach
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[266]
+# Route 9A
+Bicycle = true
+MapPosition=0,22,15
+BattleBack=beach
+Outdoor = true
+DiveMap = 283
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[283]
+# Route 9A Underwater
+BattleBack=underwater
+MapPosition=0,22,15
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[082]
+# Route 9B
+Bicycle = true
+MapPosition=0,22,13
+BattleBack=beach
+Outdoor = true
+DiveMap = 205
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[205]
+# Route 9B Underwater
+BattleBack=underwater
+MapPosition=0,22,13
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[253]
+# 9B Dive Map Placeholder
+Bicycle = true
+MapPosition=0,22,13
+BattleBack=beach
+Outdoor = true
+DiveMap = 206
+SnapEdges = true
+#-------------------------------
+[206]
+# Route 9B Underwater Houses
+BattleBack=underwater
+MapPosition=0,22,13
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[080]
+# Cassiopeia City
+Outdoor = true
+MapPosition=0,21,11
+BattleBack=beach
+Bicycle = true
+ShowArea = true
+SnapEdges = true
+Weather = Sandstorm,100
+#-------------------------------
+[106]
+# Cassiopeia PokéCenter
+MapPosition=0,21,11
+HealingSpot=80,33,31
+SnapEdges = true
+#-------------------------------
+[107]
+# Cassiopeia PokéCenter
+MapPosition=0,21,11
+SnapEdges = true
+#-------------------------------
+[108]
+# Cassiopeia Poke Mart
+MapPosition=0,21,11
+SnapEdges = true
+#-------------------------------
+[221]
+# Cassiopeia City
+MapPosition=0,21,11
+SnapEdges = true
+#-------------------------------
+[188]
+# Cassiopeia-R10 GH
+MapPosition=0,21,11
+SnapEdges = true
+#-------------------------------
+[186]
+# Route 10A
+Outdoor = true
+MapPosition=0,24,11
+Bicycle = true
+BattleBack=desert
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[194]
+# Sandswept Grotto
+Bicycle=true
+MapPosition=0,23,11
+BattleBack=cave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[187]
+# Route 10B
+Outdoor = true
+MapPosition=0,24,9
+Bicycle = true
+BattleBack=desert
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[195]
+# Undersand Caverns
+Bicycle=true
+MapPosition=0,24,10
+BattleBack=cave
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[189]
+# Cassiopeia Oasis
+Outdoor = true
+MapPosition=0,23,9
+Bicycle = true
+BattleBack=desert
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[192]
+# Forgotten Tombs
+ShowArea = true
+BattleBack=egypttemple
+MapPosition=0,22,9
+SnapEdges = true
+#-------------------------------
+[236]
+# Temple of Space L1
+ShowArea = true
+MapPosition=0,21,9
+BattleBack=egypttemple
+SnapEdges = true
+#-------------------------------
+[239]
+# Temple of Space L2
+ShowArea = true
+MapPosition=0,21,9
+BattleBack=egypttemple
+SnapEdges = true
+#-------------------------------
+[240]
+# Temple of Space L3
+ShowArea = true
+MapPosition=0,21,9
+BattleBack=egypttemple
+SnapEdges = true
+#-------------------------------
+[241]
+# Heart of Space
+ShowArea = true
+MapPosition=0,21,9
+BattleBack=egypttemple
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# THE IN-BETWEEN
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[207]
+# The In-Between
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=inbetween
+Weather = Ash,100
+MapPosition=1,16,12
+SnapEdges = true
+#-------------------------------
+[208]
+# The In-Between
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=inbetween
+Weather = Ash,100
+MapPosition=1,15,12
+SnapEdges = true
+#-------------------------------
+[209]
+# The In-Between
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=inbetween
+Weather = Ash,100
+MapPosition=1,14,12
+SnapEdges = true
+#-------------------------------
+[215]
+# The In-Between
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=inbetween
+Weather = Ash,100
+MapPosition=1,14,11
+SnapEdges = true
+#-------------------------------
+[374]
+# CUTSCENE: The In-Between
+Outdoor = true
+Bicycle = true
+BattleBack=inbetween
+Weather = Ash,100
+MapPosition=1,16,12
+SnapEdges = true
+#-------------------------------
+[375]
+# CUTSCENE: The In-Between
+Outdoor = true
+Bicycle = true
+BattleBack=inbetween
+Weather = Ash,100
+MapPosition=1,14,11
+SnapEdges = true
+#-------------------------------
+[216]
+# Antimatter Temple L1
+ShowArea = true
+BattleBack=antimattertemple
+MapPosition=1,14,10
+SnapEdges = true
+#-------------------------------
+[217]
+# Antimatter Temple L2
+ShowArea = true
+BattleBack=antimattertemple
+MapPosition=1,14,10
+SnapEdges = true
+#-------------------------------
+[218]
+# Antimatter Temple L3
+ShowArea = true
+BattleBack=antimattertemple
+MapPosition=1,14,10
+SnapEdges = true
+#-------------------------------
+[376]
+# Ezreal's Prison
+ShowArea = true
+BattleBack=antimattertemple
+MapPosition=1,14,10
+SnapEdges = true
+#-------------------------------
+[219]
+# Antimatter Temple L4
+ShowArea = true
+BattleBack=antimattertemple
+MapPosition=1,14,10
+SnapEdges = true
+#-------------------------------
+[220]
+# Antimatter Temple L5
+ShowArea = true
+BattleBack=giratina
+MapPosition=1,14,10
+SnapEdges = true
+#-------------------------------
+[357]
+# Eridanus Settlement
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=inbetween
+Weather = Ash,100
+MapPosition=1,26,8
+SnapEdges = true
+#-------------------------------
+[358]
+# Eridanus Settlement
+MapPosition=1,26,8
+BattleBack=slumindoor
+SnapEdges = true
+#-------------------------------
+[359]
+# Ezreal's Tent
+MapPosition=1,26,8
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+# BACK TO THE ORION REGION
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[380]
+# EC Lab - Cutscene
+MapPosition=0,11,7
+SnapEdges = true
+#-------------------------------
+[328]
+# Mt. Titania
+Bicycle = true
+MapPosition=0,2,9
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+DiveMap = 329
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[329]
+# Mt. Titania Underwater
+BattleBack=underwater
+MapPosition=0,2,9
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[332]
+# Underwater Temple Dive Map Placeholder
+Bicycle = true
+MapPosition=0,2,9
+BattleBack=beach
+Outdoor = true
+DiveMap = 325
+SnapEdges = true
+#-------------------------------
+[325]
+# Underwater Temple L1
+BattleBack=underwatertomb
+MapPosition=0,2,9
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[333]
+# Underwater Temple Dive Map Placeholder
+Bicycle = true
+MapPosition=0,2,9
+BattleBack=beach
+Outdoor = true
+DiveMap = 326
+SnapEdges = true
+#-------------------------------
+[326]
+# Underwater Temple L2
+BattleBack=underwatertomb
+MapPosition=0,2,9
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[334]
+# Underwater Temple Dive Map Placeholder
+Bicycle = true
+MapPosition=0,2,9
+BattleBack=beach
+Outdoor = true
+DiveMap = 327
+SnapEdges = true
+#-------------------------------
+[327]
+# Underwater Temple L3
+BattleBack=underwatertomb
+MapPosition=0,2,9
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[378]
+# Underwater Temple Dive Map Placeholder
+Bicycle = true
+MapPosition=0,2,9
+BattleBack=beach
+Outdoor = true
+DiveMap = 377
+SnapEdges = true
+#-------------------------------
+[377]
+# Underwater Throne Room
+BattleBack=underwatertomb
+MapPosition=0,2,9
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[330]
+# Lyra Glacier
+Bicycle = true
+MapPosition=0,3,8
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+DiveMap = 331
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[331]
+# Lyra Glacier Underwater
+BattleBack=underwater
+MapPosition=0,3,8
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[200]
+# Lyra Glacier
+Bicycle = true
+MapPosition=0,3,8
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[295]
+# Lyra-R11A Gatehouse
+MapPosition=0,5,7
+SnapEdges = true
+#-------------------------------
+[382]
+# Underwater Base - Cutscene
+MapPosition=0,14,5
+SnapEdges = true
+#-------------------------------
+[383]
+# Route 14A - Cutscene
+MapPosition=0,11,5
+Weather = Interplanar,100
+Outdoor = true
+SnapEdges = true
+#-------------------------------
+[384]
+# Route 13B - Cutscene
+MapPosition=0,11,5
+Weather = Interplanar,100
+Outdoor = true
+SnapEdges = true
+#-------------------------------
+[197]
+# Route 11A
+Bicycle = true
+MapPosition=0,5,7
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[198]
+# Charon Ice Tunnels - Part 1
+Bicycle=true
+MapPosition=0,6,7
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[285]
+# Charon Ice Tunnels - Nooks
+Bicycle=true
+MapPosition=0,6,7
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[284]
+# Route 11B
+Bicycle = true
+MapPosition=0,7,7
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[201]
+# Charon Ice Tunnels - Part 2
+Bicycle=true
+MapPosition=0,7,6
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[286]
+# Charon Ice Tunnels - Nooks
+Bicycle=true
+MapPosition=0,7,6
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[287]
+# Route 12A
+Bicycle = true
+MapPosition=0,7,5
+BattleBack=snowforest
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[288]
+# R12A-R12B Gatehouse
+MapPosition=0,7,5
+SnapEdges = true
+#-------------------------------
+[289]
+# Route 12B
+Bicycle = true
+MapPosition=0,7,4
+BattleBack=snowforest
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[290]
+# Charon Ice Tunnels - Part 3
+Bicycle=true
+MapPosition=0,7,3
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[291]
+# Charon Ice Tunnels - Nooks
+Bicycle=true
+MapPosition=0,7,3
+BattleBack=cave4
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[228]
+# Ursa Village
+Bicycle = true
+MapPosition=0,8,3
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[257]
+# Ursa PokéCenter
+MapPosition=0,8,3
+HealingSpot=228,10,35
+SnapEdges = true
+#-------------------------------
+[258]
+# Ursa PokéCenter
+MapPosition=0,8,3
+SnapEdges = true
+#-------------------------------
+[259]
+# Ursa Poke Mart
+MapPosition=0,8,3
+SnapEdges = true
+#-------------------------------
+[229]
+# Ursa Village
+MapPosition=0,8,3
+SnapEdges = true
+#-------------------------------
+[260]
+# Ursa-R13A Gatehouse
+MapPosition=0,9,3
+SnapEdges = true
+#-------------------------------
+[196]
+# Route 13A - Corrupted
+Bicycle = true
+MapPosition=0,9,4
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Interplanar,100
+SnapEdges = true
+#-------------------------------
+[385]
+# Route 13A - Clean
+Bicycle = true
+MapPosition=0,9,4
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[261]
+# R13A-R13B Gatehouse
+MapPosition=0,9,5
+SnapEdges = true
+#-------------------------------
+[199]
+# Route 13B - Corrupted
+Bicycle = true
+MapPosition=0,10,5
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Interplanar,100
+SnapEdges = true
+#-------------------------------
+[386]
+# Route 13B - Clean
+Bicycle = true
+MapPosition=0,10,5
+BattleBack=snow
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+SnapEdges = true
+#-------------------------------
+[230]
+# R13B-R14A Cable Car
+MapPosition=0,10,5
+SnapEdges = true
+#-------------------------------
+[231]
+# Route 14A
+Bicycle = true
+MapPosition=0,11,5
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[048]
+# Vela Town
+Bicycle = true
+MapPosition=0,11,4
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[089]
+# Vela PokéCenter
+MapPosition=0,11,4
+HealingSpot=48,38,33
+SnapEdges = true
+#-------------------------------
+[090]
+# Vela PokéCenter
+MapPosition=0,11,4
+SnapEdges = true
+#-------------------------------
+[088]
+# Vela Poke Mart
+MapPosition=0,11,4
+SnapEdges = true
+#-------------------------------
+[087]
+# Vela Town
+MapPosition=0,11,4
+SnapEdges = true
+#-------------------------------
+[390]
+# R14A-Callisto Lake GH
+MapPosition=0,12,5
+SnapEdges = true
+#-------------------------------
+[419]
+# R14A-R15A GH
+MapPosition=0,11,5
+SnapEdges = true
+#-------------------------------
+[234]
+# Callisto Lake
+Bicycle = true
+MapPosition=0,14,5
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+DiveMap = 237
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[237]
+# Callisto Lake Underwater
+BattleBack=underwater
+MapPosition=0,14,5
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[370]
+# Callisto Caverns Dive Map Placeholder
+Bicycle = true
+MapPosition=0,14,5
+BattleBack=autumn
+Outdoor = true
+DiveMap = 371
+SnapEdges = true
+#-------------------------------
+[371]
+# Callisto Caverns
+BattleBack=underwater
+MapPosition=0,14,5
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[394]
+# Draco City Cutscene
+Outdoor = false # To ensure lighting is appropriate for cut scene.
+Weather = Interplanar,100
+SnapEdges = true
+#-------------------------------
+[373]
+# Underwater Base
+MapPosition=0,14,5
+BattleBack=submarine
+DiveMap = 372
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[372]
+# Underwater Base
+BattleBack=underwater
+MapPosition=0,14,5
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[345]
+# Crew Quarters
+MapPosition=0,14,5
+BattleBack=crewquarters
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[344]
+# Control Bridge
+MapPosition=0,14,5
+BattleBack=submarine
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[346]
+# Engine Room
+MapPosition=0,14,5
+BattleBack=engineroom
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[362]
+# Facility Lab
+MapPosition=0,14,5
+BattleBack=submarine
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[398]
+# Draco City Cutscene 2
+Outdoor = false # To ensure lighting is appropriate for cut scene.
+Weather = Interplanar,100
+SnapEdges = true
+#-------------------------------
+[395]
+# Epoch Corporation HQ
+MapPosition=0,13,8
+BattleBack=sciencelab
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[396]
+# Epoch Corporation HQ
+MapPosition=0,13,8
+BattleBack=sciencelab
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[397]
+# Epoch Corporation HQ
+MapPosition=0,13,8
+BattleBack=sciencelab
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[235]
+# Route 14B
+Bicycle = true
+MapPosition=0,14,4
+BattleBack=autumn
+Weather = Leaves,100
+Outdoor = true
+DiveMap = 238
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[238]
+# Route 14B Underwater
+BattleBack=underwater
+MapPosition=0,14,4
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[368]
+# Route 14B Dive Map Placeholder
+Bicycle = true
+MapPosition=0,15,4
+BattleBack=autumn
+Outdoor = true
+DiveMap = 369
+SnapEdges = true
+#-------------------------------
+[369]
+# Callisto Caverns
+BattleBack=underwater
+MapPosition=0,15,4
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[392]
+# Callisto Lake-R14B GH
+MapPosition=0,14,4
+SnapEdges = true
+#-------------------------------
+[393]
+# R14B-Draco City GH
+MapPosition=0,15,4
+SnapEdges = true
+#-------------------------------
+[387]
+# Draco City Attack
+Outdoor = true
+Weather = Interplanar,100
+MapPosition=0,16,4 # First iteration of Draco City so you can't fly here using Drifblimp pilot yet.
+BattleBack=cityattack
+WildBattleBGM = Wild Battle - Ominous # Because the normal wild track is too happy sounding for this area.
+Bicycle = true
+SnapEdges = true
+#-------------------------------
+[415]
+# Draco City-R16A GH
+MapPosition=0,18,4
+SnapEdges = true
+#-------------------------------
+[403]
+# Route 16A
+Outdoor = true
+MapPosition=0,18,4
+Weather = FogLeaf,100
+BattleBack=hotsprings
+Bicycle = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[416]
+# R16A-R16B Gatehouse
+MapPosition=0,18,4
+SnapEdges = true
+#-------------------------------
+[404]
+# Route 16B
+Outdoor = true
+MapPosition=0,19,4
+Weather = FogLeafG,100
+BattleBack=fogforest
+Bicycle = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[417]
+# R16B-Ara City GH
+MapPosition=0,19,4
+SnapEdges = true
+#-------------------------------
+[363]
+# Ara City
+Outdoor = true
+MapPosition=0,20,4
+Bicycle = true
+BattleBack=aracity
+Weather = FogLeafG,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[364]
+# Ara PokéCenter
+MapPosition=0,20,4
+HealingSpot=363,37,47
+SnapEdges = true
+#-------------------------------
+[365]
+# Ara PokéCenter
+MapPosition=0,20,4
+SnapEdges = true
+#-------------------------------
+[366]
+# Ara Poke Mart
+MapPosition=0,20,4
+SnapEdges = true
+#-------------------------------
+[367]
+# Ara City
+MapPosition=0,20,4
+SnapEdges = true
+#-------------------------------
+[027]
+# Ara Art Gallery
+MapPosition=0,20,4
+BattleBack=artgallery
+SnapEdges = true
+#-------------------------------
+[414]
+# Ara City-R17A GH
+MapPosition=0,20,3
+SnapEdges = true
+#-------------------------------
+[405]
+# Route 17A
+Outdoor = true
+MapPosition=0,20,3
+Weather = FogLeafG,100
+BattleBack=arceusruins
+Bicycle = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[408]
+# Ruins of Creation
+ShowArea = true
+BattleBack=stonetemple
+MapPosition=0,20,3
+SnapEdges = true
+#-------------------------------
+[406]
+# Route 17B
+Outdoor = true
+MapPosition=0,20,2
+Weather = FogLeafG,100
+BattleBack=arceusruins
+Bicycle = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[413]
+# Ruins of Creation
+ShowArea = true
+BattleBack=stonetemple
+MapPosition=0,20,2
+SnapEdges = true
+#-------------------------------
+[409]
+# Temple of Creation L1
+ShowArea = true
+BattleBack=arceustemple
+MapPosition=0,20,1
+SnapEdges = true
+#-------------------------------
+[410]
+# Temple of Creation L2 - Altar of Time
+ShowArea = true
+BattleBack=arceustemple
+MapPosition=0,20,1
+SnapEdges = true
+#-------------------------------
+[411]
+# Temple of Creation L3 - Altar of Space
+ShowArea = true
+BattleBack=arceustemple
+MapPosition=0,20,1
+SnapEdges = true
+#-------------------------------
+[407]
+# Altar of Creation
+ShowArea = true
+BattleBack=arceustemple
+MapPosition=0,20,1
+SnapEdges = true
+#-------------------------------
+[423]
+# CUTSCENE: Deimos Caves
+Outdoor = false
+Bicycle = true
+MapPosition=0,26,4
+SnapEdges = true
+#-------------------------------
+[210]
+# Arceus' Realm
+Outdoor = false
+Bicycle = false
+MapPosition=1,11,16
+SnapEdges = true
+#-------------------------------
+[182]
+# Altar of Creation
+ShowArea = true
+BattleBack=arceustemple
+MapPosition=0,20,1
+SnapEdges = true
+#-------------------------------
+[435]
+# The Time Matrix Cutscene
+Outdoor=true
+ShowArea=true
+BattleBack=timematrix
+MapPosition=1,5,5
+SnapEdges = true
+#-------------------------------
+[232]
+# Draco City
+Outdoor = true
+MapPosition=0,17,4
+Weather = Leaves,100
+BattleBack=hotsprings
+Bicycle = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[262]
+# Draco PokéCenter
+MapPosition=0,17,4
+HealingSpot=232,73,48
+SnapEdges = true
+#-------------------------------
+[263]
+# Draco PokéCenter
+MapPosition=0,17,4
+SnapEdges = true
+#-------------------------------
+[264]
+# Draco Poke Mart
+MapPosition=0,17,4
+SnapEdges = true
+#-------------------------------
+[233]
+# Draco City
+MapPosition=0,17,4
+SnapEdges = true
+#-------------------------------
+[347]
+# Draco Museum
+MapPosition=0,17,4
+SnapEdges = true
+#-------------------------------
+[424]
+# The Time Matrix - Home Base
+Outdoor=false
+ShowArea=true
+BattleBack=timematrix
+MapPosition=1,6,4
+SnapEdges = true
+#-------------------------------
+[439]
+# Spire of Antimatter
+Outdoor=true
+ShowArea=true
+BattleBack=timematrix2
+MapPosition=1,5,6
+SnapEdges = true
+#-------------------------------
+[437]
+# Spire of Time
+Outdoor=true
+ShowArea=true
+BattleBack=timematrix2
+MapPosition=1,4,4
+SnapEdges = true
+#-------------------------------
+[294]
+# Draco City Museum Cutscene
+Outdoor=false
+ShowArea = false
+MapPosition=0,17,4
+SnapEdges = true
+#-------------------------------
+[436]
+# Spire of Space Cutscene
+Outdoor=true
+ShowArea=true
+BattleBack=timematrix2
+MapPosition=1,7,3
+SnapEdges = true
+#-------------------------------
+[438]
+# Spire of Space
+Outdoor=true
+ShowArea=true
+BattleBack=timematrix2
+MapPosition=1,7,3
+SnapEdges = true
+#-------------------------------
+[433]
+# Remnants of the Origin
+Outdoor=true
+ShowArea=true
+BattleBack=origin
+MapPosition=1,7,8
+SnapEdges = true
+#-------------------------------
+[292]
+# Antimatter Temple Cutscene
+Outdoor=false
+ShowArea = false
+BattleBack=giratina
+MapPosition=1,14,10
+SnapEdges = true
+#-------------------------------
+[293]
+# Time Warden's Challenge
+Outdoor=false
+ShowArea = false
+BattleBack=trialoftw
+MapPosition=1,3,15
+SnapEdges = true
+#-------------------------------
+[391]
+# Trial of the Time Warden
+Outdoor=false
+ShowArea = false
+MapPosition=1,2,14
+BattleBack=trialoftw
+SnapEdges = true
+#-------------------------------
+[389]
+# Trial of the Time Warden Arena
+Outdoor=false
+ShowArea = false
+MapPosition=1,2,14
+BattleBack=trialoftw
+SnapEdges = true
+#-------------------------------
+[402]
+# Time Warden's Legacy
+Outdoor=false
+ShowArea = false
+MapPosition=1,4,14
+BattleBack=trialoftw
+SnapEdges = true
+#-------------------------------
+[399]
+# Hall of Memories
+Outdoor=false
+ShowArea = false
+MapPosition=1,4,14
+BattleBack=trialoftw
+SnapEdges = true
+#-------------------------------
+[400]
+# Battle Memory
+Outdoor=false
+ShowArea = false
+MapPosition=1,4,14
+BattleBack=trialoftw
+SnapEdges = true
+#-------------------------------
+[401]
+# Memory's Reprieve
+Outdoor=false
+ShowArea = false
+MapPosition=1,4,14
+BattleBack=trialoftw
+SnapEdges = true
+#-------------------------------
+[441]
+# Time Warden's Armory
+Outdoor=false
+ShowArea = false
+BattleBack=trialoftw
+MapPosition=1,3,15
+SnapEdges = true
+#-------------------------------
+[455]
+# Time Warden's Gauntlet
+Outdoor=false
+ShowArea = false
+MapPosition=1,2,14
+BattleBack=trialoftw
+SnapEdges = true
+Flags = DisableBoxLink
+#-------------------------------
+[440]
+# Draco Museum New
+MapPosition=0,17,4
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+### POST GAME MAPS
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[468]
+# Eridanus Settlement Cutscene
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=inbetween
+Weather = Ash,100
+MapPosition=1,26,8 # Fix this
+SnapEdges = true
+#-------------------------------
+[360]
+# Shadowmoon Forest
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=shadowmoonforest
+Weather = FogAsh,100
+MapPosition=1,25,8
+SnapEdges = true
+#-------------------------------
+[361]
+# Shadowmoon Marsh
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=shadowmoonmarsh
+Weather = FogRain,100
+MapPosition=1,24,8
+SnapEdges = true
+#-------------------------------
+[479]
+# Witch's Hut
+MapPosition=1,24,8
+SnapEdges = true
+#-------------------------------
+[480]
+# Adria's Hut Cutscene
+MapPosition=1,24,8
+SnapEdges = true
+#-------------------------------
+[442]
+# Eridanus Tunnels L1
+Bicycle=true
+MapPosition=1,24,7
+BattleBack=cave6
+Environment = Cave
+DarkMap = true
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[456]
+# Eridanus Tunnels L2
+Bicycle=true
+MapPosition=1,24,7
+BattleBack=cave6
+Environment = Cave
+DarkMap = true
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[457]
+# Eridanus Tunnels L3
+Bicycle=true
+MapPosition=1,24,7
+BattleBack=cave6
+Environment = Cave
+DarkMap = true
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[458]
+# Eridanus Tunnels L4
+Bicycle=true
+MapPosition=1,24,7
+BattleBack=cave6
+Environment = Cave
+DarkMap = true
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[454]
+# Eridanus Tunnels L5
+Bicycle=true
+MapPosition=1,24,7
+BattleBack=cave6
+Environment = Cave
+DarkMap = true
+DiveMap = 459
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[481]
+# Secret Chamber
+Bicycle=true
+MapPosition=1,24,7
+BattleBack=cave6
+Environment = Cave
+DarkMap = true
+SnapEdges = true
+#-------------------------------
+[459]
+# Eridanus Trench
+BattleBack=dirtyunderwater
+MapPosition=1,23,7
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[461]
+# Libram Tunnel
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcave2
+MapPosition=1,22,7
+DiveMap = 460
+DarkMap = true
+SnapEdges = true
+#-------------------------------
+[460]
+# Eridanus Trench
+BattleBack=dirtyunderwater
+MapPosition=1,22,7
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[450]
+# Libram Passageway
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcave2
+MapPosition=1,22,6
+SnapEdges = true
+#-------------------------------
+[060]
+# CUTSCENE: Science District
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcity
+Weather = BlueFog,100
+MapPosition=1,22,4
+SnapEdges = true
+#-------------------------------
+[019]
+# CUTSCENE: Libram City Hall
+MapPosition=1,23,3
+SnapEdges = true
+#-------------------------------
+[020]
+# Science District Attack
+Outdoor = false
+MapPosition=1,22,4
+BattleBack=sciencedistrict
+WildBattleBGM = Wild Battle - Ominous # Because the normal wild track is too happy sounding for this area.
+Bicycle = true
+SnapEdges = true
+#-------------------------------
+[466]
+# Libram Dungeons L3
+ShowArea = true
+BattleBack=stonedungeon
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[465]
+# Libram Dungeons L2
+ShowArea = true
+BattleBack=stonedungeon
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[464]
+# Libram Dungeons L1
+ShowArea = true
+BattleBack=stonedungeon
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[497]
+# Libram Dungeons Foyer
+ShowArea = true
+BattleBack=stonedungeon
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[462]
+# Market District
+Outdoor = true # This has different time of day encounters but overworld tinting is disabled
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcity
+Weather = FogAsh,100
+MapPosition=1,24,5
+SnapEdges = true
+#-------------------------------
+[472]
+# Market District Indoor
+BattleBack=slumindoor
+MapPosition=1,24,5
+SnapEdges = true
+#-------------------------------
+[496]
+# Lux Pub
+BattleBack=slumindoor
+MapPosition=1,24,5
+SnapEdges = true
+#-------------------------------
+[532]
+# CUTSCENE: Shadowmoon Marsh
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=shadowmoonmarsh
+Weather = FogRain,100
+MapPosition=1,24,8
+SnapEdges = true
+#-------------------------------
+[451]
+# Mining District
+Outdoor = true # Overworld tinting disabled to enable easy camping
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcity
+Weather = BlueFog,100
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[494]
+# Mining District Indoor
+Outdoor = false
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[492]
+# Mine Elevator
+Outdoor = false
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[058]
+# Mine Elevator - Cutscene
+Outdoor = false
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[059]
+# CUTSCENE: Mining District
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcity
+Weather = BlueFog,100
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[489]
+# Aether Mine L1
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=aethermine
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[490]
+# Aether Mine L2
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=aethermine
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[491]
+# Aether Mine L3
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=aethermine
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[057]
+# Aether Mine Centre
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=aethermine
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[475]
+# Mining District PokéCenter
+MapPosition=1,23,5
+HealingSpot=451,17,33
+SnapEdges = true
+#-------------------------------
+[476]
+# Mining District PokéCenter
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[029]
+# Mining District Poke Mart
+MapPosition=1,23,5
+SnapEdges = true
+#-------------------------------
+[452]
+# Science District
+Outdoor = true # Overworld tinting disabled to enable easy camping
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcity
+Weather = BlueFog,100
+MapPosition=1,22,5
+SnapEdges = true
+#-------------------------------
+[493]
+# Science District Indoor
+Outdoor = false
+MapPosition=1,22,5
+SnapEdges = true
+#-------------------------------
+[536]
+# Ezreal's Capture Cutscene
+Outdoor=false
+ShowArea = false
+BattleBack=giratina
+MapPosition=1,14,10
+SnapEdges = true
+#-------------------------------
+[483]
+# Power Plant L1
+MapPosition=1,22,5
+BattleBack=powerplant
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[484]
+# Power Plant L2
+MapPosition=1,22,5
+BattleBack=powerplant
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[485]
+# Power Plant L3
+MapPosition=1,22,5
+BattleBack=powerplant
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[486]
+# Power Plant L4
+MapPosition=1,22,5
+BattleBack=powerplant
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[487]
+# Power Plant L5
+MapPosition=1,22,5
+BattleBack=powerplant
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[469]
+# The Arboretum
+Outdoor = true # This has different time of day encounters but overworld tinting is disabled
+Bicycle = true
+ShowArea = true
+BattleBack=arboretum
+Weather = SakuraFog,100
+MapPosition=1,22,3
+SnapEdges = true
+#-------------------------------
+[482]
+# The Orchidarium
+Outdoor = true # This has different time of day encounters but overworld tinting is disabled
+Bicycle = true
+ShowArea = true
+BattleBack=arboretum # Arboretum for wild grass outside the greenhouse while BattleBack=orchidarium is scripted for trainer battles inside the greenhouse
+Weather = SakuraFog,100
+MapPosition=1,22,3
+SnapEdges = true
+#-------------------------------
+[463]
+# Arcane District
+Outdoor = true # Overworld tinting disabled to enable easy camping
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcity
+Weather = BlueFog,100
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[495]
+# Arcane District Indoor
+Outdoor = false
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[061]
+# Revolution Safehouse
+Outdoor = false
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[473]
+# Arcane District PokéCenter
+MapPosition=1,24,4
+HealingSpot=463,25,31 # Fix this
+SnapEdges = true
+#-------------------------------
+[474]
+# Arcane District PokéCenter
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[063]
+# Arcane District Poke Mart
+MapPosition=1,24,4
+SnapEdges = true
+#-------------------------------
+[540]
+# Guulrahn Wastes 1 - Cutscene
+Outdoor = true
+MapPosition=1,19,2
+Bicycle = true
+BattleBack=greydesert
+Weather = Ashstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[470]
+# Civil District
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=cyberpark
+Weather = BlueFog,100
+MapPosition=1,24,3
+SnapEdges = true
+#-------------------------------
+[477]
+# Civil District PokéCenter
+MapPosition=1,24,3
+HealingSpot=470,17,42
+SnapEdges = true
+#-------------------------------
+[478]
+# Civil District PokéCenter
+MapPosition=1,24,3
+SnapEdges = true
+#-------------------------------
+[062]
+# Civil District Poke Mart
+MapPosition=1,24,3
+SnapEdges = true
+#-------------------------------
+[488]
+# Libram City Hall
+MapPosition=1,24,3
+BattleBack=indoor3
+SnapEdges = true
+#-------------------------------
+[520]
+# The Grand Pylon
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcave2
+MapPosition=1,22,7
+DiveMap = 460
+SnapEdges = true
+#-------------------------------
+[533]
+# Revolution Lab
+MapPosition=1,24,4
+BattleBack=sciencelab
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[453]
+# Libram Port
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=temporaldocks
+Weather = BlueFog,100
+DiveMap = 069
+MapPosition=1,23,4
+SnapEdges = true
+#-------------------------------
+[069]
+# Libram Trench
+BattleBack=dirtyunderwater
+MapPosition=1,21,4
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[071]
+# Guulrahn Cavern
+Outdoor = false
+Bicycle = true
+ShowArea = true
+BattleBack=temporalcave2
+MapPosition=1,20,4
+DiveMap = 070
+DarkMap = true
+SnapEdges = true
+#-------------------------------
+[070]
+# Guulrahn Trench
+BattleBack=dirtyunderwater
+MapPosition=1,20,4
+Weather = Waves,100
+SnapEdges = true
+#-------------------------------
+[072]
+# Guulrahn Badlands
+Outdoor = true
+MapPosition=1,19,4
+Bicycle = true
+BattleBack=greydesert
+Weather = Ashstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[064]
+# Bootes Encampment
+Outdoor = true
+MapPosition=1,19,3
+Bicycle = true
+BattleBack=abandonedtown
+Weather = Ashstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[065]
+# Bootes PokéCenter
+MapPosition=1,19,3
+HealingSpot=538,17,37
+SnapEdges = true
+#-------------------------------
+[066]
+# Bootes PokéCenter
+MapPosition=1,19,3
+SnapEdges = true
+#-------------------------------
+[067]
+# Bootes Poke Mart
+MapPosition=1,19,3
+SnapEdges = true
+#-------------------------------
+[068]
+# Bootes Encampment Indoor
+BattleBack=slumindoor
+MapPosition=1,19,3
+SnapEdges = true
+#-------------------------------
+[537]
+# Emil's Workshop
+BattleBack=slumindoor
+MapPosition=1,19,3
+SnapEdges = true
+#-------------------------------
+[538]
+# Bootes Encampment (Waypoint Activated)
+Outdoor = true
+MapPosition=1,19,3
+Bicycle = true
+BattleBack=abandonedtown
+Weather = Ashstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[074]
+# Guulrahn Wastes 1
+Outdoor = true
+MapPosition=1,19,2
+Bicycle = true
+BattleBack=greydesert
+Weather = Ashstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[073]
+# Nesting Grounds
+Outdoor = false
+Bicycle=true
+MapPosition=1,19,2
+BattleBack=bugnest
+Weather = Sulfur,100
+ShowArea=true
+SnapEdges = true
+DarkMap = true
+#-------------------------------
+[075]
+# Guulrahn Wastes 2
+Outdoor = true
+MapPosition=1,18,2
+Bicycle = true
+BattleBack=greydesert
+Weather = Ashstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[017]
+# Spawning Pool
+Outdoor = false
+Bicycle=true
+MapPosition=1,18,2
+BattleBack=bugnest
+Weather = Sulfur,100
+ShowArea=true
+SnapEdges = true
+DarkMap = true
+#-------------------------------
+[139]
+# The Hive L1
+Outdoor = false
+Bicycle=true
+MapPosition=1,18,2
+BattleBack=bugnest
+Weather = Sulfur,100
+ShowArea=true
+SnapEdges = true
+DarkMap = true
+#-------------------------------
+[512]
+# The Hive L2
+Outdoor = false
+Bicycle=true
+MapPosition=1,18,2
+BattleBack=bugnest
+Weather = Sulfur,100
+ShowArea=true
+SnapEdges = true
+DarkMap = true
+#-------------------------------
+[513]
+# The Hive L3
+Outdoor = false
+Bicycle=true
+MapPosition=1,18,2
+BattleBack=bugnest
+Weather = Sulfur,100
+ShowArea=true
+SnapEdges = true
+DarkMap = true
+#-------------------------------
+[517]
+# The Hatchery
+Outdoor = false
+Bicycle=true
+MapPosition=1,18,2
+BattleBack=bugnest
+Weather = Sulfur,100
+ShowArea=true
+SnapEdges = true
+DarkMap = true
+#-------------------------------
+[242]
+# Lupus Refuge
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=mistybog
+Weather = FogRain,100
+MapPosition=1,27,17
+SnapEdges = true
+#-------------------------------
+[141]
+# Lupus PokéCenter
+MapPosition=1,27,17
+HealingSpot=242,37,43
+SnapEdges = true
+#-------------------------------
+[518]
+# Lupus PokéCenter
+MapPosition=1,27,17
+SnapEdges = true
+#-------------------------------
+[519]
+# Lupus Poke Mart
+MapPosition=1,27,17
+SnapEdges = true
+#-------------------------------
+[523]
+# Lupus Refuge Indoors
+MapPosition=1,27,17
+SnapEdges = true
+#-------------------------------
+[522]
+# Swamp of Sorrows
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=shadowmoonmarsh
+Weather = FogRain,100
+MapPosition=1,27,16
+SnapEdges = true
+#-------------------------------
+[525]
+# The Overgrowth
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=shadowmoonforest
+Weather = FogRain,100
+MapPosition=1,27,16
+SnapEdges = true
+#-------------------------------
+[524]
+# Felfire Canyon
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=purplecanyon
+Weather = FogAsh,100
+MapPosition=1,26,16
+SnapEdges = true
+#-------------------------------
+[526]
+# Deadwind Pass
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=purplecanyon
+Weather = FogAsh,100
+MapPosition=1,26,16
+SnapEdges = true
+#-------------------------------
+[521]
+# Leviathan's Maw
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=darkjungle
+Weather = FogRain,100
+MapPosition=1,26,15
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[501]
+# Draco Falls
+Outdoor = true
+MapPosition=0,17,5
+Weather = FogLeaf,100
+BattleBack=hotsprings
+Bicycle = true
+DiveMap = 502
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[502]
+# Draco Trench
+BattleBack=underwater
+MapPosition=0,17,5
+SnapEdges = true
+#-------------------------------
+[503]
+# Flooded Base
+MapPosition=0,17,5
+BattleBack=submarine
+DiveMap = 511
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[511]
+# Flooded Base
+BattleBack=underwater
+MapPosition=0,17,5
+SnapEdges = true
+#-------------------------------
+[504]
+# Flooded Base
+MapPosition=0,17,5
+BattleBack=crewquarters
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[509]
+# Flooded Base
+MapPosition=0,17,5
+BattleBack=crewquarters
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[510]
+# ECHQ Wreckage
+MapPosition=0,13,8
+BattleBack=sciencelab
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[515]
+# Ara City-R18A GH
+MapPosition=0,21,4
+SnapEdges = true
+#-------------------------------
+[425]
+# Route 18A
+Outdoor = true
+MapPosition=0,21,4
+Weather = FogLeaf,100
+BattleBack=autumn
+Bicycle = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[516]
+# R18A-R18B GH
+MapPosition=0,22,4
+SnapEdges = true
+#-------------------------------
+[426]
+# Route 18B
+Outdoor = true
+MapPosition=0,22,4
+Weather = FogLeaf,100
+BattleBack=autumn
+Bicycle = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[514]
+# R18B-R19 GH
+MapPosition=0,22,3
+SnapEdges = true
+#-------------------------------
+[412]
+# Route 19
+Outdoor = true
+MapPosition=0,22,3
+Bicycle = true
+BattleBack=field
+Weather = LeavesG,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[350]
+# Norma Town
+Outdoor = true
+MapPosition=0,22,2
+Bicycle = true
+BattleBack=beach
+Weather = LeavesG,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[356]
+# R19-Norma Gatehouse
+MapPosition=0,22,2
+SnapEdges = true
+#-------------------------------
+[351]
+# Norma PokéCenter
+MapPosition=0,22,2
+HealingSpot=350,30,51
+#-------------------------------
+[352]
+# Norma PokéCenter
+MapPosition=0,22,2
+#-------------------------------
+[353]
+# Norma Poke Mart
+MapPosition=0,22,2
+SnapEdges = true
+#-------------------------------
+[354]
+# Norma Casino
+MapPosition=0,22,2
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[355]
+# Norma Town
+MapPosition=0,22,2
+#-------------------------------
+[421]
+# Retirement Home
+MapPosition=0,22,2
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[193]
+# Aquila City
+Outdoor = true
+MapPosition=0,24,8
+Bicycle = true
+BattleBack=reddesertlake
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[335]
+# R10B-Aquila Gatehouse
+MapPosition=0,24,8
+SnapEdges = true
+#-------------------------------
+[254]
+# Aquila PokéCenter
+MapPosition=0,24,8
+HealingSpot=193,71,14
+SnapEdges = true
+#-------------------------------
+[255]
+# Aquila PokéCenter
+MapPosition=0,24,8
+SnapEdges = true
+#-------------------------------
+[256]
+# Aquila Poke Mart
+MapPosition=0,24,8
+SnapEdges = true
+#-------------------------------
+[222]
+# Aquila City
+MapPosition=0,24,8
+SnapEdges = true
+#-------------------------------
+[274]
+# Route 23A
+Outdoor = true
+MapPosition=0,25,8
+Bicycle = true
+BattleBack=reddesert
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[275]
+# Route 23B
+Outdoor = true
+MapPosition=0,25,7
+Bicycle = true
+BattleBack=reddesert
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[276]
+# Route 23C
+Outdoor = true
+MapPosition=0,25,6
+Bicycle = true
+BattleBack=reddesert
+Weather = Sandstorm,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[051]
+# Deimos Caves L0
+Outdoor = false
+Bicycle=true
+MapPosition=0,26,4
+BattleBack=cave7
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[052]
+# Deimos Caves L1
+Outdoor = false
+Bicycle=true
+MapPosition=0,26,4
+BattleBack=cave7
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[053]
+# Deimos Caves L2
+Outdoor = false
+Bicycle=true
+MapPosition=0,26,4
+BattleBack=cave7
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[054]
+# Deimos Caves L3
+Outdoor = false
+Bicycle=true
+MapPosition=0,26,4
+BattleBack=cave7
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[499]
+# Deimos Caves L4
+Outdoor = false
+Bicycle=true
+MapPosition=0,26,4
+BattleBack=cave7
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[498]
+# Deimos Caves L5
+Outdoor = false
+Bicycle=true
+MapPosition=0,26,4
+BattleBack=cave7
+Environment = Cave
+ShowArea=true
+SnapEdges = true
+#-------------------------------
+[278]
+# Corvus Town
+Outdoor = true
+MapPosition=0,26,5
+Bicycle = true
+BattleBack=corvustown
+Weather = FogAsh,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[279]
+# Corvus PokéCenter
+MapPosition=0,26,5
+HealingSpot=278,46,27
+SnapEdges = true
+#-------------------------------
+[280]
+# Corvus PokéCenter
+MapPosition=0,26,5
+SnapEdges = true
+#-------------------------------
+[281]
+# Corvus Poke Mart
+MapPosition=0,26,5
+SnapEdges = true
+#-------------------------------
+[282]
+# Corvus Town
+MapPosition=0,26,5
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[428]
+# Route 20A
+Outdoor = true
+MapPosition=0,23,2
+Bicycle = true
+BattleBack=beach
+Weather = HeavyRainCopy,100
+DiveMap = 013
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[013]
+# Route 20A Underwater
+BattleBack=underwater
+Weather = Waves,100
+MapPosition=0,23,2
+SnapEdges = true
+#-------------------------------
+[429]
+# Route 20B
+Outdoor = true
+MapPosition=0,24,2
+Bicycle = true
+BattleBack=beach
+Weather = HeavyRainCopy,100
+DiveMap = 014
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[014]
+# Route 20B Underwater
+BattleBack=shipwreck
+Weather = Waves,100
+MapPosition=0,24,2
+SnapEdges = true
+#-------------------------------
+[015]
+# Abandoned Shipwreck Dive Map Placeholder
+Bicycle = true
+MapPosition=0,24,2
+BattleBack=beach
+Outdoor = true
+Weather = HeavyRainCopy,100
+DiveMap = 012
+SnapEdges = true
+#-------------------------------
+[012]
+# Abandoned Shipwreck
+BattleBack=shipwreckinterior
+Weather = Waves,100
+MapPosition=0,24,2
+SnapEdges = true
+#-------------------------------
+[277]
+# Route 21A
+Outdoor = true
+MapPosition=0,25,2
+Bicycle = true
+BattleBack=beach
+Weather = Rain,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[427]
+# Route 21B
+Outdoor = true
+MapPosition=0,26,2
+Bicycle = true
+BattleBack=swamp
+Weather = FogRain2,100
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[006]
+# R21B-Tucana Gatehouse
+MapPosition=0,26,2
+SnapEdges = true
+#-------------------------------
+[434]
+# Tucana City
+Bicycle = true
+MapPosition=0,26,1
+Outdoor = true
+ShowArea = true
+Weather = FogRain2,100
+SnapEdges = true
+#-------------------------------
+[002]
+# Tucana PokéCenter
+MapPosition=0,26,1
+HealingSpot=434,22,48
+#-------------------------------
+[003]
+# Tucana PokéCenter
+MapPosition=0,26,1
+SnapEdges = true
+#-------------------------------
+[004]
+# Tucana Poke Mart
+MapPosition=0,26,1
+SnapEdges = true
+#-------------------------------
+[005]
+# Tucana City
+MapPosition=0,27,1
+SnapEdges = true
+#-------------------------------
+[007]
+# Tucana-Bayou Gatehouse
+MapPosition=0,27,0
+SnapEdges = true
+#-------------------------------
+[011]
+# Tucana Bayou
+Bicycle = true
+MapPosition=0,27,0
+Outdoor = true
+ShowArea = true
+BattleBack=swamp
+Weather = FogRain2,100
+SnapEdges = true
+#-------------------------------
+[008]
+# Destroyed Lab L1
+MapPosition=0,27,0
+BattleBack=crewquarters
+DarkMap = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[009]
+# Destroyed Lab L2
+MapPosition=0,27,0
+BattleBack=crewquarters
+DarkMap = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+[010]
+# Destroyed Lab L3
+MapPosition=0,27,0
+BattleBack=crewquarters
+DarkMap = true
+ShowArea = true
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+[432]
+# Route 22C
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=charredforest
+Weather = FogAsh,100
+MapPosition=0,24,5
+SnapEdges = true
+#-------------------------------
+[431]
+# Route 22B
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=charredforest
+Weather = FogAsh,100
+MapPosition=0,23,5
+SnapEdges = true
+#-------------------------------
+[430]
+# Route 22A
+Outdoor = true
+Bicycle = true
+ShowArea = true
+BattleBack=charredforest
+Weather = FogAsh,100
+MapPosition=0,22,5
+SnapEdges = true
+#-------------------------------
+[018]
+# R18B-R22A Gatehouse
+MapPosition=0,22,5
+SnapEdges = true
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------
+#-------------------------------

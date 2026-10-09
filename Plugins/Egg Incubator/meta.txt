@@ -1,0 +1,5 @@
+Name = Egg Hatcher
+Version = 1.1
+Essentials = 20.1
+Website = https://eeveeexpo.com/resources/613/
+Credits = Kyu, Clara, Turner

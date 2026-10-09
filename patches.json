@@ -1,0 +1,10 @@
+{
+    "rpgm": [
+        {
+            "author": "[ g f y ]",
+            "comment": "Fix scripts loading in Pokemon Soulstones 2",
+            "key": "\"\", File.join('Scripts')",
+            "value": "'Scripts'"
+        }
+    ]
+}

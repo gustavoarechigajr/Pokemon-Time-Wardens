@@ -1,0 +1,583 @@
+TIME WARDENS
+MASTER CREDITS
+
+#----------------------------------------------------------------------------------------------------------------------
+THIRD PARTY SCRIPTS
+Note that many scripts were sourced from the website Relic Castle as this game has been in development for a very long time.
+
+As a result, many of the links for these third-party scripts point to dead links now that the Relic Castle website was taken down
+
+In some cases, the scripts were re-posted over to the successor site, EeveeExpo, but not all script resource links were able to be identified
+#----------------------------------------------------------------------------------------------------------------------
+
+v20.1 Generation 8 Pack for Essentials v20.1 v1.0.3
+https://eeveeexpo.com/resources/952/
+
+Battler Sprites:
+Gen 1-5 Pokemon Sprites - veekun
+Gen 6 Pokemon Sprites - All Contributors To Smogon X/Y Sprite Project
+Gen 7 Pokemon Sprites - All Contributors To Smogon Sun/Moon Sprite Project
+Gen 8 Pokemon Sprites - All Contributors To Smogon Sword/Shield Sprite Project
+Overworld Sprites
+Gen 6+ Berry Tree Overworlds - Anarlaurendil
+Gen 6 Pokemon Overworlds - princess-pheonix, LunarDusk, Wolfang62, TintjeMadelintje101, piphybuilder88
+Gen 7 Pokemon Overworlds - Larry Turbo, princess-pheonix
+Gen 8 Pokemon Overworlds - SageDeoxys, Wolfang62, LarryTurbo, tammyclaydon
+Gen 1-5 Pokemon Overworlds - MissingLukey, help-14, Kymoyonian, cSc-A7X, 2and2makes5, Pokegirl4ever, Fernandojl, Silver-Skies, TyranitarDark, Getsuei-H, Kid1513, Milomilotic11, Kyt666, kdiamo11, Chocosrawlooid, Syledude, Gallanty, Gizamimi-Pichu, 2and2makes5, Zyon17,LarryTurbo, spritesstealer, LarryTurbo
+Icon Sprites
+Gen 1-6 Pokemon Icon Sprites - Alaguesia
+Gen 7 Pokemon Icon Sprites - Marin, MapleBranchWing, Contributors to the DS Styled Gen 7+ Repository
+Gen 8 Icon Sprites - Larry Turbo, Leparagon
+Cry Credits:
+Gen 1-6 Pokemon Cries - Rhyden
+Gen 7 Pokemon Cries - Marin, Rhyden
+Gen 8 Pokemon Cries - Zeak6464
+Script Credits:
+Golisopod User, Luka S.J.
+Compilation of Resources:
+Golisopod User, UberDunsparce
+
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Gen 8 move animation project
+https://www.pokecommunity.com/showthread.php?t=446303
+
+Project lead by StCooler.
+Contributors: StCooler, DarryBD99, WolfPP, ardicoozer, riddlemeree.
+Thanks to the Reborn team for letting people use their resources. You are awesome.
+Thanks to BellBlitzKing for his Pokemon Sound Effects Pack: Gen 1 to Gen 7 - All Attacks SFX.
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Voltseon's Pause Menu:
+https://eeveeexpo.com/resources/692/
+Voltseon, Golisopod User, ENLS
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Voltseon's A-Star Pathfinding 1.2
+https://eeveeexpo.com/resources/804/
+Voltseon, Golisopod User, ENLS
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Encounters List UI
+https://eeveeexpo.com/resources/658/
+ThatWelshOne_,raZ,Marin,Maruno,Nuri Yuri,PurpleZaffre,Savordez,Vendily
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Modern Quest System + UI
+https://eeveeexpo.com/resources/709/
+ThatWelshOne_,mej71,derFischae,Marin
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Overworld Encounter Messages
+https://eeveeexpo.com/resources/1901
+RegalSword
+
+#----------------------------------------------------------------------------------------------------------------------
+
+EVs and IVs in Summary
+https://eeveeexpo.com/resources/703/
+Deoxysprime (v19.1 Original)
+SoulfulLex (v20.1 Update)
+
+#----------------------------------------------------------------------------------------------------------------------
+
+v20.1 Type match-up summary 1.0.2
+https://eeveeexpo.com/resources/667/
+ThatWelshOne_
+
+v20.1 Simple item crafting system + interface 1.2.2
+https://eeveeexpo.com/resources/632/
+ThatWelshOne_
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Mr. Gela's Name Windows
+https://eeveeexpo.com/resources/197/
+mej71
+Vendily
+theo#7722
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Carmaniac's Speech Bubble Script for v20​
+https://eeveeexpo.com/resources/954/	
+Carmaniac (Original Script), Nononever (Updated for v20)
+
+#----------------------------------------------------------------------------------------------------------------------
+
+v20.1 Stat Change Overlay 1.0.2
+https://eeveeexpo.com/resources/951/
+Phantombass
+
+#----------------------------------------------------------------------------------------------------------------------
+
+v20.1 Speed Up 2.0
+https://eeveeexpo.com/resources/713/
+
+Marin - for the original Better Speed Up script
+Phantombass - updating the script to Essentials v19.1
+
+#----------------------------------------------------------------------------------------------------------------------
+
+AdvancedDex
+https://github.com/FL-/Essentials-AdvancedDex
+FL
+
+#----------------------------------------------------------------------------------------------------------------------
+
+v20.1 Advanced Items Field Moves v1.1.1
+https://eeveeexpo.com/resources/981/
+Bergium
+Moyo aka FeelMoyoMan
+Marin
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Various bespoke scripts:
+Directional Sliding
+Consistent AI
+Level Based Mixed EV System and Allocator
+Independent Hidden Power Type
+Tutor.net
+
+
+
+DemICE#1752
+
+#----------------------------------------------------------------------------------------------------------------------
+
+v20.1 Ultimate Move Tutor 1.0
+https://eeveeexpo.com/resources/700/
+Grogro
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Unreal Time System
+https://www.pokecommunity.com/showthread.php?t=285831
+FL
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Infinite Save Backups v1.3
+https://eeveeexpo.com/resources/1238/
+DemICE,http404error
+
+#----------------------------------------------------------------------------------------------------------------------
+
+v20.1 Auto Multi Save 1.1
+https://eeveeexpo.com/resources/1059/
+http404error
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Storage System Utilities
+https://eeveeexpo.com/resources/1310/
+Swdfm,PDM20, and badhaas
+
+#----------------------------------------------------------------------------------------------------------------------
+
+
+
+v20.1 Essentials Deluxe [v20.1] v1.1.4
+https://eeveeexpo.com/resources/986/
+Lucidious89
+
+v20.1 Enhanced UI [v20.1] v1.0.3
+https://eeveeexpo.com/resources/988/
+Lucidious89
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Randomizer X
+https://luka-sj.com/res/rndx
+Luka S.J.
+
+#----------------------------------------------------------------------------------------------------------------------
+
+RMXP Event Exporter v1.4.1
+https://eeveeexpo.com/resources/394/
+NettoHikari
+
+#----------------------------------------------------------------------------------------------------------------------
+
+v20.1 Hidden Abilities by Percentage 2.1
+https://eeveeexpo.com/resources/249/
+	
+Mashirosakura (me) for putting out the script?
+Scyl, NettoHikari and Marin for help initially setting this up.
+Maq47 for Gift Pokémon in older versions, and the base for the v20.1 version
+StarWolff for his slight modifications for v20.1
+Kotaro for his help making this a plugin with me.
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Wonder Trade (Custom Script)
+Black Eternity, PDM20, Upgraded to v20.1 by Jos_Louis, TechSkylander1518 and Thunder
+Game Dev Cafe Discord
+
+#----------------------------------------------------------------------------------------------------------------------
+
+BW Location Signposts:
+https://eeveeexpo.com/resources/755/
+Shashu-Greninja,DeepBlue PacificWaves,Shiney570
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Better Move Tutor 1.0
+https://eeveeexpo.com/resources/977/
+Sonicover
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Triple Triad Booster Pack 1.1
+https://www.pokecommunity.com/showthread.php?t=356231
+FL
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Trainers Species Usage
+https://www.pokecommunity.com/showthread.php?t=477929
+FL
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Bag Screen with Interactable Party v2.2.0
+https://eeveeexpo.com/resources/723/
+DiegoWT
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Tech's Oddities 2023-05-17
+https://eeveeexpo.com/resources/1281/
+TechSkylander1518
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Gen 8-Style Item Find Description 2.0
+https://eeveeexpo.com/resources/371/
+Boonzeet
+Upgraded to v20.1 by TechSkylander1518
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Tileset Rearranger 1.4
+https://eeveeexpo.com/resources/794/
+Maruno
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Better Battle Animation Editor v1.0
+https://eeveeexpo.com/resources/1314/
+KRLW890
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Trade from PC
+https://eeveeexpo.com/resources/1417/
+Dr.Doom76
+
+#----------------------------------------------------------------------------------------------------------------------
+ART
+#----------------------------------------------------------------------------------------------------------------------
+
+VARIOUS ART RESOURCES NOT LIMITED TO 
+- BATTLE BACKGROUNDS 
+- OVERWORLD SPRITES
+- TRAINER SPRITES
+- FAKEMON / REGIONAL VARIANTS
+- TILES AND AUTOTILES
+
+#----------------------------------------------------------------------------------------------------------------------
+Resource: Character Customization Resources (Gen 4) 1.0
+https://eeveeexpo.com/resources/317/
+
+Contributor: Coffee Cup/ Poltergeist
+
+#----------------------------------------------------------------------------------------------------------------------
+
+ALL Official Gen 4 Overworld Sprites v1.5
+https://eeveeexpo.com/resources/404/
+
+Contributors:
+Neo-Spriteman
+VanillaSunshine
+PurpleZaffre & Maicerochico
+AtomicReactor
+
+#----------------------------------------------------------------------------------------------------------------------
+
+ULTIMATE Gen 4 Overworlds Pack 2021-03-29
+https://eeveeexpo.com/resources/609/
+
+PurpleZaffre
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Type icons mod and types in battle UI
+Trapstarr
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Gen 5 Characters in Gen 4 OW style 2.0
+https://eeveeexpo.com/resources/370/
+DiegoWT
+
+#----------------------------------------------------------------------------------------------------------------------
+
+POKEMON SPRITES FAKEMON / REGIONAL VARIANTS:
+- Fakemon Festival Pack
+https://eeveeexpo.com/resources/654/
+
+Altaira
+Atsui
+Dulcet
+Lumio
+Magiscarf
+Odisea
+PansyGum
+PrincessPhoenix
+Scotsman
+Mechamudskipper
+JWNutz
+Mechanicalape464
+AnonAlpaca
+Leparagon & PurpleZaffre for administration
+Nuclear Omega & PurpleZaffre for administration
+AceTrainerAvery
+Thundaga, Voltseon, TristantineTheGreat, Kristiano100
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Ivy Colosseum tileset
+Main contributors:
+• Amras Anárion (myself) (CC BY-SA) Interior architecture, black tiles, ivy, arena's coat or arms, crystal lamps, wooden table, stone counter, almost all furniture, all parchments, dishes and food, statues of Celebi and Arkainu, carnyxes and arena area layout on the ground.
+
+• Dracoyan (CC BY-SA) Exterior bulding, statues of dragon, texture of the floor pavement, starting point for the convex exteriors walls and exterior square pillars
+
+Minor contributions:
+
+• Chimcharsfireworkd (CC-BY) (Sparse paving for floor, floor flowers)
+• Magiscarf (CC-BY-NC-SA) (barrel, floor grass texture, large paving stones for the floor)
+
+• Thunungu (CC BY-SA) (the two green plant in pot, the two small plant in pot, dark wooden bucket, large candlestick)
+
+• Redshrike (CC-BY) (Fine candlestick, wall flag and the two very colorful big plant in a pot)
+• aveontrainer (CC-BY) (deer head)
+
+https://www.deviantart.com/anarlaurendil/art/Ivy-Colosseum-tileset-Celebi-arena-1135970503
+
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Medieval Tileset
+• Amras Anárion (myself) (CC BY-SA) Since almost nothing existed in the 16x16 medieval-fantasy theme, I had to create most of the tiles.
+• Thunungu (CC BY-SA) (pale brown table and chair and its stone version, pale brown barrel, soil texture to the floor, wood floor, large candlestick, rustic shelf, green plant, green and red carpet with yellow edges and champion cup)
+• aveontrainer (CC-BY) (Gray stone fireplace, Front of stone fireplace, deer head, horizontal staircase barrier, chairs in dark red velvet, dark wood furniture)
+• Inkaline (CC BY-NC) (wooden chairs, beds, chairs in light red velvet, some candles)
+• Redshrike (CC-BY) (little candlestick, 3 carpets, closed books and the two very colorful plant in a pot.)
+• Dracoyan (CC-BY) (sawmill rail and grinding wheel)
+• Magiscarf (CC BY-NC-SA) (light wood logs)
+https://www.deviantart.com/anarlaurendil/art/Medieval-Pokemon-tileset-Alienor-interiors-v1-901041147
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Nocturn's MegaPack
+https://eeveeexpo.com/resources/655/
+
+Champions:
+Backgrounds/Foregrounds: Mechamudskipper
+Pokegear icon & Egg Hatcher Icon: NocTurn
+
+Mite, Quartet, and NightingaleNoctowl battle sprites: Mechamudskipper
+All other trainer sprite edits: NocTurn
+UI based off of Aki's resource with edits from NocTurn
+
+Charlene OW: PurpleZaffre
+Clive Animation: Monika~
+Hiker Base: Kyledove
+All other OWs: NocTurn
+
+Nexus:
+Trainer designs:
+Tatiana: Apollo
+Snickerblizz: Bea
+LogicalLoony: Cole
+AnthiXD: Camelia, Karen, Lacey, Mona + Wade, Moonflower, Vedalia
+
+Trainer Classes:
+Oskidoodle: Breeder, Fisherman
+AnthiXD: Bug Catcher M + F, Conservationist M + F, Lass, Lumberjack, Nomads, Nurse Carol, Scientists, Youngster
+Bungod: Hiker
+
+Code:
+NoahConstrictor: All code
+
+Music:
+Key: Route 2
+Jobless Music: Greenmire, Trainer_Victory, VS_Dangerous_Pokemon
+HunteR: Intro
+
+Sprites:
+Spring: Fisherman & Cole OW
+NocTurn: All other OWs
+Spring: All item icons
+MechaMudskipper: Breeder, BugCatcherF, Conservationist F + M, Fisherman, Nomad M, Lumberjack
+JaneJewel: Cole, Lacey, Wade
+AnthiXD: GreenThumb, ScientistF
+Zaffre: Lenora based used for Lass OW
+
+#----------------------------------------------------------------------------------------------------------------------
+
+#                             Gen 4 OW Collection                              #
+#                                                                              #
+#                    Compiled & Created by Vanilla Sunshine                    #
+#                         With help from Neo-Spriteman,                        #
+#                Purple Zaffre, Maicerochico, and Atomic Reactor               #
+#                                                                              #
+#            Intended for use with Mr. Gela's Trainer Sprites and PBS.         #
+#                     https://eeveeexpo.com/resources/391     
+
+#----------------------------------------------------------------------------------------------------------------------
+
+TILESETS AND AUTOTILES:
+
+Ready to use Tilesets:
+https://eeveeexpo.com/resources/15/
+
+- Akizakura16
+- LotusKing
+- Kaliser
+- JesusCarrasco
+- WilsonScarloxy
+- SailorVicious
+- Magiscarf
+- Kyle Dove
+
+#----------------------------------------------------------------------------------------------------------------------
+OTHER MISC TILES AND BATTLE BACKGROUNDS FROM DEVIANTART:
+
+- ChaoticCherryCake
+- Carchagui
+- Aveontrainer
+- Phyromatical
+- Pauline Roy (Large Crystal)
+
+#----------------------------------------------------------------------------------------------------------------------
+
+MUSIC:
+
+- GlitchxCity
+- EchanTheMan
+- Yeth_half
+- Emdasche formerly known as ElectricMudkip
+- Pokemon Reborn Team
+- Pokemon Rejuvenation Team
+- Tekken 8
+- World of Warcraft, Diablo and Starcraft by Blizzard Entertainment
+- Clair Obscur: Expedition 33; Lorien Testard and Alice Dupont-Percier
+- Monster Hunter Wilds
+
+#----------------------------------------------------------------------------------------------------------------------
+
+PokeRover Application
+SexyRexy
+
+#----------------------------------------------------------------------------------------------------------------------
+
+Team Showcase
+Pokemon Tectonic team
+
+#----------------------------------------------------------------------------------------------------------------------
+
+OTHER ART
+
+Title Screen:
+https://deep-fold.itch.io/space-background-generator
+CrystalStar
+
+#----------------------------------------------------------------------------------------------------------------------
+
+VARIOUS SPRITE DESIGNS / CONCEPTS / :
+Many other Pokemon Fan games/ ROMhacks have provided inspirations or design concepts during the production of our various regional species. The quality of these fan games have been a big driver behind us wanting to aspire to create at least one regional variant for each species in canon, and it would not have been possible without them helping us during the creative process. These other games are not limited to Blazing Emerald, Solar Light Lunar Dark, Uranium, Insurgence, Infinite Fusion, Infinity, Jade, and much more.
+
+Primary Sprite Artists:
+Jos_Louis
+Badman
+Endless
+Hexx_Vixtar
+
+Khrona
+kfweagz
+Mr. Fakemon
+Plates of Arceus Reborn Mod
+Hubercioch
+Angel
+Doowi
+Anarlaurendil
+Steelman2004
+Geno
+Maeracle
+S4's "Spicy Man" Army#3133 aka currlor
+Velkin
+Boro
+LuRocha
+Scotsman33
+LightningStrike7
+KingPanloco
+NocTurn
+Nimolinari
+IndianAnimator
+Noel#5229, Colin#1356
+Starry_Knight_Constellations
+SplittingJaws, Eysselia, Millie, Cataclyptic, Anarlaurendil, Dracoyan, Amras Anarion
+RedEmber513
+RBRNNova
+Eeveelution Reborn Mod
+Arcadian Gekkouga#8920
+Azria (a_zerudez)
+PokelustCompany
+Pokemon Reborn Team
+Pokemon Rejuvenation Team
+DiegoWT
+Taka
+ZeneonP0
+Ochako
+CrystalStar
+YoshiGaminStuf
+Stellari
+CreativeVision
+Dewdneym
+TotallyNotCalledEvan
+TrashGamer101
+Escav
+AtteaTheSilly
+Ace
+Raffs07
+Badman
+A11
+Zeta
+Hexx_Vixtar
+Ignotus68
+Brylark and TheAetherPlayer
+Kiriaura
+Agentbla
+Endless
+PDM20
+BiggusWeeabus
+Riptidecord
+Angel
+Velink
+Eeveelution Reborn
+Pokemon Defiance
+BlueTowel
+Kixur
+KingOfTheXRoad
+Star Gaazer
+Otter
+Aboodie

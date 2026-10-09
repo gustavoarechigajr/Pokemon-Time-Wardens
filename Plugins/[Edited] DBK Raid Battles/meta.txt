@@ -1,0 +1,6 @@
+﻿Name       = [DBK] Raid Battles
+Version    = 1.0
+Essentials = 20.1
+Requires   = Soulstones 2 Plugin Changes
+Website    = https://lucidious89-tutorials.gitbook.io/deluxe-battle-kit-tutorial/deluxe-battle-kit-for-v21.1/add-on-tutorials/raid-battles
+Credits    = Lucidious89, PDM20 (Backport)

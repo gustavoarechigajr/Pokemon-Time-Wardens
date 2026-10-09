@@ -1,0 +1,4 @@
+Name         = Soulstones 2 Specific Changes
+Version      = 0.1
+Essentials   = 20.1
+Credits    = Jos_Louis, DemICE

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\PBS"
+		},
+		{
+			"path": "../Plugins"
+		}
+	],
+	"settings": {}
+}

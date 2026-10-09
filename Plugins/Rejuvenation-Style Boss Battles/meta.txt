@@ -1,0 +1,10 @@
+Name       = Rejuv-style Bosses
+Version    = 2.0
+Essentials = 20.1
+Credits    = Rejuvenation Dev Team, Pokemon Empyrean, Stochastic, Repudiation Dev team, IndianAnimator, Jbsundown, Swdfm, PDM20[backporting]
+Requires   = v20.1 Hotfixes,1.0.7
+Requires   = Level Based Mixed EV System and Allocator,1.0.1
+Requires   = Essentials Deluxe,1.2.7
+Requires   = Enhanced UI,1.1.2
+Requires   = Soulstones 2 Specific Changes,0.1
+Requires   = Soulstones 2 Plugin Changes,0.1

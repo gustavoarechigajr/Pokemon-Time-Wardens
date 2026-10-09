@@ -1,0 +1,6 @@
+Name         = Updated Quicksave
+Essentials   = 20.1
+Version      = 1.0
+Requires     = Auto Multi Save
+Website      = https://reliccastle.com/resources/1091/
+Credits      = Marin, CrystalStar

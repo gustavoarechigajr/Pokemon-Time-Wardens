@@ -1,0 +1,5 @@
+Name         = Mr Gela Name Windows and Boonzeet Shout
+Version      = 1.0
+Essentials   = 20.1
+Website      = https://reliccastle.com/resources/355/ and https://reliccastle.com/resources/197/
+Credits      = Boonzeet, mej71, Vendily, theo#7722
