@@ -873,19 +873,24 @@ public class SecondScreenView extends View
 
     private void drawSummaryInfo(JSONObject p)
     {
-        float y = 50;
-        small("Species", 210, y, DIM); small(p.optString("species", ""), 330, y, WHITE); y += 26;
+        float y = 48;
+        small("Species", 210, y, DIM); small(p.optString("species", ""), 330, y, WHITE); y += 24;
         small("Type", 210, y, DIM);
         JSONArray types = p.optJSONArray("types");
         for (int i = 0; types != null && i < types.length(); i++) typeIcon(types.optJSONObject(i), 330 + i * 70, y + 1, 64);
-        y += 30;
-        small("Nature", 210, y, DIM); small(p.optString("nature", ""), 330, y, WHITE); y += 26;
+        y += 28;
+        small("Nature", 210, y, DIM); small(p.optString("nature", ""), 330, y, WHITE); y += 24;
         small("Item", 210, y, DIM);
-        small(p.optString("item_name", "").isEmpty() ? "None" : p.optString("item_name", ""), 330, y, WHITE); y += 26;
-        small("Ability", 210, y, DIM); small(p.optString("ability", ""), 330, y, GOLD); y += 24;
-        List<String> lines = wrap(p.optString("ability_desc", ""), mSmallFont, 19, 284);
-        for (int i = 0; i < Math.min(2, lines.size()); i++) text(lines.get(i), 210, y + i * 20, mSmallFont, 19, 0, LILAC, SHADOW);
-        y = 214;
+        small(p.optString("item_name", "").isEmpty() ? "None" : p.optString("item_name", ""), 330, y, WHITE); y += 24;
+        small("Ability", 210, y, DIM); small(p.optString("ability", ""), 330, y, GOLD); y += 22;
+        // Ability description: two lines at most, so it never runs into Exp.
+        List<String> lines = wrap(p.optString("ability_desc", ""), mSmallFont, 17, 284);
+        for (int i = 0; i < Math.min(2, lines.size()); i++) {
+            String line = lines.get(i);
+            if (i == 1 && lines.size() > 2) line = ellipsize(line + " ...", mSmallFont, 17, 284);
+            text(line, 210, y + i * 18, mSmallFont, 17, 0, LILAC, SHADOW);
+        }
+        y = 216;
         small("Exp.", 210, y, DIM);
         fillRect(260, y + 8, 236, 6, 0xff303038);
         fillRect(260, y + 8, 236 * (float) Math.max(0, Math.min(1, p.optDouble("exp_frac", 0))), 6, 0xff48a8f8);
