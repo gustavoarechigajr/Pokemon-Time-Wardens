@@ -28,7 +28,8 @@ permissions:
 
 env:
   ANDROID_NDK_VERSION: 23.2.8568313
-  PORT_DIR: ${{ github.workspace }}/../port
+  # Outside the checkout (absolute: actions/cache rejects ".." in paths)
+  PORT_DIR: /home/runner/tw-port
 
 jobs:
   native:
