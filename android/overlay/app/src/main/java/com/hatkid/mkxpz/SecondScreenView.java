@@ -1312,15 +1312,15 @@ public class SecondScreenView extends View
             }
         }
         box(6, 164, 500, 108);
-        small("Items & tools", 16, 170, GOLD);
+        small("Items & tools", 16, 166, GOLD);
         int n = Math.min(tools.size(), 8);
         boolean compact = n > 4;   // two rows of smaller tiles
-        float tw = compact ? 118 : 118, th = compact ? 36 : 70;
+        float tw = 118, th = compact ? 34 : 70;
         for (int i = 0; i < n; i++) {
             JSONObject it = tools.get(i);
             final String id = it.optString("id", "");
             final boolean fly = it.optBoolean("fly", false);
-            float x = 12 + (i % 4) * 124, y = compact ? 194 + (i / 4) * 38 : 196;
+            float x = 12 + (i % 4) * 124, y = compact ? 198 + (i / 4) * 36 : 196;
             button("", x, y, tw, th, can || fly, false, () -> {
                 if (fly) setPage(P_MAP);   // pick a destination on the map
                 else command("cmd", "key_item", "item", id);
