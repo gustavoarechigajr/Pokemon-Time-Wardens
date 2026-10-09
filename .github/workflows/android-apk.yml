@@ -174,16 +174,19 @@ jobs:
         env:
           TW_VERSION_CODE: ${{ github.run_number }}
           TW_VERSION_NAME: 2.05-android.${{ github.run_number }}
-          TW_KEYSTORE: ${{ github.workspace }}/android/keystore/release.jks
-          TW_KEYSTORE_PASSWORD: ${{ secrets.TW_KEYSTORE_PASSWORD || 'timewardens' }}
+          TW_KEYSTORE_PASSWORD: ${{ secrets.TW_KEYSTORE_PASSWORD }}
           TW_KEY_ALIAS: timewardens
-          TW_KEY_PASSWORD: ${{ secrets.TW_KEY_PASSWORD || 'timewardens' }}
+          TW_KEY_PASSWORD: ${{ secrets.TW_KEY_PASSWORD }}
           TW_NDK_VERSION: ${{ env.ANDROID_NDK_VERSION }}
+          KEYSTORE_BASE64: ${{ secrets.TW_KEYSTORE_BASE64 }}
         run: |
-          if [ -n "${{ secrets.TW_KEYSTORE_BASE64 }}" ]; then
-            echo "${{ secrets.TW_KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/release.jks"
-            export TW_KEYSTORE="$RUNNER_TEMP/release.jks"
+          # Signing key comes only from repository secrets (see android/README.md)
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$TW_KEYSTORE_PASSWORD" ]; then
+            echo "::error::Signing secrets missing: add TW_KEYSTORE_BASE64, TW_KEYSTORE_PASSWORD and TW_KEY_PASSWORD"
+            exit 1
           fi
+          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          export TW_KEYSTORE="$RUNNER_TEMP/release.jks"
           chmod +x gradlew
           OUT="$RUNNER_TEMP/out"
           ASSETS=app/src/main/assets

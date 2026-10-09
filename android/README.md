@@ -180,13 +180,10 @@ base64-encoded in that job's log.
 
 ## Signing
 
-APKs are signed with `keystore/release.jks` (alias `timewardens`, password
-`timewardens`) so every build can update the previous one. The repository
-is private, so this is fine for personal use. If you want your own private
-key instead, add these repository secrets and the workflow will use them:
-
-* `TW_KEYSTORE_BASE64`: your keystore file, base64-encoded
-* `TW_KEYSTORE_PASSWORD`, `TW_KEY_PASSWORD`
-
-Changing the key means already-installed copies have to be uninstalled once
-before the new build will install.
+APKs are signed with a private key stored only in the repository's
+Actions secrets: `TW_KEYSTORE_BASE64` (the keystore file, base64),
+`TW_KEYSTORE_PASSWORD` and `TW_KEY_PASSWORD` (key alias `timewardens`). The
+build fails if they're missing. Every build signed with the same key can
+update the installed app, so keep a backup of the keystore file. Without it,
+installed copies would have to be uninstalled (losing saves) before a build
+with a new key installs.
