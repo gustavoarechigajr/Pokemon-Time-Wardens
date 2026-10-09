@@ -67,7 +67,9 @@ public class MainActivity extends SDLActivity
         }
 
         // Setup in-screen gamepad
-        mGamepadInvisible = (isAndroidTV() || isChromebook());
+        // Start with the touch controls hidden on devices with built-in or
+        // connected controllers (e.g. AYN Thor); touching the screen shows them.
+        mGamepadInvisible = (isAndroidTV() || isChromebook() || Gamepad.hasController());
         GamepadConfig gpadConfig = new GamepadConfig();
         mGamepad.init(gpadConfig, mGamepadInvisible);
         mGamepad.setOnKeyDownListener(SDLActivity::onNativeKeyDown);
@@ -150,12 +152,18 @@ public class MainActivity extends SDLActivity
     }
 
     @Override
-    public boolean onGenericMotionEvent(MotionEvent evt)
+    public boolean dispatchGenericMotionEvent(MotionEvent evt)
     {
-        if (mGamepad.processDPadEvent(evt))
+        // Handle controller D-pad / analog stick before SDL's view sees it
+        if (mGamepad.processDPadEvent(evt)) {
+            if (!mGamepadInvisible) {
+                mGamepad.hideView();
+                mGamepadInvisible = true;
+            }
             return true;
+        }
 
-        return super.onGenericMotionEvent(evt);
+        return super.dispatchGenericMotionEvent(evt);
     }
 
     /**

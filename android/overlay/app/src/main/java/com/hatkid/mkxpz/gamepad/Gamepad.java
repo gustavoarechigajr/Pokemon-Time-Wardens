@@ -8,6 +8,7 @@ import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.animation.AlphaAnimation;
+import android.util.Log;
 import android.widget.RelativeLayout;
 
 import com.hatkid.mkxpz.R;
@@ -175,78 +176,161 @@ public class Gamepad
         setGamepadButtonKey(gpadBtnSHIFT, mGamepadConfig.keycodeSHIFT);
     }
 
+    /**
+     * Maps a physical controller button to the keyboard key the game is
+     * bound to (mkxp-z default RGSS bindings), or 0 if it is not mapped.
+     *
+     * Layout follows Android's positional button codes, as used by handhelds
+     * such as the AYN Thor and by Xbox-style pads:
+     *   A (bottom) = OK, B (right) = Back/menu, X (left) = Action,
+     *   Y (top) = Special, L1/R1 = speed up/down, L2/R2 = jump up/down in
+     *   lists, Start = menu, Select = Special.
+     */
+    public static int mapControllerKey(int keycode)
+    {
+        switch (keycode)
+        {
+            case KeyEvent.KEYCODE_BUTTON_A:
+            case KeyEvent.KEYCODE_DPAD_CENTER:
+                return KeyEvent.KEYCODE_C;
+            case KeyEvent.KEYCODE_BUTTON_B:
+            case KeyEvent.KEYCODE_BUTTON_START:
+                return KeyEvent.KEYCODE_X;
+            case KeyEvent.KEYCODE_BUTTON_X:
+                return KeyEvent.KEYCODE_Z;
+            case KeyEvent.KEYCODE_BUTTON_Y:
+            case KeyEvent.KEYCODE_BUTTON_SELECT:
+                return KeyEvent.KEYCODE_D;
+            case KeyEvent.KEYCODE_BUTTON_L1:
+                return KeyEvent.KEYCODE_Q;
+            case KeyEvent.KEYCODE_BUTTON_R1:
+                return KeyEvent.KEYCODE_W;
+            case KeyEvent.KEYCODE_BUTTON_L2:
+                return KeyEvent.KEYCODE_A;
+            case KeyEvent.KEYCODE_BUTTON_R2:
+                return KeyEvent.KEYCODE_S;
+            case KeyEvent.KEYCODE_DPAD_UP:
+            case KeyEvent.KEYCODE_DPAD_DOWN:
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                return keycode;
+            default:
+                return 0;
+        }
+    }
+
+    /** True if any connected input device is a game controller. */
+    public static boolean hasController()
+    {
+        for (int id : InputDevice.getDeviceIds()) {
+            InputDevice dev = InputDevice.getDevice(id);
+            if (dev == null || dev.isVirtual()) continue;
+            int src = dev.getSources();
+            if ((src & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD
+                || (src & InputDevice.SOURCE_JOYSTICK) == InputDevice.SOURCE_JOYSTICK)
+                return true;
+        }
+        return false;
+    }
+
+    private static boolean isFromController(KeyEvent evt)
+    {
+        int src = evt.getSource();
+        return (src & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD
+            || (src & InputDevice.SOURCE_JOYSTICK) == InputDevice.SOURCE_JOYSTICK
+            || (src & InputDevice.SOURCE_DPAD) == InputDevice.SOURCE_DPAD;
+    }
+
+    /**
+     * Handles controller buttons. Gamepad buttons (BUTTON_*) are always
+     * translated; D-pad keys only when they come from a controller, so
+     * keyboard arrow keys keep going straight to SDL.
+     */
     public boolean processGamepadEvent(KeyEvent evt)
     {
-        InputDevice device = evt.getDevice();
-
-        if (device == null)
-            return false;
-
-        int sources = device.getSources();
-
-        if (
-            ((sources & InputDevice.SOURCE_GAMEPAD) != InputDevice.SOURCE_GAMEPAD) &&
-            ((sources & InputDevice.SOURCE_DPAD) != InputDevice.SOURCE_DPAD)
-        )
-            return false;
-
         int keycode = evt.getKeyCode();
+        boolean gamepadButton = KeyEvent.isGamepadButton(keycode) || keycode == KeyEvent.KEYCODE_DPAD_CENTER;
+
+        if (!gamepadButton && !isFromController(evt))
+            return false;
+
+        int mapped = mapControllerKey(keycode);
+        if (mapped == 0)
+            return gamepadButton; // swallow unmapped pad buttons (e.g. stick clicks)
 
         switch (evt.getAction())
         {
-            case MotionEvent.ACTION_DOWN:
-                mOnKeyDownListener.onKeyDown(keycode);
+            case KeyEvent.ACTION_DOWN:
+                if (evt.getRepeatCount() == 0) {
+                    Log.d("TimeWardens[Pad]", KeyEvent.keyCodeToString(keycode) + " -> " + KeyEvent.keyCodeToString(mapped));
+                    mOnKeyDownListener.onKeyDown(mapped);
+                }
                 break;
 
-            case MotionEvent.ACTION_CANCEL:
-            case MotionEvent.ACTION_UP:
-                mOnKeyUpListener.onKeyUp(keycode);
+            case KeyEvent.ACTION_UP:
+                mOnKeyUpListener.onKeyUp(mapped);
                 break;
         }
 
         return true;
     }
 
+    // Direction keys currently held because of the hat / analog stick
+    private boolean mUp, mDown, mLeft, mRight;
+    private static final float STICK_THRESHOLD = 0.5f;
+
+    private void setDirection(boolean now, boolean before, int keycode)
+    {
+        if (now && !before) mOnKeyDownListener.onKeyDown(keycode);
+        else if (!now && before) mOnKeyUpListener.onKeyUp(keycode);
+    }
+
+    /**
+     * Handles the D-pad (reported as a hat) and the left analog stick, which
+     * arrive as continuous motion events, by turning them into arrow key
+     * presses and releases.
+     */
     public boolean processDPadEvent(MotionEvent evt)
     {
-        InputDevice device = evt.getDevice();
-
-        if (device == null)
+        int src = evt.getSource();
+        if ((src & InputDevice.SOURCE_JOYSTICK) != InputDevice.SOURCE_JOYSTICK
+            && (src & InputDevice.SOURCE_GAMEPAD) != InputDevice.SOURCE_GAMEPAD
+            && (src & InputDevice.SOURCE_DPAD) != InputDevice.SOURCE_DPAD)
             return false;
 
-        int sources = device.getSources();
-
-        if (((sources & InputDevice.SOURCE_DPAD) != InputDevice.SOURCE_DPAD))
+        if (evt.getActionMasked() != MotionEvent.ACTION_MOVE)
             return false;
 
-        float xAxis = evt.getAxisValue(MotionEvent.AXIS_HAT_X);
-        float yAxis = evt.getAxisValue(MotionEvent.AXIS_HAT_Y);
+        float hatX = evt.getAxisValue(MotionEvent.AXIS_HAT_X);
+        float hatY = evt.getAxisValue(MotionEvent.AXIS_HAT_Y);
+        float x = evt.getAxisValue(MotionEvent.AXIS_X);
+        float y = evt.getAxisValue(MotionEvent.AXIS_Y);
 
-        Integer keycode = null;
-
-        if (Float.compare(yAxis, -1.0f) == 0)
-            keycode = KeyEvent.KEYCODE_DPAD_UP;
-        else if (Float.compare(yAxis, 1.0f) == 0)
-            keycode = KeyEvent.KEYCODE_DPAD_DOWN;
-        else if (Float.compare(xAxis, -1.0f) == 0)
-            keycode = KeyEvent.KEYCODE_DPAD_LEFT;
-        else if (Float.compare(xAxis, 1.0f) == 0)
-            keycode = KeyEvent.KEYCODE_DPAD_RIGHT;
-
-        if (keycode == null)
-            return false;
-
-        switch (evt.getAction())
-        {
-            case MotionEvent.ACTION_DOWN:
-                mOnKeyDownListener.onKeyDown(keycode);
-                break;
-
-            case MotionEvent.ACTION_CANCEL:
-            case MotionEvent.ACTION_UP:
-                mOnKeyUpListener.onKeyUp(keycode);
-                break;
+        // Ignore the stick's dead zone as reported by the device
+        InputDevice dev = evt.getDevice();
+        if (dev != null) {
+            InputDevice.MotionRange rx = dev.getMotionRange(MotionEvent.AXIS_X, src);
+            InputDevice.MotionRange ry = dev.getMotionRange(MotionEvent.AXIS_Y, src);
+            if (rx != null && Math.abs(x) <= rx.getFlat()) x = 0;
+            if (ry != null && Math.abs(y) <= ry.getFlat()) y = 0;
         }
+
+        boolean up = hatY < -0.5f || y < -STICK_THRESHOLD;
+        boolean down = hatY > 0.5f || y > STICK_THRESHOLD;
+        boolean left = hatX < -0.5f || x < -STICK_THRESHOLD;
+        boolean right = hatX > 0.5f || x > STICK_THRESHOLD;
+
+        // Grid movement: keep only the dominant stick axis on diagonals
+        if ((up || down) && (left || right) && hatX == 0 && hatY == 0) {
+            if (Math.abs(x) > Math.abs(y)) { up = false; down = false; }
+            else { left = false; right = false; }
+        }
+
+        setDirection(up, mUp, KeyEvent.KEYCODE_DPAD_UP);
+        setDirection(down, mDown, KeyEvent.KEYCODE_DPAD_DOWN);
+        setDirection(left, mLeft, KeyEvent.KEYCODE_DPAD_LEFT);
+        setDirection(right, mRight, KeyEvent.KEYCODE_DPAD_RIGHT);
+        mUp = up; mDown = down; mLeft = left; mRight = right;
 
         return true;
     }

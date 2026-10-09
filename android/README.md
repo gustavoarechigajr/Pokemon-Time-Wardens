@@ -44,9 +44,26 @@ controller is used and comes back when you touch the screen.
 | Z      | Special (D) |
 | Fast / Slow | Speed up / slow down (Q / W) |
 
+**Controllers / handhelds (e.g. AYN Thor Max):** built-in controls and
+Bluetooth/USB pads work directly. The touch overlay starts hidden when a
+controller is detected and appears if you touch the screen.
+
+| Controller | Game action |
+|------------|-------------|
+| D-pad / left stick | Move / navigate |
+| A (bottom) | OK / confirm |
+| B (right) or Start | Back / open the menu |
+| X (left)   | Action |
+| Y (top) or Select | Special |
+| L1 / R1    | Speed up / slow down |
+| L2 / R2    | Jump up / down in lists |
+
+If confirm and back feel swapped on your device, check its controller
+layout setting (Xbox vs. Nintendo style).
+
 The phone's own back button/gesture acts as the game's **Back** button. It
 doesn't close the game, so an accidental swipe can't lose unsaved progress.
-Bluetooth/USB controllers and keyboards also work.
+Keyboards also work.
 
 ## How it works
 

@@ -71,26 +71,40 @@ for t in 10 20 30 45; do
   check_alive || FAIL=1
 done
 
-# Title screen -> continue/new game menu -> new game, pressing "C" (Use)
+# Inputs below go through the controller path (as on handhelds like the
+# AYN Thor): "input gamepad"/"input dpad" inject events with a gamepad/D-pad
+# source, which MainActivity maps to the game's keys.
+pad() { adb shell input gamepad keyevent "$@"; }
+dpad() { adb shell input dpad keyevent "$@"; }
+
+# Title screen -> continue/new game menu -> new game, pressing A (= OK)
 for step in 1 2 3 4 5 6; do
-  key KEYCODE_C
+  pad KEYCODE_BUTTON_A
   sleep 6
-  shot "press_c_${step}"
+  shot "pad_a_${step}"
   check_alive || { FAIL=1; break; }
 done
 
-# Walk around a bit / advance dialogue
+# Advance intro dialogue with A
 for step in 1 2 3 4 5 6 7 8 9 10; do
-  key KEYCODE_C
+  pad KEYCODE_BUTTON_A
   sleep 3
 done
 shot "after_dialogue"
-key KEYCODE_DPAD_DOWN KEYCODE_DPAD_DOWN KEYCODE_DPAD_LEFT KEYCODE_DPAD_RIGHT
+
+# D-pad movement from a controller
+dpad KEYCODE_DPAD_DOWN KEYCODE_DPAD_DOWN KEYCODE_DPAD_LEFT KEYCODE_DPAD_RIGHT
 sleep 3
 shot "after_walk"
-# Open the pause menu (Back) and close it again
-key KEYCODE_X; sleep 4; shot "menu"; key KEYCODE_X; sleep 3
-check_alive || FAIL=1
+
+# B opens the pause menu, B again closes it
+pad KEYCODE_BUTTON_B; sleep 4; shot "pad_b_menu"
+pad KEYCODE_BUTTON_B; sleep 3; shot "pad_b_closed"
+
+# Keyboard still works (C = OK) and the phone's back key acts as Back
+key KEYCODE_BACK; sleep 4; shot "back_key_menu"
+key KEYCODE_BACK; sleep 3
+check_alive || { log "!! back key closed the game"; FAIL=1; }
 
 sleep 2
 kill "$LOGCAT_PID" 2>/dev/null
