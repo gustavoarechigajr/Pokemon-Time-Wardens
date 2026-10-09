@@ -169,6 +169,14 @@ jobs:
           ls -la "$ASSETS"
           df -h /
 
+      # The compiled engine (libmkxp-z etc.) only changes with android/port;
+      # reusing it saves about 8 minutes per build
+      - name: Cache engine libraries
+        uses: actions/cache@v4
+        with:
+          path: ~/tw-jnilibs
+          key: jnilibs-v1-${{ env.ANDROID_NDK_VERSION }}-${{ hashFiles('android/port/**') }}
+
       - name: Build signed APK
         working-directory: ${{ env.PORT_DIR }}
         env:
@@ -191,10 +199,22 @@ jobs:
           OUT="$RUNNER_TEMP/out"
           ASSETS=app/src/main/assets
           mkdir -p "$OUT"
+          JNI_CACHE="$HOME/tw-jnilibs"
+          if ls "$JNI_CACHE"/arm64-v8a/*.so >/dev/null 2>&1; then
+            echo "Using cached engine libraries"
+            export TW_PREBUILT_JNI="$JNI_CACHE"
+          fi
 
           # 1. Full APK: engine + bundled game (for first installs)
           ./gradlew assembleRelease --no-daemon --stacktrace -Dorg.gradle.jvmargs=-Xmx4g
           mv "$(ls app/build/outputs/apk/release/*.apk | head -1)" "$OUT/TimeWardens-${TW_VERSION_NAME}.apk"
+          if [ -z "${TW_PREBUILT_JNI:-}" ]; then
+            # Keep the freshly built engine for the next builds
+            mkdir -p "$JNI_CACHE"
+            cp -r app/build/intermediates/merged_native_libs/release/out/lib/. "$JNI_CACHE/" \
+              || { echo "::warning::engine libraries not found; next build compiles them again"; rm -rf "$JNI_CACHE"; }
+          fi
+          find "$JNI_CACHE" -name '*.so' 2>/dev/null | sort
 
           # 2. Update APK: same app without the bundled game (in-app updates)
           mv "$ASSETS/game.zip" "$OUT/game.zip"
@@ -256,7 +276,8 @@ jobs:
           echo "APK_PATH=$(ls $RUNNER_TEMP/apk/*.apk)" >> "$GITHUB_ENV"
 
       - name: Install screenshot tools
-        run: sudo apt-get update -y && sudo apt-get install -y imagemagick
+        # (Ubuntu 24.04's system Python needs --break-system-packages for --user installs)
+        run: python3 -m pip install --quiet --user pillow || python3 -m pip install --quiet --user --break-system-packages pillow
 
       - name: Enable KVM
         run: |

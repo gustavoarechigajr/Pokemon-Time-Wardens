@@ -63,9 +63,17 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    externalNativeBuild {
-        ndkBuild {
-            path "jni/Android.mk"
+    // CI reuses the engine libraries from an earlier build when the native
+    // code hasn't changed (TW_PREBUILT_JNI = folder of <abi>/*.so); compiling
+    // mkxp-z for three ABIs otherwise takes about 8 minutes
+    def prebuiltJni = System.getenv('TW_PREBUILT_JNI')
+    if (prebuiltJni) {
+        sourceSets.main.jniLibs.srcDirs = [prebuiltJni]
+    } else {
+        externalNativeBuild {
+            ndkBuild {
+                path "jni/Android.mk"
+            }
         }
     }
     ndkVersion envOr('TW_NDK_VERSION', '23.2.8568313')

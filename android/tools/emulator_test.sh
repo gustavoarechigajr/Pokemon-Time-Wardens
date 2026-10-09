@@ -18,13 +18,22 @@ FAIL=0
 
 log() { echo "[$(date +%H:%M:%S)] $*"; }
 
+# PNG -> small JPEG (Pillow, installed with pip by the workflow)
+tojpg() {
+  python3 - "$1" "$2" <<'PY' 2>/dev/null
+import sys
+from PIL import Image
+im = Image.open(sys.argv[1]).convert("RGB")
+if im.width > 640:
+    im = im.resize((640, round(im.height * 640 / im.width)))
+im.save(sys.argv[2], quality=70)
+PY
+}
+
 shot() {
   local name="$1"
   adb exec-out screencap -p > "$OUT/$name.png" 2>/dev/null || return 0
-  if command -v convert >/dev/null; then
-    convert "$OUT/$name.png" -resize 640x -quality 70 "$OUT/$name.jpg" 2>/dev/null || return 0
-    echo "==SHOT $name== $(base64 -w0 "$OUT/$name.jpg")"
-  fi
+  tojpg "$OUT/$name.png" "$OUT/$name.jpg" && echo "==SHOT $name== $(base64 -w0 "$OUT/$name.jpg")"
 }
 
 key() { adb shell input keyevent "$@"; }
@@ -145,7 +154,7 @@ shot_display() {
   local name="$1"
   if [ -n "$SECOND_ID" ]; then
     adb exec-out screencap -d "$SECOND_ID" -p > "$OUT/$name.png" 2>/dev/null
-    convert "$OUT/$name.png" -resize 640x -quality 70 "$OUT/$name.jpg" 2>/dev/null && \
+    tojpg "$OUT/$name.png" "$OUT/$name.jpg" && \
       echo "==SHOT $name== $(base64 -w0 "$OUT/$name.jpg")"
   fi
 }
