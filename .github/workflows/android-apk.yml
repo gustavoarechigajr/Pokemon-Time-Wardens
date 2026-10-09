@@ -20,7 +20,8 @@ on:
 
 concurrency:
   group: android-apk-${{ github.ref }}
-  cancel-in-progress: true
+  # Queue instead of cancelling, so a running native build still gets cached
+  cancel-in-progress: false
 
 permissions:
   contents: write
