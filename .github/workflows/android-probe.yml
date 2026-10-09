@@ -1,0 +1,44 @@
+name: Android port probe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ccr-d38f2306-jiju6n]
+    paths: ['.github/workflows/android-probe.yml']
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Clone ports
+        run: |
+          git clone --depth 50 https://github.com/BookerRues9/mkxp-z-android-reworked.git booker
+          git clone --depth 50 https://github.com/thehatkid/mkxp-z-android.git hatkid
+          for r in booker hatkid; do echo "=== $r"; git -C $r log --format='%h %ad %s' --date=short | head -15; git -C $r submodule status || true; done
+      - name: Tree
+        run: |
+          cd booker
+          find . -path ./.git -prune -o -type f -print | grep -v '/mkxp-z/' | sort
+          echo ==== mkxp-z tree
+          find app/jni/mkxp-z -type f | grep -vE '\.(png|ttf|otf)$' | sort | head -400
+      - name: Diff booker vs hatkid
+        run: |
+          diff -rq booker hatkid -x .git | head -100
+      - name: Java and manifest
+        run: |
+          cd booker
+          for f in $(find app/src -name '*.java' -path '*hatkid*') app/src/main/AndroidManifest.xml app/build.gradle build.gradle settings.gradle gradle.properties gradle/wrapper/gradle-wrapper.properties; do echo "######## $f"; cat -n "$f"; done
+          find app/src/main/res -type f
+      - name: JNI build files
+        run: |
+          cd booker/app/jni
+          ls -la
+          for f in Makefile get_deps.sh *.mk Android.mk Application.mk mkxp-z/Android.mk mkxp-z/make_xxd.sh mkxp-z/mkxp.json; do [ -f "$f" ] && { echo "######## $f"; cat -n "$f"; }; done
+      - name: Android-specific engine code
+        run: |
+          cd booker/app/jni/mkxp-z
+          grep -rn -i 'android' --include=*.cpp --include=*.h --include=*.c --include=*.mm . | head -300
+      - name: Engine fs/config/main
+        run: |
+          cd booker/app/jni/mkxp-z
+          for f in src/main.cpp src/config.cpp; do echo "######## $f"; cat -n "$f"; done
