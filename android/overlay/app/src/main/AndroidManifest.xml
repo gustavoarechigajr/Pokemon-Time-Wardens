@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- In-app updates: install the downloaded update APK (Android asks the user) -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
     <!-- Access to vibrator -->
     <uses-permission android:name="android.permission.VIBRATE" />
 

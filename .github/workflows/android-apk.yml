@@ -158,9 +158,15 @@ jobs:
 
       - name: Package game files
         run: |
-          python3 android/tools/package_game.py . "$PORT_DIR/app/src/main/assets" --midi-cache ~/.cache/tw-midi
-          ls -la "$PORT_DIR/app/src/main/assets"
-          # The checkout is no longer needed; free its space for Gradle
+          ASSETS="$PORT_DIR/app/src/main/assets"
+          python3 android/tools/package_game.py . "$ASSETS" --midi-cache ~/.cache/tw-midi --build ${{ github.run_number }}
+          # Identifies the app/engine code; the in-app updater offers an app
+          # update only when this changes (game-only changes download files)
+          ENGINE_ID=$( (git ls-files -s android/overlay android/port; cat android/port/port.env) | sha256sum | cut -c1-16)
+          printf 'repo=%s\ntag=android-latest\nengine_id=%s\n' "$GITHUB_REPOSITORY" "$ENGINE_ID" > "$ASSETS/engine.properties"
+          echo "ENGINE_ID=$ENGINE_ID" >> "$GITHUB_ENV"
+          cat "$ASSETS/game.properties" "$ASSETS/engine.properties"
+          ls -la "$ASSETS"
           df -h /
 
       - name: Build signed APK
@@ -179,13 +185,33 @@ jobs:
             export TW_KEYSTORE="$RUNNER_TEMP/release.jks"
           fi
           chmod +x gradlew
+          OUT="$RUNNER_TEMP/out"
+          ASSETS=app/src/main/assets
+          mkdir -p "$OUT"
+
+          # 1. Full APK: engine + bundled game (for first installs)
           ./gradlew assembleRelease --no-daemon --stacktrace -Dorg.gradle.jvmargs=-Xmx4g
-          ls -la app/build/outputs/apk/release/
-          APK=$(ls app/build/outputs/apk/release/*.apk | head -1)
-          mkdir -p "$RUNNER_TEMP/out"
-          cp "$APK" "$RUNNER_TEMP/out/TimeWardens-${TW_VERSION_NAME}.apk"
-          "$ANDROID_HOME/build-tools/33.0.2/apksigner" verify --print-certs "$RUNNER_TEMP/out/"*.apk | head -3
-          unzip -l "$RUNNER_TEMP/out/"*.apk | grep -E "lib/|assets/" | head -40
+          mv "$(ls app/build/outputs/apk/release/*.apk | head -1)" "$OUT/TimeWardens-${TW_VERSION_NAME}.apk"
+
+          # 2. Update APK: same app without the bundled game (in-app updates)
+          mv "$ASSETS/game.zip" "$OUT/game.zip"
+          mv "$ASSETS/game-manifest.json.gz" "$OUT/game-manifest.json.gz"
+          GAME_ID=$(grep '^id=' "$ASSETS/game.properties" | cut -d= -f2)
+          rm -f "$ASSETS/game.properties"
+          ./gradlew assembleRelease --no-daemon --stacktrace -Dorg.gradle.jvmargs=-Xmx4g
+          mv "$(ls app/build/outputs/apk/release/*.apk | head -1)" "$OUT/TimeWardens-update.apk"
+
+          # 3. What the in-app updater reads first
+          cat > "$OUT/version.json" <<JSON
+          {"build": ${TW_VERSION_CODE}, "game_id": "${GAME_ID}", "engine_id": "${ENGINE_ID}",
+           "apk_version_code": ${TW_VERSION_CODE}, "update_apk_bytes": $(stat -c %s "$OUT/TimeWardens-update.apk")}
+          JSON
+          ls -la "$OUT"
+          cat "$OUT/version.json"
+          for apk in "$OUT"/*.apk; do
+            "$ANDROID_HOME/build-tools/33.0.2/apksigner" verify --print-certs "$apk" | head -2
+          done
+          unzip -l "$OUT/TimeWardens-${TW_VERSION_NAME}.apk" | grep -E "lib/|assets/" | head -40
 
       - name: Publish release
         id: release
@@ -195,10 +221,11 @@ jobs:
           TAG=android-latest
           gh release delete "$TAG" --cleanup-tag -y || true
           git push origin ":refs/tags/$TAG" 2>/dev/null || true
-          gh release create "$TAG" "$RUNNER_TEMP"/out/*.apk \
+          gh release create "$TAG" "$RUNNER_TEMP"/out/*.apk "$RUNNER_TEMP"/out/game.zip \
+            "$RUNNER_TEMP"/out/game-manifest.json.gz "$RUNNER_TEMP"/out/version.json \
             --target "$GITHUB_SHA" --prerelease \
             --title "Time Wardens for Android (build ${{ github.run_number }})" \
-            --notes "Android build of Time Wardens from commit ${GITHUB_SHA::8} (branch ${GITHUB_REF_NAME}). Download the .apk on your phone and open it to install. See android/README.md for details."
+            --notes "Android build of Time Wardens from commit ${GITHUB_SHA::8} (branch ${GITHUB_REF_NAME}). First install: download TimeWardens-2.05-android.${{ github.run_number }}.apk on your device and open it. Already installed: just open the game, it offers to download only what changed. The other files here are used by the in-app updater. See android/README.md."
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
 
   test:
@@ -221,7 +248,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download "${{ needs.apk.outputs.tag }}" -p '*.apk' -D "$RUNNER_TEMP/apk" -R "$GITHUB_REPOSITORY"
+          gh release download "${{ needs.apk.outputs.tag }}" -p 'TimeWardens-2*.apk' -D "$RUNNER_TEMP/apk" -R "$GITHUB_REPOSITORY"
           ls -la "$RUNNER_TEMP/apk"
           echo "APK_PATH=$(ls $RUNNER_TEMP/apk/*.apk)" >> "$GITHUB_ENV"
 

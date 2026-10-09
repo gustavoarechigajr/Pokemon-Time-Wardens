@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Package the Time Wardens game folder for the Android APK.
 
-Produces two files for the APK's assets folder:
-  game.zip         the game files the engine needs at runtime
-  game.properties  size/id info read by GameInstallActivity
+Produces, in out_dir:
+  game.zip               the game files the engine needs at runtime
+  game.properties        build/size/id info read by GameInstallActivity
+  game-manifest.json.gz  every file in game.zip with its CRC and byte range,
+                         used by the in-app updater to download only the
+                         files that changed between builds
 
 Android-specific handling:
   * Windows-only files (Game.exe, DLLs, the PokeRover tool, shortcuts...)
@@ -23,6 +26,7 @@ Usage: package_game.py <game_dir> <out_dir> [--midi-cache DIR]
 """
 
 import argparse
+import gzip
 import hashlib
 import json
 import os
@@ -159,6 +163,7 @@ def main():
     ap.add_argument("game_dir")
     ap.add_argument("out_dir")
     ap.add_argument("--midi-cache", default=None)
+    ap.add_argument("--build", type=int, default=0, help="build number (CI run number)")
     ap.add_argument("--patches", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "game_patches"))
     args = ap.parse_args()
 
@@ -282,14 +287,32 @@ def main():
                 total += os.path.getsize(src)
                 print("added Android patch:", arcname)
 
-    with open(zip_path, "rb") as f:
-        h = hashlib.sha256()
-        for chunk in iter(lambda: f.read(1 << 20), b""):
-            h.update(chunk)
+    # Manifest: where each file's (compressed) bytes sit inside game.zip
+    entries = []
+    content = hashlib.sha256()
+    with open(zip_path, "rb") as raw, zipfile.ZipFile(zip_path) as zf:
+        for info in zf.infolist():
+            if info.is_dir():
+                continue
+            raw.seek(info.header_offset)
+            local = raw.read(30)
+            if local[:4] != b"PK\x03\x04":
+                sys.exit("bad local header for " + info.filename)
+            name_len = int.from_bytes(local[26:28], "little")
+            extra_len = int.from_bytes(local[28:30], "little")
+            data_offset = info.header_offset + 30 + name_len + extra_len
+            entries.append([info.filename, info.CRC, info.file_size, data_offset,
+                            info.compress_size, info.compress_type])
+            content.update(("%s|%d|%d\n" % (info.filename, info.CRC, info.file_size)).encode())
+    game_id = content.hexdigest()[:16]
+    manifest = {"build": args.build, "game_id": game_id, "files": entries}
+    with gzip.open(os.path.join(out, "game-manifest.json.gz"), "wt", encoding="utf-8") as f:
+        json.dump(manifest, f, separators=(",", ":"))
     with open(os.path.join(out, "game.properties"), "w") as f:
-        f.write("id=%s\n" % h.hexdigest()[:16])
+        f.write("id=%s\n" % game_id)
+        f.write("build=%d\n" % args.build)
         f.write("uncompressed_bytes=%d\n" % total)
-        f.write("files=%d\n" % (len(files) - dropped))
+        f.write("files=%d\n" % len(entries))
 
     print("Packaged %d files, %.1f MB uncompressed, zip %.1f MB; MIDI rendered %d, audio converted %d, dropped %d"
           % (len(files) - dropped, total / 1e6, os.path.getsize(zip_path) / 1e6, rendered, converted, dropped))

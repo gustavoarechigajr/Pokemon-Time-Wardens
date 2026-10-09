@@ -14,6 +14,34 @@ finishes, the APK is attached to the **`android-latest`** release:
 
 You can also start a build by hand from the Actions tab ("Run workflow").
 
+## Updates (in the app)
+
+Once installed, you never need to download the big APK again. Every time
+you open the game it quickly checks the `android-latest` release, if you're
+online:
+
+* **Game updates** (scripts, maps, graphics, audio...) download **only the
+  files that changed**. The app compares its list of installed files and
+  checksums with the release's list, then fetches just those files out of
+  the published `game.zip`. A typical script fix is a few hundred KB.
+* **App updates** (engine, controls, second screen...) download the small
+  `TimeWardens-update.apk`, which is the app without the bundled game, and
+  hand it to Android's installer. It installs over the current app and keeps
+  your game files and saves.
+
+Either way you get an **Update now / Later** prompt with the download size.
+Offline, the game just starts.
+
+The release must be publicly downloadable (a **public repository**) for the
+app to fetch updates. Each build publishes these files to the release:
+
+| File | Used for |
+|------|----------|
+| `TimeWardens-2.05-android.N.apk` | first install (includes the whole game) |
+| `TimeWardens-update.apk` | app updates |
+| `game.zip`, `game-manifest.json.gz` | game updates (changed files only) |
+| `version.json` | the update check |
+
 ## Installing on a device
 
 1. Download the `.apk` on the device (or copy it over from a computer).
