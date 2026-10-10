@@ -215,6 +215,8 @@ PY
   # Mid-battle: battle page, then the party/summary and every other tab
   demo_start battle
   demo_shot "demo_battle"
+  tap_v 440 23; sleep 2; demo_shot "demo_foe"          # FOE INFO
+  tap_v 256 309; sleep 1                               # BACK
   tap_v 421 242; sleep 2; demo_shot "demo_switch"      # POKEMON -> party on this screen
   tap_v 160 309; sleep 1                               # BACK
   tap_v 91 242; sleep 2; demo_shot "demo_bag"          # BAG -> battle bag
@@ -241,6 +243,12 @@ PY
   tap_v 384 64; sleep 2
   tap_v 86 270; sleep 2; demo_shot "demo_items"
   tap_tab 5; sleep 2; demo_shot "demo_more_free"
+  tap_tab 0; sleep 2
+  tap_v 450 310; sleep 2; demo_shot "demo_types"       # PARTY -> TYPES
+  tap_v 451 24; sleep 1                                # BACK
+  tap_tab 2; sleep 2
+  tap_v 448 23; sleep 2; demo_shot "demo_area"         # MAP -> AREA
+  tap_v 448 23; sleep 1                                # back to REGION
   # Naming keyboard
   demo_start entry
   demo_shot "demo_keyboard"

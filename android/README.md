@@ -111,6 +111,10 @@ along the bottom switch pages:
     status cures...) and use it on that Pokémon, with the game's own
     item effects and messages.
   * **SWAP**: then tap another Pokémon to swap their places.
+  Eggs show how many steps are left until they hatch. **TYPES** opens a
+  team type chart (Time Wardens' own types): for every type, how many of
+  your Pokémon are weak to it, resist it or are immune, and a star when
+  one of your moves hits it super effectively.
 * **BATTLE** (replaces the first tab during battles and opens by itself):
   laid out like the DS games' touch screen, using Time Wardens' own battle
   buttons: a big FIGHT button with BAG, RUN and POKÉMON below it. The move
@@ -127,13 +131,17 @@ along the bottom switch pages:
   foe", "Resists foe"); tap one to switch. **BAG** shows Poké Balls,
   medicine and battle items as big buttons; medicine then asks which
   Pokémon to use it on. **TOP SCREEN** opens the game's own menu instead
-  (for summaries, Ethers and so on). Battle text and HP stay on
+  (for summaries, Ethers and so on). **FOE INFO** shows the opponent's
+  types, stat changes, status, possible abilities and whether you've
+  caught that species. Battle text and HP stay on
   the top screen; the physical buttons keep working as usual.
 * **JOURNAL**: the BW-style location sign, your current story objective
   (tap for the next part of long ones), trainer name, money, play time,
   the in-game clock and season and the chapters earned. **QUEST LOG** lists
   every active and completed quest.
-* **MAP**: the region's Town Map with your position. Tap a place to see its
+* **MAP**: the region's Town Map with your position, or (**AREA**) a
+  live map of the place you're in, DS-style: paths, tall grass, water,
+  ledges, exits, items and people, with you in the middle. Tap a place to see its
   name; if you can Fly and it's a Fly destination, **FLY** takes you there.
 * **ROUTE**: the wild Pokémon of the current area for the time of day, with
   encounter rates and levels. Unseen Pokémon stay silhouettes and "???";

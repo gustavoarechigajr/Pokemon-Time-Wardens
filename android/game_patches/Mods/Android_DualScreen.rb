@@ -26,6 +26,7 @@ if (System.platform[/Android/] rescue false)
     FLAG       = File.join(IPC_DIR, ".tw_dualscreen")
     OUT        = File.join(IPC_DIR, ".tw_status.json")
     CMD_GLOB   = File.join(IPC_DIR, ".tw_cmd_*.txt")
+    AREA_OUT   = File.join(IPC_DIR, ".tw_area.json")
     CMD_EXPIRE = 8.0   # seconds a queued command waits for a safe moment
 
     # Same word lists and order as the BW Location Signposts plugin
@@ -388,6 +389,106 @@ if (System.platform[/Android/] rescue false)
         {}
       end
 
+      # Team type chart (Time Wardens' own types and matchups): for each type,
+      # how many team members are weak to / resist / are immune to it, and
+      # whether any of the team's damaging moves hits it super effectively
+      def team_coverage
+        team = ($player.party || []).compact.reject(&:egg?)
+        types = []
+        GameData::Type.each { |t| types.push(t) if !t.pseudo_type }
+        rows = types.map do |t|
+          weak = resist = immune = 0
+          team.each do |pkmn|
+            v = Effectiveness.calculate(t.id, *pkmn.types)
+            if Effectiveness.ineffective?(v) then immune += 1
+            elsif Effectiveness.super_effective?(v) then weak += 1
+            elsif Effectiveness.not_very_effective?(v) then resist += 1
+            end
+          end
+          hit = team.any? do |pkmn|
+            pkmn.moves.any? do |m|
+              data = GameData::Move.try_get(m.id)
+              data && data.category != 2 && Effectiveness.super_effective?(Effectiveness.calculate(m.type, t.id))
+            end
+          end
+          { "type" => type_info(t.id), "weak" => weak, "resist" => resist, "immune" => immune, "hit" => hit }
+        end
+        { "size" => team.size, "rows" => rows }
+      rescue StandardError
+        nil
+      end
+
+      # Area map (second screen MAP page): the current map's terrain, written to
+      # its own file once per map. One character per tile:
+      #   . walkable  # blocked  ~ water  " tall grass  v ledge  * ice
+      def write_area
+        map = $game_map
+        return if !map || @area_map == map.map_id
+        @area_map = map.map_id
+        w, h = map.width, map.height
+        data = map.data
+        passages = map.instance_variable_get(:@passages)
+        priorities = map.instance_variable_get(:@priorities)
+        tags = map.instance_variable_get(:@terrain_tags)
+        tag_cache = {}
+        tag_of = lambda { |tid| tag_cache.fetch(tid) { tag_cache[tid] = (GameData::TerrainTag.try_get(tags[tid]) rescue nil) } }
+        # One pass over the tile layers per tile (like Game_Map#passable?,
+        # ignoring direction), much cheaper than asking for every direction
+        rows = Array.new(h) do |y|
+          line = +""
+          w.times do |x|
+            walk = true
+            top = nil
+            [2, 1, 0].each do |i|
+              tid = data[x, y, i]
+              next if tid.nil? || tid == 0
+              tt = tag_of.call(tid)
+              top ||= tt if tt && tt.id != :None
+              next if tt && tt.ignore_passability
+              pass = passages[tid].to_i
+              if pass & 0x0f == 0x0f
+                walk = false
+                break
+              end
+              break if priorities[tid].to_i == 0
+            end
+            line << if top && top.can_surf && !walk then "~"
+                    elsif top && top.ledge then "v"
+                    elsif top && top.ice then "*"
+                    elsif walk && top && top.land_wild_encounters then "\""
+                    elsif walk then "."
+                    else "#"
+                    end
+          end
+          line
+        end
+        text = json({ "id" => map.map_id, "w" => w, "h" => h, "name" => (map.name rescue "").to_s, "rows" => rows })
+        File.open(AREA_OUT + ".tmp", "wb") { |f| f.write(text) }
+        File.rename(AREA_OUT + ".tmp", AREA_OUT)
+      rescue StandardError => e
+        echoln("Area map: #{e.message}") rescue nil
+      end
+
+      # Things to mark on the area map: exits (doors, warps), visible items and people
+      def area_events
+        list = []
+        ($game_map.events || {}).each_value do |ev|
+          next if !ev || (ev.erased rescue false)
+          page = ev.instance_variable_get(:@page)
+          next if !page
+          exit = page.list.any? { |c| c.code == 201 } && [1, 2].include?(page.trigger)
+          name = ev.character_name.to_s
+          kind = if exit then "exit"
+                 elsif name[/item|ball/i] then "item"
+                 elsif !name.empty? then "npc"
+                 end
+          list.push([ev.x, ev.y, kind]) if kind
+        end
+        list.first(120)
+      rescue StandardError
+        []
+      end
+
       # Field tools from the Advanced Items Field Moves plugin that are used on
       # their own (obstacles like trees and boulders clear themselves when the
       # player interacts with them, so those aren't listed)
@@ -521,6 +622,14 @@ if (System.platform[/Android/] rescue false)
           }
           if b.opposes?
             info.delete("hp") ; info.delete("maxhp")
+            sp = b.displayPokemon.species rescue b.species
+            info["owned"] = ($player.owned?(sp) rescue false) ? true : false
+            info["abilities"] = (begin
+              d = GameData::Species.get_species_form(b.displaySpecies, b.displayForm)
+              (d.abilities + d.hidden_abilities).uniq.map { |a| GameData::Ability.get(a).name }
+            rescue StandardError
+              []
+            end)
             info["hp_frac"] = b.totalhp > 0 ? (b.hp.to_f / b.totalhp) : 0.0
             foes.push(info)
           else
@@ -594,7 +703,9 @@ if (System.platform[/Android/] rescue false)
           "party"    => ($player.party || []).compact.first(6).map { |p| pokemon_entry(p) },
           "heal"     => heal_items,
           "quick"    => quick_items,
-          "route"    => encounters
+          "route"    => encounters,
+          "coverage" => team_coverage,
+          "area"     => { "id" => ($game_map.map_id rescue 0), "events" => area_events }
         }
       end
 
@@ -605,6 +716,7 @@ if (System.platform[/Android/] rescue false)
           "context"  => context,
           "speed"    => (defined?($GameSpeed) && $GameSpeed) ? $GameSpeed + 1 : 1,
           "se_volume"=> (($PokemonSystem.sevolume rescue 100) || 100).to_i,
+          "pos"      => ($game_player ? [$game_map.map_id, $game_player.x, $game_player.y, $game_player.direction] : nil),
           "log"      => @log,
           "toast"    => @toast
         }
@@ -629,6 +741,7 @@ if (System.platform[/Android/] rescue false)
         else
           # The slow part is rebuilt about once a second (or when it changed)
           if refresh_slow || !@slow_json || @frame - @slow_frame.to_i >= 60
+            write_area
             @slow_json = json(slow_status)
             @slow_frame = @frame
           end
