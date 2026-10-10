@@ -112,9 +112,10 @@ along the bottom switch pages:
     item effects and messages.
   * **SWAP**: then tap another Pokémon to swap their places.
   Eggs show how many steps are left until they hatch. **TYPES** opens a
-  team type chart (Time Wardens' own types): for every type, how many of
-  your Pokémon are weak to it, resist it or are immune, and a star when
-  one of your moves hits it super effectively.
+  team type chart (Time Wardens' own types): one column per Pokémon, one
+  row per type, showing the damage that Pokémon takes from it (2x, 4x,
+  1/2, 1/4, 0 - both of its types combined), with a star where that
+  Pokémon has a move that hits the type super effectively.
 * **BATTLE** (replaces the first tab during battles and opens by itself):
   laid out like the DS games' touch screen, using Time Wardens' own battle
   buttons: a big FIGHT button with BAG, RUN and POKÉMON below it. The move
@@ -140,8 +141,9 @@ along the bottom switch pages:
   the in-game clock and season and the chapters earned. **QUEST LOG** lists
   every active and completed quest.
 * **MAP**: the region's Town Map with your position, or (**AREA**) a
-  live map of the place you're in, DS-style: paths, tall grass, water,
-  ledges, exits, items and people, with you in the middle. Tap a place to see its
+  live map of the place you're in, drawn from the map's own tiles at half
+  size, with the people, items and you as the game's sprites; it glides
+  along as you walk. Tap a place to see its
   name; if you can Fly and it's a Fly destination, **FLY** takes you there.
 * **ROUTE**: the wild Pokémon of the current area for the time of day, with
   encounter rates and levels. Unseen Pokémon stay silhouettes and "???";

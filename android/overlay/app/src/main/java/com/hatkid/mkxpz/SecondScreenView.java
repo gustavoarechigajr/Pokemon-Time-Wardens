@@ -853,7 +853,7 @@ public class SecondScreenView extends View
             });
         }
         if (mSwapFrom < 0 && count > 0)
-            capsule("TYPES", W - 6 - 112, 290, 112, 40, false, false, () -> mOverlay = O_COVERAGE);
+            capsule("TYPES", 8, 292, 116, 36, false, false, () -> { mOverlay = O_COVERAGE; mScroll[SCROLL_COVERAGE] = 0; });
         if (mSwapFrom >= 0) {
             box(96, 298, 320, 32, 0xf0302848);
             small("Tap a Pokémon to swap with", W / 2f, 304, GOLD, 2);
@@ -943,9 +943,10 @@ public class SecondScreenView extends View
             text(line, 210, y + i * 18, mSmallFont, 17, 0, LILAC, SHADOW);
         }
         y = 216;
-        small("Exp.", 210, y, DIM);
-        fillRect(260, y + 8, 236, 6, 0xff303038);
-        fillRect(260, y + 8, 236 * (float) Math.max(0, Math.min(1, p.optDouble("exp_frac", 0))), 6, 0xff48a8f8);
+        // Exp. label and bar share a centre line
+        text("Exp.", 210, capTop(mSmallFont, 21, y + 11), mSmallFont, 21, 0, DIM, SHADOW);
+        fillRect(262, y + 8, 234, 6, 0xff303038);
+        fillRect(262, y + 8, 234 * (float) Math.max(0, Math.min(1, p.optDouble("exp_frac", 0))), 6, 0xff48a8f8);
     }
 
     private void drawSummaryStats(JSONObject p)
@@ -1221,7 +1222,7 @@ public class SecondScreenView extends View
         float w = measure(s, mSmallFont, 21) + 16;
         if (alignRight) x -= w;
         box(x, y, w, 30, 0xd2181428);
-        small(s, x + 8, y + 3, color);
+        text(s, x + 8, capTop(mSmallFont, 21, y + 15), mSmallFont, 21, 0, color, SHADOW);
     }
 
     // ---- Route encounters ---------------------------------------------
@@ -1800,6 +1801,26 @@ public class SecondScreenView extends View
 
     // ---- Team type chart (PARTY -> TYPES) ----------------------------------
 
+    static final int SCROLL_COVERAGE = 7;
+
+    private static String multText(double m)
+    {
+        if (m <= 0) return "0";
+        if (m >= 3.9) return "4x";
+        if (m >= 1.9) return "2x";
+        if (m <= 0.26) return "1/4";
+        if (m <= 0.51) return "1/2";
+        return "";
+    }
+
+    private static int multColor(double m)
+    {
+        if (m <= 0) return 0xff70a8f8;          // immune: blue
+        if (m >= 3.9) return 0xffff5040;        // 4x: bright red
+        if (m >= 1.9) return 0xfff08070;        // 2x: red
+        return 0xff78d878;                      // resists: green
+    }
+
     private void drawCoverage()
     {
         box(6, 4, W - 12, 40);
@@ -1807,37 +1828,54 @@ public class SecondScreenView extends View
         capsule("BACK", W - 6 - 110, 4, 110, 40, false, false, () -> { mOverlay = O_NONE; mSoundCancel = true; });
         JSONObject cov = mState.optJSONObject("coverage");
         JSONArray rows = cov != null ? cov.optJSONArray("rows") : null;
-        if (rows == null || cov.optInt("size", 0) == 0) {
+        JSONArray team = cov != null ? cov.optJSONArray("team") : null;
+        int n = team == null ? 0 : Math.min(6, team.length());
+        if (rows == null || n == 0) {
             small("No Pokémon to chart yet.", W / 2f, 150, DIM, 2);
             return;
         }
-        // Three columns of types: weak/resist/immune pips for each team
-        // member, and a star when one of your moves hits it super effectively
-        int n = rows.length(), perCol = (n + 2) / 3;
-        float colW = 166, rowH = Math.min(34, 236f / Math.max(1, perCol)), top = 50;
-        for (int i = 0; i < n; i++) {
-            JSONObject r = rows.optJSONObject(i);
-            if (r == null) continue;
-            float x = 6 + (i / perCol) * (colW + 1), y = top + (i % perCol) * rowH;
-            if ((i % perCol) % 2 == 0) fillRect(x, y, colW, rowH, 0x30ffffff);
-            typeIcon(r.optJSONObject("type"), x + 4, y + (rowH - 24) / 2f, 54);
-            float px = x + 64, py = y + rowH / 2f - 5;
-            int weak = r.optInt("weak"), resist = r.optInt("resist"), immune = r.optInt("immune");
-            for (int k = 0; k < weak; k++, px += 12) fillRect(px, py, 10, 10, 0xffe85848);
-            for (int k = 0; k < resist; k++, px += 12) fillRect(px, py, 10, 10, 0xff58c058);
-            for (int k = 0; k < immune; k++, px += 12) fillRect(px, py, 10, 10, 0xff5898e8);
-            if (r.optBoolean("hit", false)) star(x + colW - 14, y + rowH / 2f, 0xfff8d048);
+        // One column per team member (icon and name on top)
+        float typeW = 70, colW = Math.min(72, (W - 12 - typeW) / n), left = 6 + typeW;
+        for (int j = 0; j < n; j++) {
+            JSONObject m = team.optJSONObject(j);
+            float cx = left + j * colW + colW / 2f;
+            icon(m.optString("icon", ""), cx, 66, 44, true, null);
+            text(ellipsize(m.optString("name", ""), mSmallFont, 15, colW - 4), cx, capTop(mSmallFont, 15, 96), mSmallFont, 15, 2, WHITE, SHADOW);
         }
-        float ly = top + perCol * rowH + 10;
-        float lx = 14;
-        fillRect(lx, ly + 6, 10, 10, 0xffe85848); lx += 14;
-        lx += text("weak", lx, ly, mSmallFont, 17, 0, WHITE, SHADOW) + 14;
-        fillRect(lx, ly + 6, 10, 10, 0xff58c058); lx += 14;
-        lx += text("resists", lx, ly, mSmallFont, 17, 0, WHITE, SHADOW) + 14;
-        fillRect(lx, ly + 6, 10, 10, 0xff5898e8); lx += 14;
-        lx += text("immune", lx, ly, mSmallFont, 17, 0, WHITE, SHADOW) + 18;
-        star(lx + 6, ly + 11, 0xfff8d048); lx += 16;
-        text("your moves hit it hard", lx, ly, mSmallFont, 17, 0, WHITE, SHADOW);
+        // Rows: the type, then what each member takes from it (scrolls)
+        float top = 106, view = 182, rowH = 26;
+        listScroll(SCROLL_COVERAGE, rows.length() * rowH, view);
+        mC.save();
+        mC.clipRect(0, top, W, top + view);
+        for (int i = 0; i < rows.length(); i++) {
+            JSONObject r = rows.optJSONObject(i);
+            float y = top + i * rowH - mScroll[SCROLL_COVERAGE];
+            if (r == null || y + rowH < top || y > top + view) continue;
+            fillRect(6, y, W - 12, rowH, i % 2 == 0 ? 0x38ffffff : 0x18ffffff);
+            typeIcon(r.optJSONObject("type"), 10, y + 2, 56);
+            JSONArray mult = r.optJSONArray("mult");
+            JSONArray hitters = r.optJSONArray("hitters");
+            for (int j = 0; j < n; j++) {
+                float cx = left + j * colW + colW / 2f;
+                double v = mult != null ? mult.optDouble(j, 1) : 1;
+                String t = multText(v);
+                if (!t.isEmpty()) text(t, cx - 4, capTop(mSmallFont, 18, y + rowH / 2f), mSmallFont, 18, 2, multColor(v), SHADOW);
+                else fillRect(cx - 5, y + rowH / 2f - 1, 2, 2, DIM);
+                boolean hits = false;
+                for (int k = 0; hitters != null && k < hitters.length(); k++) if (hitters.optInt(k) == j) hits = true;
+                if (hits) star(cx + colW / 2f - 10, y + rowH / 2f, 0xfff8d048);
+            }
+        }
+        mC.restore();
+        // Legend
+        float ly = 296;
+        float lx = 12;
+        lx += text("Damage taken:", lx, capTop(mSmallFont, 15, ly + 8), mSmallFont, 15, 0, LILAC, SHADOW) + 8;
+        lx += text("2x 4x", lx, capTop(mSmallFont, 15, ly + 8), mSmallFont, 15, 0, 0xfff08070, SHADOW) + 8;
+        lx += text("1/2 1/4", lx, capTop(mSmallFont, 15, ly + 8), mSmallFont, 15, 0, 0xff78d878, SHADOW) + 8;
+        text("0 = immune", lx, capTop(mSmallFont, 15, ly + 8), mSmallFont, 15, 0, 0xff70a8f8, SHADOW);
+        star(18, ly + 26, 0xfff8d048);
+        text("= that Pokémon has a move that's super effective on it", 30, capTop(mSmallFont, 15, ly + 26), mSmallFont, 15, 0, LILAC, SHADOW);
     }
 
     private void star(float cx, float cy, int color)
@@ -1928,38 +1966,83 @@ public class SecondScreenView extends View
     }
 
     // ---- Area map (MAP page, AREA mode) -------------------------------------
+    // Drawn from the map's real tiles (tileset + autotiles, half size) the way
+    // the game's own TileDrawingHelper does, rendered once per map on a
+    // background thread; the player and people are the game's sprites, and
+    // the view glides between tiles instead of jumping.
+
+    // Essentials' TileDrawingHelper::AUTOTILE_PATTERNS
+    private static final int[][][] AUTOTILE_PATTERNS = {
+        { {27, 28, 33, 34}, {5, 28, 33, 34}, {27, 6, 33, 34}, {5, 6, 33, 34},
+          {27, 28, 33, 12}, {5, 28, 33, 12}, {27, 6, 33, 12}, {5, 6, 33, 12} },
+        { {27, 28, 11, 34}, {5, 28, 11, 34}, {27, 6, 11, 34}, {5, 6, 11, 34},
+          {27, 28, 11, 12}, {5, 28, 11, 12}, {27, 6, 11, 12}, {5, 6, 11, 12} },
+        { {25, 26, 31, 32}, {25, 6, 31, 32}, {25, 26, 31, 12}, {25, 6, 31, 12},
+          {15, 16, 21, 22}, {15, 16, 21, 12}, {15, 16, 11, 22}, {15, 16, 11, 12} },
+        { {29, 30, 35, 36}, {29, 30, 11, 36}, {5, 30, 35, 36}, {5, 30, 11, 36},
+          {39, 40, 45, 46}, {5, 40, 45, 46}, {39, 6, 45, 46}, {5, 6, 45, 46} },
+        { {25, 30, 31, 36}, {15, 16, 45, 46}, {13, 14, 19, 20}, {13, 14, 19, 12},
+          {17, 18, 23, 24}, {17, 18, 11, 24}, {41, 42, 47, 48}, {5, 42, 47, 48} },
+        { {37, 38, 43, 44}, {37, 6, 43, 44}, {13, 18, 19, 24}, {13, 14, 43, 44},
+          {37, 42, 43, 48}, {17, 18, 47, 48}, {13, 18, 43, 48}, {1, 2, 7, 8} }
+    };
+    static final int AREA_T = 16;   // page pixels per map tile
 
     private boolean mAreaMode;
-    private int mAreaId = -1;
+    private int mAreaId = -1, mAreaW, mAreaH, mAreaScale = 2;
     private long mAreaModified;
     private String[] mAreaRows;
     private String mAreaName = "";
+    private volatile Bitmap mAreaBmp;
+    private volatile boolean mAreaRendering;
+    private float mAreaPX = -1, mAreaPY = -1;      // player position shown (tiles, smoothed)
+    private long mAreaLastFrame;
+    private final Map<Integer, float[]> mAreaEv = new HashMap<>();   // event id -> shown x, y
 
-    /** Loads the game's terrain file for the current map when it changes. */
+    /** Loads the game's area file when it changes and starts rendering it. */
     private void loadArea()
     {
-        File f = new File(mIpcDir, ".tw_area.json");
         java.io.InputStream in = null;
         try {
             if (mDemo) {
+                if (mAreaRows != null) return;
                 in = getContext().getAssets().open("tw_demo_area.json");
             } else {
+                File f = new File(mIpcDir, ".tw_area.json");
                 long mod = f.lastModified();
                 if (mod == 0 || mod == mAreaModified) return;
                 mAreaModified = mod;
                 in = new FileInputStream(f);
             }
             java.io.ByteArrayOutputStream bos = new java.io.ByteArrayOutputStream();
-            byte[] buf = new byte[16384];
+            byte[] buf = new byte[32768];
             int r;
             while ((r = in.read(buf)) > 0) bos.write(buf, 0, r);
-            JSONObject a = new JSONObject(bos.toString("UTF-8"));
+            final JSONObject a = new JSONObject(bos.toString("UTF-8"));
             JSONArray rows = a.optJSONArray("rows");
             String[] out = new String[rows == null ? 0 : rows.length()];
             for (int i = 0; i < out.length; i++) out[i] = rows.optString(i, "");
             mAreaRows = out;
             mAreaId = a.optInt("id", -1);
+            mAreaW = a.optInt("w", 0);
+            mAreaH = a.optInt("h", 0);
             mAreaName = a.optString("name", "");
+            mAreaBmp = null;
+            mAreaPX = mAreaPY = -1;
+            mAreaEv.clear();
+            if (a.optJSONArray("layers") != null && !mAreaRendering) {
+                mAreaRendering = true;
+                new Thread(() -> {
+                    try {
+                        mAreaBmp = renderArea(a);
+                    } catch (Throwable t) {
+                        Log.w(TAG, "Area render: " + t);
+                    } finally {
+                        mAreaRendering = false;
+                        postInvalidate();
+                    }
+                }, "TW-area").start();
+            }
         } catch (Exception e) {
             Log.w(TAG, "Area map: " + e);
         } finally {
@@ -1967,96 +2050,196 @@ public class SecondScreenView extends View
         }
     }
 
-    private static int areaColor(char c)
+    private Bitmap decodeScaled(String rel, int sample)
     {
-        switch (c) {
-            case '.': return 0xffd8c898;   // path / walkable
-            case '"': return 0xff60a850;   // tall grass
-            case '~': return 0xff4f80d0;   // water
-            case 'v': return 0xffb07c48;   // ledge
-            case '*': return 0xffc8e8f8;   // ice
-            default:  return 0xff2c4a38;   // trees, walls...
+        File f = rel == null || rel.isEmpty() ? null : resolve(rel);
+        if (f == null) return null;
+        BitmapFactory.Options o = new BitmapFactory.Options();
+        o.inScaled = false;
+        o.inSampleSize = sample;
+        return BitmapFactory.decodeFile(f.getAbsolutePath(), o);
+    }
+
+    /** Renders the whole map at AREA_T/mAreaScale... i.e. 16px (or 8px for huge maps) per tile. */
+    private Bitmap renderArea(JSONObject a)
+    {
+        int w = a.optInt("w"), h = a.optInt("h");
+        // 32px tiles decoded at 1/2 (16px); very large maps at 1/4 (8px)
+        int sample = (w * 16 > 3072 || h * 16 > 3072) ? 4 : 2;
+        int t = 32 / sample, q = t / 2;
+        Bitmap out = Bitmap.createBitmap(Math.max(1, w * t), Math.max(1, h * t), Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(out);
+        c.drawColor(0xff101820);
+        Paint p = new Paint();
+        p.setFilterBitmap(false);
+        Bitmap tiles = decodeScaled(a.optString("tileset", ""), sample);
+        JSONArray an = a.optJSONArray("autotiles");
+        Bitmap[] autos = new Bitmap[7];
+        for (int i = 0; an != null && i < 7 && i < an.length(); i++) autos[i] = decodeScaled(an.optString(i, ""), sample);
+        JSONArray layers = a.optJSONArray("layers");
+        Rect src = new Rect(), dst = new Rect();
+        for (int z = 0; layers != null && z < layers.length(); z++) {
+            JSONArray L = layers.optJSONArray(z);
+            if (L == null) continue;
+            for (int y = 0; y < h; y++) {
+                for (int x = 0; x < w; x++) {
+                    int id = L.optInt(y * w + x, 0);
+                    if (id <= 0) continue;
+                    int dx = x * t, dy = y * t;
+                    if (id >= 384) {
+                        if (tiles == null) continue;
+                        int n = id - 384;
+                        src.set((n % 8) * t, (n / 8) * t, (n % 8) * t + t, (n / 8) * t + t);
+                        if (src.bottom > tiles.getHeight()) continue;
+                        dst.set(dx, dy, dx + t, dy + t);
+                        c.drawBitmap(tiles, src, dst, p);
+                    } else if (id >= 48) {
+                        Bitmap at = autos[id / 48 - 1];
+                        if (at == null) continue;
+                        if (at.getHeight() <= t) {   // single-tile (animated strip) autotile
+                            src.set(0, 0, t, t);
+                            dst.set(dx, dy, dx + t, dy + t);
+                            c.drawBitmap(at, src, dst, p);
+                            continue;
+                        }
+                        int pat = id % 48;
+                        int[] parts = AUTOTILE_PATTERNS[pat >> 3][pat & 7];
+                        for (int k = 0; k < 4; k++) {
+                            int tp = parts[k] - 1;
+                            int sx = (tp % 6) * q, sy = (tp / 6) * q;
+                            src.set(sx, sy, sx + q, sy + q);
+                            int ox = dx + (k % 2) * q, oy = dy + (k / 2) * q;
+                            dst.set(ox, oy, ox + q, oy + q);
+                            c.drawBitmap(at, src, dst, p);
+                        }
+                    }
+                }
+            }
         }
+        mAreaScale = AREA_T / t;
+        return out;
+    }
+
+    /** First frame of a character sprite (4x4 sheet) facing dir, drawn at half size. */
+    private void drawCharacter(String rel, int dir, float cx, float bottom, int pattern)
+    {
+        Bitmap b = image(rel);
+        if (b == null) return;
+        int fw = b.getWidth() / 4, fh = b.getHeight() / 4;
+        int row = dir == 4 ? 1 : dir == 6 ? 2 : dir == 8 ? 3 : 0;
+        float dw = fw / 2f, dh = fh / 2f;
+        mC.drawBitmap(b, new Rect(pattern * fw, row * fh, pattern * fw + fw, row * fh + fh),
+            new RectF(cx - dw / 2f, bottom - dh, cx + dw / 2f, bottom), mBlit);
+    }
+
+    private static float approach(float cur, float target, float step)
+    {
+        if (cur < 0 || Math.abs(target - cur) > 6) return target;   // first frame or a jump: snap
+        if (Math.abs(target - cur) <= step) return target;
+        return cur + Math.signum(target - cur) * step;
     }
 
     private void drawArea()
     {
-        if (mAreaRows == null || (mDemo ? mAreaRows.length == 0 : false)) loadArea();
-        else if (!mDemo) loadArea();
+        loadArea();
         JSONArray pos = mState.optJSONArray("pos");
         int mapId = pos != null ? pos.optInt(0, -1) : -1;
-        if (mAreaRows == null || mAreaRows.length == 0 || (!mDemo && mapId != mAreaId)) {
+        float vx = 6, vy = 6, vw = W - 12, vh = 322;
+        fillRect(vx, vy, vw, vh, 0xff101820);
+        if (mAreaRows == null || mAreaW == 0 || (!mDemo && mapId != mAreaId)) {
             box(W / 2f - 150, 150, 300, 40);
-            small("No area map yet", W / 2f, 158, WHITE, 2);
+            text("No area map yet", W / 2f, capTop(mSmallFont, 21, 170), mSmallFont, 21, 2, WHITE, SHADOW);
             return;
         }
-        int h = mAreaRows.length, w = mAreaRows[0].length();
-        int px = pos != null ? pos.optInt(1, 0) : w / 2, py = pos != null ? pos.optInt(2, 0) : h / 2;
-        // A window of the map around the player, 12px per tile
-        int cell = 12;
-        float vx = 6, vy = 6, vw = W - 12, vh = 322;
-        int cols = (int) (vw / cell), rows = (int) (vh / cell);
-        int x0 = Math.max(0, Math.min(w - cols, px - cols / 2)), y0 = Math.max(0, Math.min(h - rows, py - rows / 2));
-        if (w <= cols) x0 = -(cols - w) / 2;
-        if (h <= rows) y0 = -(rows - h) / 2;
-        fillRect(vx, vy, vw, vh, 0xff101820);
-        for (int ty = 0; ty < rows; ty++) {
-            int my = y0 + ty;
-            if (my < 0 || my >= h) continue;
-            String line = mAreaRows[my];
-            for (int tx = 0; tx < cols; tx++) {
-                int mx = x0 + tx;
-                if (mx < 0 || mx >= line.length()) continue;
-                char c = line.charAt(mx);
-                float cx = vx + tx * cell, cy = vy + ty * cell;
-                fillRect(cx, cy, cell, cell, areaColor(c));
-                if (c == '"') fillRect(cx + 3, cy + 2, 2, 5, 0xff3c7c34);
-                if (c == '"') fillRect(cx + 7, cy + 4, 2, 5, 0xff3c7c34);
-                if (c == '~' && ((mx + my) & 1) == 0) fillRect(cx + 2, cy + 5, 6, 2, 0xff7aa4e8);
+        // Smooth movement: walk the shown position toward the real one
+        long now = SystemClock.uptimeMillis();
+        float dt = mAreaLastFrame == 0 ? 0 : Math.min(0.1f, (now - mAreaLastFrame) / 1000f);
+        mAreaLastFrame = now;
+        int tx = pos != null ? pos.optInt(1, 0) : mAreaW / 2, ty = pos != null ? pos.optInt(2, 0) : mAreaH / 2;
+        boolean moving = mAreaPX >= 0 && (Math.abs(mAreaPX - tx) > 0.01f || Math.abs(mAreaPY - ty) > 0.01f);
+        mAreaPX = approach(mAreaPX, tx, dt * 5.5f);
+        mAreaPY = approach(mAreaPY, ty, dt * 5.5f);
+        // Camera centred on the player, kept inside the map
+        float camX = (mAreaPX + 0.5f) * AREA_T - vw / 2f, camY = (mAreaPY + 0.5f) * AREA_T - vh / 2f;
+        float mapW = mAreaW * AREA_T, mapH = mAreaH * AREA_T;
+        camX = mapW <= vw ? (mapW - vw) / 2f : Math.max(0, Math.min(mapW - vw, camX));
+        camY = mapH <= vh ? (mapH - vh) / 2f : Math.max(0, Math.min(mapH - vh, camY));
+        mC.save();
+        mC.clipRect(vx, vy, vx + vw, vy + vh);
+        Bitmap bmp = mAreaBmp;
+        if (bmp != null) {
+            float s = mAreaScale;
+            mC.save();
+            mC.translate(vx - camX, vy - camY);
+            mC.scale(s, s);
+            mC.drawBitmap(bmp, 0, 0, mBlit);
+            mC.restore();
+        } else {
+            // Still rendering (or no tiles): the simple terrain view
+            for (int y = 0; y < mAreaH; y++) {
+                float py = vy + y * AREA_T - camY;
+                if (py + AREA_T < vy || py > vy + vh) continue;
+                String line = mAreaRows[y];
+                for (int x = 0; x < line.length(); x++) {
+                    float px = vx + x * AREA_T - camX;
+                    if (px + AREA_T < vx || px > vx + vw) continue;
+                    fillRect(px, py, AREA_T, AREA_T, areaColor(line.charAt(x)));
+                }
             }
         }
-        // Exits, items and people
+        // People and items (their own sprites), exits as a soft marker
         JSONObject area = mState.optJSONObject("area");
         JSONArray evs = area != null ? area.optJSONArray("events") : null;
+        float pulse = (float) (0.5 + 0.5 * Math.sin(now / 250.0));
         for (int i = 0; evs != null && i < evs.length(); i++) {
             JSONArray e = evs.optJSONArray(i);
             if (e == null) continue;
-            int ex = e.optInt(0) - x0, ey = e.optInt(1) - y0;
-            if (ex < 0 || ey < 0 || ex >= cols || ey >= rows) continue;
-            float cx = vx + ex * cell + cell / 2f, cy = vy + ey * cell + cell / 2f;
-            String kind = e.optString(2, "");
-            mShape.setStyle(Paint.Style.FILL);
-            if ("exit".equals(kind)) {
-                fillRect(cx - 6, cy - 6, 12, 12, 0xff282020);
-                fillRect(cx - 4, cy - 4, 8, 8, 0xfff8d048);
-            } else if ("item".equals(kind)) {
-                mShape.setColor(0xff282020); mC.drawCircle(cx, cy, 5.5f, mShape);
-                mShape.setColor(0xffe84040); mC.drawRect(cx - 4.5f, cy - 4.5f, cx + 4.5f, cy, mShape);
-                mShape.setColor(0xfff8f8f8); mC.drawRect(cx - 4.5f, cy, cx + 4.5f, cy + 4.5f, mShape);
-            } else {
-                mShape.setColor(0xff282020); mC.drawCircle(cx, cy, 5f, mShape);
-                mShape.setColor(0xffc8b8f0); mC.drawCircle(cx, cy, 3.5f, mShape);
+            int id = e.optInt(0);
+            float[] shown = mAreaEv.get(id);
+            if (shown == null) { shown = new float[] { -1, -1 }; mAreaEv.put(id, shown); }
+            shown[0] = approach(shown[0], e.optInt(1), dt * 4f);
+            shown[1] = approach(shown[1], e.optInt(2), dt * 4f);
+            float cx = vx + (shown[0] + 0.5f) * AREA_T - camX, bottom = vy + (shown[1] + 1) * AREA_T - camY;
+            if (cx < vx - 20 || cx > vx + vw + 20 || bottom < vy || bottom > vy + vh + 30) continue;
+            String sprite = e.optString(4, "");
+            if ("exit".equals(e.optString(3, "")) && sprite.isEmpty()) {
+                int al = (int) (90 + 120 * pulse);
+                fillRect(cx - 5, bottom - 11, 10, 10, (al << 24) | 0xf8d048);
+            } else if (!sprite.isEmpty()) {
+                drawCharacter(sprite, e.optInt(5, 2), cx, bottom, 0);
             }
         }
-        // The player: the region map's trainer icon over a blinking ring
-        float pcx = vx + (px - x0) * cell + cell / 2f, pcy = vy + (py - y0) * cell + cell / 2f;
-        if ((SystemClock.uptimeMillis() / 400) % 2 == 0) {
-            mShape.setStyle(Paint.Style.STROKE);
-            mShape.setStrokeWidth(2);
-            mShape.setColor(0xfff8f8f8);
-            mC.drawCircle(pcx, pcy, 11, mShape);
-        }
-        JSONObject m = mState.optJSONObject("map");
-        Bitmap pi = m != null ? image(m.optString("player", "")) : null;
-        if (pi != null) {
-            mC.drawBitmap(pi, null, new RectF(pcx - 10, pcy - 10, pcx + 10, pcy + 10), mBlit);
+        // The player, walking while the view glides
+        float pcx = vx + (mAreaPX + 0.5f) * AREA_T - camX, pbottom = vy + (mAreaPY + 1) * AREA_T - camY;
+        String ps = pos != null ? pos.optString(4, "") : "";
+        int frame = moving ? (int) ((now / 130) % 4) : 0;
+        if (!ps.isEmpty() && image(ps) != null) {
+            drawCharacter(ps, pos.optInt(3, 2), pcx, pbottom, frame);
         } else {
             mShape.setStyle(Paint.Style.FILL);
             mShape.setColor(0xffe83838);
-            mC.drawCircle(pcx, pcy, 6, mShape);
+            mC.drawCircle(pcx, pbottom - AREA_T / 2f, 5, mShape);
         }
+        mC.restore();
+        // Soft vignette edge so the map sits inside the screen like a window
+        mShape.setStyle(Paint.Style.STROKE);
+        mShape.setStrokeWidth(2);
+        mShape.setColor(0xc0f8f8f8);
+        mC.drawRoundRect(new RectF(vx + 1, vy + 1, vx + vw - 1, vy + vh - 1), 8, 8, mShape);
         label(mAreaName.isEmpty() && mState.optJSONObject("location") != null
-            ? mState.optJSONObject("location").optString("name", "") : mAreaName, 24, 14, GOLD, false);
+            ? mState.optJSONObject("location").optString("name", "") : mAreaName, 16, 12, GOLD, false);
+    }
+
+    private static int areaColor(char c)
+    {
+        switch (c) {
+            case '.': return 0xffd8c898;
+            case '"': return 0xff60a850;
+            case '~': return 0xff4f80d0;
+            case 'v': return 0xffb07c48;
+            case '*': return 0xffc8e8f8;
+            default:  return 0xff2c4a38;
+        }
     }
 
     // ---- Keyboard (naming screens) -------------------------------------

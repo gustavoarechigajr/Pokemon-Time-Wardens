@@ -390,30 +390,31 @@ if (System.platform[/Android/] rescue false)
       end
 
       # Team type chart (Time Wardens' own types and matchups): for each type,
-      # how many team members are weak to / resist / are immune to it, and
-      # whether any of the team's damaging moves hits it super effectively
+      # the damage multiplier each team member takes from it (both of its
+      # types combined), and which members have a move that hits that type
+      # super effectively
       def team_coverage
         team = ($player.party || []).compact.reject(&:egg?)
         types = []
         GameData::Type.each { |t| types.push(t) if !t.pseudo_type }
+        normal = Effectiveness::NORMAL_EFFECTIVE.to_f
         rows = types.map do |t|
-          weak = resist = immune = 0
-          team.each do |pkmn|
-            v = Effectiveness.calculate(t.id, *pkmn.types)
-            if Effectiveness.ineffective?(v) then immune += 1
-            elsif Effectiveness.super_effective?(v) then weak += 1
-            elsif Effectiveness.not_very_effective?(v) then resist += 1
-            end
-          end
-          hit = team.any? do |pkmn|
-            pkmn.moves.any? do |m|
+          mult = team.map { |pkmn| (Effectiveness.calculate(t.id, *pkmn.types) / normal).round(3) }
+          hitters = []
+          team.each_with_index do |pkmn, i|
+            hit = pkmn.moves.any? do |m|
               data = GameData::Move.try_get(m.id)
               data && data.category != 2 && Effectiveness.super_effective?(Effectiveness.calculate(m.type, t.id))
             end
+            hitters.push(i) if hit
           end
-          { "type" => type_info(t.id), "weak" => weak, "resist" => resist, "immune" => immune, "hit" => hit }
+          { "type" => type_info(t.id), "mult" => mult, "hit" => !hitters.empty?, "hitters" => hitters }
         end
-        { "size" => team.size, "rows" => rows }
+        team_info = team.map do |pkmn|
+          { "name" => pkmn.name, "icon" => (GameData::Species.icon_filename_from_pokemon(pkmn) rescue "").to_s,
+            "types" => pkmn.types.map { |ty| type_info(ty) } }
+        end
+        { "size" => team.size, "team" => team_info, "rows" => rows }
       rescue StandardError
         nil
       end
@@ -462,14 +463,25 @@ if (System.platform[/Android/] rescue false)
           end
           line
         end
-        text = json({ "id" => map.map_id, "w" => w, "h" => h, "name" => (map.name rescue "").to_s, "rows" => rows })
+        # The real tiles too, so the second screen can draw the map the way it looks
+        tileset = ($data_tilesets[map.instance_variable_get(:@map).tileset_id] rescue nil)
+        layers = (0...3).map do |z|
+          arr = Array.new(w * h, 0)
+          h.times { |y| w.times { |x| arr[y * w + x] = data[x, y, z].to_i } }
+          arr
+        end
+        text = json({ "id" => map.map_id, "w" => w, "h" => h, "name" => (map.name rescue "").to_s, "rows" => rows,
+                      "tileset" => (tileset ? "Graphics/Tilesets/" + tileset.tileset_name.to_s : ""),
+                      "autotiles" => (tileset ? tileset.autotile_names.map { |n| n.to_s.empty? ? "" : "Graphics/Autotiles/" + n.to_s } : []),
+                      "layers" => layers })
         File.open(AREA_OUT + ".tmp", "wb") { |f| f.write(text) }
         File.rename(AREA_OUT + ".tmp", AREA_OUT)
       rescue StandardError => e
         echoln("Area map: #{e.message}") rescue nil
       end
 
-      # Things to mark on the area map: exits (doors, warps), visible items and people
+      # Things to show on the area map: [id, x, y, kind, sprite, direction]
+      # (exits are doors and warps; items and people are drawn with their sprite)
       def area_events
         list = []
         ($game_map.events || {}).each_value do |ev|
@@ -478,11 +490,11 @@ if (System.platform[/Android/] rescue false)
           next if !page
           exit = page.list.any? { |c| c.code == 201 } && [1, 2].include?(page.trigger)
           name = ev.character_name.to_s
-          kind = if exit then "exit"
-                 elsif name[/item|ball/i] then "item"
-                 elsif !name.empty? then "npc"
-                 end
-          list.push([ev.x, ev.y, kind]) if kind
+          next if name.empty? && !exit
+          next if ev.tile_id.to_i > 0 && !exit
+          next if (ev.opacity rescue 255) == 0 || (ev.transparent rescue false)
+          kind = exit ? "exit" : (name[/item|ball/i] ? "item" : "npc")
+          list.push([ev.id, ev.x, ev.y, kind, name.empty? ? "" : "Graphics/Characters/" + name, ev.direction])
         end
         list.first(120)
       rescue StandardError
@@ -704,8 +716,7 @@ if (System.platform[/Android/] rescue false)
           "heal"     => heal_items,
           "quick"    => quick_items,
           "route"    => encounters,
-          "coverage" => team_coverage,
-          "area"     => { "id" => ($game_map.map_id rescue 0), "events" => area_events }
+          "coverage" => team_coverage
         }
       end
 
@@ -716,7 +727,9 @@ if (System.platform[/Android/] rescue false)
           "context"  => context,
           "speed"    => (defined?($GameSpeed) && $GameSpeed) ? $GameSpeed + 1 : 1,
           "se_volume"=> (($PokemonSystem.sevolume rescue 100) || 100).to_i,
-          "pos"      => ($game_player ? [$game_map.map_id, $game_player.x, $game_player.y, $game_player.direction] : nil),
+          "pos"      => ($game_player ? [$game_map.map_id, $game_player.x, $game_player.y, $game_player.direction,
+                          ($game_player.character_name.to_s.empty? ? "" : "Graphics/Characters/" + $game_player.character_name.to_s)] : nil),
+          "area"     => (in_battle? ? nil : { "id" => ($game_map.map_id rescue 0), "events" => area_events }),
           "log"      => @log,
           "toast"    => @toast
         }
@@ -1006,6 +1019,14 @@ if (System.platform[/Android/] rescue false)
         @frame += 1
         @active = File.exist?(FLAG) if (@frame % 30) == 1
         return if !@active
+        # Walking: update the second screen's map as soon as the player moves
+        if $game_player && !in_battle?
+          pos = [$game_map.map_id, $game_player.x, $game_player.y, $game_player.direction]
+          if pos != @last_pos
+            @last_pos = pos
+            @dirty = true
+          end
+        end
         # Taps are picked up within 2 frames (10 on old apps' slower storage)
         read_commands if (@frame % (FAST_IPC ? 2 : 10)) == 0
         interval = (in_battle? || @entry_scene) ? 10 : 30

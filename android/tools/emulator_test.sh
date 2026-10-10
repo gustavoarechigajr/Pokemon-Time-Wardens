@@ -244,7 +244,7 @@ PY
   tap_v 86 270; sleep 2; demo_shot "demo_items"
   tap_tab 5; sleep 2; demo_shot "demo_more_free"
   tap_tab 0; sleep 2
-  tap_v 450 310; sleep 2; demo_shot "demo_types"       # PARTY -> TYPES
+  tap_v 66 310; sleep 2; demo_shot "demo_types"        # PARTY -> TYPES
   tap_v 451 24; sleep 1                                # BACK
   tap_tab 2; sleep 2
   tap_v 448 23; sleep 2; demo_shot "demo_area"         # MAP -> AREA
